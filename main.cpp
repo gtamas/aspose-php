@@ -334,21 +334,45 @@ Php::Value aspose_get_version()
 	return buffer;
 }
 
-
-Php::Value aspose_count_slides(Php::Parameters &params)
+class PowerPoint : public Php::Base
 {
+private:
+    /**
+     *  The initial value
+     *  @var    int
+     */
+    SharedPtr<Presentation> _pres;
 
-    std::string path = params[0].stringValue();
-    if(access( path.c_str(), F_OK ) == -1 ) {
-        return -1;
+public:
+    /**
+     *  C++ constructor and destructor
+     */
+    PowerPoint() = default;
+    virtual ~PowerPoint() = default;
+
+    /**
+     *  Update methods to increment or decrement the counter
+     *  Both methods return the NEW value of the counter
+     *  @return int
+     */
+    Php::Value open(Php::Parameters &params) {
+        std::string path = params[0].stringValue();
+        if(access( path.c_str(), F_OK ) == -1 ) {
+            return -1;
+        }
+        const String templatePath = String(path);
+
+        SharedPtr<LoadOptions> loadOptions = MakeObject<LoadOptions>();
+        _pres = MakeObject<Presentation>(templatePath);
+
+        return this;
+     }
+
+    Php::Value countSlides() const 
+    { 
+        return _pres->get_Slides()->get_Count(); 
     }
-	const String templatePath = String(path);
-
-	SharedPtr<LoadOptions> loadOptions = MakeObject<LoadOptions>();
-	SharedPtr<Presentation> pres = MakeObject<Presentation>(templatePath);
-
-    return pres->get_Slides()->get_Count();
-}
+};
 
 
 /**
@@ -367,11 +391,21 @@ extern "C" {
     {
         static Php::Extension extension("pptparser", "1.0");
 
+        Php::Class<PowerPoint> ppt("PowerPoint");
+
+        ppt.method<&PowerPoint::open>("open", { 
+            Php::ByVal("path", Php::Type::String) 
+        });
+
+        ppt.method<&PowerPoint::countSlides>("countSlides", {});
+
+        extension.add(std::move(ppt));
+
         extension.add<cpp_date>("cpp_date");
         extension.add<aspose_get_version>("aspose_get_version");
-        extension.add<aspose_count_slides>("aspose_count_slides", {
-            Php::ByVal("path", Php::Type::String)
-        });
+        //extension.add<aspose_count_slides>("aspose_count_slides", {
+        //    Php::ByVal("path", Php::Type::String)
+        //});
 
         return extension;
     }

@@ -21,9 +21,15 @@ Finally, run this:
 
 ### API
 
+**Global methods**
+
 | name  | desc  | 
 |---|---|---|---|---|
 | aspose_get_version()  |  returns major.minor version |
-| aspose_count_slides(filePath)  | Returns the number of slides in PPT file  | 
 
+**PowerPoint class**
 
+| name  | desc  | 
+|---|---|---|---|---|
+| open(filePath)  |  Opens PPT file |
+| countSlides() Returns slide count  |

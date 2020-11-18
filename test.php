@@ -1,4 +1,7 @@
-Slides in file: <?php echo aspose_count_slides("../asposeext/file.pptx"); ?>
+Slides in file: <?php
+$ppt = new PowerPoint();
+$ppt->open("../asposeext/file.pptx");
+echo $ppt->countSlides(); ?>
 
 Aspose.Slides version: <?php echo aspose_get_version(); ?>
 
