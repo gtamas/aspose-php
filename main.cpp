@@ -7,6 +7,7 @@
 #include <system/io/file_mode.h>
 #include <system/io/file_stream.h>
 #include <system/math.h>
+#include <BuildVersionInfo.h>
 
 #include <DOM/Presentation.h>
 #include <DOM/LoadOptions.h>
@@ -310,8 +311,11 @@
 
 #include <Util/SlideUtil.h>
 
+#include <unistd.h>
+
 using namespace Aspose::Slides;
 using namespace System;
+
 
 Php::Value cpp_date()
 {
@@ -320,19 +324,30 @@ Php::Value cpp_date()
 }
 
 
+Php::Value aspose_get_version()
+{
+
+    int32_t major = BuildVersionInfo::ProductMajor();
+    int32_t minor = BuildVersionInfo::ProductMinor();
+    char buffer [10];
+    sprintf(buffer, "%d.%d", major, minor);
+	return buffer;
+}
+
+
 Php::Value aspose_count_slides(Php::Parameters &params)
 {
 
-    char buffer [50];
-    Php::Value path = params[0];
-	const String templatePath = String(path.stringValue());
+    std::string path = params[0].stringValue();
+    if(access( path.c_str(), F_OK ) == -1 ) {
+        return -1;
+    }
+	const String templatePath = String(path);
 
 	SharedPtr<LoadOptions> loadOptions = MakeObject<LoadOptions>();
 	SharedPtr<Presentation> pres = MakeObject<Presentation>(templatePath);
 
-	sprintf(buffer, "Total slides inside presentation are : %d\n", pres->get_Slides()->get_Count());
-
-    return buffer;
+    return pres->get_Slides()->get_Count();
 }
 
 
@@ -353,6 +368,7 @@ extern "C" {
         static Php::Extension extension("pptparser", "1.0");
 
         extension.add<cpp_date>("cpp_date");
+        extension.add<aspose_get_version>("aspose_get_version");
         extension.add<aspose_count_slides>("aspose_count_slides", {
             Php::ByVal("path", Php::Type::String)
         });
