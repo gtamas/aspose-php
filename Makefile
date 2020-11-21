@@ -85,7 +85,7 @@ LINKER				=	g++
 #	with a list of all flags that should be passed to the linker.
 #
 
-COMPILER_FLAGS		=	-Wall -I${ASPOSE_PATH}/include/aspose.slides.cpp -I${ASPOSE_PATH}/include/asposecpplib -c -O2 -std=c++17 -fpic -o
+COMPILER_FLAGS		=	 -Wall -I${ASPOSE_PATH}/include/aspose.slides.cpp -I${ASPOSE_PATH}/include/asposecpplib -c -O2 -std=c++17 -fpic -o
 LINKER_FLAGS		=	-shared -fuse-ld=gold
 LINKER_DEPENDENCIES	=	-lphpcpp -lAspose.Slides_clang3_libstdcpp -laspose_cpp_clang3_libstdcpp -L${ASPOSE_PATH}/lib
 
@@ -110,7 +110,7 @@ MKDIR				=	mkdir -p
 #	file, with the .cpp extension being replaced by .o.
 #
 
-SOURCES				=	$(wildcard *.cpp)
+SOURCES				=	$(wildcard src/*.cpp)
 OBJECTS				=	$(SOURCES:%.cpp=%.o)
 
 

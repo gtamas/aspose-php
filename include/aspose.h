@@ -1,15 +1,16 @@
-#include <phpcpp.h>
-#include <ctime>
-
-
 #include <system/string.h>
 #include <system/io/file.h>
 #include <system/io/file_mode.h>
 #include <system/io/file_stream.h>
 #include <system/math.h>
-#include <BuildVersionInfo.h>
+#include <system/runtime/interop_services/marshal.h>
 
+#include <Export/SaveFormat.h>
 #include <DOM/Presentation.h>
+#include <DOM/PresentationFactory.h>
+#include <DOM/TextExtractionArrangingMode.h>
+#include <DOM/ISlideText.h>
+#include <DOM/IPresentationText.h>
 #include <DOM/LoadOptions.h>
 #include <DOM/ShapeType.h>
 #include <DOM/IShapeCollection.h>
@@ -310,103 +311,3 @@
 #include <Import/IExternalResourceResolver.h>
 
 #include <Util/SlideUtil.h>
-
-#include <unistd.h>
-
-using namespace Aspose::Slides;
-using namespace System;
-
-
-Php::Value cpp_date()
-{
-     std::time_t result = std::time(nullptr);
-	return std::asctime(std::localtime(&result));
-}
-
-
-Php::Value aspose_get_version()
-{
-
-    int32_t major = BuildVersionInfo::ProductMajor();
-    int32_t minor = BuildVersionInfo::ProductMinor();
-    char buffer [10];
-    sprintf(buffer, "%d.%d", major, minor);
-	return buffer;
-}
-
-class PowerPoint : public Php::Base
-{
-private:
-    /**
-     *  The initial value
-     *  @var    int
-     */
-    SharedPtr<Presentation> _pres;
-
-public:
-    /**
-     *  C++ constructor and destructor
-     */
-    PowerPoint() = default;
-    virtual ~PowerPoint() = default;
-
-    /**
-     *  Update methods to increment or decrement the counter
-     *  Both methods return the NEW value of the counter
-     *  @return int
-     */
-    Php::Value open(Php::Parameters &params) {
-        std::string path = params[0].stringValue();
-        if(access( path.c_str(), F_OK ) == -1 ) {
-            return -1;
-        }
-        const String templatePath = String(path);
-
-        SharedPtr<LoadOptions> loadOptions = MakeObject<LoadOptions>();
-        _pres = MakeObject<Presentation>(templatePath);
-
-        return this;
-     }
-
-    Php::Value countSlides() const 
-    { 
-        return _pres->get_Slides()->get_Count(); 
-    }
-};
-
-
-/**
- *  tell the compiler that the get_module is a pure C function
- */
-extern "C" {
-    
-    /**
-     *  Function that is called by PHP right after the PHP process
-     *  has started, and that returns an address of an internal PHP
-     *  strucure with all the details and features of your extension
-     *
-     *  @return void*   a pointer to an address that is understood by PHP
-     */
-    PHPCPP_EXPORT void *get_module() 
-    {
-        static Php::Extension extension("pptparser", "1.0");
-
-        Php::Class<PowerPoint> ppt("PowerPoint");
-
-        ppt.method<&PowerPoint::open>("open", { 
-            Php::ByVal("path", Php::Type::String) 
-        });
-
-        ppt.method<&PowerPoint::countSlides>("countSlides", {});
-
-        extension.add(std::move(ppt));
-
-        extension.add<cpp_date>("cpp_date");
-        extension.add<aspose_get_version>("aspose_get_version");
-        //extension.add<aspose_count_slides>("aspose_count_slides", {
-        //    Php::ByVal("path", Php::Type::String)
-        //});
-
-        return extension;
-    }
-}

@@ -1,7 +1,14 @@
-Slides in file: <?php
-$ppt = new PowerPoint();
-$ppt->open("../asposeext/file.pptx");
-echo $ppt->countSlides(); ?>
+<?php 
 
-Aspose.Slides version: <?php echo aspose_get_version(); ?>
+$ppt = new Presentation("../asposeext/file.pptx"); ?>
+
+Slides in file: <?php echo $ppt->slideCount(); ?>
+
+Text in file: <?php print_r($ppt->getText("../asposeext/file.pptx", "master", false));
+
+$ppt->cloneSlide(0); ?>
+
+Aspose.Slides version: <?php echo AsposeUtil::getVersion(); ?>
+
+<?php $ppt->save("./text.pptx"); ?>
 
