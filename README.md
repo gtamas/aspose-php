@@ -35,13 +35,13 @@ Finally, run this:
 Ezek static methodok.
 
 | name  | desc  | 
-|---|---|---|---|---|
+|-------|-------|
 | getVersion()  |  returns major.minor version |
 
 **Presentation class**
 
 | name  | desc  | 
-|---|---|---|---|---|
+|-------|-------|
 | new Presentation(filePath)  |  Opens PPT file |
 | open(filePath)  |  Opens PPT file |
 | countSlides()  | Returns slide count
