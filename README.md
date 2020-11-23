@@ -32,7 +32,7 @@ You can find it in ./dist. This should work under Ubuntu Linux 16.0+. Just run t
 make install
 ```
 
-## Install
+## Compile from source
 
 Download Aspose Slides C++ library package from [this page](https://products.aspose.com/slides/cpp) and unzip it somewhere.
 
