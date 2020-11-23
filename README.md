@@ -1,6 +1,21 @@
 # aspose-php
 Aspose PHP extension
 
+- [aspose-php](#aspose-php)
+  * [Prerequisites](#prerequisites)
+  * [Install](#install)
+  * [API](#api)
+    + [AsposeUtil class](#asposeutil-class)
+      - [static getVersion()](#static-getversion--)
+    + [Presentation class](#presentation-class)
+      - [Presentation(filePath)](#presentation-filepath-)
+      - [countSlides()](#countslides--)
+      - [cloneSlide(index)](#cloneslide-index-)
+      - [getText(filePath, type, arranged)](#gettext-filepath--type--arranged-)
+      - [save(filePath)](#save-filepath-)
+  * [PHP](#php)
+
+
 ## Prerequisites
 
 * Ubuntu Linux 16.0+
@@ -32,13 +47,13 @@ Finally, run this:
 
 ### AsposeUtil class
 
-### static getVersion()
+#### static getVersion()
 
 Returns the Aspose version major.minor
 
 ### Presentation class
 
-### Presentation(filePath)
+#### Presentation(filePath)
 
 Constructor, creates instance.
 
@@ -46,11 +61,11 @@ Params:
 
 * filePath (string) - optional: Opens PPT (or any supported format) file
 
-### countSlides()
+#### countSlides()
 
 Returns slide count
 
-### cloneSlide(index)
+#### cloneSlide(index)
 
 Clones the desired slide, appends it to presentation.
 
@@ -58,7 +73,7 @@ Params:
 
 * index (int) - The slide index, starting at 0.
 
-### getText(filePath, type, arranged) 
+#### getText(filePath, type, arranged) 
 
 Returns all text for each slide in an array.
 
@@ -69,7 +84,7 @@ Params:
 * arrange (bool) - If true tex will returned in an ordered way (starting a slide 0).
 
 
-### save(filePath) 
+#### save(filePath) 
 
 Saves the presentation to file. The format is defined by file extension.
 
