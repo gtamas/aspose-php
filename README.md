@@ -8,11 +8,11 @@ Aspose PHP extension
     + [AsposeUtil class](#asposeutil-class)
       - [static getVersion()](#static-getversion)
     + [Presentation class](#presentation-class)
-      - [Presentation(filePath)](#presentation-filepath)
+      - [Presentation(filePath)](#presentationfilepath)
       - [countSlides()](#countslides)
-      - [cloneSlide(index)](#cloneslide-index)
-      - [getText(filePath, type, arranged)](#gettext-filepath--type--arranged)
-      - [save(filePath)](#save-filepath)
+      - [cloneSlide(index)](#cloneslideindex)
+      - [getText(filePath, type, arranged)](#gettextfilepath-type-arranged)
+      - [save(filePath)](#savefilepath)
   * [PHP](#php)
 
 
@@ -20,9 +20,10 @@ Aspose PHP extension
 
 * Ubuntu Linux 16.0+
 * Aspose.Slides for C++ 20.10+
-* PHP-CPP latest
+* PHP-CPP 2.2+
 * Dev tools like make, g++ etc.
 * Clang 3.x+
+* PHP 7.0+
 
 
 ## Install
