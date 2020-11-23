@@ -10,5 +10,5 @@ $ppt->cloneSlide(0); ?>
 
 Aspose.Slides version: <?php echo AsposeUtil::getVersion(); ?>
 
-<?php $ppt->save("./text.pptx"); ?>
+<?php //$ppt->save("../text.pptx"); ?>
 

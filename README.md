@@ -15,7 +15,6 @@ Aspose PHP extension
       - [save(filePath)](#savefilepath)
   * [PHP](#php)
 
-
 ## Prerequisites
 
 * Ubuntu Linux 16.0+
@@ -25,6 +24,13 @@ Aspose PHP extension
 * Clang 3.x+
 * PHP 7.0+
 
+## Precompiled version
+
+You can find it in ./dist. This should work under Ubuntu Linux 16.0+. Just run the following (you might need sudo):
+
+```
+make install
+```
 
 ## Install
 

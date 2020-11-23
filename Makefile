@@ -42,6 +42,7 @@ INI_DIR				=	/etc/php/7.4/cli/conf.d
 #
 
 EXTENSION_DIR		=	$(shell php-config --extension-dir)
+DIST_DIR		=	./dist
 
 
 #
@@ -51,7 +52,7 @@ EXTENSION_DIR		=	$(shell php-config --extension-dir)
 #	a certain extension to them (.so or .ini)
 #
 
-EXTENSION 			=	${NAME}.so
+EXTENSION 			=	dist/${NAME}.so
 INI 				=	${NAME}.ini
 
 
@@ -129,6 +130,9 @@ ${OBJECTS}:
 install:		
 						${CP} ${EXTENSION} ${EXTENSION_DIR}
 						${CP} ${INI} ${INI_DIR}
+
+dist:		
+						${CP} ${EXTENSION} ${DIST_DIR}
 				
 clean:
 						${RM} ${EXTENSION} ${OBJECTS}
