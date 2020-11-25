@@ -2,9 +2,11 @@
 
 $ppt = new Presentation("../asposeext/file.pptx"); ?>
 
-Slides in file: <?php echo $ppt->slideCount(); ?>
+Slides in file: <?php echo $ppt->getNumberOfSlides(); ?>
 
-Text in file: <?php print_r($ppt->getText("../asposeext/file.pptx", "master", false));
+Text in file: <?php print_r($ppt->getPresentationText("../asposeext/file.pptx", "master", true)); ?>
+
+Text in slide 0: <?php echo $ppt->getSlide(0)->getNotesText();
 
 $ppt->cloneSlide(0); ?>
 

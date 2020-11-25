@@ -3,7 +3,7 @@
 #include <system/io/file_mode.h>
 #include <system/io/file_stream.h>
 #include <system/math.h>
-#include <system/runtime/interop_services/marshal.h>
+#include <system/exceptions.h>
 
 #include <Export/SaveFormat.h>
 #include <DOM/Presentation.h>

@@ -10,7 +10,8 @@ namespace AsposePhp {
     {
     private:
        System::SharedPtr<Aspose::Slides::Presentation> _pres;
-       System::SharedPtr<Aspose::Slides::ISlideCollection> _slides;
+       System::SharedPtr<Aspose::Slides::ISlideCollection> _slides = nullptr;
+       System::ArrayPtr<System::SharedPtr<Aspose::Slides::ISlideText>> _slideText = nullptr;
 
     public:
         Presentation() = default;
@@ -19,10 +20,11 @@ namespace AsposePhp {
         void __construct(Php::Parameters &params);
         void save(Php::Parameters &params);
         void cloneSlide(Php::Parameters &params);
-        
-        Php::Value open(Php::Parameters &params);
-        Php::Value getText(Php::Parameters &params);
-        Php::Value slideCount();
+        Php::Value load(Php::Parameters &params);
+        Php::Value getPresentationText(Php::Parameters &params);
+        Php::Value getNumberOfSlides();
+        Php::Value getSlides();
+        Php::Value getSlide(Php::Parameters &params);
     };
 }
 
