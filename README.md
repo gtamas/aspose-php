@@ -1,7 +1,7 @@
 <!-- vscode-markdown-toc -->
 * 1. [Prerequisites](#prerequisites)
 * 2. [Precompiled version](#precompiled-version)
-* 3. [Install](#install)
+* 3. [Compile from source](#compile-from-source)
 * 4. [API](#api)
     * 4.1. [AsposeUtil class](#asposeutil-class)
         * 4.1.1. [static getVersion()](#static-getversion())
@@ -49,8 +49,7 @@ You can find it in ./dist. This should work under Ubuntu Linux 16.0+. Just run t
 ```
 make install
 ```
-
-##  3. <a name='install'></a>Install
+##  3. <a name='compile-from-source'></a>Compile from source
 
 Download Aspose Slides C++ library package from [this page](https://products.aspose.com/slides/cpp) and unzip it somewhere.
 
