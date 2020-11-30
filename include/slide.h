@@ -9,20 +9,19 @@ namespace AsposePhp {
     class Slide : public Php::Base 
     {
         private:
+            System::SharedPtr<Aspose::Slides::ISlide> _slide;
             std::string _text;
             std::string _layoutText;
             std::string _notesText;
             std::string _masterText;
             int _slideNo;
             std::string getAllText(System::SharedPtr<Aspose::Slides::ISlide> slide);
-
+            std::vector<System::SharedPtr<Aspose::Slides::Charts::Chart>> getShapes(System::SharedPtr<Aspose::Slides::ISlide> slide, System::String shapeName); 
+           
         public:
             Slide() = default;
-            Slide(System::SharedPtr<Aspose::Slides::ISlide> slide, std::string layoutText, std::string notesText, std::string masterText, int slideNo) {
-                _layoutText = layoutText;
-                _notesText = notesText;
-                _masterText = masterText;
-                _slideNo = slideNo;
+            Slide(System::SharedPtr<Aspose::Slides::ISlide> slide, std::string layoutText, std::string notesText, std::string masterText, int slideNo) 
+            : _slide(slide), _layoutText(layoutText), _notesText(notesText), _masterText(masterText), _slideNo(slideNo) {
                 _text = this->getAllText(slide);
             };
             virtual ~Slide() = default;

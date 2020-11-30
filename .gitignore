@@ -29,3 +29,9 @@
 *.exe
 *.out
 *.app
+*.so
+!dist/aspose_php.so
+
+#doc files
+*.ppt
+*.pptx

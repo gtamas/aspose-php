@@ -1,6 +1,10 @@
 #include <phpcpp.h>
 #include "../include/aspose_util.h"
 #include "../include/presentation.h"
+#include "../include/islide_collection.h"
+#include "../include/presentation_factory.h"
+#include "../include/presentation_text.h"
+#include "../include/slide_text.h"
 #include "../include/slide.h"
 
 using namespace AsposePhp;
@@ -50,11 +54,47 @@ extern "C" {
             Php::ByVal("outfile", Php::Type::Numeric, true) 
         });
 
+        // SlideCollection
+
+        Php::Class<ISlideCollection> col("ISlideCollection");
+
+        col.method<&AsposePhp::ISlideCollection::size>("size", {});
+        col.method<&AsposePhp::ISlideCollection::get_Item>("get_Item", {});
+
+
+        // PresentationFactory
+
+        Php::Class<AsposePhp::PresentationFactory> presentationFactory("PresentationFactory", 0);
+        
+        presentationFactory.method<&AsposePhp::PresentationFactory::__construct>("__construct", Php::Public, {});
+        presentationFactory.method<&AsposePhp::PresentationFactory::GetPresentationText>("GetPresentationText",{ 
+            Php::ByVal("path", Php::Type::String, true) 
+        });
+
+
+        // PresentationText
+
+        Php::Class<AsposePhp::PresentationText> presentationText("PresentationText", 0);
+        presentationText.method<&AsposePhp::PresentationText::__construct>("__construct", Php::Public, {});
+        presentationText.method<&AsposePhp::PresentationText::get_SlidesText>("get_SlidesText", Php::Public, {});
+        
+         // SlideText
+
+        Php::Class<AsposePhp::SlideText> slideText("SlideText", 0);
+        slideText.method<&AsposePhp::SlideText::__construct>("__construct", Php::Public, {});
+        slideText.method<&AsposePhp::SlideText::get_Text>("get_Text", {});
+        slideText.method<&AsposePhp::SlideText::get_MasterText>("get_MasterText", {});
+        slideText.method<&AsposePhp::SlideText::get_LayoutText>("get_LayoutText", {});
+        slideText.method<&AsposePhp::SlideText::get_NotesText>("get_NotesText", {});
+        
+
         // AsposeUtil
 
         Php::Class<AsposeUtil> util("AsposeUtil");
 
-        util.method<&AsposeUtil::getVersion>("getVersion", {});
+        util.method<&AsposeUtil::getVersion>("getVersion", { 
+            Php::ByVal("slideNo", Php::Type::Numeric, true) 
+        });
 
         // Slide
 
@@ -68,8 +108,13 @@ extern "C" {
 
         ns.add<AsposeUtil>("AsposePoseUtil");
         ns.add<AsposePhp::Presentation>("Presentation");
+        ns.add<AsposePhp::PresentationFactory>("PresentationFactory");
         ns.add<AsposePhp::Slide>("Slide");
 
+        extension.add(std::move(slideText));
+        extension.add(std::move(presentationFactory));
+        extension.add(std::move(presentationText));
+        extension.add(std::move(col));
         extension.add(std::move(util));
         extension.add(std::move(slide));
         extension.add(std::move(pres));

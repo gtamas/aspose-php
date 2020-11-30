@@ -1,8 +1,10 @@
 #include "../include/aspose.h"
 #include "../include/slide.h"
+#include "../include/util.h"
 #include <phpcpp.h>
 
 using namespace Aspose::Slides;
+using namespace Aspose::Slides::Charts;
 using namespace System;
 using namespace std;
 
@@ -11,6 +13,7 @@ namespace AsposePhp {
 
     void Slide::__construct(Php::Parameters &params)
     {
+        
 
     }
 
@@ -34,9 +37,30 @@ namespace AsposePhp {
         return _notesText;
     }
 
+
+   vector<SharedPtr<Chart>> Slide::getShapes(SharedPtr<ISlide> slide, String shapeName) {
+        SharedPtr<IShapeCollection> shapes = slide->get_Shapes();
+        int32_t numShapes = shapes->get_Count();
+
+        vector<SharedPtr<Chart>> retShapes;
+
+        for (int i = 0; i < numShapes; i++) {
+            SharedPtr<IShape> shape = shapes->idx_get(i);
+            if(ObjectExt::GetType(shape).get_Name() == shapeName) {
+                retShapes.push_back(DynamicCast<Chart>(shape));
+            }
+        }
+
+        return retShapes;
+   }
+
     std::string Slide::getAllText(SharedPtr<ISlide> slide) {
 
         string text;
+
+        //vector<SharedPtr<Chart>> charts = this->getShapes(slide, u"Chart");
+
+        //cout << charts[0]->get_Name() << endl;
 
         ArrayPtr<SharedPtr<ITextFrame>> textFramesSlide = Util::SlideUtil::GetAllTextBoxes(slide);
 

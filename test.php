@@ -1,12 +1,13 @@
 <?php 
 
-$ppt = new Presentation("../asposeext/file.pptx"); ?>
+$ppt = new Presentation("../asposeext/example.pptx"); ?>
 
 Slides in file: <?php echo $ppt->getNumberOfSlides(); ?>
 
-Text in file: <?php print_r($ppt->getPresentationText("../asposeext/file.pptx", "master", true)); ?>
+Text in file: <?php print_r($ppt->getPresentationText("../asposeext/example.pptx", "master", true)); ?>
 
-Text in slide 0: <?php echo $ppt->getSlide(0)->getNotesText();
+Text in slide 0: <?php $fac = new PresentationFactory(); 
+print_r($fac->GetPresentationText("../asposeext/pptexamples.ppt")->get_SlidesText()[0]->get_NotesText());
 
 $ppt->cloneSlide(0); ?>
 

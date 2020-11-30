@@ -1,6 +1,7 @@
 #include "../include/aspose.h"
 #include "../include/presentation.h"
 #include "../include/slide.h"
+#include "../include/islide_collection.h"
 #include <phpcpp.h>
 
 using namespace Aspose::Slides;
@@ -14,7 +15,7 @@ namespace AsposePhp {
 
     void Presentation::__construct(Php::Parameters &params)
     {
-
+    
         if(!params.empty() && this->load(params) == -1) {
             std::cerr << "No file.."; 
         }
@@ -107,22 +108,33 @@ namespace AsposePhp {
     }
 
     Php::Value Presentation::getSlides() {
+        ISlideCollection* coll = new ISlideCollection(_slides);
+        return Php::Object("ISlideCollection", coll);
+    }
+
+    Php::Value Presentation::getSlides2() {
 
         if(_slides == nullptr) {
             _slides = _pres->get_Slides();
         }
 
         int32_t slideCount = _slides->get_Count();
+        int32_t slideTextCount = _slideText->get_Count();
         vector<Php::Object> slideArr;
         SmartPtr<ISlide> slide;
         
         try {
             for(int i = 0; i < slideCount; i++) {
                 slide = _slides->idx_get(i);
-                AsposePhp::Slide* phpSlide = new AsposePhp::Slide(slide, 
-                _slideText[i]->get_LayoutText().ToUtf8String(), 
-                _slideText[i]->get_NotesText().ToUtf8String(), 
-                _slideText[i]->get_MasterText().ToUtf8String(), slide->get_SlideNumber());
+                AsposePhp::Slide* phpSlide;
+                if(i >= slideTextCount) {
+                    phpSlide = new AsposePhp::Slide(slide, "", "", "", slide->get_SlideNumber());
+                } else {
+                    phpSlide = new AsposePhp::Slide(slide, 
+                    _slideText[i]->get_LayoutText().ToUtf8String(), 
+                    _slideText[i]->get_NotesText().ToUtf8String(), 
+                    _slideText[i]->get_MasterText().ToUtf8String(), slide->get_SlideNumber());
+                    }
                 slideArr.push_back(Php::Object("Slide", phpSlide));
             }
             return Php::Array(slideArr);
@@ -134,8 +146,6 @@ namespace AsposePhp {
 
     Php::Value Presentation::getSlide(Php::Parameters &params) {
         int slideNo = params[0].numericValue();
-          
-        string text = "";
 
         try {
             SharedPtr<ISlide> slide = _pres->get_Slides()->idx_get(slideNo);
