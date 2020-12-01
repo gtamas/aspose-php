@@ -13,6 +13,11 @@ using namespace System::IO;
 
 namespace AsposePhp {
 
+    /**
+     * @brief PHP Constructor
+     * 
+     * @param params Path to presentation file to read. This is optional. If not defined, an empty presentation will be created.
+     */
     void Presentation::__construct(Php::Parameters &params)
     {
     
@@ -22,6 +27,12 @@ namespace AsposePhp {
 
     }
 
+    /**
+     * @brief Loads a presentation file.
+     * 
+     * @param params Path to presentation to read.
+     * @return Php::Value 
+     */
     Php::Value Presentation::load(Php::Parameters &params) {
         std::string path = params[0].stringValue();
         const String templatePath = String(path);
@@ -40,6 +51,11 @@ namespace AsposePhp {
         return this;
     }
 
+    /**
+     * @brief Writes the presentaton to disk.
+     * 
+     * @param params Output path. File must not exist.
+     */
     void Presentation::save(Php::Parameters &params) {
         String outfile = String(params[0].stringValue());
         string ext = outfile.Substring(outfile.LastIndexOf(u".")+1).ToUtf8String();
@@ -54,13 +70,18 @@ namespace AsposePhp {
                 format = SaveFormat::Pptx;
             } 
 
-            SharedPtr<Stream> stream = MakeObject<FileStream>(outfile, FileMode::Create);
-            _pres->Save(stream, format);
+            SharedPtr<Stream> stream = MakeObject<FileStream>(outfile, FileMode::CreateNew);
+            _pres->Save(outfile, format);
         }
 
     }
 
 
+    /**
+     * @brief Clones the slide with given index.
+     * 
+     * @param params 0 based index of the slide to be cloned
+     */
     void Presentation::cloneSlide(Php::Parameters &params) {
         int slideNo = params[0].numericValue();
         
@@ -69,6 +90,17 @@ namespace AsposePhp {
     }
 
 
+    /**
+     * @brief Returns all text from presentation as string. Does NOT include charts and tables.
+     * 
+     * @param params An array with 2 string elements: a path to the presentation file and a 
+     * type indicating which type of text should be returned. Type can be either of the following: 
+     * - master 
+     * - layout
+     * - notes
+     * - all
+     * @return Php::Value 
+     */
      Php::Value Presentation::getPresentationText(Php::Parameters &params) {
         std::string path = params[0].stringValue();
         std::string type = params[1].stringValue();
@@ -102,11 +134,21 @@ namespace AsposePhp {
     }
 
 
+    /**
+     * @brief Returns the number of slides in presentation.
+     * 
+     * @return Php::Value 
+     */
     Php::Value Presentation::getNumberOfSlides() {
 
         return _pres->get_Slides()->get_Count();
     }
 
+    /**
+     * @brief Returns an array of slides as Slide objects.
+     * 
+     * @return Php::Value 
+     */
     Php::Value Presentation::getSlides() {
         ISlideCollection* coll = new ISlideCollection(_slides);
         return Php::Object("ISlideCollection", coll);
@@ -144,6 +186,12 @@ namespace AsposePhp {
         }
     }
 
+    /**
+     * @brief Returns a specific slide by index.
+     * 
+     * @param params The 0 based index of the slide.
+     * @return Php::Value 
+     */
     Php::Value Presentation::getSlide(Php::Parameters &params) {
         int slideNo = params[0].numericValue();
 

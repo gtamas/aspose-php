@@ -4,7 +4,6 @@
 #ifndef SLIDE_TEXT_H
 #define SLIDE_TEXT_H
 
-
 namespace AsposePhp {
 
     class SlideText : public Php::Base 

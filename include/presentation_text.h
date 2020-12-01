@@ -1,6 +1,8 @@
 #include <phpcpp.h>
 #include "../include/aspose.h"
 
+using namespace std;
+
 #ifndef PRESENTATION_TEXT_H
 #define PRESENTATION_TEXT_H
 

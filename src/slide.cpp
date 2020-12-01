@@ -1,5 +1,6 @@
 #include "../include/aspose.h"
 #include "../include/slide.h"
+#include "../include/notes_slide_manager.h"
 #include "../include/util.h"
 #include <phpcpp.h>
 
@@ -11,33 +12,81 @@ using namespace std;
 namespace AsposePhp {
 
 
+    /**
+     * @brief PHP constructor
+     * 
+     * @param params 
+     */
     void Slide::__construct(Php::Parameters &params)
     {
-        
+
 
     }
 
+    /**
+     * @brief Returns the index of this slide
+     * 
+     * @return Php::Value 
+     */
     Php::Value Slide::getSlideNumber() {
-        return _slideNo;
+        return _slide->get_SlideNumber();
     }
 
+    /**
+     * @brief Returns all text from slide
+     * 
+     * @return Php::Value 
+     */
     Php::Value Slide::getSlideText() {
         return _text;
     }
 
+    /**
+     * @brief Returns the layout text
+     * 
+     * @return Php::Value 
+     */
     Php::Value Slide::getLayoutText() {
         return _layoutText;
     }
 
+    /**
+     * @brief Returns the master text
+     * 
+     * @return Php::Value 
+     */
     Php::Value Slide::getMasterText() {
         return _masterText;
     }
 
+    /**
+     * @brief Returns the notes text
+     * 
+     * @return Php::Value 
+     */
     Php::Value Slide::getNotesText() {
         return _notesText;
     }
 
+    /**
+     * @brief Returns the SlideManager instance.
+     * 
+     * @return Php::Value 
+     */
+    Php::Value Slide::get_NotesSlideManager() {
+        SharedPtr<INotesSlideManager> slideManager = _slide->get_NotesSlideManager();
+        NotesSlideManager * phpValue = new NotesSlideManager(slideManager); 
+        return Php::Object("NotesSlideManager", phpValue);
+    }
 
+
+    /**
+     * @brief Returns all shapes of given type from a slide
+     * 
+     * @param slide The slide object
+     * @param shapeName The name / type of the shape to return
+     * @return vector<SharedPtr<Chart>> 
+     */
    vector<SharedPtr<Chart>> Slide::getShapes(SharedPtr<ISlide> slide, String shapeName) {
         SharedPtr<IShapeCollection> shapes = slide->get_Shapes();
         int32_t numShapes = shapes->get_Count();
@@ -54,6 +103,12 @@ namespace AsposePhp {
         return retShapes;
    }
 
+    /**
+     * @brief Returns all text frames from a slide as string.
+     * 
+     * @param slide The slide object
+     * @return std::string 
+     */
     std::string Slide::getAllText(SharedPtr<ISlide> slide) {
 
         string text;

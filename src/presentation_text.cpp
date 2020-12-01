@@ -10,11 +10,22 @@ using namespace std;
 namespace AsposePhp {
 
 
+    /**
+     * @brief PHP Constructor
+     * 
+     * @param params 
+     */
     void PresentationText::__construct(Php::Parameters &params)
     {
 
     }
 
+    /**
+     * @brief Returns an array of SlideText objects which hold text elements. There could be less SlideText objects than the number
+     * of the actual slides.
+     * 
+     * @return Php::Value 
+     */
     Php::Value PresentationText::get_SlidesText()
     {
         ArrayPtr<SharedPtr<ISlideText>> slideTexts = _text->get_SlidesText();
