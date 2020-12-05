@@ -1,7 +1,7 @@
 var class_aspose_php_1_1_presentation =
 [
     [ "Presentation", "class_aspose_php_1_1_presentation.html#a85b8d5da4a9a581e9969d5703eaaca44", null ],
-    [ "~Presentation", "class_aspose_php_1_1_presentation.html#ac38ade84631129a8c7a670f38b7f7837", null ],
+    [ "~Presentation", "class_aspose_php_1_1_presentation.html#a8a482aa0f05de98e6ebfbd753ab81b79", null ],
     [ "__construct", "class_aspose_php_1_1_presentation.html#ad08871c69f9cc33d2bb84c76d9ca7aaf", null ],
     [ "cloneSlide", "class_aspose_php_1_1_presentation.html#ac6ad24e7a519ed873f9824875a220c3e", null ],
     [ "getNumberOfSlides", "class_aspose_php_1_1_presentation.html#a70b4c7e3a0eb03d570905d1b651d4a11", null ],

@@ -88,39 +88,37 @@ $(document).ready(function(){initNavTree('notes__slide__manager_8h_source.html',
 </div><!--header-->
 <div class="contents">
 <a href="notes__slide__manager_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;phpcpp.h&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../include/aspose.h&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>std;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef NOTES_SLIDE_MANAGER</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define NOTES_SLIDE_MANAGER</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_aspose_php.html">AsposePhp</a> {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_notes_slide_manager.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_aspose_php_1_1_notes_slide_manager.html">NotesSlideManager</a> : <span class="keyword">public</span> Php::Base </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">private</span>: </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            System::SharedPtr&lt;Aspose::Slides::INotesSlideManager&gt; _manager;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_notes_slide_manager.html#a1fbacfdd5d82076f865215d00ebd8bf7">   16</a></span>&#160;            <a class="code" href="class_aspose_php_1_1_notes_slide_manager.html#a1fbacfdd5d82076f865215d00ebd8bf7">NotesSlideManager</a>(System::SharedPtr&lt;Aspose::Slides::INotesSlideManager&gt; manager) : _manager(manager) {};</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_notes_slide_manager.html#a57ee671e2bd9b1b2ae39b91f34fcb38f">   17</a></span>&#160;            <span class="keyword">virtual</span> <a class="code" href="class_aspose_php_1_1_notes_slide_manager.html#a57ee671e2bd9b1b2ae39b91f34fcb38f">~NotesSlideManager</a>() {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                _manager.reset();</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            };</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            <span class="keywordtype">void</span> __construct(Php::Parameters &amp;params);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            Php::Value get_NotesSlide();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../include/aspose_php.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../include/aspose.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef NOTES_SLIDE_MANAGER</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define NOTES_SLIDE_MANAGER</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_aspose_php.html">AsposePhp</a> {</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_notes_slide_manager.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_aspose_php_1_1_notes_slide_manager.html">NotesSlideManager</a> : <span class="keyword">public</span> <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;INotesSlideManager&gt;, <span class="keyword">public</span> Php::Base</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_notes_slide_manager.html#a2ab8213169d34d3fb7fd80a5a2f35527">   15</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_aspose_php_1_1_notes_slide_manager.html#a2ab8213169d34d3fb7fd80a5a2f35527">__construct</a>(Php::Parameters &amp;params);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_notes_slide_manager.html#a9b769dc8c6aa37c04ca0e1de4d247e19">   17</a></span>&#160;            <a class="code" href="class_aspose_php_1_1_notes_slide_manager.html#a9b769dc8c6aa37c04ca0e1de4d247e19">NotesSlideManager</a>(System::SharedPtr&lt;INotesSlideManager&gt; notes) : <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;INotesSlideManager&gt;(notes) {};</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            Php::Value get_NotesSlide();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    };</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_aspose_php_1_1_notes_slide_manager_html_a57ee671e2bd9b1b2ae39b91f34fcb38f"><div class="ttname"><a href="class_aspose_php_1_1_notes_slide_manager.html#a57ee671e2bd9b1b2ae39b91f34fcb38f">AsposePhp::NotesSlideManager::~NotesSlideManager</a></div><div class="ttdeci">virtual ~NotesSlideManager()</div><div class="ttdef"><b>Definition:</b> notes_slide_manager.h:17</div></div>
-<div class="ttc" id="anamespace_aspose_php_html"><div class="ttname"><a href="namespace_aspose_php.html">AsposePhp</a></div><div class="ttdef"><b>Definition:</b> aspose_util.h:6</div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_notes_slide_manager_html"><div class="ttname"><a href="class_aspose_php_1_1_notes_slide_manager.html">AsposePhp::NotesSlideManager</a></div><div class="ttdef"><b>Definition:</b> notes_slide_manager.h:12</div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_notes_slide_manager_html_a1fbacfdd5d82076f865215d00ebd8bf7"><div class="ttname"><a href="class_aspose_php_1_1_notes_slide_manager.html#a1fbacfdd5d82076f865215d00ebd8bf7">AsposePhp::NotesSlideManager::NotesSlideManager</a></div><div class="ttdeci">NotesSlideManager(System::SharedPtr&lt; Aspose::Slides::INotesSlideManager &gt; manager)</div><div class="ttdef"><b>Definition:</b> notes_slide_manager.h:16</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_notes_slide_manager_html_a2ab8213169d34d3fb7fd80a5a2f35527"><div class="ttname"><a href="class_aspose_php_1_1_notes_slide_manager.html#a2ab8213169d34d3fb7fd80a5a2f35527">AsposePhp::NotesSlideManager::__construct</a></div><div class="ttdeci">void __construct(Php::Parameters &amp;params)</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_aspose_object_wrapper_html"><div class="ttname"><a href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposePhp::AsposeObjectWrapper</a></div><div class="ttdoc">This is the wrapper class we use to wrap Aspose objects. It's also the base class of all AsposePhp cl...</div><div class="ttdef"><b>Definition:</b> aspose_php.h:23</div></div>
+<div class="ttc" id="anamespace_aspose_php_html"><div class="ttname"><a href="namespace_aspose_php.html">AsposePhp</a></div><div class="ttdef"><b>Definition:</b> aspose_php.h:13</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_notes_slide_manager_html"><div class="ttname"><a href="class_aspose_php_1_1_notes_slide_manager.html">AsposePhp::NotesSlideManager</a></div><div class="ttdef"><b>Definition:</b> notes_slide_manager.h:13</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_notes_slide_manager_html_a9b769dc8c6aa37c04ca0e1de4d247e19"><div class="ttname"><a href="class_aspose_php_1_1_notes_slide_manager.html#a9b769dc8c6aa37c04ca0e1de4d247e19">AsposePhp::NotesSlideManager::NotesSlideManager</a></div><div class="ttdeci">NotesSlideManager(System::SharedPtr&lt; INotesSlideManager &gt; notes)</div><div class="ttdef"><b>Definition:</b> notes_slide_manager.h:17</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

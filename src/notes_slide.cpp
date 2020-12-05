@@ -21,7 +21,7 @@ namespace AsposePhp {
     }
 
     /**
-     * @brief Returns the TextFrame object which contains the text string
+     * @brief Returns the TextFrame object which contains the notes text string
      * 
      * @return Php::Value 
      */

@@ -15,7 +15,9 @@ namespace AsposePhp {
 
     public:
         Presentation() = default;
-        virtual ~Presentation() = default;
+        virtual ~Presentation() {
+            _pres.reset();
+        };
     
         void __construct(Php::Parameters &params);
         void save(Php::Parameters &params);

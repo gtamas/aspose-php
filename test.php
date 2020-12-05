@@ -1,6 +1,6 @@
 <?php 
 
-$ppt = new Presentation("../asposeext/example.pptx");
+$ppt = new Presentation("../asposeext/file.pptx");
 ?>
 
 cloned
@@ -14,6 +14,12 @@ print_r($fac->GetPresentationText("../asposeext/pptexamples.ppt")->get_SlidesTex
 
 Notes Text in slide 0: <?php 
 print_r($ppt->getSlides()->get_Item(0)->get_NotesSlideManager()->get_NotesSlide()->get_NotesTextFrame()->get_Text()); ?>
+
+Chart series: <?php 
+print_r($ppt->getSlides()->get_Item(1)->get_Shapes()->ToArray()[3]->get_ChartData()->get_Series()->idx_get(0)->get_DataPoints()->idx_get(0)->get_Value()->get_AsCell()->get_Value()); ?>
+
+Chart Categories: <?php 
+print_r($ppt->getSlides()->get_Item(1)->get_Shapes()->ToArray()[3]->get_AlternativeText()); ?>
 
 <?php $ppt->cloneSlide(0); ?>
 

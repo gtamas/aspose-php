@@ -1,6 +1,7 @@
 #include "../include/aspose.h"
 #include "../include/slide.h"
 #include "../include/notes_slide_manager.h"
+#include "../include/shape_collection.h"
 #include "../include/util.h"
 #include <phpcpp.h>
 
@@ -33,7 +34,7 @@ namespace AsposePhp {
     }
 
     /**
-     * @brief Returns all text from slide
+     * @brief Returns all text from slide (charts, tables excluded)
      * 
      * @return Php::Value 
      */
@@ -77,6 +78,18 @@ namespace AsposePhp {
         SharedPtr<INotesSlideManager> slideManager = _slide->get_NotesSlideManager();
         NotesSlideManager * phpValue = new NotesSlideManager(slideManager); 
         return Php::Object("NotesSlideManager", phpValue);
+    }
+
+
+    /**
+     * @brief Returns the shape collection
+     * 
+     * @return Php::Value 
+     */
+    Php::Value Slide::get_Shapes() {
+        SharedPtr<IShapeCollection> shapes = _slide->get_Shapes();
+        ShapeCollection * phpValue = new ShapeCollection(shapes); 
+        return Php::Object("ShapeCollection", phpValue);
     }
 
 

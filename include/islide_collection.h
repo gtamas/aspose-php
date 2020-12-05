@@ -12,7 +12,9 @@ namespace AsposePhp {
             System::SharedPtr<Aspose::Slides::ISlideCollection> _slides;
         public:
             ISlideCollection(System::SharedPtr<Aspose::Slides::ISlideCollection> slides) : _slides(slides) {};
-            virtual ~ISlideCollection() = default;
+            virtual ~ISlideCollection() {
+                _slides.reset();
+            };
             
             void __construct(Php::Parameters &params);
             

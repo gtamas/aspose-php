@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_2ecpp_36',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['main_2ed_37',['main.d',['../main_8d.html',1,'']]]
+  ['load_141',['load',['../class_aspose_php_1_1_presentation.html#ade5925620f5246320a9d185e3508ff6b',1,'AsposePhp::Presentation']]]
 ];

@@ -1,12 +1,13 @@
 var indexSectionsWithContent =
 {
-  0: "$_acgilmnprstu~",
-  1: "ainpst",
+  0: "$_acdgilmnprstuw~",
+  1: "acdginpst",
   2: "a",
-  3: "aimnprstu",
-  4: "_acgilnpst~",
-  5: "$",
-  6: "r"
+  3: "acdgimnprstu",
+  4: "_acdgilnpstw~",
+  5: "$_",
+  6: "c",
+  7: "r"
 };
 
 var indexSectionNames =
@@ -17,7 +18,8 @@ var indexSectionNames =
   3: "files",
   4: "functions",
   5: "variables",
-  6: "pages"
+  6: "defines",
+  7: "pages"
 };
 
 var indexSectionLabels =
@@ -28,6 +30,7 @@ var indexSectionLabels =
   3: "Files",
   4: "Functions",
   5: "Variables",
-  6: "Pages"
+  6: "Macros",
+  7: "Pages"
 };
 

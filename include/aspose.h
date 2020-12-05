@@ -107,6 +107,7 @@
 #include <DOM/Chart/IChartDataPointLevel.h>
 #include <DOM/Chart/IDataLabelFormat.h>
 #include <DOM/Chart/IDataLabel.h>
+#include <DOM/Chart/DataLabel.h>
 #include <DOM/Chart/ErrorBarValueType.h>
 #include <DOM/Chart/IErrorBarsFormat.h>
 #include <DOM/Chart/IDataSourceTypeForErrorBarsCustomValues.h>
@@ -155,7 +156,9 @@
 #include <DOM/Chart/TrendlineType.h>
 #include <DOM/Chart/IChartDataCell.h>
 #include <DOM/Chart/IStringOrDoubleChartValue.h>
+#include <DOM/Chart/IStringChartValue.h>
 #include <DOM/Chart/ChartData.h>
+#include <DOM/Chart/ChartCellCollection.h>
 #include <DOM/Chart/IMarker.h>
 #include <DOM/Chart/MarkerStyleType.h>
 #include <DOM/Chart/LegendDataLabelPosition.h>

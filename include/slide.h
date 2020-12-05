@@ -25,11 +25,12 @@ namespace AsposePhp {
                 _text = this->getAllText(slide);
             };
             virtual ~Slide() {
-                _slide->Reset();
+                _slide.reset();
             };
             
             void __construct(Php::Parameters &params);
 
+            Php::Value get_Shapes();
             Php::Value get_NotesSlideManager();
             Php::Value getSlideNumber();
             Php::Value getNotesText();

@@ -8,6 +8,12 @@ using namespace Aspose::Slides;
 
 namespace AsposePhp {
 
+
+    /**
+     * @brief Returns Aspose lib version.
+     * 
+     * @return Php::Value 
+     */
     Php::Value AsposeUtil::getVersion()
     {
 

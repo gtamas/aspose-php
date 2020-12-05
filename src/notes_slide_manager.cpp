@@ -11,25 +11,12 @@ namespace AsposePhp {
 
 
     /**
-     * @brief PHP Constructor
-     * 
-     * @param params 
-     */
-    void NotesSlideManager::__construct(Php::Parameters &params)
-    {
-
-    }
-
-    /**
      * @brief Returns a NotesSlide object wrapper. 
-     * @see Aspose::Slides::NotesSlide
      * 
      * @return Php::Value 
      */
     Php::Value NotesSlideManager::get_NotesSlide() {
-        SharedPtr<INotesSlide> slide = _manager->get_NotesSlide();
-        NotesSlide * phpSlide = new NotesSlide(slide); 
-        return Php::Object("NotesSlide", phpSlide);
+        return Php::Object("NotesSlide", wrapObject<INotesSlide, NotesSlide, &INotesSlideManager::get_NotesSlide>());
     }
 
 

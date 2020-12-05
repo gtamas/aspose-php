@@ -1,24 +1,11 @@
 var searchData=
 [
-  ['get_5fitem_10',['get_Item',['../class_aspose_php_1_1_i_slide_collection.html#aa737a2d1d8155cd156ab617a6ee5a8fd',1,'AsposePhp::ISlideCollection']]],
-  ['get_5flayouttext_11',['get_LayoutText',['../class_aspose_php_1_1_slide_text.html#ad03f024a56011d22f197af3069c74867',1,'AsposePhp::SlideText']]],
-  ['get_5fmastertext_12',['get_MasterText',['../class_aspose_php_1_1_slide_text.html#ac50f8e9d81b3daa1d3d845051d8403f1',1,'AsposePhp::SlideText']]],
-  ['get_5fmodule_13',['get_module',['../main_8cpp.html#a7eabba47a5be4945e6154b97dc7a52d3',1,'main.cpp']]],
-  ['get_5fnotesslide_14',['get_NotesSlide',['../class_aspose_php_1_1_notes_slide_manager.html#a27368b05b6fc0b92a56dfbe222526be3',1,'AsposePhp::NotesSlideManager']]],
-  ['get_5fnotesslidemanager_15',['get_NotesSlideManager',['../class_aspose_php_1_1_slide.html#aba362cae5b812433d939c36cde9e7a15',1,'AsposePhp::Slide']]],
-  ['get_5fnotestext_16',['get_NotesText',['../class_aspose_php_1_1_slide_text.html#a6e270efc3e9db9411345c23c0a1fef55',1,'AsposePhp::SlideText']]],
-  ['get_5fnotestextframe_17',['get_NotesTextFrame',['../class_aspose_php_1_1_notes_slide.html#a1680dccb6a3697d8b74604e92556f840',1,'AsposePhp::NotesSlide']]],
-  ['get_5fslidestext_18',['get_SlidesText',['../class_aspose_php_1_1_presentation_text.html#afe868da858bb413970aec9a58d3774fe',1,'AsposePhp::PresentationText']]],
-  ['get_5ftext_19',['get_Text',['../class_aspose_php_1_1_slide_text.html#a8937180e435788669b96896b8a95bc46',1,'AsposePhp::SlideText::get_Text()'],['../class_aspose_php_1_1_text_frame.html#aaaf0611d592b280f5e70eefee44ef210',1,'AsposePhp::TextFrame::get_Text()']]],
-  ['getlayouttext_20',['getLayoutText',['../class_aspose_php_1_1_slide.html#a6cfc9c66bd5fdd746f0d331084aa2efc',1,'AsposePhp::Slide']]],
-  ['getmastertext_21',['getMasterText',['../class_aspose_php_1_1_slide.html#a791f76a499df99a4634284f311aad628',1,'AsposePhp::Slide']]],
-  ['getnotestext_22',['getNotesText',['../class_aspose_php_1_1_slide.html#a436e969626df741adc888b0738c8e54f',1,'AsposePhp::Slide']]],
-  ['getnumberofslides_23',['getNumberOfSlides',['../class_aspose_php_1_1_presentation.html#a70b4c7e3a0eb03d570905d1b651d4a11',1,'AsposePhp::Presentation']]],
-  ['getpresentationtext_24',['GetPresentationText',['../class_aspose_php_1_1_presentation_factory.html#a0c2033037e7ede9be2917551af361b10',1,'AsposePhp::PresentationFactory::GetPresentationText()'],['../class_aspose_php_1_1_presentation.html#ad3ec1bd4f5a06d102d4361bf95a81d49',1,'AsposePhp::Presentation::getPresentationText()']]],
-  ['getslide_25',['getSlide',['../class_aspose_php_1_1_presentation.html#a54d5a2b12ce0bdfbf4426aa5c48893aa',1,'AsposePhp::Presentation']]],
-  ['getslidenumber_26',['getSlideNumber',['../class_aspose_php_1_1_slide.html#a31279010ed7ea600e401a76c24982051',1,'AsposePhp::Slide']]],
-  ['getslides_27',['getSlides',['../class_aspose_php_1_1_presentation.html#ae0cd2691549f2264d94c4aa20f92a9c2',1,'AsposePhp::Presentation']]],
-  ['getslides2_28',['getSlides2',['../class_aspose_php_1_1_presentation.html#a2ca33f9ec42d4657c8f8f93881b3adf4',1,'AsposePhp::Presentation']]],
-  ['getslidetext_29',['getSlideText',['../class_aspose_php_1_1_slide.html#aac2af6f8201e17cf77e726237aa4b432',1,'AsposePhp::Slide']]],
-  ['getversion_30',['getVersion',['../class_aspose_php_1_1_aspose_util.html#a0c8376d21de208bd570b0c58c1009d20',1,'AsposePhp::AsposeUtil']]]
+  ['data_5flabel_2ecpp_83',['data_label.cpp',['../data__label_8cpp.html',1,'']]],
+  ['data_5flabel_2ed_84',['data_label.d',['../data__label_8d.html',1,'']]],
+  ['data_5flabel_2eh_85',['data_label.h',['../data__label_8h.html',1,'']]],
+  ['datalabel_86',['DataLabel',['../class_aspose_php_1_1_data_label.html',1,'AsposePhp::DataLabel'],['../class_aspose_php_1_1_data_label.html#a1221f7b6d44891de500cae0be67247fc',1,'AsposePhp::DataLabel::DataLabel()']]],
+  ['double_5fchart_5fvalue_2ecpp_87',['double_chart_value.cpp',['../double__chart__value_8cpp.html',1,'']]],
+  ['double_5fchart_5fvalue_2ed_88',['double_chart_value.d',['../double__chart__value_8d.html',1,'']]],
+  ['double_5fchart_5fvalue_2eh_89',['double_chart_value.h',['../double__chart__value_8h.html',1,'']]],
+  ['doublechartvalue_90',['DoubleChartValue',['../class_aspose_php_1_1_double_chart_value.html',1,'AsposePhp::DoubleChartValue'],['../class_aspose_php_1_1_double_chart_value.html#a4aa616b9eb4311f4cd5ed8a51a747c7d',1,'AsposePhp::DoubleChartValue::DoubleChartValue()']]]
 ];

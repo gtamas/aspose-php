@@ -1,4 +1,5 @@
 #include <phpcpp.h>
+#include "../include/aspose_php.h"
 #include "../include/aspose.h"
 
 using namespace std;
@@ -8,18 +9,14 @@ using namespace std;
 
 namespace AsposePhp {
 
-    class NotesSlideManager : public Php::Base 
+    class NotesSlideManager : public AsposeObjectWrapper<INotesSlideManager>, public Php::Base
     {
-        private: 
-            System::SharedPtr<Aspose::Slides::INotesSlideManager> _manager;
         public:
-            NotesSlideManager(System::SharedPtr<Aspose::Slides::INotesSlideManager> manager) : _manager(manager) {};
-            virtual ~NotesSlideManager() {
-                _manager.reset();
-            };
-            
             void __construct(Php::Parameters &params);
+            
+            NotesSlideManager(System::SharedPtr<INotesSlideManager> notes) : AsposeObjectWrapper<INotesSlideManager>(notes) {};
             Php::Value get_NotesSlide();
+
 
     };
 
