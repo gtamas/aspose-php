@@ -58,17 +58,16 @@ extern "C" {
     {
         static Php::Extension extension("aspose_php", "1.0");
 
-        Php::Namespace ns("AsposePhp");
-
         // Presentation class
 
-        Php::Class<AsposePhp::Presentation> pres("Presentation", 0);
+        Php::Class<AsposePhp::Presentation> pres("AsposePhp\\Presentation", 0);
 
         pres.method<&AsposePhp::Presentation::load>("load", { 
             Php::ByVal("path", Php::Type::String, true) 
         });
         pres.method<&AsposePhp::Presentation::__construct>("__construct", Php::Public, { 
-            Php::ByVal("path", Php::Type::String, false) 
+            Php::ByVal("path", Php::Type::String, false),
+            Php::ByVal("licensePath", Php::Type::String, false)  
         });
         pres.method<&AsposePhp::Presentation::getPresentationText>("getPresentationText", Php::Public, { 
             Php::ByVal("path", Php::Type::String, true),
@@ -89,7 +88,7 @@ extern "C" {
 
         // SlideCollection
 
-        Php::Class<AsposePhp::ISlideCollection> col("ISlideCollection");
+        Php::Class<AsposePhp::ISlideCollection> col("AsposePhp\\ISlideCollection");
 
         col.method<&AsposePhp::ISlideCollection::size>("size", {});
         col.method<&AsposePhp::ISlideCollection::get_Item>("get_Item", {});
@@ -97,7 +96,7 @@ extern "C" {
 
         // PresentationFactory
 
-        Php::Class<AsposePhp::PresentationFactory> presentationFactory("PresentationFactory", 0);
+        Php::Class<AsposePhp::PresentationFactory> presentationFactory("AsposePhp\\PresentationFactory", 0);
         
         presentationFactory.method<&AsposePhp::PresentationFactory::__construct>("__construct", Php::Public, {});
         presentationFactory.method<&AsposePhp::PresentationFactory::GetPresentationText>("GetPresentationText",{ 
@@ -140,6 +139,9 @@ extern "C" {
         Php::Class<AsposePhp::TextFrame> textFrame("TextFrame", 0);
         textFrame.method<&AsposePhp::TextFrame::__construct>("__construct", Php::Public, {});
         textFrame.method<&AsposePhp::TextFrame::get_Text>("get_Text", Php::Public, {});
+        textFrame.method<&AsposePhp::TextFrame::set_Text>("set_Text", Php::Public, {
+             Php::ByVal("text", Php::Type::String, true),
+        });
         
         // ShapeCollection
 
@@ -161,6 +163,10 @@ extern "C" {
         Php::Class<AsposePhp::GroupShape> groupShape("GroupShape", 0);
         groupShape.method<&AsposePhp::GroupShape::__construct>("__construct", Php::Public, {});
         groupShape.method<&AsposePhp::GroupShape::get_Shapes>("get_Shapes", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::get_AlternativeText>("get_AlternativeText", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::isGroupShape>("isGroupShape", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::isChart>("isChart", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::isTable>("isTable", Php::Public, {});
         
         // Chart
 
@@ -168,11 +174,18 @@ extern "C" {
         chart.method<&AsposePhp::Chart::__construct>("__construct", Php::Public, {});
         chart.method<&AsposePhp::Chart::get_ChartData>("get_ChartData", Php::Public, {});
         chart.method<&AsposePhp::Chart::get_AlternativeText>("get_AlternativeText", Php::Public, {});
+        chart.method<&AsposePhp::Chart::isGroupShape>("isGroupShape", Php::Public, {});
+        chart.method<&AsposePhp::Chart::isChart>("isChart", Php::Public, {});
+        chart.method<&AsposePhp::Chart::isTable>("isTable", Php::Public, {});
 
          // Table
 
         Php::Class<AsposePhp::Table> table("Table", 0);
         table.method<&AsposePhp::Table::__construct>("__construct", Php::Public, {});
+        table.method<&AsposePhp::Table::isGroupShape>("isGroupShape", Php::Public, {});
+        table.method<&AsposePhp::Table::get_AlternativeText>("get_AlternativeText", Php::Public, {});
+        table.method<&AsposePhp::Table::isChart>("isChart", Php::Public, {});
+        table.method<&AsposePhp::Table::isTable>("isTable", Php::Public, {});
         //chart.method<&AsposePhp::Table::get_ChartData>("get_ChartData", Php::Public, {});
 
 
@@ -228,7 +241,7 @@ extern "C" {
 
         Php::Class<AsposePhp::StringChartValue> stringChartValue("StringChartValue", 0);
         stringChartValue.method<&AsposePhp::StringChartValue::__construct>("__construct", Php::Public, {});
-        // chartDataCell.method<&AsposePhp::StringChartValue::get_Value>("get_Value", Php::Public, {});
+        stringChartValue.method<&AsposePhp::StringChartValue::get_AsCells>("get_AsCells", Php::Public, {});
     
         // ChartCellCollection
 
@@ -281,11 +294,9 @@ extern "C" {
 
         // AsposeUtil
 
-        Php::Class<AsposeUtil> util("AsposeUtil");
+        Php::Class<AsposeUtil> util("AsposePhp\\AsposeUtil");
 
-        util.method<&AsposeUtil::getVersion>("getVersion", { 
-            Php::ByVal("slideNo", Php::Type::Numeric, true) 
-        });
+        util.method<&AsposeUtil::getVersion>("getVersion", {});
 
         // Slide
 
@@ -298,12 +309,6 @@ extern "C" {
         slide.method<&AsposePhp::Slide::getMasterText>("getMasterText", {});
         slide.method<&AsposePhp::Slide::getNotesText>("getNotesText", {});
         slide.method<&AsposePhp::Slide::get_NotesSlideManager>("get_NotesSlideManager", {});
-
-
-        ns.add<AsposeUtil>("AsposeUtil");
-        ns.add<AsposePhp::Presentation>("Presentation");
-        ns.add<AsposePhp::PresentationFactory>("PresentationFactory");
-        ns.add<AsposePhp::Slide>("Slide");
         
         extension.add(std::move(stringOrdoubleChartValue));
         extension.add(std::move(doubleChartValue));
@@ -333,7 +338,6 @@ extern "C" {
         extension.add(std::move(util));
         extension.add(std::move(slide));
         extension.add(std::move(pres));
-        extension.add(std::move(ns));
 
         return extension;
     }

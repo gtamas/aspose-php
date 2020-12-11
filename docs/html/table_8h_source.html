@@ -90,29 +90,39 @@ $(document).ready(function(){initNavTree('table_8h_source.html',''); initResizab
 <a href="table_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;phpcpp.h&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../include/aspose.h&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../include/aspose_php.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef TABLE_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define TABLE_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_aspose_php.html">AsposePhp</a> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_table.html">   10</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_aspose_php_1_1_table.html">Table</a> : <span class="keyword">public</span> <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;ITable&gt;, <span class="keyword">public</span> Php::Base</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_table.html#a4bf6dec013871236efef3003092ac2ab">   13</a></span>&#160;            <a class="code" href="class_aspose_php_1_1_table.html#a4bf6dec013871236efef3003092ac2ab">Table</a>(System::SharedPtr&lt;ITable&gt; shape) : <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;ITable&gt;(shape) {};</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_table.html#a2a9488e52d40336c71dd833a54a21779">   14</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_aspose_php_1_1_table.html#a2a9488e52d40336c71dd833a54a21779">__construct</a>(Php::Parameters &amp;params);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    };</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../include/shape.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef TABLE_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define TABLE_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_aspose_php.html">AsposePhp</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_table.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_aspose_php_1_1_table.html">Table</a> : <span class="keyword">public</span> <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;ITable&gt;, <span class="keyword">public</span> <a class="code" href="class_aspose_php_1_1_shape.html">Shape</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_table.html#a4bf6dec013871236efef3003092ac2ab">   14</a></span>&#160;            <a class="code" href="class_aspose_php_1_1_table.html#a4bf6dec013871236efef3003092ac2ab">Table</a>(System::SharedPtr&lt;ITable&gt; shape) : <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;ITable&gt;(shape), <a class="code" href="class_aspose_php_1_1_shape.html">Shape</a>(shape) {};</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_table.html#a2a9488e52d40336c71dd833a54a21779">   15</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_aspose_php_1_1_table.html#a2a9488e52d40336c71dd833a54a21779">__construct</a>(Php::Parameters &amp;params);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            Php::Value <a class="code" href="class_aspose_php_1_1_table.html#a03a0987c3e2cca5bb9840899b03f52fa">isGroupShape</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            Php::Value <a class="code" href="class_aspose_php_1_1_table.html#abc26d51e87fecdc212d33fd4b2004eb6">isTable</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            Php::Value <a class="code" href="class_aspose_php_1_1_table.html#ae632dd4dd865f1a87eeb7bfa89479073">isChart</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            Php::Value <a class="code" href="class_aspose_php_1_1_table.html#af5e758f77e8036bd6bef40f3b2d20d6b">get_AlternativeText</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    };</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_aspose_php_1_1_aspose_object_wrapper_html"><div class="ttname"><a href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposePhp::AsposeObjectWrapper</a></div><div class="ttdoc">This is the wrapper class we use to wrap Aspose objects. It's also the base class of all AsposePhp cl...</div><div class="ttdef"><b>Definition:</b> aspose_php.h:23</div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_table_html_a4bf6dec013871236efef3003092ac2ab"><div class="ttname"><a href="class_aspose_php_1_1_table.html#a4bf6dec013871236efef3003092ac2ab">AsposePhp::Table::Table</a></div><div class="ttdeci">Table(System::SharedPtr&lt; ITable &gt; shape)</div><div class="ttdef"><b>Definition:</b> table.h:13</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_table_html_a4bf6dec013871236efef3003092ac2ab"><div class="ttname"><a href="class_aspose_php_1_1_table.html#a4bf6dec013871236efef3003092ac2ab">AsposePhp::Table::Table</a></div><div class="ttdeci">Table(System::SharedPtr&lt; ITable &gt; shape)</div><div class="ttdef"><b>Definition:</b> table.h:14</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_table_html_ae632dd4dd865f1a87eeb7bfa89479073"><div class="ttname"><a href="class_aspose_php_1_1_table.html#ae632dd4dd865f1a87eeb7bfa89479073">AsposePhp::Table::isChart</a></div><div class="ttdeci">Php::Value isChart()</div><div class="ttdef"><b>Definition:</b> table.cpp:16</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_table_html_af5e758f77e8036bd6bef40f3b2d20d6b"><div class="ttname"><a href="class_aspose_php_1_1_table.html#af5e758f77e8036bd6bef40f3b2d20d6b">AsposePhp::Table::get_AlternativeText</a></div><div class="ttdeci">Php::Value get_AlternativeText()</div><div class="ttdef"><b>Definition:</b> table.cpp:24</div></div>
 <div class="ttc" id="anamespace_aspose_php_html"><div class="ttname"><a href="namespace_aspose_php.html">AsposePhp</a></div><div class="ttdef"><b>Definition:</b> aspose_php.h:13</div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_table_html"><div class="ttname"><a href="class_aspose_php_1_1_table.html">AsposePhp::Table</a></div><div class="ttdef"><b>Definition:</b> table.h:11</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_table_html"><div class="ttname"><a href="class_aspose_php_1_1_table.html">AsposePhp::Table</a></div><div class="ttdef"><b>Definition:</b> table.h:12</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_table_html_abc26d51e87fecdc212d33fd4b2004eb6"><div class="ttname"><a href="class_aspose_php_1_1_table.html#abc26d51e87fecdc212d33fd4b2004eb6">AsposePhp::Table::isTable</a></div><div class="ttdeci">Php::Value isTable()</div><div class="ttdef"><b>Definition:</b> table.cpp:20</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_table_html_a03a0987c3e2cca5bb9840899b03f52fa"><div class="ttname"><a href="class_aspose_php_1_1_table.html#a03a0987c3e2cca5bb9840899b03f52fa">AsposePhp::Table::isGroupShape</a></div><div class="ttdeci">Php::Value isGroupShape()</div><div class="ttdef"><b>Definition:</b> table.cpp:12</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_shape_html"><div class="ttname"><a href="class_aspose_php_1_1_shape.html">AsposePhp::Shape</a></div><div class="ttdef"><b>Definition:</b> shape.h:13</div></div>
 <div class="ttc" id="aclass_aspose_php_1_1_table_html_a2a9488e52d40336c71dd833a54a21779"><div class="ttname"><a href="class_aspose_php_1_1_table.html#a2a9488e52d40336c71dd833a54a21779">AsposePhp::Table::__construct</a></div><div class="ttdeci">void __construct(Php::Parameters &amp;params)</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

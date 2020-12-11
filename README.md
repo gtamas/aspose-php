@@ -41,6 +41,14 @@ export ASPOSE_PATH=/some/path
 
 Then install [PHP-CPP](https://www.php-cpp.com/)
 
+Finally, run this to build from scratch:
+
+```
+./make.sh -c 1
+```
+
+To build only changed files, partial rebuild:
+
 Finally, run this:
 
 ```
@@ -49,7 +57,7 @@ Finally, run this:
 
 ##  4. <a name='api'></a>API
 
-Please see ./docs/index.html.
+Please see [./docs/index.html]("./docs/index.html").
 
 ##  5. <a name='php'></a>PHP
 

@@ -16,7 +16,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value Chart::get_ChartData() {
-        return Php::Object("ChartData", wrapObject<IChartData, AsposePhp::ChartData, &IChart::get_ChartData>());
+        return Php::Object("ChartData",AsposeObjectWrapper<IChart>::wrapObject<IChartData, AsposePhp::ChartData, &IChart::get_ChartData>());
     }
 
     /**
@@ -25,7 +25,20 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value Chart::get_AlternativeText() {
-        return _asposeObj->get_AlternativeText().ToUtf8String();
+        return this->Shape::_asposeObj->get_AlternativeText().ToUtf8String();
+    }
+
+
+    Php::Value Chart::isGroupShape() {
+        return Shape::isGroupShape();
+    }
+
+    Php::Value Chart::isChart() {
+        return true;
+    }
+
+    Php::Value Chart::isTable() {
+        return Shape::isTable();
     }
 
 

@@ -27,6 +27,16 @@ namespace AsposePhp {
         return _textFrame->get_Text().ToUtf8String();
     }
 
+    /**
+     * @brief Sets text frame text content
+     * 
+     * @param params 
+     */
+    void TextFrame::set_Text(Php::Parameters &params) {
+        std::string text = params[0].stringValue();
+        _textFrame->set_Text(String(text));
+    }
+
 
 
 }

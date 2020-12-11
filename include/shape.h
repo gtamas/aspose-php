@@ -2,6 +2,8 @@
 #include "../include/aspose.h"
 #include "../include/aspose_php.h"
 
+using namespace Aspose::Slides::Charts;
+
 #ifndef SHAPE_H
 #define SHAPE_H
 
@@ -29,6 +31,7 @@ namespace AsposePhp {
                 return true;
             }
         public:
+            Shape();
             Shape(System::SharedPtr<IShape> shape) : AsposeObjectWrapper<IShape>(shape) {};
             
             void __construct(Php::Parameters &params);

@@ -55,7 +55,7 @@ namespace AsposePhp {
      */
     Php::Value Shape::get_AlternativeText()
     {
-        return _asposeObj->get_AlternativeText().ToUtf8String();
+        return this->_asposeObj->get_AlternativeText().ToUtf8String();
 
     }
 

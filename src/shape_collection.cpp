@@ -2,6 +2,8 @@
 #include "../include/shape_collection.h"
 #include "../include/shape.h"
 #include "../include/chart.h"
+#include "../include/group_shape.h"
+#include "../include/table.h"
 #include <phpcpp.h>
 #include <variant>
 
@@ -41,10 +43,23 @@ namespace AsposePhp {
             if(chart != nullptr) {
                 Chart * phpValue =  new Chart(chart);
                 arr.push_back(Php::Object("Chart", phpValue));
-            } else {
-                Shape * phpValue = new Shape(shape);
-                arr.push_back(Php::Object("Shape", phpValue));
-            }
+                continue;
+            } 
+             SharedPtr<Aspose::Slides::GroupShape> gs = Shape::convert<Aspose::Slides::GroupShape>(shape);
+             if(gs != nullptr) {
+                GroupShape * phpValue =  new GroupShape(gs);
+                arr.push_back(Php::Object("GroupShape", phpValue));
+                continue;
+            } 
+            SharedPtr<Aspose::Slides::Table> table = Shape::convert<Aspose::Slides::Table>(shape);
+             if(table != nullptr) {
+                Table * phpValue =  new Table(table);
+                arr.push_back(Php::Object("Table", phpValue));
+                continue;
+            } 
+            
+            Shape * phpValue = new Shape(shape);
+            arr.push_back(Php::Object("Shape", phpValue));
             
         }
             

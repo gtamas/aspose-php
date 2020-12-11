@@ -3,6 +3,8 @@
 #include "../include/slide.h"
 #include "../include/islide_collection.h"
 #include <phpcpp.h>
+#include <iostream>
+#include <Util/License.h>
 
 using namespace Aspose::Slides;
 using namespace Aspose::Slides::Export;
@@ -13,6 +15,14 @@ using namespace System::IO;
 
 namespace AsposePhp {
 
+    class AsposePhpException: public exception
+    {
+        virtual const char* what() const throw()
+        {
+            return "My exception happened";
+        }
+    };
+
     /**
      * @brief PHP Constructor
      * 
@@ -21,10 +31,29 @@ namespace AsposePhp {
     void Presentation::__construct(Php::Parameters &params)
     {
     
-        if(!params.empty() && this->load(params) == -1) {
-            std::cerr << "No file.."; 
+        this->load(params);
+        
+        if(params.size() > 1) {
+            this->loadLicense(params);
         }
 
+    }
+
+    void Presentation::loadLicense(Php::Parameters &params) {
+          std::string licensePath = params[1].stringValue();
+          
+          try {
+            SharedPtr<Aspose::Slides::License> lic = MakeObject<Aspose::Slides::License>();
+            lic->SetLicense(String(licensePath));
+
+            if(!lic->IsLicensed()) {
+                throw Php::Exception("Invalid license");
+            }
+          }
+          catch(...) {
+              throw Php::Exception("Unable to load license..");
+          }
+         
     }
 
     /**
@@ -35,14 +64,21 @@ namespace AsposePhp {
      */
     Php::Value Presentation::load(Php::Parameters &params) {
         std::string path = params[0].stringValue();
+        // std::string licencePath = params[1].stringValue();
         const String templatePath = String(path);
 
-        if(!File::Exists(templatePath)) {
-            return -1;
+        SharedPtr<LoadOptions> loadOptions = MakeObject<LoadOptions>();
+
+        try {
+            _pres = MakeObject<Aspose::Slides::Presentation>(templatePath);
+        }
+        catch(System::ArgumentException &e) {
+            return this;
+        }
+        catch(...) {
+            return this;
         }
 
-        SharedPtr<LoadOptions> loadOptions = MakeObject<LoadOptions>();
-        _pres = MakeObject<Aspose::Slides::Presentation>(templatePath);
         _slides = _pres->get_Slides();
 
         SharedPtr<PresentationFactory> pFactory = PresentationFactory::get_Instance();
@@ -151,7 +187,7 @@ namespace AsposePhp {
      */
     Php::Value Presentation::getSlides() {
         ISlideCollection* coll = new ISlideCollection(_slides);
-        return Php::Object("ISlideCollection", coll);
+        return Php::Object("AsposePhp\\ISlideCollection", coll);
     }
 
     Php::Value Presentation::getSlides2() {

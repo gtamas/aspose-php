@@ -12,6 +12,7 @@ namespace AsposePhp {
        System::SharedPtr<Aspose::Slides::Presentation> _pres;
        System::SharedPtr<Aspose::Slides::ISlideCollection> _slides = nullptr;
        System::ArrayPtr<System::SharedPtr<Aspose::Slides::ISlideText>> _slideText = nullptr;
+       void loadLicense(Php::Parameters &params);
 
     public:
         Presentation() = default;
@@ -25,7 +26,7 @@ namespace AsposePhp {
         Php::Value load(Php::Parameters &params);
         Php::Value getPresentationText(Php::Parameters &params);
         Php::Value getNumberOfSlides();
-         Php::Value getSlides2();
+        Php::Value getSlides2();
         Php::Value getSlides();
         Php::Value getSlide(Php::Parameters &params);
     };

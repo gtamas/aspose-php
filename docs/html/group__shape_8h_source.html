@@ -90,32 +90,43 @@ $(document).ready(function(){initNavTree('group__shape_8h_source.html',''); init
 <a href="group__shape_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;phpcpp.h&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../include/aspose.h&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../include/aspose_php.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#ifndef GROUP_SHAPE_H</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define GROUP_SHAPE_H</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_aspose_php.html">AsposePhp</a> {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_group_shape.html">   10</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_aspose_php_1_1_group_shape.html">GroupShape</a> : <span class="keyword">public</span> <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;IGroupShape&gt;, <span class="keyword">public</span> Php::Base</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_group_shape.html#acf83f1b0a428953699cc55e4776a31ca">   13</a></span>&#160;            <a class="code" href="class_aspose_php_1_1_group_shape.html#acf83f1b0a428953699cc55e4776a31ca">GroupShape</a>(System::SharedPtr&lt;IGroupShape&gt; shape) : <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;IGroupShape&gt;(shape) {};</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_group_shape.html#a2890bf9cfb82efcb5af159f16819c50f">   14</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_aspose_php_1_1_group_shape.html#a2890bf9cfb82efcb5af159f16819c50f">__construct</a>(Php::Parameters &amp;params);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            Php::Value <a class="code" href="class_aspose_php_1_1_group_shape.html#a7e743b85613dff29f3a7a69cd35de9d2">get_Shapes</a>();</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    };</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../include/shape.h&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#ifndef GROUP_SHAPE_H</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define GROUP_SHAPE_H</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_aspose_php.html">AsposePhp</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_group_shape.html">   11</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_aspose_php_1_1_group_shape.html">GroupShape</a> : <span class="keyword">public</span> <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;IGroupShape&gt;, <span class="keyword">public</span> <a class="code" href="class_aspose_php_1_1_shape.html">Shape</a></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    {</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_group_shape.html#acf83f1b0a428953699cc55e4776a31ca">   14</a></span>&#160;            <a class="code" href="class_aspose_php_1_1_group_shape.html#acf83f1b0a428953699cc55e4776a31ca">GroupShape</a>(System::SharedPtr&lt;IGroupShape&gt; shape) : <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;IGroupShape&gt;(shape), <a class="code" href="class_aspose_php_1_1_shape.html">Shape</a>(shape) {};</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_group_shape.html#a2890bf9cfb82efcb5af159f16819c50f">   15</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_aspose_php_1_1_group_shape.html#a2890bf9cfb82efcb5af159f16819c50f">__construct</a>(Php::Parameters &amp;params);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            Php::Value <a class="code" href="class_aspose_php_1_1_group_shape.html#a7e743b85613dff29f3a7a69cd35de9d2">get_Shapes</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            Php::Value <a class="code" href="class_aspose_php_1_1_group_shape.html#a246b09c51853a51dde38eafd31fbac84">isGroupShape</a>();</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            Php::Value <a class="code" href="class_aspose_php_1_1_group_shape.html#ae96e695f714075d64169da1c51a6184a">get_AlternativeText</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            Php::Value <a class="code" href="class_aspose_php_1_1_group_shape.html#a675f97a2ef2cf71c4044a5b1ac587cb2">isTable</a>();</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            Php::Value <a class="code" href="class_aspose_php_1_1_group_shape.html#a53cc026a98731dab9218aa484dd3f24f">isChart</a>();</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    };</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_aspose_php_1_1_aspose_object_wrapper_html"><div class="ttname"><a href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposePhp::AsposeObjectWrapper</a></div><div class="ttdoc">This is the wrapper class we use to wrap Aspose objects. It's also the base class of all AsposePhp cl...</div><div class="ttdef"><b>Definition:</b> aspose_php.h:23</div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_group_shape_html"><div class="ttname"><a href="class_aspose_php_1_1_group_shape.html">AsposePhp::GroupShape</a></div><div class="ttdef"><b>Definition:</b> group_shape.h:11</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_group_shape_html_ae96e695f714075d64169da1c51a6184a"><div class="ttname"><a href="class_aspose_php_1_1_group_shape.html#ae96e695f714075d64169da1c51a6184a">AsposePhp::GroupShape::get_AlternativeText</a></div><div class="ttdeci">Php::Value get_AlternativeText()</div><div class="ttdef"><b>Definition:</b> group_shape.cpp:35</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_group_shape_html"><div class="ttname"><a href="class_aspose_php_1_1_group_shape.html">AsposePhp::GroupShape</a></div><div class="ttdef"><b>Definition:</b> group_shape.h:12</div></div>
 <div class="ttc" id="aclass_aspose_php_1_1_group_shape_html_a7e743b85613dff29f3a7a69cd35de9d2"><div class="ttname"><a href="class_aspose_php_1_1_group_shape.html#a7e743b85613dff29f3a7a69cd35de9d2">AsposePhp::GroupShape::get_Shapes</a></div><div class="ttdeci">Php::Value get_Shapes()</div><div class="ttdoc">Returns the shape collection for this group.</div><div class="ttdef"><b>Definition:</b> group_shape.cpp:19</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_group_shape_html_a675f97a2ef2cf71c4044a5b1ac587cb2"><div class="ttname"><a href="class_aspose_php_1_1_group_shape.html#a675f97a2ef2cf71c4044a5b1ac587cb2">AsposePhp::GroupShape::isTable</a></div><div class="ttdeci">Php::Value isTable()</div><div class="ttdef"><b>Definition:</b> group_shape.cpp:31</div></div>
 <div class="ttc" id="anamespace_aspose_php_html"><div class="ttname"><a href="namespace_aspose_php.html">AsposePhp</a></div><div class="ttdef"><b>Definition:</b> aspose_php.h:13</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_group_shape_html_a246b09c51853a51dde38eafd31fbac84"><div class="ttname"><a href="class_aspose_php_1_1_group_shape.html#a246b09c51853a51dde38eafd31fbac84">AsposePhp::GroupShape::isGroupShape</a></div><div class="ttdeci">Php::Value isGroupShape()</div><div class="ttdef"><b>Definition:</b> group_shape.cpp:23</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_group_shape_html_a53cc026a98731dab9218aa484dd3f24f"><div class="ttname"><a href="class_aspose_php_1_1_group_shape.html#a53cc026a98731dab9218aa484dd3f24f">AsposePhp::GroupShape::isChart</a></div><div class="ttdeci">Php::Value isChart()</div><div class="ttdef"><b>Definition:</b> group_shape.cpp:27</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_shape_html"><div class="ttname"><a href="class_aspose_php_1_1_shape.html">AsposePhp::Shape</a></div><div class="ttdef"><b>Definition:</b> shape.h:13</div></div>
 <div class="ttc" id="aclass_aspose_php_1_1_group_shape_html_a2890bf9cfb82efcb5af159f16819c50f"><div class="ttname"><a href="class_aspose_php_1_1_group_shape.html#a2890bf9cfb82efcb5af159f16819c50f">AsposePhp::GroupShape::__construct</a></div><div class="ttdeci">void __construct(Php::Parameters &amp;params)</div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_group_shape_html_acf83f1b0a428953699cc55e4776a31ca"><div class="ttname"><a href="class_aspose_php_1_1_group_shape.html#acf83f1b0a428953699cc55e4776a31ca">AsposePhp::GroupShape::GroupShape</a></div><div class="ttdeci">GroupShape(System::SharedPtr&lt; IGroupShape &gt; shape)</div><div class="ttdef"><b>Definition:</b> group_shape.h:13</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_group_shape_html_acf83f1b0a428953699cc55e4776a31ca"><div class="ttname"><a href="class_aspose_php_1_1_group_shape.html#acf83f1b0a428953699cc55e4776a31ca">AsposePhp::GroupShape::GroupShape</a></div><div class="ttdeci">GroupShape(System::SharedPtr&lt; IGroupShape &gt; shape)</div><div class="ttdef"><b>Definition:</b> group_shape.h:14</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>

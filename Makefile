@@ -30,6 +30,7 @@ NAME				=	aspose_php
 #
 
 INI_DIR				=	/etc/php/7.4/cli/conf.d
+APACHE_INI_DIR		=	/etc/php/7.4/apache2/conf.d
 
 
 #
@@ -132,6 +133,7 @@ ${OBJECTS}:
 install:		
 						${CP} ${EXTENSION} ${EXTENSION_DIR}
 						${CP} ${INI} ${INI_DIR}
+						${CP} ${INI} ${APACHE_INI_DIR}
 
 dist:		
 						${CP} ${EXTENSION} ${DIST_DIR}

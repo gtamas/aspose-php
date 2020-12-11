@@ -1,0 +1,14 @@
+digraph "AsposePhp::ChartCategoryCollection"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="AsposePhp::ChartCategory\lCollection",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="AsposePhp wrapper for ChartCategoryCollection class."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="AsposePhp::AsposeObjectWrapper\l\< IChartCategoryCollection \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_aspose_php_1_1_aspose_object_wrapper.html",tooltip=" "];
+  Node3 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="AsposePhp::Collection\l\< IChartCategoryCollection \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_aspose_php_1_1_collection.html",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Base",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
+}

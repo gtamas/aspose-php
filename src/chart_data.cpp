@@ -26,7 +26,6 @@ namespace AsposePhp {
      */
     Php::Value ChartData::get_Categories() {
         return Php::Object("ChartCategoryCollection", wrapObject<IChartCategoryCollection, AsposePhp::ChartCategoryCollection, &IChartData::get_Categories>());
-        return nullptr;
     }
 
 

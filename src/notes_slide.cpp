@@ -31,6 +31,4 @@ namespace AsposePhp {
         return Php::Object("TextFrame", phpValue);
     }
 
-
-
 }

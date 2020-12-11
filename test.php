@@ -1,6 +1,17 @@
 <?php 
 
-$ppt = new Presentation("../asposeext/file.pptx");
+use AsposePhp\PresentationFactory;
+use AsposePhp\AsposeUtil;
+use AsposePhp\Presentation;
+
+try {
+    $ppt = new AsposePhp\Presentation("../asposeext/example.pptx", "./Aspose.Slides.C++.lic");
+}
+catch(Exception $e) {
+    print_r($e->getMessage());
+    exit(1);
+}
+
 ?>
 
 cloned
@@ -16,10 +27,10 @@ Notes Text in slide 0: <?php
 print_r($ppt->getSlides()->get_Item(0)->get_NotesSlideManager()->get_NotesSlide()->get_NotesTextFrame()->get_Text()); ?>
 
 Chart series: <?php 
-print_r($ppt->getSlides()->get_Item(1)->get_Shapes()->ToArray()[3]->get_ChartData()->get_Series()->idx_get(0)->get_DataPoints()->idx_get(0)->get_Value()->get_AsCell()->get_Value()); ?>
+//print_r($ppt->getSlides()->get_Item(1)->get_Shapes()->ToArray()[3]->get_ChartData()->get_Series()->idx_get(0)->get_DataPoints()->idx_get(3)->get_YValue()->get_AsCell()); ?>
 
 Chart Categories: <?php 
-print_r($ppt->getSlides()->get_Item(1)->get_Shapes()->ToArray()[3]->get_AlternativeText()); ?>
+print_r($ppt->getSlides()->get_Item(1)->get_Shapes()->ToArray()[5]->get_Shapes()); ?>
 
 <?php $ppt->cloneSlide(0); ?>
 

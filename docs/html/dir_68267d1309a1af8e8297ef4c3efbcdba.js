@@ -38,7 +38,9 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "notes_slide.d", "notes__slide_8d.html", null ],
     [ "notes_slide_manager.cpp", "notes__slide__manager_8cpp.html", null ],
     [ "notes_slide_manager.d", "notes__slide__manager_8d.html", null ],
-    [ "presentation.cpp", "presentation_8cpp.html", null ],
+    [ "presentation.cpp", "presentation_8cpp.html", [
+      [ "AsposePhpException", "class_aspose_php_1_1_aspose_php_exception.html", null ]
+    ] ],
     [ "presentation.d", "presentation_8d.html", null ],
     [ "presentation_factory.cpp", "presentation__factory_8cpp.html", null ],
     [ "presentation_factory.d", "presentation__factory_8d.html", null ],
@@ -56,6 +58,8 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "string_chart_value.d", "string__chart__value_8d.html", null ],
     [ "string_or_double_chart_value.cpp", "string__or__double__chart__value_8cpp.html", null ],
     [ "string_or_double_chart_value.d", "string__or__double__chart__value_8d.html", null ],
+    [ "table.cpp", "table_8cpp.html", null ],
+    [ "table.d", "table_8d.html", null ],
     [ "text_frame.cpp", "text__frame_8cpp.html", null ],
     [ "text_frame.d", "text__frame_8d.html", null ]
 ];
