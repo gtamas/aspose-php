@@ -29,10 +29,18 @@ namespace AsposePhp {
      */
     Php::Value PresentationFactory::GetPresentationText(Php::Parameters &params)
     {
-        String path = String(params[0].stringValue());
-        SharedPtr<IPresentationText> text = _factory->GetPresentationText(path, TextExtractionArrangingMode::Arranged);
-        PresentationText * phpText = new PresentationText(text); 
-        return Php::Object("PresentationText", phpText);
+        try {
+            String path = String(params[0].stringValue());
+            SharedPtr<IPresentationText> text = _factory->GetPresentationText(path, TextExtractionArrangingMode::Arranged);
+            PresentationText * phpText = new PresentationText(text); 
+            return Php::Object("AsposePhp\\Slides\\PresentationText", phpText);
+        }
+        catch(System::ArgumentException &e) {
+            throw Php::Exception(e.what());
+        }
+        catch(System::IO::FileNotFoundException &e) {
+              throw Php::Exception(e.what());
+        }
     }
 
 

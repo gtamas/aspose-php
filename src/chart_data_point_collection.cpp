@@ -18,9 +18,14 @@ namespace AsposePhp {
      */
     Php::Value ChartDataPointCollection::idx_get(Php::Parameters &params) {
         int index = params[0].numericValue();
-        SharedPtr<IChartDataPoint> obj = _asposeObj->idx_get(index);
-        ChartDataPoint* phpValue = new ChartDataPoint(obj); 
-        return Php::Object("ChartDataPoint", phpValue);
+        try {
+            SharedPtr<IChartDataPoint> obj = _asposeObj->idx_get(index);
+            ChartDataPoint* phpValue = new ChartDataPoint(obj); 
+            return Php::Object("AsposePhp\\Slides\\Charts\\ChartDataPoint", phpValue);
+        }
+        catch(System::ArgumentOutOfRangeException &e) {
+            throw Php::Exception("Invalid index: " + to_string(index));
+        }
 
         //return Php::Object("ChartDataPoint", wrapObject<IChartDataPoint, AsposePhp::ChartDataPoint, &IChartDataPointCollection::idx_get>(index));
     }

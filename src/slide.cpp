@@ -77,7 +77,7 @@ namespace AsposePhp {
     Php::Value Slide::get_NotesSlideManager() {
         SharedPtr<INotesSlideManager> slideManager = _slide->get_NotesSlideManager();
         NotesSlideManager * phpValue = new NotesSlideManager(slideManager); 
-        return Php::Object("NotesSlideManager", phpValue);
+        return Php::Object("AsposePhp\\Slides\\NotesSlideManager", phpValue);
     }
 
 
@@ -89,7 +89,7 @@ namespace AsposePhp {
     Php::Value Slide::get_Shapes() {
         SharedPtr<IShapeCollection> shapes = _slide->get_Shapes();
         ShapeCollection * phpValue = new ShapeCollection(shapes); 
-        return Php::Object("ShapeCollection", phpValue);
+        return Php::Object("AsposePhp\\Slides\\ShapeCollection", phpValue);
     }
 
 

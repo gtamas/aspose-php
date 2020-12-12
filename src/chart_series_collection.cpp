@@ -18,7 +18,12 @@ namespace AsposePhp {
      */
     Php::Value ChartSeriesCollection::idx_get(Php::Parameters &params) {
         int index = params[0].numericValue();
-        return Php::Object("ChartSeries", wrapObject<IChartSeries, AsposePhp::ChartSeries, &IChartSeriesCollection::idx_get>(index));
+        try {
+            return Php::Object("AsposePhp\\Slides\\Charts\\ChartSeries", wrapObject<IChartSeries, AsposePhp::ChartSeries, &IChartSeriesCollection::idx_get>(index));
+        }
+        catch(System::ArgumentOutOfRangeException &e) {
+            throw Php::Exception("Invalid index: " + to_string(index));
+        }
     }
 
     /**

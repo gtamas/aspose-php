@@ -28,7 +28,7 @@ namespace AsposePhp {
     Php::Value NotesSlide::get_NotesTextFrame() {
         SharedPtr<ITextFrame> frame = _slide->get_NotesTextFrame();
         TextFrame * phpValue = new TextFrame(frame); 
-        return Php::Object("TextFrame", phpValue);
+        return Php::Object("AsposePhp\\Slides\\TextFrame", phpValue);
     }
 
 }

@@ -17,7 +17,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value GroupShape::get_Shapes() {
-        return Php::Object("ShapeCollection", AsposeObjectWrapper<IGroupShape>::wrapObject<IShapeCollection, AsposePhp::ShapeCollection, &IGroupShape::get_Shapes>());
+        return Php::Object("AsposePhp\\Slides\\ShapeCollection", AsposeObjectWrapper<IGroupShape>::wrapObject<IShapeCollection, AsposePhp::ShapeCollection, &IGroupShape::get_Shapes>());
     }
 
     Php::Value GroupShape::isGroupShape() {

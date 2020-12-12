@@ -40,10 +40,14 @@ namespace AsposePhp {
     Php::Value ISlideCollection::get_Item(Php::Parameters &params)
     {
         int slideNo = params[0].numericValue();
-        SharedPtr<ISlide> slide = this->_slides->idx_get(slideNo);
-        Slide* phpSlide = new Slide(slide, "", "", "", slide->get_SlideNumber()); 
-        return Php::Object("Slide", phpSlide);
-
+        try {
+            SharedPtr<ISlide> slide = this->_slides->idx_get(slideNo);
+            Slide* phpSlide = new Slide(slide, "", "", "", slide->get_SlideNumber()); 
+            return Php::Object("AsposePhp\\Slides\\Slide", phpSlide);
+        }
+        catch(System::ArgumentOutOfRangeException &e) {
+            throw Php::Exception("Invalid index: " + to_string(slideNo));
+        }
     }
 
 

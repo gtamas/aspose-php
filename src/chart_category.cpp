@@ -24,7 +24,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value ChartCategory::get_AsCell() {
-        return Php::Object("ChartDataCell", wrapObject<IChartDataCell, AsposePhp::ChartDataCell, &IChartCategory::get_AsCell>());
+        return Php::Object("AsposePhp\\Slides\\Charts\\ChartDataCell", wrapObject<IChartDataCell, AsposePhp::ChartDataCell, &IChartCategory::get_AsCell>());
     }
 
 

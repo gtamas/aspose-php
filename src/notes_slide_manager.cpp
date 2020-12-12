@@ -16,7 +16,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value NotesSlideManager::get_NotesSlide() {
-        return Php::Object("NotesSlide", wrapObject<INotesSlide, NotesSlide, &INotesSlideManager::get_NotesSlide>());
+        return Php::Object("AsposePhp\\Slides\\NotesSlide", wrapObject<INotesSlide, NotesSlide, &INotesSlideManager::get_NotesSlide>());
     }
 
 

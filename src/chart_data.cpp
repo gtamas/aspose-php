@@ -16,7 +16,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value ChartData::get_Series() {
-        return Php::Object("ChartSeriesCollection", wrapObject<IChartSeriesCollection, AsposePhp::ChartSeriesCollection, &IChartData::get_Series>());
+        return Php::Object("AsposePhp\\Slides\\Charts\\ChartSeriesCollection", wrapObject<IChartSeriesCollection, AsposePhp::ChartSeriesCollection, &IChartData::get_Series>());
     }
 
     /**
@@ -25,7 +25,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value ChartData::get_Categories() {
-        return Php::Object("ChartCategoryCollection", wrapObject<IChartCategoryCollection, AsposePhp::ChartCategoryCollection, &IChartData::get_Categories>());
+        return Php::Object("AsposePhp\\Slides\\Charts\\ChartCategoryCollection", wrapObject<IChartCategoryCollection, AsposePhp::ChartCategoryCollection, &IChartData::get_Categories>());
     }
 
 

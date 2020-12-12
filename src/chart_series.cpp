@@ -16,7 +16,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value ChartSeries::get_Name() {
-        return Php::Object("StringChartValue", wrapObject<IStringChartValue, AsposePhp::StringChartValue, &IChartSeries::get_Name>());
+        return Php::Object("AsposePhp\\Slides\\Charts\\StringChartValue", wrapObject<IStringChartValue, AsposePhp::StringChartValue, &IChartSeries::get_Name>());
     }
 
     /**
@@ -25,7 +25,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value ChartSeries::get_DataPoints() {
-        return Php::Object("ChartDataPointCollection", wrapObject<IChartDataPointCollection, AsposePhp::ChartDataPointCollection, &IChartSeries::get_DataPoints>());;
+        return Php::Object("AsposePhp\\Slides\\Charts\\ChartDataPointCollection", wrapObject<IChartDataPointCollection, AsposePhp::ChartDataPointCollection, &IChartSeries::get_DataPoints>());;
     }
 
 }

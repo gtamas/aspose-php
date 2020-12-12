@@ -5,6 +5,7 @@
 #include <phpcpp.h>
 #include <iostream>
 #include <Util/License.h>
+#include <Exceptions/PptxEditException.h>
 
 using namespace Aspose::Slides;
 using namespace Aspose::Slides::Export;
@@ -14,14 +15,6 @@ using namespace std;
 using namespace System::IO;
 
 namespace AsposePhp {
-
-    class AsposePhpException: public exception
-    {
-        virtual const char* what() const throw()
-        {
-            return "My exception happened";
-        }
-    };
 
     /**
      * @brief PHP Constructor
@@ -50,8 +43,20 @@ namespace AsposePhp {
                 throw Php::Exception("Invalid license");
             }
           }
+          catch(System::ArgumentException &e) {
+              throw Php::Exception(e.what());
+          }
+          catch(System::IO::FileNotFoundException &e) {
+              throw Php::Exception(e.what());
+          }
+          catch(System::UnauthorizedAccessException &e) {
+              throw Php::Exception(e.what());
+          }
+          catch(System::Xml::XmlException &e) {
+              throw Php::Exception(e.what());
+          }
           catch(...) {
-              throw Php::Exception("Unable to load license..");
+              throw Php::Exception("Unknown error. Unable to loead license file..");
           }
          
     }
@@ -71,18 +76,23 @@ namespace AsposePhp {
 
         try {
             _pres = MakeObject<Aspose::Slides::Presentation>(templatePath);
+            _slides = _pres->get_Slides();
+
+            SharedPtr<PresentationFactory> pFactory = PresentationFactory::get_Instance();
+            _slideText =  pFactory->GetPresentationText(templatePath, TextExtractionArrangingMode::Arranged)->get_SlidesText();
         }
         catch(System::ArgumentException &e) {
-            return this;
+            throw Php::Exception(e.what());
+        }
+        catch(System::IO::FileNotFoundException &e) {
+              throw Php::Exception(e.what());
+        }
+        catch(System::UnauthorizedAccessException &e) {
+              throw Php::Exception(e.what());
         }
         catch(...) {
-            return this;
+            throw Php::Exception("Uknown error. Unable to loead input file..");
         }
-
-        _slides = _pres->get_Slides();
-
-        SharedPtr<PresentationFactory> pFactory = PresentationFactory::get_Instance();
-        _slideText =  pFactory->GetPresentationText(templatePath, TextExtractionArrangingMode::Arranged)->get_SlidesText();
 
         return this;
     }
@@ -96,7 +106,7 @@ namespace AsposePhp {
         String outfile = String(params[0].stringValue());
         string ext = outfile.Substring(outfile.LastIndexOf(u".")+1).ToUtf8String();
 
-        SaveFormat format;
+        SaveFormat format = SaveFormat::Ppt;
         ArrayPtr<string> formats = new Array<string>(vector<string> {"ppt", "pptx"});
 
         if(formats->IndexOf(ext) != -1) {
@@ -106,8 +116,19 @@ namespace AsposePhp {
                 format = SaveFormat::Pptx;
             } 
 
-            SharedPtr<Stream> stream = MakeObject<FileStream>(outfile, FileMode::CreateNew);
-            _pres->Save(outfile, format);
+            try {
+                SharedPtr<Stream> stream = MakeObject<FileStream>(outfile, FileMode::CreateNew);
+                _pres->Save(outfile, format);
+            }
+            catch(System::IO::IOException &e) {
+              throw Php::Exception(e.what());
+            }
+            catch(System::UnauthorizedAccessException &e) {
+              throw Php::Exception(e.what());
+            }
+            catch(...) {
+                throw Php::Exception("Uknown error. Unable to write output file..");
+            }
         }
 
     }
@@ -121,7 +142,18 @@ namespace AsposePhp {
     void Presentation::cloneSlide(Php::Parameters &params) {
         int slideNo = params[0].numericValue();
         
-        _slides->AddClone(_slides->idx_get(slideNo));
+        try {
+            _slides->AddClone(_slides->idx_get(slideNo));
+        }
+        catch(System::ArgumentOutOfRangeException &e) {
+            throw Php::Exception("Invalid index: " + to_string(slideNo));
+        }
+        catch(Aspose::Slides::PptxEditException &e) {
+            throw Php::Exception(e.what());
+        }
+        catch(...) {
+            throw Php::Exception("Uknown error. Unable to clone slide..");
+        }	
 
     }
 
@@ -144,29 +176,37 @@ namespace AsposePhp {
 
         String templatePath = String(path);
 
-        if(!File::Exists(templatePath)) {
-            return -1;
-        }
+        try {
+            SharedPtr<PresentationFactory> pFactory = PresentationFactory::get_Instance();
+            ArrayPtr<SharedPtr<ISlideText>> text =  pFactory->GetPresentationText(templatePath, arranged ? 
+            TextExtractionArrangingMode::Arranged : TextExtractionArrangingMode::Unarranged)->get_SlidesText();
 
-        SharedPtr<PresentationFactory> pFactory = PresentationFactory::get_Instance();
-        ArrayPtr<SharedPtr<ISlideText>> text =  pFactory->GetPresentationText(templatePath, arranged ? 
-        TextExtractionArrangingMode::Arranged : TextExtractionArrangingMode::Unarranged)->get_SlidesText();
-
-       string texts = "";
-        
-        for (int i = 0; i < text->get_Length(); i++) {
-            if(type == "all") {
-                texts += text[i]->get_Text().ToUtf8String();
-            } else if(type == "master") {
-                texts += text[i]->get_MasterText().ToUtf8String();
-            }  else if(type == "layout") {
-                texts += text[i]->get_LayoutText().ToUtf8String();
-            } else if(type == "notes") {
-                texts += text[i]->get_NotesText().ToUtf8String();
+            string texts = "";
+            
+            for (int i = 0; i < text->get_Length(); i++) {
+                if(type == "all") {
+                    texts += text[i]->get_Text().ToUtf8String();
+                } else if(type == "master") {
+                    texts += text[i]->get_MasterText().ToUtf8String();
+                }  else if(type == "layout") {
+                    texts += text[i]->get_LayoutText().ToUtf8String();
+                } else if(type == "notes") {
+                    texts += text[i]->get_NotesText().ToUtf8String();
+                }
             }
-        }
 
-        return texts;
+            return texts;
+
+        }
+        catch(System::ArgumentException &e) {
+            throw Php::Exception(e.what());
+        }
+        catch(System::IO::FileNotFoundException &e) {
+              throw Php::Exception(e.what());
+        }
+        catch(System::UnauthorizedAccessException &e) {
+              throw Php::Exception(e.what());
+        }
     }
 
 
@@ -187,7 +227,7 @@ namespace AsposePhp {
      */
     Php::Value Presentation::getSlides() {
         ISlideCollection* coll = new ISlideCollection(_slides);
-        return Php::Object("AsposePhp\\ISlideCollection", coll);
+        return Php::Object("AsposePhp\\Slides\\ISlideCollection", coll);
     }
 
     Php::Value Presentation::getSlides2() {
@@ -213,11 +253,11 @@ namespace AsposePhp {
                     _slideText[i]->get_NotesText().ToUtf8String(), 
                     _slideText[i]->get_MasterText().ToUtf8String(), slide->get_SlideNumber());
                     }
-                slideArr.push_back(Php::Object("Slide", phpSlide));
+                slideArr.push_back(Php::Object("AsposePhp\\Slides\\Slide", phpSlide));
             }
             return Php::Array(slideArr);
         }
-        catch(ArgumentOutOfRangeException e) {
+        catch(ArgumentOutOfRangeException &e) {
             return nullptr;
         }
     }
@@ -238,10 +278,10 @@ namespace AsposePhp {
                 _slideText[slideNo]->get_NotesText().ToUtf8String(), 
                 _slideText[slideNo]->get_MasterText().ToUtf8String(), 
                  slide->get_SlideNumber());
-            return Php::Object("Slide", ret);
+            return Php::Object("AsposePhp\\Slides\\Slide", ret);
         }
-        catch(ArgumentOutOfRangeException e) {
-            return nullptr;
+        catch(System::ArgumentOutOfRangeException &e) {
+            throw Php::Exception("Invalid index: " + to_string(slideNo));
         }
     }
 

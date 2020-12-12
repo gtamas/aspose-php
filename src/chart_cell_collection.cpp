@@ -18,7 +18,12 @@ namespace AsposePhp {
      */
     Php::Value ChartCellCollection::idx_get(Php::Parameters &params) {
         int index = params[0].numericValue();
-        return Php::Object("ChartDataCell", wrapObject<IChartDataCell, AsposePhp::ChartDataCell, &IChartCellCollection::idx_get>(index));
+        try {
+            return Php::Object("AsposePhp\\Slides\\Charts\\ChartDataCell", wrapObject<IChartDataCell, AsposePhp::ChartDataCell, &IChartCellCollection::idx_get>(index));
+        }
+        catch(System::ArgumentOutOfRangeException &e) {
+            throw Php::Exception("Invalid index: " + to_string(index));
+        }
     }
 
     /**

@@ -16,7 +16,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value DataLabel::get_TextFrameForOverriding() {
-        return Php::Object("TextFrame", wrapObject<ITextFrame, AsposePhp::TextFrame, &IDataLabel::get_TextFrameForOverriding>());
+        return Php::Object("AsposePhp\\Slides\\TextFrame", wrapObject<ITextFrame, AsposePhp::TextFrame, &IDataLabel::get_TextFrameForOverriding>());
     }
 
     /**

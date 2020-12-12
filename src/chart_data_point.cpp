@@ -17,7 +17,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value ChartDataPoint::get_Label() {
-        return Php::Object("DataLabel", wrapObject<IDataLabel, AsposePhp::DataLabel, &IChartDataPoint::get_Label>());
+        return Php::Object("AsposePhp\\Slides\\Charts\\DataLabel", wrapObject<IDataLabel, AsposePhp::DataLabel, &IChartDataPoint::get_Label>());
     }
 
     /**
@@ -26,7 +26,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value ChartDataPoint::get_Value() {
-        return Php::Object("DoubleChartValue", wrapObject<IDoubleChartValue, AsposePhp::DoubleChartValue, &IChartDataPoint::get_Value>());;
+        return Php::Object("AsposePhp\\Slides\\Charts\\DoubleChartValue", wrapObject<IDoubleChartValue, AsposePhp::DoubleChartValue, &IChartDataPoint::get_Value>());;
     }
 
     /**
@@ -35,7 +35,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value ChartDataPoint::get_YValue() {
-        return Php::Object("DoubleChartValue", wrapObject<IDoubleChartValue, AsposePhp::DoubleChartValue, &IChartDataPoint::get_YValue>());;
+        return Php::Object("AsposePhp\\Slides\\Charts\\DoubleChartValue", wrapObject<IDoubleChartValue, AsposePhp::DoubleChartValue, &IChartDataPoint::get_YValue>());;
     }
 
     /**
@@ -44,7 +44,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value ChartDataPoint::get_XValue() {
-        return Php::Object("StringOrDoubleChartValue", wrapObject<IStringOrDoubleChartValue, AsposePhp::StringOrDoubleChartValue, &IChartDataPoint::get_XValue>());;
+        return Php::Object("AsposePhp\\Slides\\Charts\\StringOrDoubleChartValue", wrapObject<IStringOrDoubleChartValue, AsposePhp::StringOrDoubleChartValue, &IChartDataPoint::get_XValue>());;
     }
 
 }

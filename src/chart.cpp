@@ -16,7 +16,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value Chart::get_ChartData() {
-        return Php::Object("ChartData",AsposeObjectWrapper<IChart>::wrapObject<IChartData, AsposePhp::ChartData, &IChart::get_ChartData>());
+        return Php::Object("AsposePhp\\Slides\\Charts\\ChartData",AsposeObjectWrapper<IChart>::wrapObject<IChartData, AsposePhp::ChartData, &IChart::get_ChartData>());
     }
 
     /**

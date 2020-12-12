@@ -16,7 +16,7 @@ namespace AsposePhp {
      * @return Php::Value 
      */
     Php::Value StringChartValue::get_AsCells() {
-         return Php::Object("ChartCellCollection", wrapObject<IChartCellCollection, AsposePhp::ChartCellCollection, &IStringChartValue::get_AsCells>());
+         return Php::Object("AsposePhp\\Slides\\Charts\\ChartCellCollection", wrapObject<IChartCellCollection, AsposePhp::ChartCellCollection, &IStringChartValue::get_AsCells>());
     }
 
 

@@ -35,7 +35,7 @@ namespace AsposePhp {
         for(int i = 0; i < slideTextCount; i++) {
                 SharedPtr<ISlideText> slideText = slideTexts->idx_get(i);
                 SlideText * phpSlideText = new SlideText(slideText);
-                slideTextArr.push_back(Php::Object("SlideText", phpSlideText));
+                slideTextArr.push_back(Php::Object("AsposePhp\\Slides\\SlideText", phpSlideText));
             }
             
         return Php::Array(slideTextArr);

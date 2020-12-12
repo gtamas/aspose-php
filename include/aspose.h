@@ -4,6 +4,8 @@
 #include <system/io/file_stream.h>
 #include <system/math.h>
 #include <system/exceptions.h>
+#include <system/io/file_not_found_exception.h>
+#include <xml/xml_exceptions.h>
 
 #include <Export/SaveFormat.h>
 #include <DOM/Presentation.h>
