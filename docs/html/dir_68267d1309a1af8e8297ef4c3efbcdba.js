@@ -38,9 +38,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "notes_slide.d", "notes__slide_8d.html", null ],
     [ "notes_slide_manager.cpp", "notes__slide__manager_8cpp.html", null ],
     [ "notes_slide_manager.d", "notes__slide__manager_8d.html", null ],
-    [ "presentation.cpp", "presentation_8cpp.html", [
-      [ "AsposePhpException", "class_aspose_php_1_1_aspose_php_exception.html", null ]
-    ] ],
+    [ "presentation.cpp", "presentation_8cpp.html", null ],
     [ "presentation.d", "presentation_8d.html", null ],
     [ "presentation_factory.cpp", "presentation__factory_8cpp.html", null ],
     [ "presentation_factory.d", "presentation__factory_8d.html", null ],

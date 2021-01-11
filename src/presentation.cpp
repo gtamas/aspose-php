@@ -32,6 +32,17 @@ namespace AsposePhp {
 
     }
 
+    /**
+     * @brief Loads license file
+     * 
+     * @param params Has one param, the path
+     * 
+     * @throw System::ArgumentException path is invalid
+     * @throw System::IO::FileNotFoundException File does not exist
+     * @throw System::UnauthorizedAccessException Has no right access file
+     * @throw System::Xml::XmlException File contains invalid XML
+     * 
+     */
     void Presentation::loadLicense(Php::Parameters &params) {
           std::string licensePath = params[1].stringValue();
           
@@ -55,6 +66,9 @@ namespace AsposePhp {
           catch(System::Xml::XmlException &e) {
               throw Php::Exception(e.what());
           }
+          catch(System::InvalidOperationException &e) {
+              throw Php::Exception(e.what());
+          }
           catch(...) {
               throw Php::Exception("Unknown error. Unable to loead license file..");
           }
@@ -65,6 +79,10 @@ namespace AsposePhp {
      * @brief Loads a presentation file.
      * 
      * @param params Path to presentation to read.
+     * 
+     * @throw System::ArgumentException path is invalid
+     * @throw System::IO::FileNotFoundException File does not exist
+     * @throw System::UnauthorizedAccessException Has no right access file
      * @return Php::Value 
      */
     Php::Value Presentation::load(Php::Parameters &params) {
@@ -79,7 +97,7 @@ namespace AsposePhp {
             _slides = _pres->get_Slides();
 
             SharedPtr<PresentationFactory> pFactory = PresentationFactory::get_Instance();
-            _slideText =  pFactory->GetPresentationText(templatePath, TextExtractionArrangingMode::Arranged)->get_SlidesText();
+            _slideText =  pFactory->GetPresentationText(templatePath, TextExtractionArrangingMode::Unarranged)->get_SlidesText();
         }
         catch(System::ArgumentException &e) {
             throw Php::Exception(e.what());
@@ -101,6 +119,9 @@ namespace AsposePhp {
      * @brief Writes the presentaton to disk.
      * 
      * @param params Output path. File must not exist.
+     * 
+     * @throw System::IO::IOException cannot access path
+     * @throw System::UnauthorizedAccessException Has no right access file
      */
     void Presentation::save(Php::Parameters &params) {
         String outfile = String(params[0].stringValue());
@@ -138,6 +159,9 @@ namespace AsposePhp {
      * @brief Clones the slide with given index.
      * 
      * @param params 0 based index of the slide to be cloned
+     * 
+     * @throw System::ArgumentOutOfRangeException slide index does not exist
+     * @throw Aspose::Slides::PptxEditException PPT modification failed.
      */
     void Presentation::cloneSlide(Php::Parameters &params) {
         int slideNo = params[0].numericValue();
@@ -167,19 +191,22 @@ namespace AsposePhp {
      * - layout
      * - notes
      * - all
+     * 
+     * @throw System::ArgumentException path is invalid
+     * @throw System::IO::FileNotFoundException File does not exist
+     * @throw System::UnauthorizedAccessException Has no right access file
      * @return Php::Value 
      */
      Php::Value Presentation::getPresentationText(Php::Parameters &params) {
         std::string path = params[0].stringValue();
         std::string type = params[1].stringValue();
-        bool arranged = params[2].boolValue();
+        bool arranged = false;
 
         String templatePath = String(path);
 
         try {
             SharedPtr<PresentationFactory> pFactory = PresentationFactory::get_Instance();
-            ArrayPtr<SharedPtr<ISlideText>> text =  pFactory->GetPresentationText(templatePath, arranged ? 
-            TextExtractionArrangingMode::Arranged : TextExtractionArrangingMode::Unarranged)->get_SlidesText();
+            ArrayPtr<SharedPtr<ISlideText>> text =  pFactory->GetPresentationText(templatePath, TextExtractionArrangingMode::Unarranged)->get_SlidesText();
 
             string texts = "";
             
@@ -266,6 +293,8 @@ namespace AsposePhp {
      * @brief Returns a specific slide by index.
      * 
      * @param params The 0 based index of the slide.
+     * 
+     * @throw System::ArgumentOutOfRangeException index does not exist.
      * @return Php::Value 
      */
     Php::Value Presentation::getSlide(Php::Parameters &params) {

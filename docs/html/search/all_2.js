@@ -25,6 +25,5 @@ var searchData=
   ['asposeobjectwrapper_3c_20istringordoublechartvalue_20_3e_26',['AsposeObjectWrapper&lt; IStringOrDoubleChartValue &gt;',['../class_aspose_php_1_1_aspose_object_wrapper.html',1,'AsposePhp']]],
   ['asposeobjectwrapper_3c_20itable_20_3e_27',['AsposeObjectWrapper&lt; ITable &gt;',['../class_aspose_php_1_1_aspose_object_wrapper.html',1,'AsposePhp']]],
   ['asposephp_28',['AsposePhp',['../namespace_aspose_php.html',1,'']]],
-  ['asposephpexception_29',['AsposePhpException',['../class_aspose_php_1_1_aspose_php_exception.html',1,'AsposePhp']]],
-  ['asposeutil_30',['AsposeUtil',['../class_aspose_php_1_1_aspose_util.html',1,'AsposePhp::AsposeUtil'],['../class_aspose_php_1_1_aspose_util.html#a53d25cbfb95c9d55052fa2a889ac43c6',1,'AsposePhp::AsposeUtil::AsposeUtil()']]]
+  ['asposeutil_29',['AsposeUtil',['../class_aspose_php_1_1_aspose_util.html',1,'AsposePhp::AsposeUtil'],['../class_aspose_php_1_1_aspose_util.html#a53d25cbfb95c9d55052fa2a889ac43c6',1,'AsposePhp::AsposeUtil::AsposeUtil()']]]
 ];

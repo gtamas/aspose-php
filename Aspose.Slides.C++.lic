@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <License>
   <Data>
-    <LicensedTo>Tamas Geschitz</LicensedTo>
-    <EmailTo>tamas@dashboardvision.com</EmailTo>
+    <LicensedTo>DBV</LicensedTo>
+    <EmailTo>tamas.geschitz@dashboardvision.com</EmailTo>
     <LicenseType>Developer Small Business</LicenseType>
     <LicenseNote>One Developer And One Deployment Location</LicenseNote>
-    <OrderID>201210145934</OrderID>
-    <UserID>864532</UserID>
+    <OrderID>210111135108</OrderID>
+    <UserID>865859</UserID>
     <OEM>This is not a redistributable license</OEM>
     <Products>
       <Product>Aspose.Slides for C++</Product>
     </Products>
     <EditionType>Professional</EditionType>
-    <SerialNumber>fedcdfdd-a8c6-4ef1-84b0-59f77c3eec09</SerialNumber>
-    <SubscriptionExpiry>20211210</SubscriptionExpiry>
-    <LicenseExpiry>20210110</LicenseExpiry>
-    <ExpiryNote>This is a temporary license for non-commercial use only and it will expire on 2021-01-10</ExpiryNote>
+    <SerialNumber>32c81410-49c0-4910-becc-29dfe2e0ff9f</SerialNumber>
+    <SubscriptionExpiry>20220111</SubscriptionExpiry>
+    <LicenseExpiry>20210211</LicenseExpiry>
+    <ExpiryNote>This is a temporary license for non-commercial use only and it will expire on 2021-02-11</ExpiryNote>
     <LicenseVersion>3.0</LicenseVersion>
     <LicenseInstructions>https://purchase.aspose.com/policies/use-license</LicenseInstructions>
   </Data>
-  <Signature>I/Y4yGo+cNSRBGMI/3SYqTFAjRvt0gQ9cC/G8LcNPvbRD+WhVdk503IcArlfj0xx26doxZPx6NI64u+husKCw+obz43an1+q/ori+cKq8LIORe1t0C7kqoay/wrMI/EsB8xghnANwdniHTMCm5Ny8fHdAUfqqqfViroFmadKtu8=</Signature>
+  <Signature>qhicCm1oCx1z71yy58RdPZ3T503Ggr8mxAVhS95inSv1MU2D4XWnEG+NmnDaER7PWnQP85iFkav9tBM0PNF+irZt0b5qMMbFLsjg6c9sbWLvT80Aw62zipCC5GV08km7v7Nu7BsgVEqk8GSmkUnbG1QcgdchqGyZDk6tUJU+hK8=</Signature>
 </License>

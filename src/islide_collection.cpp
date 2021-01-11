@@ -35,6 +35,8 @@ namespace AsposePhp {
      * @brief Returns a slide from the collection.
      * 
      * @param params A 0 based index of the slide
+     * 
+     * @throw System::ArgumentOutOfRangeException Index is invalid or does not exist
      * @return Php::Value 
      */
     Php::Value ISlideCollection::get_Item(Php::Parameters &params)

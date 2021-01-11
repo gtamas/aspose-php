@@ -1,7 +1,6 @@
 var namespace_aspose_php =
 [
     [ "AsposeObjectWrapper", "class_aspose_php_1_1_aspose_object_wrapper.html", "class_aspose_php_1_1_aspose_object_wrapper" ],
-    [ "AsposePhpException", "class_aspose_php_1_1_aspose_php_exception.html", null ],
     [ "AsposeUtil", "class_aspose_php_1_1_aspose_util.html", "class_aspose_php_1_1_aspose_util" ],
     [ "Chart", "class_aspose_php_1_1_chart.html", "class_aspose_php_1_1_chart" ],
     [ "ChartCategory", "class_aspose_php_1_1_chart_category.html", "class_aspose_php_1_1_chart_category" ],

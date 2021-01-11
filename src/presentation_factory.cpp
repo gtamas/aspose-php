@@ -25,6 +25,9 @@ namespace AsposePhp {
      * @brief Returns all text from the presentation (charts, tables not included!).
      * 
      * @param params Path to the peresentation file to read.
+     * 
+     * @throw System::ArgumentException path is invalid
+     * @throw System::IO::FileNotFoundException File or path doesn't exist
      * @return Php::Value 
      */
     Php::Value PresentationFactory::GetPresentationText(Php::Parameters &params)

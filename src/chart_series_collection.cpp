@@ -14,6 +14,7 @@ namespace AsposePhp {
     /**
      * @brief Returns the series collection from chart data. 
      * 
+     * @throw System::ArgumentOutOfRangeException Index is invalid or does not exist
      * @return Php::Value 
      */
     Php::Value ChartSeriesCollection::idx_get(Php::Parameters &params) {

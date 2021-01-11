@@ -229,7 +229,14 @@ Public Member Functions</h2></td></tr>
 <p>Clones the slide with given index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">params</td><td>0 based index of the slide to be cloned </td></tr>
+    <tr><td class="paramname">params</td><td>0 based index of the slide to be cloned</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">System::ArgumentOutOfRangeException</td><td>slide index does not exist </td></tr>
+    <tr><td class="paramname">Aspose::Slides::PptxEditException</td><td>PPT modification failed. </td></tr>
   </table>
   </dd>
 </dl>
@@ -279,9 +286,17 @@ Public Member Functions</h2></td></tr>
 <li>master</li>
 <li>layout</li>
 <li>notes</li>
-<li>all </li>
+<li>all</li>
 </ul>
 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">System::ArgumentException</td><td>path is invalid </td></tr>
+    <tr><td class="paramname">System::IO::FileNotFoundException</td><td>File does not exist </td></tr>
+    <tr><td class="paramname">System::UnauthorizedAccessException</td><td>Has no right access file </td></tr>
   </table>
   </dd>
 </dl>
@@ -308,7 +323,13 @@ Public Member Functions</h2></td></tr>
 <p>Returns a specific slide by index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">params</td><td>The 0 based index of the slide. </td></tr>
+    <tr><td class="paramname">params</td><td>The 0 based index of the slide.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">System::ArgumentOutOfRangeException</td><td>index does not exist. </td></tr>
   </table>
   </dd>
 </dl>
@@ -372,7 +393,15 @@ Public Member Functions</h2></td></tr>
 <p>Loads a presentation file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">params</td><td>Path to presentation to read. </td></tr>
+    <tr><td class="paramname">params</td><td>Path to presentation to read.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">System::ArgumentException</td><td>path is invalid </td></tr>
+    <tr><td class="paramname">System::IO::FileNotFoundException</td><td>File does not exist </td></tr>
+    <tr><td class="paramname">System::UnauthorizedAccessException</td><td>Has no right access file </td></tr>
   </table>
   </dd>
 </dl>
@@ -399,7 +428,14 @@ Public Member Functions</h2></td></tr>
 <p>Writes the presentaton to disk. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">params</td><td>Output path. File must not exist. </td></tr>
+    <tr><td class="paramname">params</td><td>Output path. File must not exist.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">System::IO::IOException</td><td>cannot access path </td></tr>
+    <tr><td class="paramname">System::UnauthorizedAccessException</td><td>Has no right access file </td></tr>
   </table>
   </dd>
 </dl>

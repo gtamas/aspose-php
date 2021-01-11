@@ -98,8 +98,5 @@ var hierarchy =
     ] ],
     [ "AsposePhp::Collection< IChartSeriesCollection >", "class_aspose_php_1_1_collection.html", [
       [ "AsposePhp::ChartSeriesCollection", "class_aspose_php_1_1_chart_series_collection.html", null ]
-    ] ],
-    [ "exception", null, [
-      [ "AsposePhp::AsposePhpException", "class_aspose_php_1_1_aspose_php_exception.html", null ]
     ] ]
 ];
