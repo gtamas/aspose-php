@@ -1,0 +1,16 @@
+{
+  "name": "generator-aspose",
+  "version": "0.1.0",
+  "description": "",
+  "files": [
+    "generators"
+  ],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "dependencies": {
+    "clipboardy": "^2.3.0",
+    "lodash": "^4.17.20",
+    "yeoman-generator": "^1.0.0"
+  }
+}

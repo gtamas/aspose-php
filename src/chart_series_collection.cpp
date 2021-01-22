@@ -36,4 +36,17 @@ namespace AsposePhp {
         return Collection::get_Count();
     }
 
+
+    /**
+     * @brief Removes the element at the given index
+     * 
+     * @return Php::Value 
+     */
+    void ChartSeriesCollection::RemoveAt(Php::Parameters &params)
+    {
+        int32_t index = params[0].numericValue();
+        _asposeObj->RemoveAt(index);
+    }
+
+
 }

@@ -1,15 +1,12 @@
 var searchData=
 [
-  ['presentation_151',['Presentation',['../class_aspose_php_1_1_presentation.html',1,'AsposePhp::Presentation'],['../class_aspose_php_1_1_presentation.html#a85b8d5da4a9a581e9969d5703eaaca44',1,'AsposePhp::Presentation::Presentation()']]],
-  ['presentation_2ecpp_152',['presentation.cpp',['../presentation_8cpp.html',1,'']]],
-  ['presentation_2ed_153',['presentation.d',['../presentation_8d.html',1,'']]],
-  ['presentation_2eh_154',['presentation.h',['../presentation_8h.html',1,'']]],
-  ['presentation_5ffactory_2ecpp_155',['presentation_factory.cpp',['../presentation__factory_8cpp.html',1,'']]],
-  ['presentation_5ffactory_2ed_156',['presentation_factory.d',['../presentation__factory_8d.html',1,'']]],
-  ['presentation_5ffactory_2eh_157',['presentation_factory.h',['../presentation__factory_8h.html',1,'']]],
-  ['presentation_5ftext_2ecpp_158',['presentation_text.cpp',['../presentation__text_8cpp.html',1,'']]],
-  ['presentation_5ftext_2ed_159',['presentation_text.d',['../presentation__text_8d.html',1,'']]],
-  ['presentation_5ftext_2eh_160',['presentation_text.h',['../presentation__text_8h.html',1,'']]],
-  ['presentationfactory_161',['PresentationFactory',['../class_aspose_php_1_1_presentation_factory.html',1,'AsposePhp::PresentationFactory'],['../class_aspose_php_1_1_presentation_factory.html#a439794b24f744aac7d2c31f0522f5a81',1,'AsposePhp::PresentationFactory::PresentationFactory()']]],
-  ['presentationtext_162',['PresentationText',['../class_aspose_php_1_1_presentation_text.html',1,'AsposePhp::PresentationText'],['../class_aspose_php_1_1_presentation_text.html#a3ea90272d4f7fdee6513478d5f3742d7',1,'AsposePhp::PresentationText::PresentationText()']]]
+  ['main_2ecpp_244',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['main_2ed_245',['main.d',['../main_8d.html',1,'']]],
+  ['marker_246',['Marker',['../class_aspose_php_1_1_marker.html',1,'AsposePhp::Marker'],['../class_aspose_php_1_1_marker.html#a478a984f152468e88a9d4d7087ae2c3d',1,'AsposePhp::Marker::Marker()']]],
+  ['marker_2ecpp_247',['marker.cpp',['../marker_8cpp.html',1,'']]],
+  ['marker_2ed_248',['marker.d',['../marker_8d.html',1,'']]],
+  ['marker_2eh_249',['marker.h',['../marker_8h.html',1,'']]],
+  ['master_5fslide_2eh_250',['master_slide.h',['../master__slide_8h.html',1,'']]],
+  ['masterslide_251',['MasterSlide',['../class_aspose_php_1_1_master_slide.html',1,'AsposePhp::MasterSlide'],['../class_aspose_php_1_1_master_slide.html#a773571186539dab53ebd61cca7b2e6ba',1,'AsposePhp::MasterSlide::MasterSlide()']]],
+  ['mergecells_252',['MergeCells',['../class_aspose_php_1_1_table.html#a77c83a4adab55486c2b32e45b43546f6',1,'AsposePhp::Table']]]
 ];

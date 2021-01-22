@@ -2,6 +2,7 @@
 #include "../include/presentation.h"
 #include "../include/slide.h"
 #include "../include/islide_collection.h"
+#include "../include/slide_size.h"
 #include <phpcpp.h>
 #include <iostream>
 #include <Util/License.h>
@@ -200,7 +201,6 @@ namespace AsposePhp {
      Php::Value Presentation::getPresentationText(Php::Parameters &params) {
         std::string path = params[0].stringValue();
         std::string type = params[1].stringValue();
-        bool arranged = false;
 
         String templatePath = String(path);
 
@@ -255,6 +255,17 @@ namespace AsposePhp {
     Php::Value Presentation::getSlides() {
         ISlideCollection* coll = new ISlideCollection(_slides);
         return Php::Object("AsposePhp\\Slides\\ISlideCollection", coll);
+    }
+
+
+    /**
+     * @brief Returns slide size object
+     * 
+     * @return Php::Value 
+     */
+    Php::Value Presentation::get_SlideSize() {
+        SlideSize * size = new SlideSize(_pres->get_SlideSize());
+        return Php::Object("AsposePhp\\Slides\\SlideSize", size);
     }
 
     Php::Value Presentation::getSlides2() {

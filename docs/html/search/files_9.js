@@ -1,21 +1,9 @@
 var searchData=
 [
-  ['shape_2ecpp_338',['shape.cpp',['../shape_8cpp.html',1,'']]],
-  ['shape_2ed_339',['shape.d',['../shape_8d.html',1,'']]],
-  ['shape_2eh_340',['shape.h',['../shape_8h.html',1,'']]],
-  ['shape_5fcollection_2ecpp_341',['shape_collection.cpp',['../shape__collection_8cpp.html',1,'']]],
-  ['shape_5fcollection_2ed_342',['shape_collection.d',['../shape__collection_8d.html',1,'']]],
-  ['shape_5fcollection_2eh_343',['shape_collection.h',['../shape__collection_8h.html',1,'']]],
-  ['slide_2ecpp_344',['slide.cpp',['../slide_8cpp.html',1,'']]],
-  ['slide_2ed_345',['slide.d',['../slide_8d.html',1,'']]],
-  ['slide_2eh_346',['slide.h',['../slide_8h.html',1,'']]],
-  ['slide_5ftext_2ecpp_347',['slide_text.cpp',['../slide__text_8cpp.html',1,'']]],
-  ['slide_5ftext_2ed_348',['slide_text.d',['../slide__text_8d.html',1,'']]],
-  ['slide_5ftext_2eh_349',['slide_text.h',['../slide__text_8h.html',1,'']]],
-  ['string_5fchart_5fvalue_2ecpp_350',['string_chart_value.cpp',['../string__chart__value_8cpp.html',1,'']]],
-  ['string_5fchart_5fvalue_2ed_351',['string_chart_value.d',['../string__chart__value_8d.html',1,'']]],
-  ['string_5fchart_5fvalue_2eh_352',['string_chart_value.h',['../string__chart__value_8h.html',1,'']]],
-  ['string_5for_5fdouble_5fchart_5fvalue_2ecpp_353',['string_or_double_chart_value.cpp',['../string__or__double__chart__value_8cpp.html',1,'']]],
-  ['string_5for_5fdouble_5fchart_5fvalue_2ed_354',['string_or_double_chart_value.d',['../string__or__double__chart__value_8d.html',1,'']]],
-  ['string_5for_5fdouble_5fchart_5fvalue_2eh_355',['string_or_double_chart_value.h',['../string__or__double__chart__value_8h.html',1,'']]]
+  ['notes_5fslide_2ecpp_573',['notes_slide.cpp',['../notes__slide_8cpp.html',1,'']]],
+  ['notes_5fslide_2ed_574',['notes_slide.d',['../notes__slide_8d.html',1,'']]],
+  ['notes_5fslide_2eh_575',['notes_slide.h',['../notes__slide_8h.html',1,'']]],
+  ['notes_5fslide_5fmanager_2ecpp_576',['notes_slide_manager.cpp',['../notes__slide__manager_8cpp.html',1,'']]],
+  ['notes_5fslide_5fmanager_2ed_577',['notes_slide_manager.d',['../notes__slide__manager_8d.html',1,'']]],
+  ['notes_5fslide_5fmanager_2eh_578',['notes_slide_manager.h',['../notes__slide__manager_8h.html',1,'']]]
 ];

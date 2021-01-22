@@ -38,7 +38,31 @@
 #include "../include/data_label.h"
 #include "../include/double_chart_value.h"
 #include "../include/string_or_double_chart_value.h"
+#include "../include/slide_size.h"
+#include "../include/sizef.h"
+#include "../include/bitmap.h"
+#include "../include/layout_slide.h"
+#include "../include/master_slide.h"
+#include "../include/slide_util.h"
 #include "../include/aspose_php.h"
+#include "../include/paragraph-collection.h"
+#include "../include/paragraph.h"
+#include "../include/portion-collection.h"
+#include "../include/portion.h"
+#include "../include/auto-shape.h"
+#include "../include/marker.h"
+#include "../include/format.h"
+#include "../include/fill-format.h"
+#include "../include/color-format.h"
+#include "../include/portion-format.h"
+#include "../include/picture-frame.h"
+#include "../include/connector.h"
+#include "../include/row-collection.h"
+#include "../include/row.h"
+#include "../include/cell.h"
+#include "../include/cell-format.h"
+#include "../include/column-collection.h"
+#include "../include/column.h"
 
 using namespace AsposePhp;
 
@@ -85,6 +109,7 @@ extern "C" {
         pres.method<&AsposePhp::Presentation::cloneSlide>("cloneSlide", Php::Public, { 
             Php::ByVal("outfile", Php::Type::Numeric, true) 
         });
+        pres.method<&AsposePhp::Presentation::get_SlideSize>("get_SlideSize", Php::Public, {});
 
         // SlideCollection
 
@@ -142,12 +167,14 @@ extern "C" {
         textFrame.method<&AsposePhp::TextFrame::set_Text>("set_Text", Php::Public, {
              Php::ByVal("text", Php::Type::String, true),
         });
+        textFrame.method<&AsposePhp::TextFrame::get_Paragraphs>("get_Paragraphs", Php::Public, {});
         
         // ShapeCollection
 
         Php::Class<AsposePhp::ShapeCollection> shapeCollection("AsposePhp\\Slides\\ShapeCollection", 0);
         shapeCollection.method<&AsposePhp::ShapeCollection::__construct>("__construct", Php::Public, {});
         shapeCollection.method<&AsposePhp::ShapeCollection::ToArray>("ToArray", Php::Public, {});
+        shapeCollection.method<&AsposePhp::ShapeCollection::Remove>("Remove", Php::Public, {});
         
          // Shape
 
@@ -156,7 +183,16 @@ extern "C" {
         shape.method<&AsposePhp::Shape::isTable>("isTable", Php::Public, {});
         shape.method<&AsposePhp::Shape::isChart>("isChart", Php::Public, {});
         shape.method<&AsposePhp::Shape::isGroupShape>("isGroupShape", Php::Public, {});
+        shape.method<&AsposePhp::Shape::isAutoShape>("isAutoShape", Php::Public, {});
+        shape.method<&AsposePhp::Shape::isPictureFrame>("isPictureFrame", Php::Public, {});
+        shape.method<&AsposePhp::Shape::isConnector>("isConnector", Php::Public, {});
         shape.method<&AsposePhp::Shape::get_AlternativeText>("get_AlternativeText", Php::Public, {});
+        shape.method<&AsposePhp::Shape::get_Name>("get_Name", Php::Public, {});
+        shape.method<&AsposePhp::Shape::get_UniqueId>("get_UniqueId", Php::Public, {});
+        shape.method<&AsposePhp::Shape::get_IsGrouped>("get_IsGrouped", Php::Public, {});
+        shape.method<&AsposePhp::Shape::get_ParentGroup>("get_ParentGroup", Php::Public, {});
+        shape.method<&AsposePhp::Shape::get_Height>("get_Height", Php::Public, {});
+        shape.method<&AsposePhp::Shape::get_Width>("get_Width", Php::Public, {});
         
         // GroupShape
 
@@ -166,7 +202,16 @@ extern "C" {
         groupShape.method<&AsposePhp::GroupShape::get_AlternativeText>("get_AlternativeText", Php::Public, {});
         groupShape.method<&AsposePhp::GroupShape::isGroupShape>("isGroupShape", Php::Public, {});
         groupShape.method<&AsposePhp::GroupShape::isChart>("isChart", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::isAutoShape>("isAutoShape", Php::Public, {});
         groupShape.method<&AsposePhp::GroupShape::isTable>("isTable", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::isConnector>("isConnector", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::isPictureFrame>("isPictureFrame", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::get_UniqueId>("get_UniqueId", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::get_Name>("get_Name", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::get_IsGrouped>("get_IsGrouped", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::get_ParentGroup>("get_ParentGroup", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::get_Height>("get_Height", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::get_Width>("get_Width", Php::Public, {});
         
         // Chart
 
@@ -175,19 +220,43 @@ extern "C" {
         chart.method<&AsposePhp::Chart::get_ChartData>("get_ChartData", Php::Public, {});
         chart.method<&AsposePhp::Chart::get_AlternativeText>("get_AlternativeText", Php::Public, {});
         chart.method<&AsposePhp::Chart::isGroupShape>("isGroupShape", Php::Public, {});
+        chart.method<&AsposePhp::Chart::isAutoShape>("isAutoShape", Php::Public, {});
         chart.method<&AsposePhp::Chart::isChart>("isChart", Php::Public, {});
         chart.method<&AsposePhp::Chart::isTable>("isTable", Php::Public, {});
+        chart.method<&AsposePhp::Chart::isConnector>("isConnector", Php::Public, {});
+        chart.method<&AsposePhp::Chart::isPictureFrame>("isPictureFrame", Php::Public, {});
+        chart.method<&AsposePhp::Chart::get_UniqueId>("get_UniqueId", Php::Public, {});
+        chart.method<&AsposePhp::Chart::get_Name>("get_Name", Php::Public, {});
+        chart.method<&AsposePhp::Chart::get_Type>("get_Type", Php::Public, {});
+        chart.method<&AsposePhp::Chart::get_IsGrouped>("get_IsGrouped", Php::Public, {});
+        chart.method<&AsposePhp::Chart::get_ParentGroup>("get_ParentGroup", Php::Public, {});
+        chart.method<&AsposePhp::Chart::get_Height>("get_Height", Php::Public, {});
+        chart.method<&AsposePhp::Chart::get_Width>("get_Width", Php::Public, {});
 
          // Table
 
         Php::Class<AsposePhp::Table> table("AsposePhp\\Slides\\Table", 0);
         table.method<&AsposePhp::Table::__construct>("__construct", Php::Public, {});
-        table.method<&AsposePhp::Table::isGroupShape>("isGroupShape", Php::Public, {});
         table.method<&AsposePhp::Table::get_AlternativeText>("get_AlternativeText", Php::Public, {});
+        table.method<&AsposePhp::Table::isGroupShape>("isGroupShape", Php::Public, {});
         table.method<&AsposePhp::Table::isChart>("isChart", Php::Public, {});
         table.method<&AsposePhp::Table::isTable>("isTable", Php::Public, {});
-        //chart.method<&AsposePhp::Table::get_ChartData>("get_ChartData", Php::Public, {});
-
+        table.method<&AsposePhp::Table::isAutoShape>("isAutoShape", Php::Public, {});
+        table.method<&AsposePhp::Table::isPictureFrame>("isPictureFrame", Php::Public, {});
+        table.method<&AsposePhp::Table::isConnector>("isConnector", Php::Public, {});
+        table.method<&AsposePhp::Table::get_UniqueId>("get_UniqueId", Php::Public, {});
+        table.method<&AsposePhp::Table::get_Name>("get_Name", Php::Public, {});
+        table.method<&AsposePhp::Table::get_IsGrouped>("get_IsGrouped", Php::Public, {});
+        table.method<&AsposePhp::Table::get_ParentGroup>("get_ParentGroup", Php::Public, {});
+        table.method<&AsposePhp::Table::get_Height>("get_Height", Php::Public, {});
+        table.method<&AsposePhp::Table::get_Width>("get_Width", Php::Public, {});
+        table.method<&AsposePhp::Table::MergeCells>("MergeCells", Php::Public, {
+             Php::ByVal("cell1", "AsposePhp\\Slides\\Cell", true),
+             Php::ByVal("cell2", "AsposePhp\\Slides\\Cell", true),
+             Php::ByVal("allowSplitting", Php::Type::Bool, true) 
+        });
+        table.method<&AsposePhp::Table::get_Rows>("get_Rows", Php::Public, {});
+        table.method<&AsposePhp::Table::get_Columns>("get_Columns", Php::Public, {});
 
         // ChartData
 
@@ -205,6 +274,9 @@ extern "C" {
             Php::ByVal("index", Php::Type::Numeric, true) 
         });
         chartSeriesCol.method<&AsposePhp::ChartSeriesCollection::get_Count>("get_Count", Php::Public, {});
+        chartSeriesCol.method<&AsposePhp::ChartSeriesCollection::RemoveAt>("RemoveAt", Php::Public, {
+             Php::ByVal("index", Php::Type::Numeric, true)
+        });
     
        
         // ChartSeries
@@ -213,6 +285,9 @@ extern "C" {
         chartSeries.method<&AsposePhp::ChartSeries::__construct>("__construct", Php::Public, {});
         chartSeries.method<&AsposePhp::ChartSeries::get_Name>("get_Name", Php::Public, {});
         chartSeries.method<&AsposePhp::ChartSeries::get_DataPoints>("get_DataPoints", Php::Public, {});
+        chartSeries.method<&AsposePhp::ChartSeries::set_InvertIfNegative>("set_InvertIfNegative", Php::Public, {
+             Php::ByVal("value", Php::Type::Bool, true) 
+        });
     
 
        // ChartCategoryCollection
@@ -223,6 +298,9 @@ extern "C" {
             Php::ByVal("index", Php::Type::Numeric, true) 
         });
         chartCategoryCol.method<&AsposePhp::ChartCategoryCollection::get_Count>("get_Count", Php::Public, {});
+        chartCategoryCol.method<&AsposePhp::ChartCategoryCollection::RemoveAt>("RemoveAt", Php::Public, {
+             Php::ByVal("index", Php::Type::Numeric, true)
+        });
     
         // ChartCategory
 
@@ -236,6 +314,14 @@ extern "C" {
         Php::Class<AsposePhp::ChartDataCell> chartDataCell("AsposePhp\\Slides\\Charts\\ChartDataCell", 0);
         chartDataCell.method<&AsposePhp::ChartDataCell::__construct>("__construct", Php::Public, {});
         chartDataCell.method<&AsposePhp::ChartDataCell::get_Value>("get_Value", Php::Public, {});
+        chartDataCell.method<&AsposePhp::ChartDataCell::get_Row>("get_Row", Php::Public, {});
+        chartDataCell.method<&AsposePhp::ChartDataCell::set_CustomNumberFormat>("set_CustomNumberFormat", Php::Public, {
+              Php::ByVal("value", Php::Type::String, true),
+        });
+        chartDataCell.method<&AsposePhp::ChartDataCell::set_Value>("set_Value", Php::Public, {
+                Php::ByVal("value", Php::Type::String, true),
+                Php::ByVal("type", Php::Type::String, true)
+        });
     
         // StringChartValue
 
@@ -262,7 +348,7 @@ extern "C" {
         });
         chartDataPointCol.method<&AsposePhp::ChartDataPointCollection::get_Count>("get_Count", Php::Public, {});
     
-         // ChartDataPoint
+        // ChartDataPoint
 
         Php::Class<AsposePhp::ChartDataPoint> chartDataPoint("AsposePhp\\Slides\\Charts\\ChartDataPoint", 0);
         chartDataPoint.method<&AsposePhp::ChartDataPoint::__construct>("__construct", Php::Public, {});
@@ -270,6 +356,8 @@ extern "C" {
         chartDataPoint.method<&AsposePhp::ChartDataPoint::get_Value>("get_Value", Php::Public, {});
         chartDataPoint.method<&AsposePhp::ChartDataPoint::get_YValue>("get_YValue", Php::Public, {});
         chartDataPoint.method<&AsposePhp::ChartDataPoint::get_XValue>("get_XValue", Php::Public, {});
+        chartDataPoint.method<&AsposePhp::ChartDataPoint::get_Marker>("get_Marker", Php::Public, {});
+        chartDataPoint.method<&AsposePhp::ChartDataPoint::Remove>("Remove", Php::Public, {});
 
         // DataLabel
 
@@ -292,6 +380,19 @@ extern "C" {
         stringOrdoubleChartValue.method<&AsposePhp::StringOrDoubleChartValue::get_AsCell>("get_AsCell", Php::Public, {});
         //dataLabel.method<&AsposePhp::DataLabel::GetActualLabelText>("GetActualLabelText", Php::Public, {});
 
+        // SlideSize
+
+        Php::Class<AsposePhp::SlideSize> slideSize("AsposePhp\\Slides\\SlideSize", 0);
+        slideSize.method<&AsposePhp::SlideSize::__construct>("__construct", Php::Public, {});
+        slideSize.method<&AsposePhp::SlideSize::get_Size>("get_Size", Php::Public, {});
+
+         // SizeF
+
+        Php::Class<AsposePhp::SizeF> sizeF("AsposePhp\\Slides\\SizeF", 0);
+        sizeF.method<&AsposePhp::SizeF::__construct>("__construct", Php::Public, {});
+        sizeF.method<&AsposePhp::SizeF::get_Width>("get_Width", Php::Public, {});
+        sizeF.method<&AsposePhp::SizeF::get_Height>("get_Height", Php::Public, {});
+
         // AsposeUtil
 
         Php::Class<AsposeUtil> util("AsposePhp\\AsposeUtil");
@@ -302,6 +403,12 @@ extern "C" {
 
         Php::Class<AsposePhp::Slide> slide("AsposePhp\\Slides\\Slide");
 
+        slide.method<&AsposePhp::Slide::GetThumbnailAsByteArray>("GetThumbnailAsByteArray", { 
+            Php::ByVal("scaleX", Php::Type::Numeric, true),
+            Php::ByVal("scaleY", Php::Type::Numeric, true),
+            Php::ByVal("format", Php::Type::String, true)  
+        });
+        slide.method<&AsposePhp::Slide::get_LayoutSlide>("get_LayoutSlide", {});
         slide.method<&AsposePhp::Slide::get_Shapes>("get_Shapes", {});
         slide.method<&AsposePhp::Slide::getSlideNumber>("getSlideNumber", {});
         slide.method<&AsposePhp::Slide::getSlideText>("getSlideText", {});
@@ -310,6 +417,218 @@ extern "C" {
         slide.method<&AsposePhp::Slide::getNotesText>("getNotesText", {});
         slide.method<&AsposePhp::Slide::get_NotesSlideManager>("get_NotesSlideManager", {});
         
+        // Bitmap
+
+        Php::Class<AsposePhp::Bitmap> bitmap("AsposePhp\\Drawing\\Bitmap");
+
+        // LayoutSlide
+
+        Php::Class<AsposePhp::LayoutSlide> layoutSlide("AsposePhp\\Slides\\LayoutSlide");
+        layoutSlide.method<&AsposePhp::LayoutSlide::get_MasterSlide>("get_MasterSlide", {});
+
+        // MasterSlide
+
+        Php::Class<AsposePhp::MasterSlide> masterSlide("AsposePhp\\Slides\\MasterSlide");
+
+         // SlideUtil
+
+        Php::Class<AsposePhp::SlideUtil> slideUtil("AsposePhp\\Slides\\Util\\SlideUtil");
+        slideUtil.method<&AsposePhp::SlideUtil::GetAllTextBoxes>("GetAllTextBoxes", {
+             Php::ByVal("slide", Php::Type::Object, true) 
+        });
+
+
+        Php::Class<AsposePhp::ParagraphCollection> paragraphCollection("AsposePhp\\Slides\\ParagraphCollection");
+        paragraphCollection.method<&AsposePhp::ParagraphCollection::idx_get>("idx_get", Php::Public, { 
+                        Php::ByVal("index", Php::Type::Numeric, true) 
+                    });
+        paragraphCollection.method<&AsposePhp::ParagraphCollection::get_Count>("get_Count", Php::Public, {});
+
+        Php::Class<AsposePhp::Paragraph> paragraph("AsposePhp\\Slides\\Paragraph");
+        paragraph.method<&AsposePhp::Paragraph::get_Text>("get_Text", Php::Public, {});
+        paragraph.method<&AsposePhp::Paragraph::get_Portions>("get_Portions", Php::Public, {});
+
+        // PortionCollection
+
+        Php::Class<AsposePhp::PortionCollection> portionCollection("AsposePhp\\Slides\\PortionCollection");
+        portionCollection.method<&AsposePhp::PortionCollection::idx_get>("idx_get", Php::Public, { 
+                        Php::ByVal("index", Php::Type::Numeric, true) 
+                    });
+        portionCollection.method<&AsposePhp::PortionCollection::get_Count>("get_Count", Php::Public, {});
+
+        // Portion
+
+        Php::Class<AsposePhp::Portion> portion("AsposePhp\\Slides\\Portion");
+        portion.method<&AsposePhp::Portion::set_Text>("set_Text", Php::Public, {
+              Php::ByVal("value", Php::Type::String, true) 
+        });
+        portion.method<&AsposePhp::Portion::get_Text>("get_Text", Php::Public, {});
+
+        // AutoShape
+
+        Php::Class<AsposePhp::AutoShape> autoShape("AsposePhp\\Slides\\AutoShape");
+        autoShape.method<&AsposePhp::AutoShape::__construct>("__construct", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::isGroupShape>("isGroupShape", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::get_AlternativeText>("get_AlternativeText", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::isChart>("isChart", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::isTable>("isTable", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::isAutoShape>("isAutoShape", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::get_UniqueId>("get_UniqueId", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::get_Name>("get_Name", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::get_TextFrame>("get_TextFrame", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::get_IsGrouped>("get_IsGrouped", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::get_ParentGroup>("get_ParentGroup", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::get_Height>("get_Height", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::get_Width>("get_Width", Php::Public, {});
+
+        // Marker
+
+        Php::Class<AsposePhp::Marker> marker("AsposePhp\\Slides\\Charts\\Marker");
+        marker.method<&AsposePhp::Marker::get_Format>("get_Format", Php::Public, {});
+
+        // Format
+
+        Php::Class<AsposePhp::Format> format("AsposePhp\\Slides\\Charts\\Format");
+        format.method<&AsposePhp::Format::get_Fill>("get_Fill", Php::Public, {});
+
+        // FillFormat
+
+        Php::Class<AsposePhp::FillFormat> fillFormat("AsposePhp\\Slides\\Charts\\FillFormat");
+        fillFormat.method<&AsposePhp::FillFormat::set_FillType>("set_FillType", Php::Public, {
+            Php::ByVal("type", Php::Type::Numeric, true) 
+        });
+        fillFormat.method<&AsposePhp::FillFormat::get_SolidFillColor>("get_SolidFillColor", Php::Public, {});
+
+        // ColorFormat
+
+        Php::Class<AsposePhp::ColorFormat> colorFormat("AsposePhp\\Slides\\ColorFormat");
+        colorFormat.method<&AsposePhp::ColorFormat::set_Color>("set_Color", Php::Public, {});
+
+        // PortionFormat
+
+        Php::Class<AsposePhp::PortionFormat> portionFormat("AsposePhp\\Slides\\PortionFormat");
+        portionFormat.method<&AsposePhp::PortionFormat::get_FillFormat>("get_FillFormat", Php::Public, {});
+
+         // PictureFrame
+
+        Php::Class<AsposePhp::PictureFrame> pictureFrame("AsposePhp\\Slides\\PictureFrame");
+        pictureFrame.method<&AsposePhp::PictureFrame::__construct>("__construct", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::get_AlternativeText>("get_AlternativeText", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::isGroupShape>("isGroupShape", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::isChart>("isChart", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::isTable>("isTable", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::isAutoShape>("isAutoShape", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::isConnector>("isConnector", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::isPictureFrame>("isPictureFrame", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::get_UniqueId>("get_UniqueId", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::get_Name>("get_Name", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::get_IsGrouped>("get_IsGrouped", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::get_ParentGroup>("get_ParentGroup", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::get_Height>("get_Height", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::get_Width>("get_Width", Php::Public, {});
+
+
+        // Connector
+
+        Php::Class<AsposePhp::Connector> connector("AsposePhp\\Slides\\Connector");
+        connector.method<&AsposePhp::Connector::__construct>("__construct", Php::Public, {});
+        connector.method<&AsposePhp::Connector::get_AlternativeText>("get_AlternativeText", Php::Public, {});
+        connector.method<&AsposePhp::Connector::isGroupShape>("isGroupShape", Php::Public, {});
+        connector.method<&AsposePhp::Connector::isChart>("isChart", Php::Public, {});
+        connector.method<&AsposePhp::Connector::isTable>("isTable", Php::Public, {});
+        connector.method<&AsposePhp::Connector::isAutoShape>("isAutoShape", Php::Public, {});
+        connector.method<&AsposePhp::Connector::isConnector>("isConnector", Php::Public, {});
+        connector.method<&AsposePhp::Connector::isPictureFrame>("isPictureFrame", Php::Public, {});
+        connector.method<&AsposePhp::Connector::get_UniqueId>("get_UniqueId", Php::Public, {});
+        connector.method<&AsposePhp::Connector::get_Name>("get_Name", Php::Public, {});
+        connector.method<&AsposePhp::Connector::get_IsGrouped>("get_IsGrouped", Php::Public, {});
+        connector.method<&AsposePhp::Connector::get_ParentGroup>("get_ParentGroup", Php::Public, {});
+        connector.method<&AsposePhp::Connector::get_Height>("get_Height", Php::Public, {});
+        connector.method<&AsposePhp::Connector::get_Width>("get_Width", Php::Public, {});
+        
+        // RowCollection
+
+        Php::Class<AsposePhp::RowCollection> rowCollection("AsposePhp\\Slides\\RowCollection");
+        rowCollection.method<&AsposePhp::RowCollection::idx_get>("idx_get", Php::Public, { 
+                        Php::ByVal("index", Php::Type::Numeric, true) 
+                    });
+        rowCollection.method<&AsposePhp::RowCollection::get_Count>("get_Count", Php::Public, {});
+        rowCollection.method<&AsposePhp::RowCollection::RemoveAt>("RemoveAt", Php::Public, {
+                    Php::ByVal("index", Php::Type::Numeric, true),
+                    Php::ByVal("withAttachedRows", Php::Type::Bool, true)  
+        });
+
+
+        // Row
+
+        Php::Class<AsposePhp::Row> row("AsposePhp\\Slides\\Row");
+        row.method<&AsposePhp::Row::idx_get>("idx_get", Php::Public, { 
+                        Php::ByVal("index", Php::Type::Numeric, true) 
+                    });
+        row.method<&AsposePhp::Row::get_Count>("get_Count", Php::Public, {});
+        row.method<&AsposePhp::Row::set_MinimalHeight>("set_MinimalHeight", Php::Public, {
+             Php::ByVal("value", Php::Type::Numeric, true),
+        });
+
+        // Cell
+
+        Php::Class<AsposePhp::Cell> cell("AsposePhp\\Slides\\Cell");
+        cell.method<&AsposePhp::Cell::get_TextFrame>("get_TextFrame", Php::Public, {});
+        cell.method<&AsposePhp::Cell::get_CellFormat>("get_CellFormat", Php::Public, {});
+        cell.method<&AsposePhp::Cell::get_RowSpan>("get_RowSpan", Php::Public, {});
+        cell.method<&AsposePhp::Cell::get_ColSpan>("get_ColSpan", Php::Public, {});
+        cell.method<&AsposePhp::Cell::SplitByRowSpan>("SplitByRowSpan", Php::Public, {
+             Php::ByVal("index", Php::Type::Numeric, true) 
+        });
+        cell.method<&AsposePhp::Cell::SplitByColSpan>("SplitByColSpan", Php::Public, {
+             Php::ByVal("index", Php::Type::Numeric, true) 
+        });
+        cell.method<&AsposePhp::Cell::get_IsMergedCell>("get_IsMergedCell", Php::Public, {});
+
+        // CellFormat
+
+        Php::Class<AsposePhp::CellFormat> cellFormat("AsposePhp\\Slides\\CellFormat");
+        cellFormat.method<&AsposePhp::CellFormat::get_FillFormat>("get_FillFormat", Php::Public, {});
+        
+        // ColumnCollection
+
+        Php::Class<AsposePhp::ColumnCollection> columnCollection("AsposePhp\\Slides\\ColumnCollection");
+        columnCollection.method<&AsposePhp::ColumnCollection::idx_get>("idx_get", Php::Public, { 
+                        Php::ByVal("index", Php::Type::Numeric, true) 
+                    });
+        columnCollection.method<&AsposePhp::ColumnCollection::get_Count>("get_Count", Php::Public, {});
+        columnCollection.method<&AsposePhp::ColumnCollection::RemoveAt>("RemoveAt", Php::Public, {
+                    Php::ByVal("index", Php::Type::Numeric, true),
+                    Php::ByVal("withAttachedRows", Php::Type::Bool, true)  
+        });
+
+        // Column
+        Php::Class<AsposePhp::Column> column("AsposePhp\\Slides\\Column");
+
+        extension.add(std::move(column));
+        extension.add(std::move(columnCollection));
+        extension.add(std::move(cellFormat));
+        extension.add(std::move(cell));
+        extension.add(std::move(row));
+        extension.add(std::move(rowCollection));
+        extension.add(std::move(connector));
+        extension.add(std::move(pictureFrame));
+        extension.add(std::move(portionFormat));
+        extension.add(std::move(colorFormat)); 
+        extension.add(std::move(fillFormat));
+        extension.add(std::move(format));
+        extension.add(std::move(marker));
+        extension.add(std::move(autoShape));
+        extension.add(std::move(portion));
+        extension.add(std::move(portionCollection));
+        extension.add(std::move(paragraph));
+        extension.add(std::move(paragraphCollection));
+        extension.add(std::move(slideUtil));
+        extension.add(std::move(masterSlide));
+        extension.add(std::move(layoutSlide));
+        extension.add(std::move(bitmap));
+        extension.add(std::move(sizeF));
+        extension.add(std::move(slideSize));
         extension.add(std::move(stringOrdoubleChartValue));
         extension.add(std::move(doubleChartValue));
         extension.add(std::move(dataLabel));

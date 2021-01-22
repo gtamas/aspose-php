@@ -42,8 +42,8 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
-        [ "Functions", "functions_func.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ]
       ] ]
     ] ],
@@ -62,7 +62,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__shape_8cpp.html"
+"class_aspose_php_1_1_data_label.html#aba8da7e5f004fb441acc6da3d8f8ff75",
+"column_8h_source.html",
+"string__or__double__chart__value_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -19,6 +19,7 @@ namespace AsposePhp {
             void __construct(Php::Parameters &params);
             
             Php::Value ToArray();
+            void Remove(Php::Parameters &params);
 
     };
 

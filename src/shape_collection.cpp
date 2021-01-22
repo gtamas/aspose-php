@@ -5,14 +5,14 @@
 #include "../include/group_shape.h"
 #include "../include/table.h"
 #include <phpcpp.h>
-#include <variant>
 
 using namespace Aspose::Slides;
 using namespace Aspose::Slides::Charts;
 using namespace System;
 using namespace std;
 
-namespace AsposePhp {
+namespace AsposePhp
+{
 
     /**
      * @brief PHP Constructor
@@ -21,7 +21,18 @@ namespace AsposePhp {
      */
     void ShapeCollection::__construct(Php::Parameters &params)
     {
+    }
 
+    /**
+     * @brief Removes the given shape from collection
+     * 
+     * @param params 
+     */
+    void ShapeCollection::Remove(Php::Parameters &params)
+    {
+        Php::Value object = params[0]; 
+        Shape * shape = (Shape *) object.implementation();
+        _shapes->Remove(shape->getAsposeClass());
     }
 
     /**
@@ -36,36 +47,37 @@ namespace AsposePhp {
         vector<Php::Object> arr;
         int32_t len = shapes->get_Length();
 
-        for(int i = 0; i < len; i++) {
+        for (int i = 0; i < len; i++)
+        {
             SharedPtr<IShape> shape = shapes->idx_get(i);
             string shapeName = "Shape";
             SharedPtr<Aspose::Slides::Charts::Chart> chart = Shape::convert<Aspose::Slides::Charts::Chart>(shape);
-            if(chart != nullptr) {
-                Chart * phpValue =  new Chart(chart);
+            if (chart != nullptr)
+            {
+                Chart *phpValue = new Chart(chart);
                 arr.push_back(Php::Object("AsposePhp\\Slides\\Charts\\Chart", phpValue));
                 continue;
-            } 
-             SharedPtr<Aspose::Slides::GroupShape> gs = Shape::convert<Aspose::Slides::GroupShape>(shape);
-             if(gs != nullptr) {
-                GroupShape * phpValue =  new GroupShape(gs);
+            }
+            SharedPtr<Aspose::Slides::GroupShape> gs = Shape::convert<Aspose::Slides::GroupShape>(shape);
+            if (gs != nullptr)
+            {
+                GroupShape *phpValue = new GroupShape(gs);
                 arr.push_back(Php::Object("AsposePhp\\Slides\\GroupShape", phpValue));
                 continue;
-            } 
+            }
             SharedPtr<Aspose::Slides::Table> table = Shape::convert<Aspose::Slides::Table>(shape);
-             if(table != nullptr) {
-                Table * phpValue =  new Table(table);
+            if (table != nullptr)
+            {
+                Table *phpValue = new Table(table);
                 arr.push_back(Php::Object("AsposePhp\\Slides\\Table", phpValue));
                 continue;
-            } 
-            
-            Shape * phpValue = new Shape(shape);
-            arr.push_back(Php::Object("AsposePhp\\Slides\\Shape", phpValue));
-            
-        }
-            
-        return Php::Array(arr);
+            }
 
+            Shape *phpValue = new Shape(shape);
+            arr.push_back(Php::Object("AsposePhp\\Slides\\Shape", phpValue));
+        }
+
+        return Php::Array(arr);
     }
 
-
-}
+} // namespace AsposePhp

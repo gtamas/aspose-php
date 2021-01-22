@@ -17,7 +17,8 @@ namespace AsposePhp {
             int _slideNo;
             std::string getAllText(System::SharedPtr<Aspose::Slides::ISlide> slide);
             std::vector<System::SharedPtr<Aspose::Slides::Charts::Chart>> getShapes(System::SharedPtr<Aspose::Slides::ISlide> slide, System::String shapeName); 
-           
+
+
         public:
             Slide() = default;
             Slide(System::SharedPtr<Aspose::Slides::ISlide> slide, std::string layoutText, std::string notesText, std::string masterText, int slideNo) 
@@ -30,8 +31,15 @@ namespace AsposePhp {
             
             void __construct(Php::Parameters &params);
 
+            System::SharedPtr<Aspose::Slides::ISlide> getAsposeClass();
+
             Php::Value get_Shapes();
+            Php::Value get_LayoutSlide();
             Php::Value get_NotesSlideManager();
+
+            // Custom methods
+
+            Php::Value GetThumbnailAsByteArray(Php::Parameters &params);
             Php::Value getSlideNumber();
             Php::Value getNotesText();
             Php::Value getMasterText();

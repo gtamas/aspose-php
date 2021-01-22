@@ -30,6 +30,9 @@ namespace AsposePhp {
             };
             
             void __construct(Php::Parameters &params) {};
+            System::SharedPtr<T> getAsposeClass() {
+                return _asposeObj;
+            }
 
             /**
              * @brief A template fucntion which creates a PHP comatible a wrapper for an Aspose object.

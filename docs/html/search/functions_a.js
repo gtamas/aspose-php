@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['table_441',['Table',['../class_aspose_php_1_1_table.html#a4bf6dec013871236efef3003092ac2ab',1,'AsposePhp::Table']]],
-  ['textframe_442',['TextFrame',['../class_aspose_php_1_1_text_frame.html#a1e4177efb5a85e3bc375b1ec73a60cdc',1,'AsposePhp::TextFrame']]],
-  ['toarray_443',['ToArray',['../class_aspose_php_1_1_shape_collection.html#acb5404f632d8414450a3b0ef62d227d7',1,'AsposePhp::ShapeCollection']]]
+  ['notesslide_756',['NotesSlide',['../class_aspose_php_1_1_notes_slide.html#accd3b72e0993565252dc5fd141abad32',1,'AsposePhp::NotesSlide']]],
+  ['notesslidemanager_757',['NotesSlideManager',['../class_aspose_php_1_1_notes_slide_manager.html#a9b769dc8c6aa37c04ca0e1de4d247e19',1,'AsposePhp::NotesSlideManager']]]
 ];

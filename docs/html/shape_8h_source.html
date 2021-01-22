@@ -121,39 +121,48 @@ $(document).ready(function(){initNavTree('shape_8h_source.html',''); initResizab
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            Php::Value isTable();</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            Php::Value isChart();</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            Php::Value isGroupShape();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            Php::Value get_AlternativeText();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_shape.html#a11c1121088c7476b90d45f5298858aa7">   52</a></span>&#160;            <span class="keyword">static</span> System::SharedPtr&lt;T&gt; <a class="code" href="class_aspose_php_1_1_shape.html#a11c1121088c7476b90d45f5298858aa7">convert</a>(System::SharedPtr&lt;IShape&gt; ptr) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                    System::SharedPtr&lt;T&gt; shape = System::DynamicCast&lt;T&gt;(ptr);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                    <span class="keywordflow">return</span> shape;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordflow">catch</span>(System::InvalidCastException &amp; e) {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    };</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            Php::Value isAutoShape();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            Php::Value isPictureFrame();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            Php::Value isConnector();</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            Php::Value get_Name();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            Php::Value get_AlternativeText();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            Php::Value get_UniqueId();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            Php::Value get_IsGrouped();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            Php::Value get_ParentGroup();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            Php::Value get_Height();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            Php::Value get_Width();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_shape.html#a11c1121088c7476b90d45f5298858aa7">   61</a></span>&#160;            <span class="keyword">static</span> System::SharedPtr&lt;T&gt; <a class="code" href="class_aspose_php_1_1_shape.html#a11c1121088c7476b90d45f5298858aa7">convert</a>(System::SharedPtr&lt;IShape&gt; ptr) {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                    System::SharedPtr&lt;T&gt; shape = System::DynamicCast&lt;T&gt;(ptr);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                    <span class="keywordflow">return</span> shape;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="keywordflow">catch</span>(System::InvalidCastException &amp; e) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                    <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                }</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    };</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_aspose_php_1_1_shape_html_a5dd085f71bc7a12e17dc4e47160e53ae"><div class="ttname"><a href="class_aspose_php_1_1_shape.html#a5dd085f71bc7a12e17dc4e47160e53ae">AsposePhp::Shape::Shape</a></div><div class="ttdeci">Shape()</div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_aspose_object_wrapper_html"><div class="ttname"><a href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposePhp::AsposeObjectWrapper</a></div><div class="ttdoc">This is the wrapper class we use to wrap Aspose objects. It's also the base class of all AsposePhp cl...</div><div class="ttdef"><b>Definition:</b> aspose_php.h:23</div></div>
-<div class="ttc" id="anamespace_aspose_php_html"><div class="ttname"><a href="namespace_aspose_php.html">AsposePhp</a></div><div class="ttdef"><b>Definition:</b> aspose_php.h:13</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_aspose_object_wrapper_html"><div class="ttname"><a href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposePhp::AsposeObjectWrapper</a></div><div class="ttdoc">This is the wrapper class we use to wrap Aspose objects. It's also the base class of all AsposePhp cl...</div><div class="ttdef"><b>Definition:</b> <a href="aspose__php_8h_source.html#l00022">aspose_php.h:23</a></div></div>
+<div class="ttc" id="anamespace_aspose_php_html"><div class="ttname"><a href="namespace_aspose_php.html">AsposePhp</a></div><div class="ttdef"><b>Definition:</b> <a href="aspose__php_8h_source.html#l00013">aspose_php.h:13</a></div></div>
 <div class="ttc" id="aclass_aspose_php_1_1_shape_html_a3bb1ff0ace570eb9c2d42b609617906a"><div class="ttname"><a href="class_aspose_php_1_1_shape.html#a3bb1ff0ace570eb9c2d42b609617906a">AsposePhp::Shape::__construct</a></div><div class="ttdeci">void __construct(Php::Parameters &amp;params)</div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_shape_html_aab9b7bfad4c6553f15a6520216f46ab6"><div class="ttname"><a href="class_aspose_php_1_1_shape.html#aab9b7bfad4c6553f15a6520216f46ab6">AsposePhp::Shape::Shape</a></div><div class="ttdeci">Shape(System::SharedPtr&lt; IShape &gt; shape)</div><div class="ttdef"><b>Definition:</b> shape.h:35</div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_shape_html"><div class="ttname"><a href="class_aspose_php_1_1_shape.html">AsposePhp::Shape</a></div><div class="ttdef"><b>Definition:</b> shape.h:13</div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_shape_html_a11c1121088c7476b90d45f5298858aa7"><div class="ttname"><a href="class_aspose_php_1_1_shape.html#a11c1121088c7476b90d45f5298858aa7">AsposePhp::Shape::convert</a></div><div class="ttdeci">static System::SharedPtr&lt; T &gt; convert(System::SharedPtr&lt; IShape &gt; ptr)</div><div class="ttdoc">Converts Shape to type T and returns a smart pointer or null, if cannot be converted.</div><div class="ttdef"><b>Definition:</b> shape.h:52</div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_shape_html_aab9b7bfad4c6553f15a6520216f46ab6"><div class="ttname"><a href="class_aspose_php_1_1_shape.html#aab9b7bfad4c6553f15a6520216f46ab6">AsposePhp::Shape::Shape</a></div><div class="ttdeci">Shape(System::SharedPtr&lt; IShape &gt; shape)</div><div class="ttdef"><b>Definition:</b> <a href="shape_8h_source.html#l00035">shape.h:35</a></div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_shape_html"><div class="ttname"><a href="class_aspose_php_1_1_shape.html">AsposePhp::Shape</a></div><div class="ttdef"><b>Definition:</b> <a href="shape_8h_source.html#l00012">shape.h:13</a></div></div>
+<div class="ttc" id="aclass_aspose_php_1_1_shape_html_a11c1121088c7476b90d45f5298858aa7"><div class="ttname"><a href="class_aspose_php_1_1_shape.html#a11c1121088c7476b90d45f5298858aa7">AsposePhp::Shape::convert</a></div><div class="ttdeci">static System::SharedPtr&lt; T &gt; convert(System::SharedPtr&lt; IShape &gt; ptr)</div><div class="ttdoc">Converts Shape to type T and returns a smart pointer or null, if cannot be converted.</div><div class="ttdef"><b>Definition:</b> <a href="shape_8h_source.html#l00061">shape.h:61</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="shape_8h.html">shape.h</a></li>
-    <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Fri Jan 22 2021 16:22:46 for AsposePhp by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>

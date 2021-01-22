@@ -21,6 +21,10 @@ namespace AsposePhp {
         };
     
         void __construct(Php::Parameters &params);
+        Php::Value get_SlideSize();
+
+
+        // Custom methods
         void save(Php::Parameters &params);
         void cloneSlide(Php::Parameters &params);
         Php::Value load(Php::Parameters &params);

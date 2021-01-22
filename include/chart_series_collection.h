@@ -15,6 +15,7 @@ namespace AsposePhp {
             void __construct(Php::Parameters &params);
             Php::Value idx_get(Php::Parameters &params);
             Php::Value get_Count();
+            void RemoveAt(Php::Parameters &params);
 
     };
 

@@ -1,5 +1,6 @@
 #include "../include/aspose.h"
 #include "../include/text_frame.h"
+#include "../include/paragraph-collection.h"
 #include <phpcpp.h>
 
 using namespace Aspose::Slides;
@@ -37,6 +38,17 @@ namespace AsposePhp {
         _textFrame->set_Text(String(text));
     }
 
+
+    /**
+     * @brief Returns the list of all paragraphs in a frame
+     * 
+     * @return Php::Value 
+     */
+    Php::Value TextFrame::get_Paragraphs() {
+        SharedPtr<IParagraphCollection> items = _textFrame->get_Paragraphs();
+        ParagraphCollection * phpValue = new ParagraphCollection(items); 
+        return Php::Object("AsposePhp\\Slides\\ParagraphCollection", phpValue);
+    }
 
 
 }

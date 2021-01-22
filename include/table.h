@@ -16,7 +16,19 @@ namespace AsposePhp {
             Php::Value isGroupShape();
             Php::Value isTable();
             Php::Value isChart();
+            Php::Value isAutoShape();
+            Php::Value isPictureFrame();
+            Php::Value isConnector();
+            Php::Value get_UniqueId();
+            Php::Value get_Name();
             Php::Value get_AlternativeText();
+            Php::Value get_IsGrouped();
+            Php::Value get_ParentGroup();
+            Php::Value get_Height();
+            Php::Value get_Width();
+            Php::Value MergeCells(Php::Parameters &params);
+            Php::Value get_Rows();
+            Php::Value get_Columns();
 
     };
 

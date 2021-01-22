@@ -1,0 +1,8 @@
+{
+  "generator-aspose": {
+    "promptValues": {
+      "className": "ISlide",
+      "itemClassName": "Foo"
+    }
+  }
+}

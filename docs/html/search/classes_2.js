@@ -1,5 +1,29 @@
 var searchData=
 [
-  ['datalabel_252',['DataLabel',['../class_aspose_php_1_1_data_label.html',1,'AsposePhp']]],
-  ['doublechartvalue_253',['DoubleChartValue',['../class_aspose_php_1_1_double_chart_value.html',1,'AsposePhp']]]
+  ['cell_426',['Cell',['../class_aspose_php_1_1_cell.html',1,'AsposePhp']]],
+  ['cellformat_427',['CellFormat',['../class_aspose_php_1_1_cell_format.html',1,'AsposePhp']]],
+  ['chart_428',['Chart',['../class_aspose_php_1_1_chart.html',1,'AsposePhp']]],
+  ['chartcategory_429',['ChartCategory',['../class_aspose_php_1_1_chart_category.html',1,'AsposePhp']]],
+  ['chartcategorycollection_430',['ChartCategoryCollection',['../class_aspose_php_1_1_chart_category_collection.html',1,'AsposePhp']]],
+  ['chartcellcollection_431',['ChartCellCollection',['../class_aspose_php_1_1_chart_cell_collection.html',1,'AsposePhp']]],
+  ['chartdata_432',['ChartData',['../class_aspose_php_1_1_chart_data.html',1,'AsposePhp']]],
+  ['chartdatacell_433',['ChartDataCell',['../class_aspose_php_1_1_chart_data_cell.html',1,'AsposePhp']]],
+  ['chartdatapoint_434',['ChartDataPoint',['../class_aspose_php_1_1_chart_data_point.html',1,'AsposePhp']]],
+  ['chartdatapointcollection_435',['ChartDataPointCollection',['../class_aspose_php_1_1_chart_data_point_collection.html',1,'AsposePhp']]],
+  ['chartseries_436',['ChartSeries',['../class_aspose_php_1_1_chart_series.html',1,'AsposePhp']]],
+  ['chartseriescollection_437',['ChartSeriesCollection',['../class_aspose_php_1_1_chart_series_collection.html',1,'AsposePhp']]],
+  ['collection_438',['Collection',['../class_aspose_php_1_1_collection.html',1,'AsposePhp']]],
+  ['collection_3c_20ichartcategorycollection_20_3e_439',['Collection&lt; IChartCategoryCollection &gt;',['../class_aspose_php_1_1_collection.html',1,'AsposePhp']]],
+  ['collection_3c_20ichartcellcollection_20_3e_440',['Collection&lt; IChartCellCollection &gt;',['../class_aspose_php_1_1_collection.html',1,'AsposePhp']]],
+  ['collection_3c_20ichartdatapointcollection_20_3e_441',['Collection&lt; IChartDataPointCollection &gt;',['../class_aspose_php_1_1_collection.html',1,'AsposePhp']]],
+  ['collection_3c_20ichartseriescollection_20_3e_442',['Collection&lt; IChartSeriesCollection &gt;',['../class_aspose_php_1_1_collection.html',1,'AsposePhp']]],
+  ['collection_3c_20icolumncollection_20_3e_443',['Collection&lt; IColumnCollection &gt;',['../class_aspose_php_1_1_collection.html',1,'AsposePhp']]],
+  ['collection_3c_20iparagraphcollection_20_3e_444',['Collection&lt; IParagraphCollection &gt;',['../class_aspose_php_1_1_collection.html',1,'AsposePhp']]],
+  ['collection_3c_20iportioncollection_20_3e_445',['Collection&lt; IPortionCollection &gt;',['../class_aspose_php_1_1_collection.html',1,'AsposePhp']]],
+  ['collection_3c_20irow_20_3e_446',['Collection&lt; IRow &gt;',['../class_aspose_php_1_1_collection.html',1,'AsposePhp']]],
+  ['collection_3c_20irowcollection_20_3e_447',['Collection&lt; IRowCollection &gt;',['../class_aspose_php_1_1_collection.html',1,'AsposePhp']]],
+  ['colorformat_448',['ColorFormat',['../class_aspose_php_1_1_color_format.html',1,'AsposePhp']]],
+  ['column_449',['Column',['../class_aspose_php_1_1_column.html',1,'AsposePhp']]],
+  ['columncollection_450',['ColumnCollection',['../class_aspose_php_1_1_column_collection.html',1,'AsposePhp']]],
+  ['connector_451',['Connector',['../class_aspose_php_1_1_connector.html',1,'AsposePhp']]]
 ];

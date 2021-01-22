@@ -24,6 +24,18 @@ namespace AsposePhp {
         return true;
     }
 
+    Php::Value GroupShape::isPictureFrame() {
+        return Shape::isPictureFrame();
+    }
+
+    Php::Value GroupShape::isConnector() {
+        return Shape::isConnector();
+    }
+
+    Php::Value GroupShape::isAutoShape() {
+        return Shape::isAutoShape();
+    }
+
     Php::Value GroupShape::isChart() {
         return Shape::isChart();
     }
@@ -32,9 +44,34 @@ namespace AsposePhp {
         return Shape::isTable();
     }
 
+    Php::Value GroupShape::get_IsGrouped() {
+        return true;
+    }
+
+    Php::Value GroupShape::get_Height() {
+        return Shape::get_Height();
+    }
+
+    Php::Value GroupShape::get_Width() {
+        return Shape::get_Width();
+    }
+
+    Php::Value GroupShape::get_ParentGroup() {
+         return Shape::get_ParentGroup();
+    }
+
     Php::Value GroupShape::get_AlternativeText() {
         return Shape::get_AlternativeText();
     }
+
+    Php::Value GroupShape::get_UniqueId() {
+        return Shape::get_UniqueId();
+    }
+
+    Php::Value GroupShape::get_Name() {
+        return Shape::get_UniqueId();
+    }
+    
 
 
 

@@ -35,3 +35,9 @@
 #doc files
 *.ppt
 *.pptx
+
+node_modules
+docs
+project
+target
+.bsp

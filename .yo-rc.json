@@ -1,0 +1,15 @@
+{
+  "generator-aspose": {
+    "promptValues": {
+      "className": "ITable",
+      "itemClassName": "IRowCollection",
+      "methodName": "get_Rows",
+      "callName": "get_Rows",
+      "wrapper": true,
+      "parentName": "Shape",
+      "type": "object",
+      "namespace": "Aspose::Slides",
+      "returnValue": false
+    }
+  }
+}

@@ -8,14 +8,16 @@ using namespace Aspose::Slides;
 using namespace System;
 using namespace std;
 
-namespace AsposePhp {
+namespace AsposePhp
+{
 
     /**
      * @brief Return series StringChartValue object 
      * 
      * @return Php::Value 
      */
-    Php::Value ChartSeries::get_Name() {
+    Php::Value ChartSeries::get_Name()
+    {
         return Php::Object("AsposePhp\\Slides\\Charts\\StringChartValue", wrapObject<IStringChartValue, AsposePhp::StringChartValue, &IChartSeries::get_Name>());
     }
 
@@ -24,8 +26,22 @@ namespace AsposePhp {
      * 
      * @return Php::Value 
      */
-    Php::Value ChartSeries::get_DataPoints() {
-        return Php::Object("AsposePhp\\Slides\\Charts\\ChartDataPointCollection", wrapObject<IChartDataPointCollection, AsposePhp::ChartDataPointCollection, &IChartSeries::get_DataPoints>());;
+    Php::Value ChartSeries::get_DataPoints()
+    {
+        return Php::Object("AsposePhp\\Slides\\Charts\\ChartDataPointCollection", wrapObject<IChartDataPointCollection, AsposePhp::ChartDataPointCollection, &IChartSeries::get_DataPoints>());
+        ;
     }
 
-}
+    /**
+     * @brief Specifies the bar, column or bubble series shall invert its colors if the value is negative
+     * 
+     * @param params 
+     * @return Php::Value 
+     */
+    void ChartSeries::set_InvertIfNegative(Php::Parameters &params)
+    {
+        bool value = params[0].boolValue();
+        return _asposeObj->set_InvertIfNegative(value);
+    }
+
+} // namespace AsposePhp

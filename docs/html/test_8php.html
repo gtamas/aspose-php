@@ -89,6 +89,8 @@ $(document).ready(function(){initNavTree('test_8php.html',''); initResizable(); 
 <div class="title">test.php File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><a href="test_8php_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -96,6 +98,12 @@ Variables</h2></td></tr>
 <tr class="separator:abe4cc9788f52e49485473dc699537388"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a960cb2b719a0f87f964af888445868af"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8php.html#a960cb2b719a0f87f964af888445868af">$fac</a> = new PresentationFactory()</td></tr>
 <tr class="separator:a960cb2b719a0f87f964af888445868af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae51391055f5e898dc2625d155b016aaa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8php.html#ae51391055f5e898dc2625d155b016aaa">$w</a> = $ppt-&gt;get_SlideSize()-&gt;get_Size()-&gt;get_Width()</td></tr>
+<tr class="separator:ae51391055f5e898dc2625d155b016aaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab00da9d5d8bd5b6b944793e093860aff"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8php.html#ab00da9d5d8bd5b6b944793e093860aff">$h</a> = $ppt-&gt;get_SlideSize()-&gt;get_Size()-&gt;get_Height()</td></tr>
+<tr class="separator:ab00da9d5d8bd5b6b944793e093860aff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a253aaecfee4ec07970c178bb15506730"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="test_8php.html#a253aaecfee4ec07970c178bb15506730">$masterSlide</a> = $ppt-&gt;getSlides()-&gt;get_Item(0)-&gt;get_LayoutSlide()-&gt;get_MasterSlide()</td></tr>
+<tr class="separator:a253aaecfee4ec07970c178bb15506730"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="a960cb2b719a0f87f964af888445868af"></a>
@@ -109,6 +117,56 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="test_8php_source.html#l00020">20</a> of file <a class="el" href="test_8php_source.html">test.php</a>.</p>
+
+</div>
+</div>
+<a id="ab00da9d5d8bd5b6b944793e093860aff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab00da9d5d8bd5b6b944793e093860aff">&#9670;&nbsp;</a></span>$h</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$h = $ppt-&gt;get_SlideSize()-&gt;get_Size()-&gt;get_Height()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="test_8php_source.html#l00033">33</a> of file <a class="el" href="test_8php_source.html">test.php</a>.</p>
+
+</div>
+</div>
+<a id="a253aaecfee4ec07970c178bb15506730"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a253aaecfee4ec07970c178bb15506730">&#9670;&nbsp;</a></span>$masterSlide</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$masterSlide = $ppt-&gt;getSlides()-&gt;get_Item(0)-&gt;get_LayoutSlide()-&gt;get_MasterSlide()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="test_8php_source.html#l00041">41</a> of file <a class="el" href="test_8php_source.html">test.php</a>.</p>
+
+</div>
+</div>
+<a id="ae51391055f5e898dc2625d155b016aaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae51391055f5e898dc2625d155b016aaa">&#9670;&nbsp;</a></span>$w</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">$w = $ppt-&gt;get_SlideSize()-&gt;get_Size()-&gt;get_Width()</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="test_8php_source.html#l00032">32</a> of file <a class="el" href="test_8php_source.html">test.php</a>.</p>
 
 </div>
 </div>
@@ -124,8 +182,10 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">    $ppt = <span class="keyword">new</span> Presentation(<span class="stringliteral">&quot;../asposeext/builder_template_v3.pptx&quot;</span>, <span class="stringliteral">&quot;./Aspose.Slides.C++.lic&quot;</span>)</div>
+<div class="line">    $ppt = <span class="keyword">new</span> Presentation(<span class="stringliteral">&quot;../asposeext/builder_template2.pptx&quot;</span>, <span class="stringliteral">&quot;./Aspose.Slides.C++.lic&quot;</span>)</div>
 </div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="test_8php_source.html#l00008">8</a> of file <a class="el" href="test_8php_source.html">test.php</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->
@@ -134,7 +194,7 @@ Variables</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="test_8php.html">test.php</a></li>
-    <li class="footer">Generated by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Fri Jan 22 2021 16:22:48 for AsposePhp by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>

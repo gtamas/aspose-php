@@ -1,15 +1,7 @@
 var searchData=
 [
-  ['_7easposeobjectwrapper_445',['~AsposeObjectWrapper',['../class_aspose_php_1_1_aspose_object_wrapper.html#a11c622afa7abbf19d2c7da9a3373c800',1,'AsposePhp::AsposeObjectWrapper']]],
-  ['_7easposeutil_446',['~AsposeUtil',['../class_aspose_php_1_1_aspose_util.html#a87088cd721f95c6cae21755e2cb0b474',1,'AsposePhp::AsposeUtil']]],
-  ['_7ecollection_447',['~Collection',['../class_aspose_php_1_1_collection.html#a1824647a757614b631c02666fa7a6034',1,'AsposePhp::Collection']]],
-  ['_7eislidecollection_448',['~ISlideCollection',['../class_aspose_php_1_1_i_slide_collection.html#a8b01a8bc1397c3e32a1d8f5244f0241f',1,'AsposePhp::ISlideCollection']]],
-  ['_7enotesslide_449',['~NotesSlide',['../class_aspose_php_1_1_notes_slide.html#ac8b396572c196a8514c36e9f83927269',1,'AsposePhp::NotesSlide']]],
-  ['_7epresentation_450',['~Presentation',['../class_aspose_php_1_1_presentation.html#a8a482aa0f05de98e6ebfbd753ab81b79',1,'AsposePhp::Presentation']]],
-  ['_7epresentationfactory_451',['~PresentationFactory',['../class_aspose_php_1_1_presentation_factory.html#a1d2904846c8468d5fec7a4ab185a06b3',1,'AsposePhp::PresentationFactory']]],
-  ['_7epresentationtext_452',['~PresentationText',['../class_aspose_php_1_1_presentation_text.html#a19158acf03b3addf88700709e0f1cfdc',1,'AsposePhp::PresentationText']]],
-  ['_7eshapecollection_453',['~ShapeCollection',['../class_aspose_php_1_1_shape_collection.html#a7ab600eee153ddfd12011934b4a35fa1',1,'AsposePhp::ShapeCollection']]],
-  ['_7eslide_454',['~Slide',['../class_aspose_php_1_1_slide.html#a158fb9db3531b686ae49e581f7616ded',1,'AsposePhp::Slide']]],
-  ['_7eslidetext_455',['~SlideText',['../class_aspose_php_1_1_slide_text.html#a713a6314205266ef424bdf4e2319d8be',1,'AsposePhp::SlideText']]],
-  ['_7etextframe_456',['~TextFrame',['../class_aspose_php_1_1_text_frame.html#ae90ca01be8f244e7a4817dc28c409064',1,'AsposePhp::TextFrame']]]
+  ['remove_767',['Remove',['../class_aspose_php_1_1_chart_data_point.html#a66ebe73f7d57a3174ce08f6a6c6bd6c5',1,'AsposePhp::ChartDataPoint::Remove()'],['../class_aspose_php_1_1_shape_collection.html#a9be673d8ce507dc0eed6b001bf6fe3ba',1,'AsposePhp::ShapeCollection::Remove()']]],
+  ['removeat_768',['RemoveAt',['../class_aspose_php_1_1_chart_category_collection.html#ac627218bdfb7cbd9141609944f3d2882',1,'AsposePhp::ChartCategoryCollection::RemoveAt()'],['../class_aspose_php_1_1_chart_series_collection.html#a42b721544cfed65c5d1d5e7bedda8dc2',1,'AsposePhp::ChartSeriesCollection::RemoveAt()'],['../class_aspose_php_1_1_column_collection.html#a366da126e12a44a8c1749dc86ce3ce27',1,'AsposePhp::ColumnCollection::RemoveAt()'],['../class_aspose_php_1_1_row_collection.html#a2f252200c9f51e30d30560f1d449aba8',1,'AsposePhp::RowCollection::RemoveAt()']]],
+  ['row_769',['Row',['../class_aspose_php_1_1_row.html#a4df0d450093f68ae981c6fa3c41df7a3',1,'AsposePhp::Row']]],
+  ['rowcollection_770',['RowCollection',['../class_aspose_php_1_1_row_collection.html#a26114622bf7b8ee5b493fc56822621e7',1,'AsposePhp::RowCollection']]]
 ];
