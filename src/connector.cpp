@@ -1,6 +1,8 @@
 #include "../include/aspose.h"
 #include "../include/connector.h"
 #include <phpcpp.h>
+#include "../include/shape.h"
+
 
 using namespace Aspose::Slides;
 using namespace std;
@@ -73,5 +75,29 @@ namespace AsposePhp
     {
         return Shape::get_Name();
     }
+
+    /**
+     * @brief Returns the shape to attach the beginning of the connector to. Read IShape.
+     * 
+     * @return Php::Value 
+     */
+    Php::Value Connector::get_StartShapeConnectedTo() {
+        SharedPtr<IShape> items = AsposeObjectWrapper<IConnector>::_asposeObj->get_StartShapeConnectedTo();
+        Shape * phpValue = new Shape(items); 
+        return Php::Object("AsposePhp\\Slides\\Shape", phpValue);
+    }
+
+    /**
+     * @brief Returns the shape to attach the end of the connector to. Read IShape
+     * 
+     * @return Php::Value 
+     */
+    Php::Value Connector::get_EndShapeConnectedTo() {
+        SharedPtr<IShape> items = AsposeObjectWrapper<IConnector>::_asposeObj->get_EndShapeConnectedTo();
+        Shape * phpValue = new Shape(items); 
+        return Php::Object("AsposePhp\\Slides\\Shape", phpValue);
+    }
+
+
 
 } // namespace AsposePhp

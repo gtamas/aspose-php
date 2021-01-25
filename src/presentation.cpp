@@ -7,6 +7,7 @@
 #include <iostream>
 #include <Util/License.h>
 #include <Exceptions/PptxEditException.h>
+#include "../include/master-slide-collection.h"
 
 using namespace Aspose::Slides;
 using namespace Aspose::Slides::Export;
@@ -323,6 +324,18 @@ namespace AsposePhp {
         catch(System::ArgumentOutOfRangeException &e) {
             throw Php::Exception("Invalid index: " + to_string(slideNo));
         }
+    }
+
+
+    /**
+     * @brief Returns a list of all master slides that are defined in the presentation. Read-only IMasterSlideCollection
+     * 
+     * @return Php::Value 
+     */
+    Php::Value Presentation::get_Masters() {
+        SharedPtr<IMasterSlideCollection> items = _pres->get_Masters();
+        MasterSlideCollection * phpValue = new MasterSlideCollection(items); 
+        return Php::Object("AsposePhp\\Slides\\MasterSlideCollection", phpValue);
     }
 
 

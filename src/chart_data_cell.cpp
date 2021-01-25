@@ -57,4 +57,15 @@ namespace AsposePhp
         }
     }
 
+
+
+    /**
+     * @brief Returns the index of the column of worksheet in which the cell is located. Read-only int32_t
+     * 
+     * @return Php::Value 
+     */
+    Php::Value ChartDataCell::get_Column() {
+        return _asposeObj->get_Column();
+    }
+
 } // namespace AsposePhp

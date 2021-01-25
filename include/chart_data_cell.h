@@ -18,6 +18,7 @@ namespace AsposePhp {
             void __construct(Php::Parameters &params);
             Php::Value get_Value();
             Php::Value get_Row();
+            Php::Value get_Column();
             void set_CustomNumberFormat(Php::Parameters &params);
             void set_Value(Php::Parameters &params);
 

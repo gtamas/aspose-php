@@ -41,6 +41,8 @@ namespace AsposePhp {
         return Php::Array(slideTextArr);
     }
 
+    
+
 
 
 }

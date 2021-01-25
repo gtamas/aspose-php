@@ -16,6 +16,7 @@ namespace AsposePhp {
             void __construct(Php::Parameters &params);
             Php::Value get_Series();
             Php::Value get_Categories();
+            Php::Value get_ChartDataWorkbook();
 
     };
 

@@ -28,7 +28,6 @@ namespace AsposePhp {
             throw Php::Exception("Invalid index: " + to_string(index));
         }
 
-        //return Php::Object("ChartDataPoint", wrapObject<IChartDataPoint, AsposePhp::ChartDataPoint, &IChartDataPointCollection::idx_get>(index));
     }
 
     /**
@@ -38,6 +37,16 @@ namespace AsposePhp {
      */
     Php::Value ChartDataPointCollection::get_Count() {
         return Collection::get_Count();
+    }
+
+    /**
+     * @brief Removes the element at the given index
+     * 
+     * @param params 
+     */
+    void ChartDataPointCollection::RemoveAt(Php::Parameters &params) {
+            int32_t index = params[0].numericValue();
+            _asposeObj->RemoveAt(index);
     }
 
 }

@@ -8,7 +8,6 @@ use AsposePhp\AsposeUtil;
 try {
     $ppt = new Presentation("../asposeext/builder_template2.pptx", "./Aspose.Slides.C++.lic");
 
-
 ?>
 
 cloned
@@ -35,7 +34,7 @@ Pres slidesize  <?php $w = $ppt->get_SlideSize()->get_Size()->get_Width();?>
 <?php print_r($w); ?>
 <?php print_r($h); ?>
 
-Thumbnail: <?php print_r($ppt->getSlides()->get_Item(0)->GetThumbnailAsByteArray(1, 1, 'png')); ?>
+Thumbnail: <?php print_r($ppt->getSlides()->get_Item(0)->get_Shapes()->ToArray()); //print_r($ppt->getSlides()->get_Item(0)->GetThumbnailAsByteArray(1, 1, 'png')); ?>
 
 LayoutSLide: <?php 
 $masterSlide = $ppt->getSlides()->get_Item(0)->get_LayoutSlide()->get_MasterSlide();

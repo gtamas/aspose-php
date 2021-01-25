@@ -29,8 +29,8 @@ namespace AsposePhp {
             Php::Value get_ParentGroup();
             Php::Value get_Height();
             Php::Value get_Width();
-            
-             
+            Php::Value get_StartShapeConnectedTo();
+            Php::Value get_EndShapeConnectedTo();
 
     };
 

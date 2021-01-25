@@ -19,4 +19,14 @@ namespace AsposePhp {
         return Php::Object("AsposePhp\\Slides\\Charts\\ChartDataCell", wrapObject<IChartDataCell, AsposePhp::ChartDataCell, &IDoubleChartValue::get_AsCell>());
     }
 
+    /**
+     * @brief Sets data
+     * 
+     * @param params 
+     */
+    void DoubleChartValue::set_Data(Php::Parameters &params) {
+        std::string value = params[0].stringValue();
+        _asposeObj->set_Data(System::ObjectExt::Box<String>(String(value)));
+    }
+
 }

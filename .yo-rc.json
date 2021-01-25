@@ -1,13 +1,13 @@
 {
   "generator-aspose": {
     "promptValues": {
-      "className": "ITable",
-      "itemClassName": "IRowCollection",
-      "methodName": "get_Rows",
-      "callName": "get_Rows",
-      "wrapper": true,
+      "className": "IColumn",
+      "itemClassName": "IShape",
+      "methodName": "set_Width",
+      "callName": "get_StartShapeConnectedTo",
+      "wrapper": false,
       "parentName": "Shape",
-      "type": "object",
+      "type": "aspose",
       "namespace": "Aspose::Slides",
       "returnValue": false
     }

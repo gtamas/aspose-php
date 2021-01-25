@@ -15,6 +15,7 @@ namespace AsposePhp {
             DoubleChartValue(System::SharedPtr<IDoubleChartValue> cell) : AsposeObjectWrapper<IDoubleChartValue>(cell) {};
             void __construct(Php::Parameters &params);
             Php::Value get_AsCell();
+            void set_Data(Php::Parameters &params);
 
     };
 

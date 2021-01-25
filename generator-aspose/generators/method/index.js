@@ -136,7 +136,7 @@ module.exports = class extends Base {
                 .join('\\\\')}\\\\${phpName}`;
         }
 
-        this._log(`${this.answers.returnValue ? 'Php::Value' : 'void'} ${this.answers.methodName}();`);
+        this._log(`${this.answers.returnValue || this.type === 'object' ? 'Php::Value' : 'void'} ${this.answers.methodName}();`);
 
         switch (this.answers.type) {
             case 'empty':
@@ -158,7 +158,7 @@ module.exports = class extends Base {
                     }`);
                 break;
             case 'object':
-                this._log(`#include "../includes/${itemHeader}.h"`);
+                this._log(`#include "../include/${itemHeader}.h"`);
                 if (this.answers.wrapper) {
                     this
                         ._log(`Php::Value ${phpClassName}::${this.answers.methodName}() {

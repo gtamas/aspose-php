@@ -14,7 +14,7 @@ namespace AsposePhp {
         public:
             Column(System::SharedPtr<IColumn> obj) : AsposeObjectWrapper<IColumn>(obj) {};
             void __construct(Php::Parameters &params);
-             
+            void set_Width(Php::Parameters &params);       
 
     };
 

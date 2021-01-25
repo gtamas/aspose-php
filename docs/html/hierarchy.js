@@ -34,6 +34,9 @@ var hierarchy =
     [ "AsposePhp::AsposeObjectWrapper< IChartDataPointCollection >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
       [ "AsposePhp::ChartDataPointCollection", "class_aspose_php_1_1_chart_data_point_collection.html", null ]
     ] ],
+    [ "AsposePhp::AsposeObjectWrapper< IChartDataWorkbook >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
+      [ "AsposePhp::ChartDataWorkbook", "class_aspose_php_1_1_chart_data_workbook.html", null ]
+    ] ],
     [ "AsposePhp::AsposeObjectWrapper< IChartSeries >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
       [ "AsposePhp::ChartSeries", "class_aspose_php_1_1_chart_series.html", null ]
     ] ],
@@ -75,6 +78,9 @@ var hierarchy =
     ] ],
     [ "AsposePhp::AsposeObjectWrapper< IMasterSlide >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
       [ "AsposePhp::MasterSlide", "class_aspose_php_1_1_master_slide.html", null ]
+    ] ],
+    [ "AsposePhp::AsposeObjectWrapper< IMasterSlideCollection >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
+      [ "AsposePhp::MasterSlideCollection", "class_aspose_php_1_1_master_slide_collection.html", null ]
     ] ],
     [ "AsposePhp::AsposeObjectWrapper< INotesSlideManager >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
       [ "AsposePhp::NotesSlideManager", "class_aspose_php_1_1_notes_slide_manager.html", null ]
@@ -140,6 +146,7 @@ var hierarchy =
       [ "AsposePhp::ChartDataCell", "class_aspose_php_1_1_chart_data_cell.html", null ],
       [ "AsposePhp::ChartDataPoint", "class_aspose_php_1_1_chart_data_point.html", null ],
       [ "AsposePhp::ChartDataPointCollection", "class_aspose_php_1_1_chart_data_point_collection.html", null ],
+      [ "AsposePhp::ChartDataWorkbook", "class_aspose_php_1_1_chart_data_workbook.html", null ],
       [ "AsposePhp::ChartSeries", "class_aspose_php_1_1_chart_series.html", null ],
       [ "AsposePhp::ChartSeriesCollection", "class_aspose_php_1_1_chart_series_collection.html", null ],
       [ "AsposePhp::ColorFormat", "class_aspose_php_1_1_color_format.html", null ],
@@ -153,6 +160,7 @@ var hierarchy =
       [ "AsposePhp::LayoutSlide", "class_aspose_php_1_1_layout_slide.html", null ],
       [ "AsposePhp::Marker", "class_aspose_php_1_1_marker.html", null ],
       [ "AsposePhp::MasterSlide", "class_aspose_php_1_1_master_slide.html", null ],
+      [ "AsposePhp::MasterSlideCollection", "class_aspose_php_1_1_master_slide_collection.html", null ],
       [ "AsposePhp::NotesSlide", "class_aspose_php_1_1_notes_slide.html", null ],
       [ "AsposePhp::NotesSlideManager", "class_aspose_php_1_1_notes_slide_manager.html", null ],
       [ "AsposePhp::Paragraph", "class_aspose_php_1_1_paragraph.html", null ],
@@ -191,6 +199,9 @@ var hierarchy =
     ] ],
     [ "AsposePhp::Collection< IColumnCollection >", "class_aspose_php_1_1_collection.html", [
       [ "AsposePhp::ColumnCollection", "class_aspose_php_1_1_column_collection.html", null ]
+    ] ],
+    [ "AsposePhp::Collection< IMasterSlideCollection >", "class_aspose_php_1_1_collection.html", [
+      [ "AsposePhp::MasterSlideCollection", "class_aspose_php_1_1_master_slide_collection.html", null ]
     ] ],
     [ "AsposePhp::Collection< IParagraphCollection >", "class_aspose_php_1_1_collection.html", [
       [ "AsposePhp::ParagraphCollection", "class_aspose_php_1_1_paragraph_collection.html", null ]

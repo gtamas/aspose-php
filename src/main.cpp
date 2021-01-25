@@ -63,6 +63,9 @@
 #include "../include/cell-format.h"
 #include "../include/column-collection.h"
 #include "../include/column.h"
+#include "../include/master-slide-collection.h"
+#include "../include/chart-data-workbook.h"
+
 
 using namespace AsposePhp;
 
@@ -110,6 +113,7 @@ extern "C" {
             Php::ByVal("outfile", Php::Type::Numeric, true) 
         });
         pres.method<&AsposePhp::Presentation::get_SlideSize>("get_SlideSize", Php::Public, {});
+        pres.method<&AsposePhp::Presentation::get_Masters>("get_Masters", Php::Public, {});
 
         // SlideCollection
 
@@ -264,6 +268,7 @@ extern "C" {
         chartData.method<&AsposePhp::ChartData::__construct>("__construct", Php::Public, {});
         chartData.method<&AsposePhp::ChartData::get_Series>("get_Series", Php::Public, {});
         chartData.method<&AsposePhp::ChartData::get_Categories>("get_Categories", Php::Public, {});
+        chartData.method<&AsposePhp::ChartData::get_ChartDataWorkbook>("get_ChartDataWorkbook", Php::Public, {});
         
         
          // ChartSeriesCollection
@@ -315,6 +320,7 @@ extern "C" {
         chartDataCell.method<&AsposePhp::ChartDataCell::__construct>("__construct", Php::Public, {});
         chartDataCell.method<&AsposePhp::ChartDataCell::get_Value>("get_Value", Php::Public, {});
         chartDataCell.method<&AsposePhp::ChartDataCell::get_Row>("get_Row", Php::Public, {});
+        chartDataCell.method<&AsposePhp::ChartDataCell::get_Column>("get_Column", Php::Public, {});
         chartDataCell.method<&AsposePhp::ChartDataCell::set_CustomNumberFormat>("set_CustomNumberFormat", Php::Public, {
               Php::ByVal("value", Php::Type::String, true),
         });
@@ -347,6 +353,7 @@ extern "C" {
             Php::ByVal("index", Php::Type::Numeric, true) 
         });
         chartDataPointCol.method<&AsposePhp::ChartDataPointCollection::get_Count>("get_Count", Php::Public, {});
+        chartDataPointCol.method<&AsposePhp::ChartDataPointCollection::RemoveAt>("RemoveAt", Php::Public, {});
     
         // ChartDataPoint
 
@@ -371,7 +378,9 @@ extern "C" {
         Php::Class<AsposePhp::DoubleChartValue> doubleChartValue("AsposePhp\\Slides\\Charts\\DoubleChartValue", 0);
         doubleChartValue.method<&AsposePhp::DoubleChartValue::__construct>("__construct", Php::Public, {});
         doubleChartValue.method<&AsposePhp::DoubleChartValue::get_AsCell>("get_AsCell", Php::Public, {});
-        //dataLabel.method<&AsposePhp::DataLabel::GetActualLabelText>("GetActualLabelText", Php::Public, {});
+        doubleChartValue.method<&AsposePhp::DoubleChartValue::set_Data>("set_Data", Php::Public, {
+            Php::ByVal("value", Php::Type::String, true), 
+        });
 
         // StringOrDoubleChartValue
 
@@ -472,7 +481,9 @@ extern "C" {
         autoShape.method<&AsposePhp::AutoShape::get_AlternativeText>("get_AlternativeText", Php::Public, {});
         autoShape.method<&AsposePhp::AutoShape::isChart>("isChart", Php::Public, {});
         autoShape.method<&AsposePhp::AutoShape::isTable>("isTable", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::isPictureFrame>("isPictureFrame", Php::Public, {});
         autoShape.method<&AsposePhp::AutoShape::isAutoShape>("isAutoShape", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::isConnector>("isConnector", Php::Public, {});
         autoShape.method<&AsposePhp::AutoShape::get_UniqueId>("get_UniqueId", Php::Public, {});
         autoShape.method<&AsposePhp::AutoShape::get_Name>("get_Name", Php::Public, {});
         autoShape.method<&AsposePhp::AutoShape::get_TextFrame>("get_TextFrame", Php::Public, {});
@@ -545,6 +556,8 @@ extern "C" {
         connector.method<&AsposePhp::Connector::get_ParentGroup>("get_ParentGroup", Php::Public, {});
         connector.method<&AsposePhp::Connector::get_Height>("get_Height", Php::Public, {});
         connector.method<&AsposePhp::Connector::get_Width>("get_Width", Php::Public, {});
+        connector.method<&AsposePhp::Connector::get_StartShapeConnectedTo>("get_StartShapeConnectedTo", Php::Public, {});
+        connector.method<&AsposePhp::Connector::get_EndShapeConnectedTo>("get_EndShapeConnectedTo", Php::Public, {});
         
         // RowCollection
 
@@ -598,13 +611,37 @@ extern "C" {
                     });
         columnCollection.method<&AsposePhp::ColumnCollection::get_Count>("get_Count", Php::Public, {});
         columnCollection.method<&AsposePhp::ColumnCollection::RemoveAt>("RemoveAt", Php::Public, {
-                    Php::ByVal("index", Php::Type::Numeric, true),
-                    Php::ByVal("withAttachedRows", Php::Type::Bool, true)  
+                Php::ByVal("index", Php::Type::Numeric, true),
+                Php::ByVal("withAttachedRows", Php::Type::Bool, true)  
         });
 
         // Column
         Php::Class<AsposePhp::Column> column("AsposePhp\\Slides\\Column");
+        column.method<&AsposePhp::Column::set_Width>("set_Width", Php::Public, {
+             Php::ByVal("value", Php::Type::Numeric, true), 
+        });
 
+        // MasterSlideCollection
+
+        Php::Class<AsposePhp::MasterSlideCollection> masterSlideCollection("AsposePhp\\Slides\\MasterSlideCollection");
+        masterSlideCollection.method<&AsposePhp::MasterSlideCollection::idx_get>("idx_get", Php::Public, { 
+                        Php::ByVal("index", Php::Type::Numeric, true) 
+                    });
+        masterSlideCollection.method<&AsposePhp::MasterSlideCollection::get_Count>("get_Count", Php::Public, {});
+
+
+        // ChartDataWorkbook
+
+        Php::Class<AsposePhp::ChartDataWorkbook> chartDataWorkbook("AsposePhp\\Slides\\Charts\\ChartDataWorkbook");
+        chartDataWorkbook.method<&AsposePhp::ChartDataWorkbook::GetCell>("GetCell", Php::Public, {
+                Php::ByVal("worksheetIndex", Php::Type::Numeric, true), 
+                Php::ByVal("row", Php::Type::String, true), 
+                Php::ByVal("column", Php::Type::String, true), 
+                Php::ByVal("value", Php::Type::String, true)
+        });
+
+        extension.add(std::move(chartDataWorkbook));
+        extension.add(std::move(masterSlideCollection));
         extension.add(std::move(column));
         extension.add(std::move(columnCollection));
         extension.add(std::move(cellFormat));

@@ -4,6 +4,9 @@
 #include "../include/chart.h"
 #include "../include/group_shape.h"
 #include "../include/table.h"
+#include "../include/auto-shape.h"
+#include "../include/picture-frame.h"
+#include "../include/connector.h"
 #include <phpcpp.h>
 
 using namespace Aspose::Slides;
@@ -50,31 +53,35 @@ namespace AsposePhp
         for (int i = 0; i < len; i++)
         {
             SharedPtr<IShape> shape = shapes->idx_get(i);
-            string shapeName = "Shape";
-            SharedPtr<Aspose::Slides::Charts::Chart> chart = Shape::convert<Aspose::Slides::Charts::Chart>(shape);
-            if (chart != nullptr)
+            if (ObjectExt::Is<Aspose::Slides::Charts::Chart>(shape))
             {
-                Chart *phpValue = new Chart(chart);
+                Chart *phpValue = new Chart(Shape::convert<Aspose::Slides::Charts::Chart>(shape));
                 arr.push_back(Php::Object("AsposePhp\\Slides\\Charts\\Chart", phpValue));
-                continue;
-            }
-            SharedPtr<Aspose::Slides::GroupShape> gs = Shape::convert<Aspose::Slides::GroupShape>(shape);
-            if (gs != nullptr)
+            } else if (ObjectExt::Is<Aspose::Slides::GroupShape>(shape))
             {
-                GroupShape *phpValue = new GroupShape(gs);
+                GroupShape *phpValue = new GroupShape(Shape::convert<Aspose::Slides::GroupShape>(shape));
                 arr.push_back(Php::Object("AsposePhp\\Slides\\GroupShape", phpValue));
-                continue;
-            }
-            SharedPtr<Aspose::Slides::Table> table = Shape::convert<Aspose::Slides::Table>(shape);
-            if (table != nullptr)
+            } else if (ObjectExt::Is<Aspose::Slides::Table>(shape))
             {
-                Table *phpValue = new Table(table);
+                Table *phpValue = new Table(Shape::convert<Aspose::Slides::Table>(shape));
                 arr.push_back(Php::Object("AsposePhp\\Slides\\Table", phpValue));
-                continue;
+            } else if (ObjectExt::Is<Aspose::Slides::PictureFrame>(shape))
+            {
+                PictureFrame *phpValue = new PictureFrame(Shape::convert<Aspose::Slides::PictureFrame>(shape));
+                arr.push_back(Php::Object("AsposePhp\\Slides\\PictureFrame", phpValue));
+            } else if (ObjectExt::Is<Aspose::Slides::Connector>(shape))
+            {
+                Connector *phpValue = new Connector(Shape::convert<Aspose::Slides::Connector>(shape));
+                arr.push_back(Php::Object("AsposePhp\\Slides\\Connector", phpValue));
+            } else if (ObjectExt::Is<Aspose::Slides::AutoShape>(shape))
+            {
+                AutoShape *phpValue = new AutoShape(Shape::convert<Aspose::Slides::AutoShape>(shape));
+                arr.push_back(Php::Object("AsposePhp\\Slides\\AutoShape", phpValue));
+            } else {
+                Shape *phpValue = new Shape(shape);
+                arr.push_back(Php::Object("AsposePhp\\Slides\\Shape", phpValue));
             }
 
-            Shape *phpValue = new Shape(shape);
-            arr.push_back(Php::Object("AsposePhp\\Slides\\Shape", phpValue));
         }
 
         return Php::Array(arr);

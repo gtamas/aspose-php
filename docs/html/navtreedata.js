@@ -62,9 +62,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_aspose_php_1_1_data_label.html#aba8da7e5f004fb441acc6da3d8f8ff75",
-"column_8h_source.html",
-"string__or__double__chart__value_8h_source.html"
+"class_aspose_php_1_1_connector.html#a40d9dda849f1fafda5d7dfd7f5a79b5d",
+"class_aspose_php_1_1_text_frame.html#ae90ca01be8f244e7a4817dc28c409064",
+"slide__size_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

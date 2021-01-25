@@ -33,6 +33,7 @@ namespace AsposePhp {
         Php::Value getSlides2();
         Php::Value getSlides();
         Php::Value getSlide(Php::Parameters &params);
+        Php::Value get_Masters();
     };
 }
 

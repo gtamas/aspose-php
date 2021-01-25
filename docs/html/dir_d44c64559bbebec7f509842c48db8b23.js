@@ -17,6 +17,9 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "cell.h", "cell_8h.html", [
       [ "Cell", "class_aspose_php_1_1_cell.html", "class_aspose_php_1_1_cell" ]
     ] ],
+    [ "chart-data-workbook.h", "chart-data-workbook_8h.html", [
+      [ "ChartDataWorkbook", "class_aspose_php_1_1_chart_data_workbook.html", "class_aspose_php_1_1_chart_data_workbook" ]
+    ] ],
     [ "chart.h", "chart_8h.html", [
       [ "Chart", "class_aspose_php_1_1_chart.html", "class_aspose_php_1_1_chart" ]
     ] ],
@@ -83,6 +86,9 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     ] ],
     [ "marker.h", "marker_8h.html", [
       [ "Marker", "class_aspose_php_1_1_marker.html", "class_aspose_php_1_1_marker" ]
+    ] ],
+    [ "master-slide-collection.h", "master-slide-collection_8h.html", [
+      [ "MasterSlideCollection", "class_aspose_php_1_1_master_slide_collection.html", "class_aspose_php_1_1_master_slide_collection" ]
     ] ],
     [ "master_slide.h", "master__slide_8h.html", [
       [ "MasterSlide", "class_aspose_php_1_1_master_slide.html", "class_aspose_php_1_1_master_slide" ]
