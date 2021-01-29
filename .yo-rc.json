@@ -1,10 +1,10 @@
 {
   "generator-aspose": {
     "promptValues": {
-      "className": "IColumn",
-      "itemClassName": "IShape",
-      "methodName": "set_Width",
-      "callName": "get_StartShapeConnectedTo",
+      "className": "ISlide",
+      "itemClassName": "ISlide",
+      "methodName": "Remove",
+      "callName": "AddClone",
       "wrapper": false,
       "parentName": "Shape",
       "type": "aspose",

@@ -8,6 +8,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
       [ "AsposeUtil", "class_aspose_php_1_1_aspose_util.html", "class_aspose_php_1_1_aspose_util" ]
     ] ],
     [ "auto-shape.h", "auto-shape_8h.html", "auto-shape_8h" ],
+    [ "base64.h", "base64_8h.html", "base64_8h" ],
     [ "bitmap.h", "bitmap_8h.html", [
       [ "Bitmap", "class_aspose_php_1_1_bitmap.html", "class_aspose_php_1_1_bitmap" ]
     ] ],
@@ -72,17 +73,29 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "fill-format.h", "fill-format_8h.html", [
       [ "FillFormat", "class_aspose_php_1_1_fill_format.html", "class_aspose_php_1_1_fill_format" ]
     ] ],
+    [ "filltype.h", "filltype_8h.html", [
+      [ "FillType", "class_aspose_php_1_1_fill_type.html", "class_aspose_php_1_1_fill_type" ]
+    ] ],
     [ "format.h", "format_8h.html", [
       [ "Format", "class_aspose_php_1_1_format.html", "class_aspose_php_1_1_format" ]
     ] ],
     [ "group_shape.h", "group__shape_8h.html", [
       [ "GroupShape", "class_aspose_php_1_1_group_shape.html", "class_aspose_php_1_1_group_shape" ]
     ] ],
+    [ "image-collection.h", "image-collection_8h.html", [
+      [ "ImageCollection", "class_aspose_php_1_1_image_collection.html", "class_aspose_php_1_1_image_collection" ]
+    ] ],
     [ "islide_collection.h", "islide__collection_8h.html", [
       [ "ISlideCollection", "class_aspose_php_1_1_i_slide_collection.html", "class_aspose_php_1_1_i_slide_collection" ]
     ] ],
     [ "layout_slide.h", "layout__slide_8h.html", [
       [ "LayoutSlide", "class_aspose_php_1_1_layout_slide.html", "class_aspose_php_1_1_layout_slide" ]
+    ] ],
+    [ "line-fill-format.h", "line-fill-format_8h.html", [
+      [ "LineFillFormat", "class_aspose_php_1_1_line_fill_format.html", "class_aspose_php_1_1_line_fill_format" ]
+    ] ],
+    [ "line-format.h", "line-format_8h.html", [
+      [ "LineFormat", "class_aspose_php_1_1_line_format.html", "class_aspose_php_1_1_line_format" ]
     ] ],
     [ "marker.h", "marker_8h.html", [
       [ "Marker", "class_aspose_php_1_1_marker.html", "class_aspose_php_1_1_marker" ]
@@ -117,6 +130,9 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "portion.h", "portion_8h.html", [
       [ "Portion", "class_aspose_php_1_1_portion.html", "class_aspose_php_1_1_portion" ]
     ] ],
+    [ "pp-image.h", "pp-image_8h.html", [
+      [ "PPImage", "class_aspose_php_1_1_p_p_image.html", "class_aspose_php_1_1_p_p_image" ]
+    ] ],
     [ "presentation.h", "presentation_8h.html", [
       [ "Presentation", "class_aspose_php_1_1_presentation.html", "class_aspose_php_1_1_presentation" ]
     ] ],
@@ -131,6 +147,9 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     ] ],
     [ "row.h", "row_8h.html", [
       [ "Row", "class_aspose_php_1_1_row.html", "class_aspose_php_1_1_row" ]
+    ] ],
+    [ "shape-type.h", "shape-type_8h.html", [
+      [ "ShapeType", "class_aspose_php_1_1_shape_type.html", "class_aspose_php_1_1_shape_type" ]
     ] ],
     [ "shape.h", "shape_8h.html", [
       [ "Shape", "class_aspose_php_1_1_shape.html", "class_aspose_php_1_1_shape" ]

@@ -20,6 +20,7 @@ namespace AsposePhp {
             
             Php::Value size();
             Php::Value get_Item(Php::Parameters &params);
+            Php::Value AddClone(Php::Parameters &params);
 
     };
 

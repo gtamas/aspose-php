@@ -13,5 +13,6 @@ var class_aspose_php_1_1_slide =
     [ "getNotesText", "class_aspose_php_1_1_slide.html#a436e969626df741adc888b0738c8e54f", null ],
     [ "getSlideNumber", "class_aspose_php_1_1_slide.html#a31279010ed7ea600e401a76c24982051", null ],
     [ "getSlideText", "class_aspose_php_1_1_slide.html#aac2af6f8201e17cf77e726237aa4b432", null ],
-    [ "GetThumbnailAsByteArray", "class_aspose_php_1_1_slide.html#adc5b89e1130f36ffe56d7dcb0f628fd9", null ]
+    [ "GetThumbnail", "class_aspose_php_1_1_slide.html#a4bbd376f2f1671985aa67a6d3566deac", null ],
+    [ "Remove", "class_aspose_php_1_1_slide.html#aa1b63f4ac455cc7f4ae7a2c1c9ed6e31", null ]
 ];

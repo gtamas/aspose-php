@@ -25,7 +25,7 @@ namespace AsposePhp {
 
 
         // Custom methods
-        void save(Php::Parameters &params);
+        Php::Value save(Php::Parameters &params);
         void cloneSlide(Php::Parameters &params);
         Php::Value load(Php::Parameters &params);
         Php::Value getPresentationText(Php::Parameters &params);
@@ -34,6 +34,7 @@ namespace AsposePhp {
         Php::Value getSlides();
         Php::Value getSlide(Php::Parameters &params);
         Php::Value get_Masters();
+        Php::Value get_Images();
     };
 }
 

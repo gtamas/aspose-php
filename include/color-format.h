@@ -15,7 +15,7 @@ namespace AsposePhp {
             ColorFormat(System::SharedPtr<IColorFormat> obj) : AsposeObjectWrapper<IColorFormat>(obj) {};
             void __construct(Php::Parameters &params);
              
-            Php::Value set_Color(Php::Parameters &params);
+            void set_Color(Php::Parameters &params);
             
 
     };

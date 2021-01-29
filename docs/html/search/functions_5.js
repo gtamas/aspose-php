@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fillformat_705',['FillFormat',['../class_aspose_php_1_1_fill_format.html#af49158058867485dce548fa8ee491522',1,'AsposePhp::FillFormat']]],
-  ['format_706',['Format',['../class_aspose_php_1_1_format.html#a54f165169bfd70916572f1e2077428c8',1,'AsposePhp::Format']]]
+  ['encode_788',['encode',['../class_base64.html#afb900dddea4770433842a99190ebdb11',1,'Base64::encode(const std::vector&lt; BYTE &gt; &amp;buf)'],['../class_base64.html#a42bc3d8103ba80aa80d14a066d9a4aed',1,'Base64::encode(const BYTE *buf, unsigned int bufLen)']]]
 ];

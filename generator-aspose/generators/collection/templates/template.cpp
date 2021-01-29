@@ -38,7 +38,7 @@ namespace AsposePhp {
     }
 
     <% for (let i=0; i<methods.length; i++) { %>
-    Php::Value <%= phpName %>::<%= methods[i].methodName %> {
+    Php::Value <%= phpName %>::<%= methods[i].methodName %>() {
         return nullptr;
     }
     <% } %>

@@ -70,8 +70,17 @@ var hierarchy =
     [ "AsposePhp::AsposeObjectWrapper< IGroupShape >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
       [ "AsposePhp::GroupShape", "class_aspose_php_1_1_group_shape.html", null ]
     ] ],
+    [ "AsposePhp::AsposeObjectWrapper< IImageCollection >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
+      [ "AsposePhp::ImageCollection", "class_aspose_php_1_1_image_collection.html", null ]
+    ] ],
     [ "AsposePhp::AsposeObjectWrapper< ILayoutSlide >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
       [ "AsposePhp::LayoutSlide", "class_aspose_php_1_1_layout_slide.html", null ]
+    ] ],
+    [ "AsposePhp::AsposeObjectWrapper< ILineFillFormat >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
+      [ "AsposePhp::LineFillFormat", "class_aspose_php_1_1_line_fill_format.html", null ]
+    ] ],
+    [ "AsposePhp::AsposeObjectWrapper< ILineFormat >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
+      [ "AsposePhp::LineFormat", "class_aspose_php_1_1_line_format.html", null ]
     ] ],
     [ "AsposePhp::AsposeObjectWrapper< IMarker >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
       [ "AsposePhp::Marker", "class_aspose_php_1_1_marker.html", null ]
@@ -102,6 +111,9 @@ var hierarchy =
     ] ],
     [ "AsposePhp::AsposeObjectWrapper< IPortionFormat >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
       [ "AsposePhp::PortionFormat", "class_aspose_php_1_1_portion_format.html", null ]
+    ] ],
+    [ "AsposePhp::AsposeObjectWrapper< IPPImage >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
+      [ "AsposePhp::PPImage", "class_aspose_php_1_1_p_p_image.html", null ]
     ] ],
     [ "AsposePhp::AsposeObjectWrapper< IRow >", "class_aspose_php_1_1_aspose_object_wrapper.html", [
       [ "AsposePhp::Row", "class_aspose_php_1_1_row.html", null ]
@@ -155,9 +167,13 @@ var hierarchy =
       [ "AsposePhp::DataLabel", "class_aspose_php_1_1_data_label.html", null ],
       [ "AsposePhp::DoubleChartValue", "class_aspose_php_1_1_double_chart_value.html", null ],
       [ "AsposePhp::FillFormat", "class_aspose_php_1_1_fill_format.html", null ],
+      [ "AsposePhp::FillType", "class_aspose_php_1_1_fill_type.html", null ],
       [ "AsposePhp::Format", "class_aspose_php_1_1_format.html", null ],
+      [ "AsposePhp::ImageCollection", "class_aspose_php_1_1_image_collection.html", null ],
       [ "AsposePhp::ISlideCollection", "class_aspose_php_1_1_i_slide_collection.html", null ],
       [ "AsposePhp::LayoutSlide", "class_aspose_php_1_1_layout_slide.html", null ],
+      [ "AsposePhp::LineFillFormat", "class_aspose_php_1_1_line_fill_format.html", null ],
+      [ "AsposePhp::LineFormat", "class_aspose_php_1_1_line_format.html", null ],
       [ "AsposePhp::Marker", "class_aspose_php_1_1_marker.html", null ],
       [ "AsposePhp::MasterSlide", "class_aspose_php_1_1_master_slide.html", null ],
       [ "AsposePhp::MasterSlideCollection", "class_aspose_php_1_1_master_slide_collection.html", null ],
@@ -168,6 +184,7 @@ var hierarchy =
       [ "AsposePhp::Portion", "class_aspose_php_1_1_portion.html", null ],
       [ "AsposePhp::PortionCollection", "class_aspose_php_1_1_portion_collection.html", null ],
       [ "AsposePhp::PortionFormat", "class_aspose_php_1_1_portion_format.html", null ],
+      [ "AsposePhp::PPImage", "class_aspose_php_1_1_p_p_image.html", null ],
       [ "AsposePhp::Presentation", "class_aspose_php_1_1_presentation.html", null ],
       [ "AsposePhp::PresentationFactory", "class_aspose_php_1_1_presentation_factory.html", null ],
       [ "AsposePhp::PresentationText", "class_aspose_php_1_1_presentation_text.html", null ],
@@ -175,6 +192,7 @@ var hierarchy =
       [ "AsposePhp::RowCollection", "class_aspose_php_1_1_row_collection.html", null ],
       [ "AsposePhp::Shape", "class_aspose_php_1_1_shape.html", null ],
       [ "AsposePhp::ShapeCollection", "class_aspose_php_1_1_shape_collection.html", null ],
+      [ "AsposePhp::ShapeType", "class_aspose_php_1_1_shape_type.html", null ],
       [ "AsposePhp::SizeF", "class_aspose_php_1_1_size_f.html", null ],
       [ "AsposePhp::Slide", "class_aspose_php_1_1_slide.html", null ],
       [ "AsposePhp::SlideSize", "class_aspose_php_1_1_slide_size.html", null ],
@@ -184,6 +202,7 @@ var hierarchy =
       [ "AsposePhp::StringOrDoubleChartValue", "class_aspose_php_1_1_string_or_double_chart_value.html", null ],
       [ "AsposePhp::TextFrame", "class_aspose_php_1_1_text_frame.html", null ]
     ] ],
+    [ "Base64", "class_base64.html", null ],
     [ "AsposePhp::Collection< T >", "class_aspose_php_1_1_collection.html", null ],
     [ "AsposePhp::Collection< IChartCategoryCollection >", "class_aspose_php_1_1_collection.html", [
       [ "AsposePhp::ChartCategoryCollection", "class_aspose_php_1_1_chart_category_collection.html", null ]
@@ -199,6 +218,9 @@ var hierarchy =
     ] ],
     [ "AsposePhp::Collection< IColumnCollection >", "class_aspose_php_1_1_collection.html", [
       [ "AsposePhp::ColumnCollection", "class_aspose_php_1_1_column_collection.html", null ]
+    ] ],
+    [ "AsposePhp::Collection< IImageCollection >", "class_aspose_php_1_1_collection.html", [
+      [ "AsposePhp::ImageCollection", "class_aspose_php_1_1_image_collection.html", null ]
     ] ],
     [ "AsposePhp::Collection< IMasterSlideCollection >", "class_aspose_php_1_1_collection.html", [
       [ "AsposePhp::MasterSlideCollection", "class_aspose_php_1_1_master_slide_collection.html", null ]

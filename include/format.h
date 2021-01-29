@@ -16,6 +16,7 @@ namespace AsposePhp {
             void __construct(Php::Parameters &params);
              
             Php::Value get_Fill();
+            Php::Value get_Line();
             
 
     };

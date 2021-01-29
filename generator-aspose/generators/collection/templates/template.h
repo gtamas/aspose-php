@@ -18,9 +18,7 @@ namespace AsposePhp {
             Php::Value idx_get(Php::Parameters &params);
             Php::Value get_Count();
             <% for (let i=0; i<methods.length; i++) { %>
-            Php::Value <%= phpName %>::<%= methods[i].methodName %> {
-                return nullptr;
-            }
+            Php::Value <%= methods[i].methodName %>();
             <% } %>
 
     };

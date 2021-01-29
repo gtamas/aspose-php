@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['main_2ecpp_257',['main.cpp',['../main_8cpp.html',1,'']]],
-  ['main_2ed_258',['main.d',['../main_8d.html',1,'']]],
-  ['marker_259',['Marker',['../class_aspose_php_1_1_marker.html',1,'AsposePhp::Marker'],['../class_aspose_php_1_1_marker.html#a478a984f152468e88a9d4d7087ae2c3d',1,'AsposePhp::Marker::Marker()']]],
-  ['marker_2ecpp_260',['marker.cpp',['../marker_8cpp.html',1,'']]],
-  ['marker_2ed_261',['marker.d',['../marker_8d.html',1,'']]],
-  ['marker_2eh_262',['marker.h',['../marker_8h.html',1,'']]],
-  ['master_2dslide_2dcollection_2ecpp_263',['master-slide-collection.cpp',['../master-slide-collection_8cpp.html',1,'']]],
-  ['master_2dslide_2dcollection_2ed_264',['master-slide-collection.d',['../master-slide-collection_8d.html',1,'']]],
-  ['master_2dslide_2dcollection_2eh_265',['master-slide-collection.h',['../master-slide-collection_8h.html',1,'']]],
-  ['master_5fslide_2eh_266',['master_slide.h',['../master__slide_8h.html',1,'']]],
-  ['masterslide_267',['MasterSlide',['../class_aspose_php_1_1_master_slide.html',1,'AsposePhp::MasterSlide'],['../class_aspose_php_1_1_master_slide.html#a773571186539dab53ebd61cca7b2e6ba',1,'AsposePhp::MasterSlide::MasterSlide()']]],
-  ['masterslidecollection_268',['MasterSlideCollection',['../class_aspose_php_1_1_master_slide_collection.html',1,'AsposePhp::MasterSlideCollection'],['../class_aspose_php_1_1_master_slide_collection.html#a082076290043e391197bc5950a0364e1',1,'AsposePhp::MasterSlideCollection::MasterSlideCollection()']]],
-  ['mergecells_269',['MergeCells',['../class_aspose_php_1_1_table.html#a77c83a4adab55486c2b32e45b43546f6',1,'AsposePhp::Table']]]
+  ['layout_5fslide_2ecpp_280',['layout_slide.cpp',['../layout__slide_8cpp.html',1,'']]],
+  ['layout_5fslide_2ed_281',['layout_slide.d',['../layout__slide_8d.html',1,'']]],
+  ['layout_5fslide_2eh_282',['layout_slide.h',['../layout__slide_8h.html',1,'']]],
+  ['layoutslide_283',['LayoutSlide',['../class_aspose_php_1_1_layout_slide.html',1,'AsposePhp::LayoutSlide'],['../class_aspose_php_1_1_layout_slide.html#ae8ddc614142032fcef7c73a9ed799afc',1,'AsposePhp::LayoutSlide::LayoutSlide()']]],
+  ['line_2dfill_2dformat_2ecpp_284',['line-fill-format.cpp',['../line-fill-format_8cpp.html',1,'']]],
+  ['line_2dfill_2dformat_2ed_285',['line-fill-format.d',['../line-fill-format_8d.html',1,'']]],
+  ['line_2dfill_2dformat_2eh_286',['line-fill-format.h',['../line-fill-format_8h.html',1,'']]],
+  ['line_2dformat_2ecpp_287',['line-format.cpp',['../line-format_8cpp.html',1,'']]],
+  ['line_2dformat_2ed_288',['line-format.d',['../line-format_8d.html',1,'']]],
+  ['line_2dformat_2eh_289',['line-format.h',['../line-format_8h.html',1,'']]],
+  ['linefillformat_290',['LineFillFormat',['../class_aspose_php_1_1_line_fill_format.html',1,'AsposePhp::LineFillFormat'],['../class_aspose_php_1_1_line_fill_format.html#aeebe1782aba30a5bb397ec2bee6af025',1,'AsposePhp::LineFillFormat::LineFillFormat()']]],
+  ['lineformat_291',['LineFormat',['../class_aspose_php_1_1_line_format.html',1,'AsposePhp::LineFormat'],['../class_aspose_php_1_1_line_format.html#abb0ddf7f70570fd4e3a9fb9122bb5160',1,'AsposePhp::LineFormat::LineFormat()']]],
+  ['load_292',['load',['../class_aspose_php_1_1_presentation.html#ade5925620f5246320a9d185e3508ff6b',1,'AsposePhp::Presentation']]]
 ];

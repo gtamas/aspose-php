@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['marker_790',['Marker',['../class_aspose_php_1_1_marker.html#a478a984f152468e88a9d4d7087ae2c3d',1,'AsposePhp::Marker']]],
-  ['masterslide_791',['MasterSlide',['../class_aspose_php_1_1_master_slide.html#a773571186539dab53ebd61cca7b2e6ba',1,'AsposePhp::MasterSlide']]],
-  ['masterslidecollection_792',['MasterSlideCollection',['../class_aspose_php_1_1_master_slide_collection.html#a082076290043e391197bc5950a0364e1',1,'AsposePhp::MasterSlideCollection']]],
-  ['mergecells_793',['MergeCells',['../class_aspose_php_1_1_table.html#a77c83a4adab55486c2b32e45b43546f6',1,'AsposePhp::Table']]]
+  ['layoutslide_878',['LayoutSlide',['../class_aspose_php_1_1_layout_slide.html#ae8ddc614142032fcef7c73a9ed799afc',1,'AsposePhp::LayoutSlide']]],
+  ['linefillformat_879',['LineFillFormat',['../class_aspose_php_1_1_line_fill_format.html#aeebe1782aba30a5bb397ec2bee6af025',1,'AsposePhp::LineFillFormat']]],
+  ['lineformat_880',['LineFormat',['../class_aspose_php_1_1_line_format.html#abb0ddf7f70570fd4e3a9fb9122bb5160',1,'AsposePhp::LineFormat']]],
+  ['load_881',['load',['../class_aspose_php_1_1_presentation.html#ade5925620f5246320a9d185e3508ff6b',1,'AsposePhp::Presentation']]]
 ];

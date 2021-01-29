@@ -3,6 +3,7 @@
 use AsposePhp\Slides\Presentation;
 use AsposePhp\Slides\Util\SlideUtil;
 use AsposePhp\Slides\PresentationFactory;
+use AsposePhp\Slides\FillType;
 use AsposePhp\AsposeUtil;
 
 try {
@@ -34,19 +35,23 @@ Pres slidesize  <?php $w = $ppt->get_SlideSize()->get_Size()->get_Width();?>
 <?php print_r($w); ?>
 <?php print_r($h); ?>
 
-Thumbnail: <?php print_r($ppt->getSlides()->get_Item(0)->get_Shapes()->ToArray()); //print_r($ppt->getSlides()->get_Item(0)->GetThumbnailAsByteArray(1, 1, 'png')); ?>
+Thumbnail: <?php //print_r($ppt->getSlides()->get_Item(0)->GetThumbnailAsByteArray(1, 1, 'png')); ?>
 
 LayoutSLide: <?php 
 $masterSlide = $ppt->getSlides()->get_Item(0)->get_LayoutSlide()->get_MasterSlide();
 print_r($masterSlide); ?>
 
-Util <?php print_r(SlideUtil::GetAllTextBoxes($masterSlide)[0]->get_Paragraphs()->idx_get(0)->get_Portions()->idx_get(0)->get_Text()); ?>
+Util <?php print_r(SlideUtil::GetAllTextBoxes($ppt->getSlides()->get_Item(0))[4]->get_Paragraphs()->idx_get(0)->get_Portions()->idx_get(0)->get_PortionFormat()->get_FillFormat()->get_SolidFillColor()->set_Color("#FF0000")); ?>
+
+<?php //print_r($ppt->getSlides()->AddClone($ppt->getSlides()->get_Item(1))); ?>
+
+<?php $ppt->getSlides()->get_Item(1)->Remove(); ?>
 
 <?php $ppt->cloneSlide(0); ?>
 
 Aspose.Slides version: <?php echo AsposeUtil::getVersion(); 
 
-//$ppt->save("/home/tamas/foo.pptx");
+print_r($ppt->save("./xy.pptx", "pptx", false));
 
 }
 catch(Exception $e) {

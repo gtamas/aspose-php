@@ -36,10 +36,11 @@ namespace AsposePhp {
             Php::Value get_Shapes();
             Php::Value get_LayoutSlide();
             Php::Value get_NotesSlideManager();
+            void Remove();
 
             // Custom methods
 
-            Php::Value GetThumbnailAsByteArray(Php::Parameters &params);
+            Php::Value GetThumbnail(Php::Parameters &params);
             Php::Value getSlideNumber();
             Php::Value getNotesText();
             Php::Value getMasterText();

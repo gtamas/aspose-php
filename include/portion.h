@@ -16,6 +16,8 @@ namespace AsposePhp {
             void __construct(Php::Parameters &params);
             void set_Text(Php::Parameters &params);
             Php::Value get_Text();
+            Php::Value get_PortionFormat();
+            
     };
 
 }

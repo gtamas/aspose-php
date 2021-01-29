@@ -53,6 +53,7 @@ var NAVTREE =
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
@@ -62,9 +63,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_aspose_php_1_1_connector.html#a40d9dda849f1fafda5d7dfd7f5a79b5d",
-"class_aspose_php_1_1_text_frame.html#ae90ca01be8f244e7a4817dc28c409064",
-"slide__size_8cpp.html"
+"class_aspose_php_1_1_column_collection.html#a366da126e12a44a8c1749dc86ce3ce27",
+"class_aspose_php_1_1_slide_text.html#a6e270efc3e9db9411345c23c0a1fef55",
+"portion-collection_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

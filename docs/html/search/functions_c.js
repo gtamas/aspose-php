@@ -1,7 +1,13 @@
 var searchData=
 [
-  ['remove_805',['Remove',['../class_aspose_php_1_1_chart_data_point.html#a66ebe73f7d57a3174ce08f6a6c6bd6c5',1,'AsposePhp::ChartDataPoint::Remove()'],['../class_aspose_php_1_1_shape_collection.html#a9be673d8ce507dc0eed6b001bf6fe3ba',1,'AsposePhp::ShapeCollection::Remove()']]],
-  ['removeat_806',['RemoveAt',['../class_aspose_php_1_1_chart_category_collection.html#ac627218bdfb7cbd9141609944f3d2882',1,'AsposePhp::ChartCategoryCollection::RemoveAt()'],['../class_aspose_php_1_1_chart_data_point_collection.html#aadbd241598e2fdb7056cad587531cc9c',1,'AsposePhp::ChartDataPointCollection::RemoveAt()'],['../class_aspose_php_1_1_chart_series_collection.html#a42b721544cfed65c5d1d5e7bedda8dc2',1,'AsposePhp::ChartSeriesCollection::RemoveAt()'],['../class_aspose_php_1_1_column_collection.html#a366da126e12a44a8c1749dc86ce3ce27',1,'AsposePhp::ColumnCollection::RemoveAt()'],['../class_aspose_php_1_1_row_collection.html#a2f252200c9f51e30d30560f1d449aba8',1,'AsposePhp::RowCollection::RemoveAt()']]],
-  ['row_807',['Row',['../class_aspose_php_1_1_row.html#a4df0d450093f68ae981c6fa3c41df7a3',1,'AsposePhp::Row']]],
-  ['rowcollection_808',['RowCollection',['../class_aspose_php_1_1_row_collection.html#a26114622bf7b8ee5b493fc56822621e7',1,'AsposePhp::RowCollection']]]
+  ['paragraph_888',['Paragraph',['../class_aspose_php_1_1_paragraph.html#aa17c9ca4a2dedbe5dc0d703916e9c696',1,'AsposePhp::Paragraph']]],
+  ['paragraphcollection_889',['ParagraphCollection',['../class_aspose_php_1_1_paragraph_collection.html#a0708e2b95df6a45d94b6985ff07dc6a5',1,'AsposePhp::ParagraphCollection']]],
+  ['pictureframe_890',['PictureFrame',['../class_aspose_php_1_1_picture_frame.html#ab1312fcfe5a4aba1a4e2d5f98a8dee7f',1,'AsposePhp::PictureFrame']]],
+  ['portion_891',['Portion',['../class_aspose_php_1_1_portion.html#ac8035b11724bd40172d636891a63a35a',1,'AsposePhp::Portion']]],
+  ['portioncollection_892',['PortionCollection',['../class_aspose_php_1_1_portion_collection.html#a562b3b86d469f2519f55fec4ad278d22',1,'AsposePhp::PortionCollection']]],
+  ['portionformat_893',['PortionFormat',['../class_aspose_php_1_1_portion_format.html#a6be144659824e4b721e996f6846c711a',1,'AsposePhp::PortionFormat']]],
+  ['ppimage_894',['PPImage',['../class_aspose_php_1_1_p_p_image.html#a7c4d2ef4101510fdbeacbf0d1e82aec3',1,'AsposePhp::PPImage']]],
+  ['presentation_895',['Presentation',['../class_aspose_php_1_1_presentation.html#a85b8d5da4a9a581e9969d5703eaaca44',1,'AsposePhp::Presentation']]],
+  ['presentationfactory_896',['PresentationFactory',['../class_aspose_php_1_1_presentation_factory.html#a439794b24f744aac7d2c31f0522f5a81',1,'AsposePhp::PresentationFactory']]],
+  ['presentationtext_897',['PresentationText',['../class_aspose_php_1_1_presentation_text.html#a3ea90272d4f7fdee6513478d5f3742d7',1,'AsposePhp::PresentationText']]]
 ];
