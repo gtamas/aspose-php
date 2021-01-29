@@ -107,6 +107,15 @@ namespace AsposePhp
     }
 
     /**
+     * @brief Removes slide from presentation
+     * 
+     */
+    void Slide::Remove()
+    {
+        _slide->Remove();
+    }
+
+    /**
      * @brief Returns the layout slide for the current slide
      * 
      * @return Php::Value 
@@ -118,11 +127,12 @@ namespace AsposePhp
         return Php::Object("AsposePhp\\Slides\\LayoutSlide", phpValue);
     }
 
-    Php::Value Slide::GetThumbnailAsByteArray(Php::Parameters &params)
+    Php::Value Slide::GetThumbnail(Php::Parameters &params)
     {
         float scaleX = params[0].numericValue();
         float scaleY = params[1].numericValue();
         std::string format = params[2].stringValue();
+        bool asArray = params[3].boolValue();
 
         ImageFormatPtr fmt;
         if (format == "png")
@@ -141,13 +151,18 @@ namespace AsposePhp
         try
         {
             SharedPtr<System::Drawing::Bitmap> bmp = _slide->GetThumbnail(scaleX, scaleY);
-            SharedPtr<MemoryStream> stream = new MemoryStream();
+            SharedPtr<MemoryStream> stream = MakeObject<MemoryStream>();
 
             bmp->Save(stream, fmt);
             vector<uint8_t> res = stream->ToArray()->data();
-            bmp.reset();
-            stream.reset();
-            return Php::Array(res);
+
+            if(asArray) {
+                return Php::Array(res);
+            } else {
+                std::string str;
+                str.assign(res.begin(), res.end());
+                return str;
+            }
         }
         catch (std::exception &e)
         {

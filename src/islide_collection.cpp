@@ -3,12 +3,15 @@
 #include "../include/slide.h"
 #include "../include/util.h"
 #include <phpcpp.h>
+#include "../include/slide.h"
+#include <Exceptions/PptxEditException.h>
 
 using namespace Aspose::Slides;
 using namespace System;
 using namespace std;
 
-namespace AsposePhp {
+namespace AsposePhp
+{
 
     /**
      * @brief PHP Constructor
@@ -17,7 +20,6 @@ namespace AsposePhp {
      */
     void ISlideCollection::__construct(Php::Parameters &params)
     {
-
     }
 
     /**
@@ -28,7 +30,6 @@ namespace AsposePhp {
     Php::Value ISlideCollection::size()
     {
         return this->_slides->get_Count();
-
     }
 
     /**
@@ -42,15 +43,42 @@ namespace AsposePhp {
     Php::Value ISlideCollection::get_Item(Php::Parameters &params)
     {
         int slideNo = params[0].numericValue();
-        try {
+        try
+        {
             SharedPtr<ISlide> slide = this->_slides->idx_get(slideNo);
-            Slide* phpSlide = new Slide(slide, "", "", "", slide->get_SlideNumber()); 
+            Slide *phpSlide = new Slide(slide, "", "", "", slide->get_SlideNumber());
             return Php::Object("AsposePhp\\Slides\\Slide", phpSlide);
         }
-        catch(System::ArgumentOutOfRangeException &e) {
+        catch (System::ArgumentOutOfRangeException &e)
+        {
             throw Php::Exception("Invalid index: " + to_string(slideNo));
         }
     }
 
+    /**
+     * @brief Adds a copy of a specified slide to the end of the collection
+     * 
+     * @param params 
+     * @return Php::Value 
+     */
+    Php::Value ISlideCollection::AddClone(Php::Parameters &params)
+    {
+        Php::Value object = params[0];
+        Slide *phpSlide = (Slide *)object.implementation();
+        try
+        {
+            SharedPtr<ISlide> slide = _slides->AddClone(phpSlide->getAsposeClass());
+            Slide *phpValue = new Slide(slide, "", "", "", slide->get_SlideNumber());
+            return Php::Object("AsposePhp\\Slides\\Slide", phpValue);
+        }
+        catch (Aspose::Slides::PptxEditException &e)
+        {
+            throw Php::Exception(e.what());
+        }
+        catch (std::exception &e)
+        {
+            throw Php::Exception(e.what());   
+        }
+    }
 
-}
+} // namespace AsposePhp

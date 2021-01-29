@@ -65,6 +65,12 @@
 #include "../include/column.h"
 #include "../include/master-slide-collection.h"
 #include "../include/chart-data-workbook.h"
+#include "../include/image-collection.h"
+#include "../include/pp-image.h"
+#include "../include/filltype.h"
+#include "../include/shape-type.h"
+#include "../include/line-format.h"
+#include "../include/line-fill-format.h"
 
 
 using namespace AsposePhp;
@@ -107,13 +113,16 @@ extern "C" {
             Php::ByVal("slideNo", Php::Type::Numeric, true) 
         });
         pres.method<&AsposePhp::Presentation::save>("save", Php::Public, { 
-            Php::ByVal("outfile", Php::Type::String, true) 
+            Php::ByVal("outfile", Php::Type::String, true),
+            Php::ByVal("format", Php::Type::String, true),
+            Php::ByVal("asArray", Php::Type::Bool, true)  
         });
         pres.method<&AsposePhp::Presentation::cloneSlide>("cloneSlide", Php::Public, { 
             Php::ByVal("outfile", Php::Type::Numeric, true) 
         });
         pres.method<&AsposePhp::Presentation::get_SlideSize>("get_SlideSize", Php::Public, {});
         pres.method<&AsposePhp::Presentation::get_Masters>("get_Masters", Php::Public, {});
+        pres.method<&AsposePhp::Presentation::get_Images>("get_Images", Php::Public, {});
 
         // SlideCollection
 
@@ -121,6 +130,9 @@ extern "C" {
 
         col.method<&AsposePhp::ISlideCollection::size>("size", {});
         col.method<&AsposePhp::ISlideCollection::get_Item>("get_Item", {});
+        col.method<&AsposePhp::ISlideCollection::AddClone>("AddClone", Php::Public, {
+             Php::ByVal("slide", "AsposePhp\\Slides\\Slide", true) 
+        });
 
 
         // PresentationFactory
@@ -412,10 +424,11 @@ extern "C" {
 
         Php::Class<AsposePhp::Slide> slide("AsposePhp\\Slides\\Slide");
 
-        slide.method<&AsposePhp::Slide::GetThumbnailAsByteArray>("GetThumbnailAsByteArray", { 
+        slide.method<&AsposePhp::Slide::GetThumbnail>("GetThumbnail", { 
             Php::ByVal("scaleX", Php::Type::Numeric, true),
             Php::ByVal("scaleY", Php::Type::Numeric, true),
-            Php::ByVal("format", Php::Type::String, true)  
+            Php::ByVal("format", Php::Type::String, true),
+            Php::ByVal("asArray", Php::Type::Bool, true)    
         });
         slide.method<&AsposePhp::Slide::get_LayoutSlide>("get_LayoutSlide", {});
         slide.method<&AsposePhp::Slide::get_Shapes>("get_Shapes", {});
@@ -425,6 +438,7 @@ extern "C" {
         slide.method<&AsposePhp::Slide::getMasterText>("getMasterText", {});
         slide.method<&AsposePhp::Slide::getNotesText>("getNotesText", {});
         slide.method<&AsposePhp::Slide::get_NotesSlideManager>("get_NotesSlideManager", {});
+        slide.method<&AsposePhp::Slide::Remove>("Remove", Php::Public, {});
         
         // Bitmap
 
@@ -472,6 +486,7 @@ extern "C" {
               Php::ByVal("value", Php::Type::String, true) 
         });
         portion.method<&AsposePhp::Portion::get_Text>("get_Text", Php::Public, {});
+        portion.method<&AsposePhp::Portion::get_PortionFormat>("get_PortionFormat", Php::Public, {});
 
         // AutoShape
 
@@ -501,6 +516,7 @@ extern "C" {
 
         Php::Class<AsposePhp::Format> format("AsposePhp\\Slides\\Charts\\Format");
         format.method<&AsposePhp::Format::get_Fill>("get_Fill", Php::Public, {});
+        format.method<&AsposePhp::Format::get_Line>("get_Line", Php::Public, {});
 
         // FillFormat
 
@@ -639,7 +655,58 @@ extern "C" {
                 Php::ByVal("column", Php::Type::String, true), 
                 Php::ByVal("value", Php::Type::String, true)
         });
+        
+        // ImageCollection 
 
+        Php::Class<AsposePhp::ImageCollection > imageCollection("AsposePhp\\Slides\\ImageCollection");
+        imageCollection.method<&AsposePhp::ImageCollection ::idx_get>("idx_get", Php::Public, { 
+                        Php::ByVal("index", Php::Type::Numeric, true) 
+                    });
+        imageCollection.method<&AsposePhp::ImageCollection ::get_Count>("get_Count", Php::Public, {});
+        imageCollection.method<&AsposePhp::ImageCollection ::AddImage>("AddImage", Php::Public, {
+                Php::ByVal("fileOrEncoded", Php::Type::String, true),
+                Php::ByVal("isBase64", Php::Type::Bool, true)  
+        });
+        
+        // PPImage
+        
+        Php::Class<AsposePhp::PPImage> ppImage("AsposePhp\\Slides\\PPImage");
+        ppImage.method<&AsposePhp::PPImage::get_Width>("get_Width", Php::Public, {});
+        ppImage.method<&AsposePhp::PPImage::get_Height>("get_Height", Php::Public, {});
+        ppImage.method<&AsposePhp::PPImage::get_ContentType>("get_ContentType", Php::Public, {});
+
+        // FillType
+
+        Php::Class<AsposePhp::FillType> fillType("AsposePhp\\Slides\\FillType");
+        fillType.method<&AsposePhp::FillType::get>("get", Php::Public, {
+             Php::ByVal("type", Php::Type::String, true) 
+        });
+
+        // ShapeType
+
+        Php::Class<AsposePhp::ShapeType> shapeType("AsposePhp\\Slides\\ShapeType");
+        shapeType.method<&AsposePhp::ShapeType::get>("get", Php::Public, {
+             Php::ByVal("type", Php::Type::String, true) 
+        });
+
+        // LineFormat
+
+        Php::Class<AsposePhp::LineFormat> lineFormat("AsposePhp\\Slides\\LineFormat");
+        lineFormat.method<&AsposePhp::LineFormat::get_FillFormat>("get_FillFormat", Php::Public, {});
+
+        // LineFillFormat
+        Php::Class<AsposePhp::LineFillFormat> lineFillFormat("AsposePhp\\Slides\\LineFillFormat");
+        lineFillFormat.method<&AsposePhp::LineFillFormat::set_FillType>("set_FillType", Php::Public, {
+            Php::ByVal("type", Php::Type::Numeric, true) 
+        });
+        lineFillFormat.method<&AsposePhp::LineFillFormat::get_SolidFillColor>("get_SolidFillColor", Php::Public, {});
+        
+        extension.add(std::move(lineFillFormat));
+        extension.add(std::move(lineFormat));
+        extension.add(std::move(shapeType));
+        extension.add(std::move(fillType));
+        extension.add(std::move(ppImage));
+        extension.add(std::move(imageCollection));
         extension.add(std::move(chartDataWorkbook));
         extension.add(std::move(masterSlideCollection));
         extension.add(std::move(column));

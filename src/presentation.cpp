@@ -8,6 +8,8 @@
 #include <Util/License.h>
 #include <Exceptions/PptxEditException.h>
 #include "../include/master-slide-collection.h"
+#include "../include/image-collection.h"
+
 
 using namespace Aspose::Slides;
 using namespace Aspose::Slides::Export;
@@ -118,30 +120,41 @@ namespace AsposePhp {
     }
 
     /**
-     * @brief Writes the presentaton to disk.
+     * @brief Writes the presentaton to disk or returns it as byte array.
      * 
      * @param params Output path. File must not exist.
+     * @param params file format.
+     * @param params AsArray if true, byte array will be returned.
      * 
      * @throw System::IO::IOException cannot access path
      * @throw System::UnauthorizedAccessException Has no right access file
      */
-    void Presentation::save(Php::Parameters &params) {
+    Php::Value Presentation::save(Php::Parameters &params) {
         String outfile = String(params[0].stringValue());
-        string ext = outfile.Substring(outfile.LastIndexOf(u".")+1).ToUtf8String();
-
+        std::string fmt = params[1].stringValue();
+        bool asArray = params[2].boolValue();
+       
         SaveFormat format = SaveFormat::Ppt;
         ArrayPtr<string> formats = new Array<string>(vector<string> {"ppt", "pptx"});
 
-        if(formats->IndexOf(ext) != -1) {
-            if(ext == "ppt") {
+        if(formats->IndexOf(fmt) != -1) {
+            if(fmt == "ppt") {
                 format = SaveFormat::Ppt;
-            } else if(ext == "pptx") {
+            } else if(fmt == "pptx") {
                 format = SaveFormat::Pptx;
             } 
 
             try {
-                SharedPtr<Stream> stream = MakeObject<FileStream>(outfile, FileMode::CreateNew);
-                _pres->Save(outfile, format);
+                if(asArray) {
+                     SharedPtr<MemoryStream> stream = MakeObject<MemoryStream>();
+                     _pres->Save(stream, format);
+                      vector<uint8_t> res = stream->ToArray()->data();
+                     return Php::Array(res);
+                } else {
+                     SharedPtr<Stream> stream = MakeObject<FileStream>(outfile, FileMode::Create);
+                    _pres->Save(stream, format);
+                }
+
             }
             catch(System::IO::IOException &e) {
               throw Php::Exception(e.what());
@@ -152,7 +165,11 @@ namespace AsposePhp {
             catch(...) {
                 throw Php::Exception("Uknown error. Unable to write output file..");
             }
+        } else {
+              throw Php::Exception("Uknown format.");
         }
+
+        return nullptr;
 
     }
 
@@ -336,6 +353,17 @@ namespace AsposePhp {
         SharedPtr<IMasterSlideCollection> items = _pres->get_Masters();
         MasterSlideCollection * phpValue = new MasterSlideCollection(items); 
         return Php::Object("AsposePhp\\Slides\\MasterSlideCollection", phpValue);
+    }
+
+    /**
+     * @brief Returns the collection of all images in the presentation. Read-only IImageCollection
+     * 
+     * @return Php::Value 
+     */
+    Php::Value Presentation::get_Images() {
+        SharedPtr<IImageCollection> items = _pres->get_Images();
+        ImageCollection * phpValue = new ImageCollection(items); 
+         return Php::Object("AsposePhp\\Slides\\ImageCollection", phpValue);
     }
 
 
