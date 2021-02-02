@@ -277,6 +277,10 @@ Once the prompts are filled, this generates the cpp and h files, prints the regi
 
 **Boostrap a collection**
 
+```
+yo aspose::collection
+```
+
 This can be used to create classes for Aspose collections such as [this one](https://apireference.aspose.com/slides/cpp/class/aspose.slides.audio_collection).
 It will generate some boilerplate code too.
 
@@ -298,6 +302,10 @@ Once finished, this will generate the sources and print reg code for you, just l
 
 
 ***Boostrap a method**
+
+```
+yo aspose::method
+```
 
 This one is special, because it does not generate source files, but only the code for the new method. It is able to generate different kind of methods.
 
