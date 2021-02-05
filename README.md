@@ -4,12 +4,14 @@
 * 3. [Compile from source](#compile-from-source)
 * 4. [API](#api)
 * 5. [PHP](#php)
-* 6. [ 6. Development](#development)
-    * 6.1. [About the code](#about-the-code)
-    * 6.2. [More on the PHP classes and methods](#more-on-the-php-classes-and-methods)
-    * 6.3. [On memory management](#on-memory-management)
-    * 6.4. [Adding new Aspose functionality](#adding-new-aspose-functionality)
-    * 6.5. [The code generator](#the-code-generator)
+* 6. [Known Aspose bugs](#known-aspose-bugs)
+* 7. [PHP stubs](#php-stubs)
+* 8. [Development](#development)
+    * 8.1. [About the code](#about-the-code)
+    * 8.2. [More on the PHP classes and methods](#more-on-the-php-classes-and-methods)
+    * 8.3. [On memory management](#on-memory-management)
+    * 8.4. [Adding new Aspose functionality](#adding-new-aspose-functionality)
+    * 8.5. [The code generator](#the-code-generator)
 
 <!-- vscode-markdown-toc-config
 	numbering=true
@@ -71,9 +73,42 @@ See test.php for examples.
 php ./test.php
 ```
 
-##  6. <a name='development'></a> 6. Development
+##  6. <a name='known-aspose-bugs'></a>Known Aspose bugs
 
-###  6.1. <a name='about-the-code'></a>About the code
+In order to make preview image generation work (Slide::GetThumbnail()), you must edit /etc/fonts/fonts.conf 
+
+```
+sudo vim /etc/fonts/fonts.conf
+```
+
+and comment the following line:
+
+```
+<dir>~/.fonts</dir>
+```
+
+##  7. <a name='php-stubs'></a>PHP stubs
+
+You can find stub files in ./stubs. These can be used to make intellisense work in IDEs like PHPStorm.
+
+Run the following to build a single file containing all stub code:
+
+```
+./make.sh -s 1
+```
+
+Run this to generate a stub file for each class:
+
+```
+./make.sh -s 2
+```
+
+Please note that each IDE requires unique config steps to use the stubs. Please refer to your IDE's docs for details.
+
+
+##  8. <a name='development'></a>Development
+
+###  8.1. <a name='about-the-code'></a>About the code
 
 This is C++ 20 code. 
 
@@ -85,7 +120,7 @@ Since it is not possible to export the Aspose classes directly to PHP, we use th
 - PHP will be able to instantiate these classes and call their methods, like normal PHP class methods.
 
 
-###  6.2. <a name='more-on-the-php-classes-and-methods'></a>More on the PHP classes and methods
+###  8.2. <a name='more-on-the-php-classes-and-methods'></a>More on the PHP classes and methods
 
 ***Classes***
 
@@ -100,7 +135,7 @@ Since it is not possible to export the Aspose classes directly to PHP, we use th
 - The Php methods might return primitives as well as instances other PHP classes (or the same class) or nullptr or they can also use void. If they return a value, it must be compatible with **Php::Value**.
 - Methods must be also registered in ./src/main.cpp, otherwise PHP won't see them.
 
-###  6.3. <a name='on-memory-management'></a>On memory management
+###  8.3. <a name='on-memory-management'></a>On memory management
 
 You shouldn't worry about this, the PHP-CPP and Aspose libs got you covered for the most part. Just keep in mind:
 
@@ -110,7 +145,7 @@ You shouldn't worry about this, the PHP-CPP and Aspose libs got you covered for 
 - For things you don't need to return to PHP, use smart pointers, avoid new.
 
 
-###  6.4. <a name='adding-new-aspose-functionality'></a>Adding new Aspose functionality
+###  8.4. <a name='adding-new-aspose-functionality'></a>Adding new Aspose functionality
 
  Exporting some Aspose class to PHP usually requires the steps outlined below. Please note that it's best to use the code generator, you shouldn't do this by hand.
 
@@ -241,7 +276,7 @@ Additionally, please check out the following resources:
 - [PHP-CPP docs](http://www.php-cpp.com/documentation/)
 - [Aspose Slides CPP API docs](https://apireference.aspose.com/slides/cpp)
 
-###  6.5. <a name='the-code-generator'></a>The code generator
+###  8.5. <a name='the-code-generator'></a>The code generator
 
 We also have a code generator which can help a lot with bootstrapping new classes, collections and methods.
 
