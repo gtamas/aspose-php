@@ -129,8 +129,8 @@ namespace AsposePhp
 
     Php::Value Slide::GetThumbnail(Php::Parameters &params)
     {
-        float scaleX = params[0].numericValue();
-        float scaleY = params[1].numericValue();
+        float scaleX = params[0].floatValue();
+        float scaleY = params[1].floatValue();
         std::string format = params[2].stringValue();
         bool asArray = params[3].boolValue();
 

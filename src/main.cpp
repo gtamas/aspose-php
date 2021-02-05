@@ -425,8 +425,8 @@ extern "C" {
         Php::Class<AsposePhp::Slide> slide("AsposePhp\\Slides\\Slide");
 
         slide.method<&AsposePhp::Slide::GetThumbnail>("GetThumbnail", { 
-            Php::ByVal("scaleX", Php::Type::Numeric, true),
-            Php::ByVal("scaleY", Php::Type::Numeric, true),
+            Php::ByVal("scaleX", Php::Type::Float, true),
+            Php::ByVal("scaleY", Php::Type::Float, true),
             Php::ByVal("format", Php::Type::String, true),
             Php::ByVal("asArray", Php::Type::Bool, true)    
         });
