@@ -35,7 +35,7 @@ Pres slidesize  <?php $w = $ppt->get_SlideSize()->get_Size()->get_Width();?>
 <?php print_r($w); ?>
 <?php print_r($h); ?>
 
-Thumbnail: <?php print_r($ppt->getSlides()->get_Item(0)->GetThumbnail(1.1111111111111, 1.1111111111111, "png", true)); ?>
+Thumbnail: <?php //print_r($ppt->getSlides()->get_Item(0)->GetThumbnail(1.1111111111111, 1.1111111111111, "png", true)); ?>
 
 LayoutSLide: <?php 
 $masterSlide = $ppt->getSlides()->get_Item(0)->get_LayoutSlide()->get_MasterSlide();
@@ -50,6 +50,8 @@ Util <?php print_r(SlideUtil::GetAllTextBoxes($ppt->getSlides()->get_Item(0))[4]
 Isset: <?php echo $fac->GetPresentationText("../asposeext/pptexamples.ppt")->get_SlidesText()[25]->get_Text(); ?>
 
 <?php $ppt->cloneSlide(0); ?>
+
+Foo: <?php print_r($fac->GetPresentationText("../asposeext/demoTemplate_2_with_previews_v2.pptx")->get_SlidesText()[5]->get_NotesText()); ?>
 
 Aspose.Slides version: <?php echo AsposeUtil::getVersion(); 
 

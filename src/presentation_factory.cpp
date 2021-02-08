@@ -34,7 +34,7 @@ namespace AsposePhp {
     {
         try {
             String path = String(params[0].stringValue());
-            SharedPtr<IPresentationText> text = _factory->GetPresentationText(path, TextExtractionArrangingMode::Arranged);
+            SharedPtr<IPresentationText> text = _factory->GetPresentationText(path, TextExtractionArrangingMode::Unarranged);
             PresentationText * phpText = new PresentationText(text); 
             return Php::Object("AsposePhp\\Slides\\PresentationText", phpText);
         }
