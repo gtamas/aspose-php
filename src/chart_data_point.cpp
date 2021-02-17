@@ -30,8 +30,7 @@ namespace AsposePhp
      */
     Php::Value ChartDataPoint::get_Value()
     {
-        return Php::Object("AsposePhp\\Slides\\Charts\\DoubleChartValue", wrapObject<IDoubleChartValue, AsposePhp::DoubleChartValue, &IChartDataPoint::get_Value>());
-        ;
+        return  Php::Object("AsposePhp\\Slides\\Charts\\DoubleChartValue", wrapObject<IDoubleChartValue, AsposePhp::DoubleChartValue, &IChartDataPoint::get_Value>());   
     }
 
     /**

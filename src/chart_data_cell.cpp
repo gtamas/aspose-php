@@ -18,7 +18,14 @@ namespace AsposePhp
      */
     Php::Value ChartDataCell::get_Value()
     {
-        return _asposeObj ? _asposeObj->get_Value()->ToString().ToUtf8String() : "";
+        if(_asposeObj) {
+            auto value = _asposeObj->get_Value();
+            if(value == nullptr) {
+                return "";
+            }
+            return _asposeObj->get_Value()->ToString().ToUtf8String();
+        } 
+        return "";
     }
 
     /**
