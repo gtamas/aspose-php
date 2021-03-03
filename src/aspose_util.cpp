@@ -1,7 +1,6 @@
 
 #include <phpcpp.h>
 #include "../include/aspose.h"
-#include <BuildVersionInfo.h>
 #include "../include/aspose_util.h"
 
 using namespace Aspose::Slides;

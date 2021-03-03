@@ -9,7 +9,6 @@
 
 using namespace Aspose::Slides;
 using namespace Aspose::Slides::Charts;
-using namespace System::Drawing;
 using namespace System::Drawing::Imaging;
 using namespace System::IO;
 using namespace System;
@@ -134,16 +133,10 @@ namespace AsposePhp
         std::string format = params[2].stringValue();
         bool asArray = params[3].boolValue();
 
-        ImageFormatPtr fmt;
-        if (format == "png")
-        {
-            fmt = System::Drawing::Imaging::ImageFormat::get_Png();
-        }
-        else if (format == "jpeg")
-        {
-            fmt = System::Drawing::Imaging::ImageFormat::get_Jpeg();
-        }
-        else
+        const ImageFormatPtr png = System::Drawing::Imaging::ImageFormat::get_Png();
+        const ImageFormatPtr jpeg = System::Drawing::Imaging::ImageFormat::get_Jpeg();
+        
+        if (format != "png" && format != "jpeg")
         {
             throw Php::Exception("Invalid format: " + format);
         }
@@ -153,7 +146,7 @@ namespace AsposePhp
             SharedPtr<System::Drawing::Bitmap> bmp = _slide->GetThumbnail(scaleX, scaleY);
             SharedPtr<MemoryStream> stream = MakeObject<MemoryStream>();
 
-            bmp->Save(stream, fmt);
+            bmp->Save(stream, format == "png" ? png : jpeg);
             vector<uint8_t> res = stream->ToArray()->data();
 
             if(asArray) {

@@ -4,7 +4,6 @@
 #include "../include/master_slide.h"
 #include "../include/text_frame.h"
 #include <phpcpp.h>
-#include <any>
 
 using namespace Aspose::Slides;
 using namespace System;

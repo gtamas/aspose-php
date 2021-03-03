@@ -3,7 +3,6 @@
 #include "../include/pp-image.h"
 #include "../include/base64.h"
 #include "../include/image-collection.h"
-#include <LoadingStreamBehavior.h>
 #include <phpcpp.h>
 
 using namespace Aspose::Slides;

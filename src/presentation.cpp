@@ -5,8 +5,6 @@
 #include "../include/slide_size.h"
 #include <phpcpp.h>
 #include <iostream>
-#include <Util/License.h>
-#include <Exceptions/PptxEditException.h>
 #include "../include/master-slide-collection.h"
 #include "../include/image-collection.h"
 

@@ -6,12 +6,17 @@ use AsposePhp\Slides\PresentationFactory;
 use AsposePhp\Slides\FillType;
 use AsposePhp\AsposeUtil;
 
+
+
 try {
     $ppt = new Presentation("../asposeext/builder_template2.pptx", "./Aspose.Slides.C++.lic");
+    print_r($ppt->getSlides()->AddClone($ppt->getSlides()->get_Item(1)));
 
 ?>
 
 cloned
+
+
 
 Slides in file: <?php echo $ppt->getNumberOfSlides(); ?>
 
@@ -43,19 +48,15 @@ print_r($masterSlide); ?>
 
 Util <?php print_r(SlideUtil::GetAllTextBoxes($ppt->getSlides()->get_Item(0))[4]->get_Paragraphs()->idx_get(0)->get_Portions()->idx_get(0)->get_PortionFormat()->get_FillFormat()->get_SolidFillColor()->set_Color("#FF0000")); ?>
 
-<?php //print_r($ppt->getSlides()->AddClone($ppt->getSlides()->get_Item(1))); ?>
-
 <?php $ppt->getSlides()->get_Item(1)->Remove(); ?>
 
 Isset: <?php echo $fac->GetPresentationText("../asposeext/pptexamples.ppt")->get_SlidesText()[25]->get_Text(); ?>
 
 <?php $ppt->cloneSlide(0); ?>
 
-Foo: <?php print_r($fac->GetPresentationText("../asposeext/demoTemplate_2_with_previews_v2.pptx")->get_SlidesText()[5]->get_NotesText()); ?>
-
 Aspose.Slides version: <?php echo AsposeUtil::getVersion(); 
 
-//print_r($ppt->save("./xy.pptx", "pptx", false));
+print_r($ppt->save("./xy.pptx", "pptx", false));
 
 }
 catch(Exception $e) {

@@ -4,7 +4,6 @@
 #include "../include/util.h"
 #include <phpcpp.h>
 #include "../include/slide.h"
-#include <Exceptions/PptxEditException.h>
 
 using namespace Aspose::Slides;
 using namespace System;

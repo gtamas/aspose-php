@@ -1,7 +1,6 @@
 #include "../include/aspose.h"
 #include "../include/chart_data_cell.h"
 #include <phpcpp.h>
-#include <DOM/Chart/ChartDataCell.h>
 
 using namespace Aspose::Slides;
 using namespace Aspose::Slides::Charts;

@@ -2,7 +2,6 @@
 #include "../include/collection.h"
 #include "../include/chart_data_cell.h"
 #include "../include/chart_cell_collection.h"
-//#include "../include/chart_category.h"
 #include <phpcpp.h>
 
 using namespace Aspose::Slides;

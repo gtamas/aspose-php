@@ -7,10 +7,25 @@
 #include <system/io/file_not_found_exception.h>
 #include <xml/xml_exceptions.h>
 
+
+#include <DOM/IMasterSlide.h>
+#include <Util/License.h>
+#include <Exceptions/PptxEditException.h>
+#include <LoadingStreamBehavior.h>
+#include <drawing/color_translator.h>
+#include <DOM/Chart/ChartDataCell.h>
+#include <DOM/Chart/IChartCategory.h>
+#include <BuildVersionInfo.h>
+#include <drawing/imaging/image_format.h>
+#include <drawing/bitmap.h>
+#include <system/io/memory_stream.h>
+#include <DOM/Table/IColumn.h>
 #include <Export/SaveFormat.h>
+#include <DOM/PPImage.h>
 #include <DOM/Presentation.h>
 #include <DOM/PresentationFactory.h>
 #include <DOM/TextExtractionArrangingMode.h>
+#include <DOM/ISlide.h>
 #include <DOM/ISlideText.h>
 #include <DOM/IPresentationText.h>
 #include <DOM/LoadOptions.h>

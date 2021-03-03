@@ -1,6 +1,5 @@
 #include "../include/aspose.h"
 #include "../include/color-format.h"
-#include <drawing/color_translator.h>
 #include <phpcpp.h>
 
 using namespace Aspose::Slides;
