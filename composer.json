@@ -1,0 +1,35 @@
+{
+    "name": "dashboardvision/aspose-php",
+    "description": "Aspose.Slides PHP extension",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Tamas Geschitz",
+            "email": "getamas@gmail.com"
+        }
+    ],
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/sasezaki/php-extension-stub-generator"
+        }
+    ],
+    "version": "1.0.0",
+    "keywords": [
+        "extension",
+        "aspose",
+        "pptx",
+        "slides",
+        "presentation"
+    ],
+    "homepage": "https://github.com/dashboardvision/aspose-php",
+    "require": {
+        "sasezaki/php-extension-stub-generator": "dev-master"
+    },
+    "support": {
+        "email": "info@dashboardvision.com",
+        "issues": "https://github.com/dashboardvision/aspose-php/issues"
+    }
+}

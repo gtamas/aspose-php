@@ -91,6 +91,12 @@ and comment the following line:
 
 You can find stub files in ./stubs. These can be used to make intellisense work in IDEs like PHPStorm.
 
+If you wanna build these files, install the stub generator:
+
+```
+composer update
+```
+
 Run the following to build a single file containing all stub code:
 
 ```

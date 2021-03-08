@@ -35,9 +35,12 @@
 #doc files
 *.ppt
 *.pptx
+!ppts/*
 
 node_modules
 docs
 project
 target
 .bsp
+
+/vendor/
