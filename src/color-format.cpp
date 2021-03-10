@@ -11,6 +11,11 @@ using namespace std;
 namespace AsposePhp {
 
  
+    /**
+     * @brief Sets the color definition method
+     * 
+     * @param params 
+     */
     void ColorFormat::set_Color(Php::Parameters &params) {
         String color = String(params[0].stringValue());
         Color c = ColorTranslator::FromHtml(color);

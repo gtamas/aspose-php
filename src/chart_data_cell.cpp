@@ -49,6 +49,11 @@ namespace AsposePhp
         return _asposeObj->set_CustomNumberFormat(String(value));
     }
 
+    /**
+     * @brief Sets the value.
+     * 
+     * @param params 
+     */
     void ChartDataCell::set_Value(Php::Parameters &params)
     {
         std::string value = params[0].stringValue();

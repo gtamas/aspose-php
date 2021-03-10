@@ -42,6 +42,11 @@ namespace AsposePhp
         return _asposeObj->get_Count();
     }
 
+    /**
+     * @brief Removes a row at the specified position from a table
+     * 
+     * @param params 
+     */
     void RowCollection::RemoveAt(Php::Parameters &params)
     {
         int32_t index = params[0].numericValue();

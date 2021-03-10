@@ -126,6 +126,12 @@ namespace AsposePhp
         return Php::Object("AsposePhp\\Slides\\LayoutSlide", phpValue);
     }
 
+    /**
+     * @brief 
+     * 
+     * @param params 
+     * @return Php::Value 
+     */
     Php::Value Slide::GetThumbnail(Php::Parameters &params)
     {
         float scaleX = params[0].floatValue();

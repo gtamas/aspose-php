@@ -34,7 +34,7 @@ namespace AsposePhp
     }
 
     /**
-     * @brief Returns the x value of chart data point
+     * @brief Returns the y value of chart data point
      * 
      * @return Php::Value 
      */
@@ -45,7 +45,7 @@ namespace AsposePhp
     }
 
     /**
-     * @brief Returns the y value of chart data point
+     * @brief Returns the x value of chart data point
      * 
      * @return Php::Value 
      */

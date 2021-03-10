@@ -20,6 +20,11 @@ namespace AsposePhp
         return Php::Object("AsposePhp\\Slides\\Charts\\FillFormat", wrapObject<IFillFormat, AsposePhp::FillFormat, &IFormat::get_Fill>());
     }
 
+    /**
+     * @brief Returns line style properties of a chart
+     * 
+     * @return Php::Value 
+     */
     Php::Value Format::get_Line()
     {
         return Php::Object("AsposePhp\\Slides\\LineFormat", wrapObject<ILineFormat, AsposePhp::LineFormat, &IFormat::get_Line>());
