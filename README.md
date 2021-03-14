@@ -90,6 +90,10 @@ and comment the following line:
 ##  7. <a name='php-stubs'></a>PHP stubs
 
 You can find stub files in ./stubs. These can be used to make intellisense work in IDEs like PHPStorm.
+Please note that the generated stubs contain only the namespaces, methods and classes and some info about the arguments. This will make intellisense work, however, there is no detailed usage info like PHPDocs. This is because of PHP-CPP limitations.
+
+If you want more detailed info, see `plugin/aspose/aspose.php`, which is an annotated stub file, but it has to be updated manually.
+See below for install instructions.
 
 If you wanna build these files, install the stub generator:
 
@@ -107,6 +111,13 @@ Run this to generate a stub file for each class:
 
 ```
 ./make.sh -s 2
+```
+
+Additionally, you may also generate stubs as PHPStorm plugin. This is the recommended way, since it's the easiest to install and the stub data contains detailed PHPDocs.
+Simply add the resulting `plugin/phpstorm-aspose-php-plugin.jar` to PHPStorm (see [this page](https://www.jetbrains.com/help/phpstorm/managing-plugins.html) if you wanna know more).
+
+```
+./make.sh -p 1
 ```
 
 Please note that each IDE requires unique config steps to use the stubs. Please refer to your IDE's docs for details.

@@ -1,0 +1,27 @@
+<idea-plugin version="2">
+  <id>com.dashboardvision.idea.plugin.asposephp</id>
+  <name>AsposePhp</name>
+  <version>0.1</version>
+  <vendor email="info@dashboardvision.com" url="https://dashboardvision.com/">DashboardVision Inc</vendor>
+
+  <description><![CDATA[
+    Aspose-PHP extension stub files.
+  ]]></description>
+
+  <change-notes><![CDATA[
+    <h3>0.1</h3>
+    <ul>
+      <li>First release.</li>
+    </ul>
+  ]]>
+  </change-notes>
+
+  <idea-version since-build="163.3984"/>
+
+  <depends>com.intellij.modules.platform</depends>
+  <depends>com.jetbrains.php</depends>
+
+  <extensions defaultExtensionNs="com.jetbrains.php">
+    <libraryRoot id="aspose" path="/aspose/" runtime="false"/>
+  </extensions>
+</idea-plugin>
