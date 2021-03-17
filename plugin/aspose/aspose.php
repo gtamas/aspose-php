@@ -24,9 +24,9 @@ class LineFillFormat
      * https://apireference.aspose.com/slides/cpp/class/aspose.slides.line_fill_format
      * 
      * @param int $type The fill type. It's an enum See https://apireference.aspose.com/slides/cpp/namespace/aspose.slides#a73f3a585b379b3df191d07931378e40a
-     * @return AsposePhp\Slides\ColorFormat
+     * @return \AsposePhp\Slides\ColorFormat
      */
-    public function get_SolidFillColor(): AsposePhp\Slides\ColorFormat
+    public function get_SolidFillColor(): ColorFormat
     {
     }
 
@@ -49,7 +49,7 @@ class LineFormat
      * 
      * @return null
      */
-    public function get_FillFormat()
+    public function get_FillFormat(): null
     {
     }
 
@@ -145,9 +145,9 @@ class ImageCollection
      * 
      * @param int $index The index.
      * @throws System::ArgumentOutOfRangeException if index is invalid or does not exist
-     * @return AsposePhp\Slides\PPImage
+     * @return \AsposePhp\Slides\PPImage
      */
-    public function idx_get(int $index)
+    public function idx_get(int $index): PPImage
     {
     }
 
@@ -156,7 +156,7 @@ class ImageCollection
      * 
      * @return int
      */
-    public function get_Count()
+    public function get_Count(): int
     {
     }
 
@@ -165,9 +165,9 @@ class ImageCollection
      * 
      * @param string $fileOrEncoded the image to add. Path or base64 encoded string.
      * @param bool $isBase64 the is this base64 encoded input.
-     * @return AsposePhp\Slides\PPImage
+     * @return \AsposePhp\Slides\PPImage
      */
-    public function AddImage(string $fileOrEncoded, bool $isBase64)
+    public function AddImage(string $fileOrEncoded, bool $isBase64): PPImage
     {
     }
 
@@ -182,7 +182,16 @@ namespace AsposePhp\Slides\Charts;
 class ChartDataWorkbook
 {
 
-    public function GetCell(int $worksheetIndex, string $row, string $column, string $value)
+    /**
+     * Gets the cell that can be used for chart series or categories
+     * 
+     * @param int $worksheetIndex Index of the worksheet
+     * @param int $row The row
+     * @param int $column The column
+     * @param string $value The new value
+     * @return \AsposePhp\Slides\Charts\ChartDataCell
+     */
+    public function GetCell(int $worksheetIndex, int $row, int $column, string $value): ChartDataCell
     {
     }
 
@@ -202,9 +211,9 @@ class MasterSlideCollection
      * 
      * @param int $index The index.
      * @throws System::ArgumentOutOfRangeException if index is invalid or does not exist
-     * @return AsposePhp\Slides\MasterSlide
+     * @return \AsposePhp\Slides\MasterSlide
      */
-    public function idx_get(int $index)
+    public function idx_get(int $index): MasterSlide
     {
     }
 
@@ -213,7 +222,7 @@ class MasterSlideCollection
      * 
      * @return int
      */
-    public function get_Count()
+    public function get_Count(): int
     {
     }
 
@@ -233,7 +242,7 @@ class Column
      * @param int $value The width.
      * @return void
      */
-    public function set_Width(int $value)
+    public function set_Width(int $value): void
     {
     }
 
@@ -253,9 +262,9 @@ class ColumnCollection
      * 
      * @param int $index The index.
      * @throws System::ArgumentOutOfRangeException if index is invalid or does not exist
-     * @return AsposePhp\Slides\Column
+     * @return \AsposePhp\Slides\Column
      */
-    public function idx_get(int $index)
+    public function idx_get(int $index): Column
     {
     }
 
@@ -264,7 +273,7 @@ class ColumnCollection
      * 
      * @return int
      */
-    public function get_Count()
+    public function get_Count(): int
     {
     }
 
@@ -275,7 +284,7 @@ class ColumnCollection
      * @param bool $withAttachedRows Remove attached rows as well or not.
      * @return void
      */
-    public function RemoveAt(int $index, bool $withAttachedRows)
+    public function RemoveAt(int $index, bool $withAttachedRows): void
     {
     }
 
@@ -293,7 +302,7 @@ class CellFormat
     /**
      * Not implemented
      */
-    public function get_FillFormat()
+    public function get_FillFormat(): null
     {
     }
 
@@ -311,18 +320,18 @@ class Cell
     /**
      * Returns the text frame of a cell. Read-only ITextFrame
      * 
-     * @return AsposePhp\Slides\TextFrame 
+     * @return \AsposePhp\Slides\TextFrame 
      */
-    public function get_TextFrame()
+    public function get_TextFrame(): TextFrame
     {
     }
 
     /**
      * Returns the CellFormat object that contains formatting properties for this cell. Read-only ICellFormat
      * 
-     * @return AsposePhp\Slides\CellFormat 
+     * @return \AsposePhp\Slides\CellFormat 
      */
-    public function get_CellFormat()
+    public function get_CellFormat(): CellFormat
     {
     }
 
@@ -331,7 +340,7 @@ class Cell
      * 
      * @return int 
      */
-    public function get_RowSpan()
+    public function get_RowSpan(): int
     {
     }
 
@@ -340,7 +349,7 @@ class Cell
      * 
      * @return int 
      */
-    public function get_ColSpan()
+    public function get_ColSpan(): int
     {
     }
 
@@ -350,7 +359,7 @@ class Cell
      * @param int $index The index to split by 
      * @return void 
      */
-    public function SplitByRowSpan(int $index)
+    public function SplitByRowSpan(int $index): void
     {
     }
 
@@ -360,7 +369,7 @@ class Cell
      * @param int $index The index to split by 
      * @return void 
      */
-    public function SplitByColSpan(int $index)
+    public function SplitByColSpan(int $index): void
     {
     }
 
@@ -369,7 +378,7 @@ class Cell
      * 
      * @return bool 
      */
-    public function get_IsMergedCell()
+    public function get_IsMergedCell(): bool
     {
     }
 
@@ -389,9 +398,9 @@ class Row
      * 
      * @param int $index The index.
      * @throws System::ArgumentOutOfRangeException if index is invalid or does not exist
-     * @return AsposePhp\Slides\Cell
+     * @return \AsposePhp\Slides\Cell
      */
-    public function idx_get(int $index)
+    public function idx_get(int $index): Cell
     {
     }
 
@@ -400,7 +409,7 @@ class Row
      * 
      * @return int
      */
-    public function get_Count()
+    public function get_Count(): int
     {
     }
 
@@ -410,7 +419,7 @@ class Row
      * @param int $index The new height value.
      * @return void
      */
-    public function set_MinimalHeight(int $value)
+    public function set_MinimalHeight(int $value): void
     {
     }
 
@@ -430,9 +439,9 @@ class RowCollection
      * 
      * @param int $index The index.
      * @throws System::ArgumentOutOfRangeException if index is invalid or does not exist
-     * @return AsposePhp\Slides\Cell
+     * @return \AsposePhp\Slides\Cell
      */
-    public function idx_get(int $index)
+    public function idx_get(int $index): Cell
     {
     }
 
@@ -441,7 +450,7 @@ class RowCollection
      * 
      * @return int
      */
-    public function get_Count()
+    public function get_Count(): int
     {
     }
 
@@ -452,7 +461,7 @@ class RowCollection
      * @param bool $withAttachedRows Remove attached rows too or not.
      * @return void
      */
-    public function RemoveAt(int $index, bool $withAttachedRows)
+    public function RemoveAt(int $index, bool $withAttachedRows): void
     {
     }
 
@@ -480,7 +489,7 @@ class Connector
      * 
      * @return string
      */
-    public function get_AlternativeText()
+    public function get_AlternativeText(): string
     {
     }
 
@@ -489,7 +498,7 @@ class Connector
      * 
      * @return bool 
      */
-    public function isGroupShape()
+    public function isGroupShape(): bool
     {
     }
 
@@ -498,7 +507,7 @@ class Connector
      * 
      * @return bool 
      */
-    public function isChart()
+    public function isChart(): bool
     {
     }
 
@@ -507,7 +516,7 @@ class Connector
      * 
      * @return bool 
      */
-    public function isTable()
+    public function isTable(): bool
     {
     }
 
@@ -516,7 +525,7 @@ class Connector
      * 
      * @return bool 
      */
-    public function isAutoShape()
+    public function isAutoShape(): bool
     {
     }
 
@@ -525,7 +534,7 @@ class Connector
      * 
      * @return bool 
      */
-    public function isConnector()
+    public function isConnector(): bool
     {
     }
 
@@ -534,7 +543,7 @@ class Connector
      * 
      * @return bool 
      */
-    public function isPictureFrame()
+    public function isPictureFrame(): bool
     {
     }
 
@@ -543,7 +552,7 @@ class Connector
      * 
      * @return int 
      */
-    public function get_UniqueId()
+    public function get_UniqueId(): int
     {
     }
 
@@ -552,7 +561,7 @@ class Connector
      * 
      * @return string 
      */
-    public function get_Name()
+    public function get_Name(): string
     {
     }
 
@@ -561,16 +570,16 @@ class Connector
      * 
      * @return bool 
      */
-    public function get_IsGrouped()
+    public function get_IsGrouped(): bool
     {
     }
 
     /**
      * Returns parent GroupShape object if shape is grouped. Otherwise returns null
      * 
-     * @return AsposePhp\Slides\GroupShape 
+     * @return \AsposePhp\Slides\GroupShape 
      */
-    public function get_ParentGroup()
+    public function get_ParentGroup(): GroupShape
     {
     }
 
@@ -579,7 +588,7 @@ class Connector
      * 
      * @return float 
      */
-    public function get_Height()
+    public function get_Height(): float
     {
     }
 
@@ -588,16 +597,16 @@ class Connector
      * 
      * @return float 
      */
-    public function get_Width()
+    public function get_Width(): float
     {
     }
 
     /**
      * Returns the shape to attach the beginning of the connector to. Read IShape.
      * 
-     * @return AsposePhp\Slides\Shape 
+     * @return \AsposePhp\Slides\Shape 
      */
-    public function get_StartShapeConnectedTo()
+    public function get_StartShapeConnectedTo(): Shape
     {
     }
 
@@ -605,9 +614,9 @@ class Connector
     /**
      * Returns the shape to attach the end of the connector to. Read IShape.
      * 
-     * @return AsposePhp\Slides\Shape 
+     * @return \AsposePhp\Slides\Shape 
      */
-    public function get_EndShapeConnectedTo()
+    public function get_EndShapeConnectedTo(): Shape
     {
     }
 
@@ -635,7 +644,7 @@ class PictureFrame
      * 
      * @return string
      */
-    public function get_AlternativeText()
+    public function get_AlternativeText(): string
     {
     }
 
@@ -644,7 +653,7 @@ class PictureFrame
      * 
      * @return bool 
      */
-    public function isGroupShape()
+    public function isGroupShape(): bool
     {
     }
 
@@ -653,7 +662,7 @@ class PictureFrame
      * 
      * @return bool 
      */
-    public function isChart()
+    public function isChart(): bool
     {
     }
 
@@ -662,7 +671,7 @@ class PictureFrame
      * 
      * @return bool 
      */
-    public function isTable()
+    public function isTable(): bool
     {
     }
 
@@ -671,7 +680,7 @@ class PictureFrame
      * 
      * @return bool 
      */
-    public function isAutoShape()
+    public function isAutoShape(): bool
     {
     }
 
@@ -680,7 +689,7 @@ class PictureFrame
      * 
      * @return bool 
      */
-    public function isConnector()
+    public function isConnector(): bool
     {
     }
 
@@ -689,7 +698,7 @@ class PictureFrame
      * 
      * @return bool 
      */
-    public function isPictureFrame()
+    public function isPictureFrame(): bool
     {
     }
 
@@ -698,7 +707,7 @@ class PictureFrame
      * 
      * @return int 
      */
-    public function get_UniqueId()
+    public function get_UniqueId(): int
     {
     }
 
@@ -707,7 +716,7 @@ class PictureFrame
      * 
      * @return string 
      */
-    public function get_Name()
+    public function get_Name(): string
     {
     }
 
@@ -716,16 +725,16 @@ class PictureFrame
      * 
      * @return bool 
      */
-    public function get_IsGrouped()
+    public function get_IsGrouped(): bool
     {
     }
 
     /**
      * Returns parent GroupShape object if shape is grouped. Otherwise returns null
      * 
-     * @return AsposePhp\Slides\GroupShape 
+     * @return \AsposePhp\Slides\GroupShape 
      */
-    public function get_ParentGroup()
+    public function get_ParentGroup(): GroupShape
     {
     }
 
@@ -734,7 +743,7 @@ class PictureFrame
      * 
      * @return float 
      */
-    public function get_Height()
+    public function get_Height(): float
     {
     }
 
@@ -743,7 +752,7 @@ class PictureFrame
      * 
      * @return float 
      */
-    public function get_Width()
+    public function get_Width(): float
     {
     }
 
@@ -761,9 +770,9 @@ class PortionFormat
     /**
      * Returns the text FillFormat properties. No inheritance applied
      * 
-     * @return AsposePhp\Slides\Charts\FillFormat 
+     * @return \AsposePhp\Slides\Charts\FillFormat 
      */
-    public function get_FillFormat()
+    public function get_FillFormat(): FillFormat
     {
     }
 
@@ -784,7 +793,7 @@ class ColorFormat
      * @param string $color A hex color code
      * @return void 
      */
-    public function set_Color(string $color)
+    public function set_Color(string $color): void
     {
     }
 
@@ -804,18 +813,19 @@ class FillFormat
      * 
      * @param int $type The fill type. See Aspose::Slides::FillType 
      * @param params 
+     * @return void
      */
-    public function set_FillType(int $type)
+    public function set_FillType(int $type): void
     {
     }
 
 
     /**
-     * @brief Returns the fill color.
+     * Returns the fill color.
      * 
-     * @return AsposePhp\Slides\ColorFormat 
+     * @return \AsposePhp\Slides\ColorFormat 
      */
-    public function get_SolidFillColor()
+    public function get_SolidFillColor(): ColorFormat
     {
     }
 
@@ -833,18 +843,18 @@ class Format
     /**
      * Returns fill style properties of a chart
      * 
-     * @return AsposePhp\Slides\Charts\FillFormat 
+     * @return \AsposePhp\Slides\Charts\FillFormat 
      */
-    public function get_Fill()
+    public function get_Fill(): FillFormat
     {
     }
 
     /**
      * @brief Returns line style properties of a chart
      * 
-     * @return AsposePhp\Slides\LineFormat
+     * @return \AsposePhp\Slides\LineFormat
      */
-    public function get_Line()
+    public function get_Line(): LineFormat
     {
     }
 
@@ -862,9 +872,9 @@ class Marker
     /**
      * @brief Gets the marker fill
      * 
-     * @return AsposePhp\Slides\Charts\Format 
+     * @return \AsposePhp\Slides\Charts\Format 
      */
-    public function get_Format()
+    public function get_Format(): Format
     {
     }
 
@@ -892,7 +902,7 @@ class AutoShape
      * 
      * @return bool 
      */
-    public function isGroupShape()
+    public function isGroupShape(): bool
     {
     }
 
@@ -901,7 +911,7 @@ class AutoShape
      * 
      * @return string
      */
-    public function get_AlternativeText()
+    public function get_AlternativeText(): string
     {
     }
 
@@ -910,7 +920,7 @@ class AutoShape
      * 
      * @return bool 
      */
-    public function isChart()
+    public function isChart(): bool
     {
     }
 
@@ -919,7 +929,7 @@ class AutoShape
      * 
      * @return bool 
      */
-    public function isTable()
+    public function isTable(): bool
     {
     }
 
@@ -928,7 +938,7 @@ class AutoShape
      * 
      * @return bool 
      */
-    public function isPictureFrame()
+    public function isPictureFrame(): bool
     {
     }
 
@@ -938,7 +948,7 @@ class AutoShape
      * 
      * @return bool 
      */
-    public function isAutoShape()
+    public function isAutoShape(): bool
     {
     }
 
@@ -948,7 +958,7 @@ class AutoShape
      * 
      * @return bool 
      */
-    public function isConnector()
+    public function isConnector(): bool
     {
     }
 
@@ -957,7 +967,7 @@ class AutoShape
      * 
      * @return int 
      */
-    public function get_UniqueId()
+    public function get_UniqueId(): int
     {
     }
 
@@ -966,16 +976,16 @@ class AutoShape
      * 
      * @return string 
      */
-    public function get_Name()
+    public function get_Name(): string
     {
     }
 
     /**
      * Returns the text frame from this shape
      * 
-     * @return AsposePhp\Slides\TextFrame
+     * @return \AsposePhp\Slides\TextFrame
      */
-    public function get_TextFrame()
+    public function get_TextFrame(): TextFrame
     {
     }
 
@@ -984,16 +994,16 @@ class AutoShape
      * 
      * @return bool 
      */
-    public function get_IsGrouped()
+    public function get_IsGrouped(): bool
     {
     }
 
       /**
      * Returns parent GroupShape object if shape is grouped. Otherwise returns null
      * 
-     * @return AsposePhp\Slides\GroupShape 
+     * @return \AsposePhp\Slides\GroupShape 
      */
-    public function get_ParentGroup()
+    public function get_ParentGroup(): GroupShape
     {
     }
 
@@ -1002,7 +1012,7 @@ class AutoShape
      * 
      * @return float 
      */
-    public function get_Height()
+    public function get_Height(): float
     {
     }
 
@@ -1011,7 +1021,7 @@ class AutoShape
      * 
      * @return float 
      */
-    public function get_Width()
+    public function get_Width(): float
     {
     }
 
@@ -1031,8 +1041,9 @@ class Portion
      * 
      * @param string $value The text.
      * @param params 
+     * @return void
      */
-    public function set_Text(string $value)
+    public function set_Text(string $value): void
     {
     }
 
@@ -1041,16 +1052,16 @@ class Portion
      * 
      * @return string 
      */
-    public function get_Text()
+    public function get_Text(): string
     {
     }
 
     /**
      * Returns formatting object which contains explicitly set formatting properties of the text portion with no inheritance applied.
      * 
-     * @return AsposePhp\Slides\PortionFormat 
+     * @return \AsposePhp\Slides\PortionFormat 
      */
-    public function get_PortionFormat()
+    public function get_PortionFormat(): PortionFormat
     {
     }
 
@@ -1070,9 +1081,9 @@ class PortionCollection
      * 
      * @param int $index The index.
      * @throws System::ArgumentOutOfRangeException if index is invalid or does not exist
-     * @return AsposePhp\Slides\Portion
+     * @return \AsposePhp\Slides\Portion
      */
-    public function idx_get(int $index)
+    public function idx_get(int $index): Portion
     {
     }
 
@@ -1081,7 +1092,7 @@ class PortionCollection
      * 
      * @return int
      */
-    public function get_Count()
+    public function get_Count(): int
     {
     }
 
@@ -1102,16 +1113,16 @@ class Paragraph
      * 
      * @return string 
      */
-    public function get_Text()
+    public function get_Text(): string
     {
     }
 
     /**
      * @brief Returns the collection of a text portions
      * 
-     * @return AsposePhp\Slides\PortionCollection 
+     * @return \AsposePhp\Slides\PortionCollection 
      */
-    public function get_Portions()
+    public function get_Portions(): PortionCollection
     {
     }
 
@@ -1131,9 +1142,9 @@ class ParagraphCollection
      * 
      * @param int $index The index.
      * @throws System::ArgumentOutOfRangeException if index is invalid or does not exist
-     * @return AsposePhp\Slides\Portion
+     * @return \AsposePhp\Slides\Paragraph
      */
-    public function idx_get(int $index)
+    public function idx_get(int $index): Paragraph
     {
     }
 
@@ -1142,7 +1153,7 @@ class ParagraphCollection
      * 
      * @return int
      */
-    public function get_Count()
+    public function get_Count(): int
     {
     }
 
@@ -1161,7 +1172,7 @@ class SlideUtil
      * 
      * @return array
      */
-    public static function GetAllTextBoxes(object $slide)
+    public static function GetAllTextBoxes(object $slide): array
     {
     }
 
@@ -1190,9 +1201,9 @@ class LayoutSlide
     /**
      *  Returns the master slide for a layout.  
      * 
-     * @return AsposePhp\Slides\MasterSlide 
+     * @return \AsposePhp\Slides\MasterSlide 
      */
-    public function get_MasterSlide()
+    public function get_MasterSlide(): MasterSlide
     {
     }
 
@@ -1227,7 +1238,7 @@ class SizeF
      * 
      * @return float 
      */
-    public function get_Width()
+    public function get_Width(): float
     {
     }
 
@@ -1236,7 +1247,7 @@ class SizeF
      * 
      * @return float 
      */
-    public function get_Height()
+    public function get_Height(): float
     {
     }
 
@@ -1261,9 +1272,9 @@ class SlideSize
     /**
      *  Returns the size in points.  
      * 
-     * @return AsposePhp\Slides\SizeF 
+     * @return \AsposePhp\Slides\SizeF 
      */
-    public function get_Size()
+    public function get_Size(): SizeF
     {
     }
 
@@ -1289,9 +1300,9 @@ class StringOrDoubleChartValue
     /**
      * Returns chart data cell
      * 
-     * @return AsposePhp\Slides\Charts\ChartDataCell 
+     * @return \AsposePhp\Slides\Charts\ChartDataCell 
      */
-    public function get_AsCell()
+    public function get_AsCell(): ChartDataCell
     {
     }
 
@@ -1316,9 +1327,9 @@ class DoubleChartValue
     /**
      * Returns chart data cell. 
      * 
-     * @return AsposePhp\Slides\Charts\ChartDataCell 
+     * @return \AsposePhp\Slides\Charts\ChartDataCell 
      */
-    public function get_AsCell()
+    public function get_AsCell(): ChartDataCell
     {
     }
 
@@ -1329,7 +1340,7 @@ class DoubleChartValue
      * @param string $value The new value
      * @return void
      */
-    public function set_Data(string $value)
+    public function set_Data(string $value): void
     {
     }
 
@@ -1354,9 +1365,9 @@ class DataLabel
     /**
      * Can contain a rich formatted text. If this property is not null then this formatted text value overrides auto-generated text of data label. Auto-generated text of data label means text that is managed by ShowSeriesName, ShowValue, ... properties and is formatted with the TextFormatManager.TextFormat property.
      * 
-     * @return AsposePhp\Slides\TextFrame 
+     * @return \AsposePhp\Slides\TextFrame 
      */
-    public function get_TextFrameForOverriding()
+    public function get_TextFrameForOverriding(): TextFrame
     {
     }
 
@@ -1365,7 +1376,7 @@ class DataLabel
      * 
      * @return string 
      */
-    public function GetActualLabelText()
+    public function GetActualLabelText(): string
     {
     }
 
@@ -1390,45 +1401,45 @@ class ChartDataPoint
      /**
      * Represents the label of chart data point
      * 
-     * @return AsposePhp\Slides\Charts\DataLabel 
+     * @return \AsposePhp\Slides\Charts\DataLabel 
      */
-    public function get_Label()
+    public function get_Label(): DataLabel
     {
     }
 
     /**
      * Returns the value of chart data point
      * 
-     * @return AsposePhp\Slides\Charts\DoubleChartValue 
+     * @return \AsposePhp\Slides\Charts\DoubleChartValue 
      */
-    public function get_Value()
+    public function get_Value(): DoubleChartValue
     {
     }
 
     /**
      * Returns the y value of chart data point
      * 
-     * @return AsposePhp\Slides\Charts\DoubleChartValue 
+     * @return \AsposePhp\Slides\Charts\DoubleChartValue 
      */
-    public function get_YValue()
+    public function get_YValue(): DoubleChartValue
     {
     }
 
     /**
      * Returns the x value of chart data point
      * 
-     * @return AsposePhp\Slides\Charts\StringOrDoubleChartValue 
+     * @return \AsposePhp\Slides\Charts\StringOrDoubleChartValue 
      */
-    public function get_XValue()
+    public function get_XValue(): StringOrDoubleChartValue
     {
     }
 
      /**
      * Specifies a data marker
      * 
-     * @return AsposePhp\Slides\Charts\Marker 
+     * @return \AsposePhp\Slides\Charts\Marker 
      */
-    public function get_Marker()
+    public function get_Marker(): Marker
     {
     }
 
@@ -1436,7 +1447,7 @@ class ChartDataPoint
      * Removes DataPoint from chart series
      * @return void
      */
-    public function Remove()
+    public function Remove(): void
     {
     }
 
@@ -1463,9 +1474,9 @@ class ChartDataPointCollection
      * 
      * @param int $index The index.
      * @throws System::ArgumentOutOfRangeException if index is invalid or does not exist
-     * @return AsposePhp\Slides\Charts\ChartDataPoint
+     * @return \AsposePhp\Slides\Charts\ChartDataPoint
      */
-    public function idx_get(int $index)
+    public function idx_get(int $index): ChartDataPoint
     {
     }
 
@@ -1474,7 +1485,7 @@ class ChartDataPointCollection
      * 
      * @return int 
      */
-    public function get_Count()
+    public function get_Count(): int
     {
     }
 
@@ -1483,7 +1494,7 @@ class ChartDataPointCollection
      * 
      * @return void
      */
-    public function RemoveAt()
+    public function RemoveAt(): void
     {
     }
 
@@ -1511,9 +1522,9 @@ class ChartCellCollection
      * 
      * @throws System::ArgumentOutOfRangeException Index is invalid or does not exist
      * @param int $index The index
-     * @return AsposePhp\Slides\Charts\ChartDataCell 
+     * @return \AsposePhp\Slides\Charts\ChartDataCell 
      */
-    public function idx_get(int $index)
+    public function idx_get(int $index): ChartDataCell
     {
     }
 
@@ -1522,7 +1533,7 @@ class ChartCellCollection
      * 
      * @return int 
      */
-    public function get_Count()
+    public function get_Count(): int
     {
     }
 
@@ -1548,9 +1559,9 @@ class StringChartValue
     /**
      * Null value assigning is not allowed. Returning value always is not null.. 
      * 
-     * @return AsposePhp\Slides\Charts\ChartCellCollection 
+     * @return \AsposePhp\Slides\Charts\ChartCellCollection 
      */
-    public function get_AsCells()
+    public function get_AsCells(): ChartCellCollection
     {
     }
 
@@ -1579,7 +1590,7 @@ class ChartDataCell
      * 
      * @return string 
      */
-    public function get_Value()
+    public function get_Value(): string
     {
     }
 
@@ -1588,11 +1599,16 @@ class ChartDataCell
      * 
      * @return int 
      */
-    public function get_Row()
+    public function get_Row(): int
     {
     }
 
-    public function get_Column()
+     /**
+     *  Returns the index of the column of worksheet in which the cell is located
+     * 
+     * @return int 
+     */
+    public function get_Column(): int
     {
     }
 
@@ -1602,7 +1618,7 @@ class ChartDataCell
      * @param string $value The new value
      * @return string 
      */
-    public function set_CustomNumberFormat(string $value)
+    public function set_CustomNumberFormat(string $value): string
     {
     }
 
@@ -1613,7 +1629,7 @@ class ChartDataCell
      * @param string $value The type of the value, int, float or string.
      * @return void 
      */
-    public function set_Value(string $value, string $type)
+    public function set_Value(string $value, string $type): void
     {
     }
 
@@ -1640,16 +1656,16 @@ class ChartCategory
      * 
      * @return bool 
      */
-    public function get_UseCell()
+    public function get_UseCell(): bool
     {
     }
 
     /**
      * Returns Aspose.Cells.Cell object. If category is multi-level then used Aspose.Cells.Cell object for level "0". 
      * 
-     * @return AsposePhp\Slides\Charts\ChartDataCell 
+     * @return \AsposePhp\Slides\Charts\ChartDataCell 
      */
-    public function get_AsCell()
+    public function get_AsCell(): ChartDataCell
     {
     }
 
@@ -1673,9 +1689,9 @@ class ChartCategoryCollection
      * 
      * @throws System::ArgumentOutOfRangeException Index is invalid or does not exist
      * @param int $index The index
-     * @return AsposePhp\Slides\Charts\ChartCategory 
+     * @return \AsposePhp\Slides\Charts\ChartCategory 
      */
-    public function idx_get(int $index)
+    public function idx_get(int $index): ChartCategory
     {
     }
 
@@ -1684,7 +1700,7 @@ class ChartCategoryCollection
      * 
      * @return int 
      */
-    public function get_Count()
+    public function get_Count(): int
     {
     }
 
@@ -1694,7 +1710,7 @@ class ChartCategoryCollection
      * @param int $index The index
      * @return void 
      */
-    public function RemoveAt(int $index)
+    public function RemoveAt(int $index): void
     {
     }
 
@@ -1720,9 +1736,9 @@ class ChartSeries
     /**
      * Return series StringChartValue object 
      * 
-     * @return AsposePhp\Slides\Charts\StringChartValue 
+     * @return \AsposePhp\Slides\Charts\StringChartValue 
      */
-    public function get_Name()
+    public function get_Name(): StringChartValue
     {
     }
 
@@ -1731,7 +1747,7 @@ class ChartSeries
      * 
      * @return  AsposePhp\Slides\Charts\ChartDataPointCollection
      */
-    public function get_DataPoints()
+    public function get_DataPoints(): ChartDataPointCollection
     {
     }
 
@@ -1739,9 +1755,9 @@ class ChartSeries
      * Specifies the bar, column or bubble series shall invert its colors if the value is negative
      * 
      * @param bool $value should invert or not? 
-     * @return Php::Value 
+     * @return void 
      */
-    public function set_InvertIfNegative(bool $value)
+    public function set_InvertIfNegative(bool $value): void
     {
     }
 
@@ -1768,9 +1784,9 @@ class ChartSeriesCollection
      * 
      * @throws System::ArgumentOutOfRangeException Index is invalid or does not exist
      * @param int $index The index
-     * @return AsposePhp\Slides\Charts\ChartSeries 
+     * @return \AsposePhp\Slides\Charts\ChartSeries 
      */
-    public function idx_get(int $index)
+    public function idx_get(int $index): ChartSeries
     {
     }
 
@@ -1779,7 +1795,7 @@ class ChartSeriesCollection
      * 
      * @return int 
      */
-    public function get_Count()
+    public function get_Count(): int
     {
     }
 
@@ -1789,7 +1805,7 @@ class ChartSeriesCollection
      * @param int $index The index
      * @return void 
      */
-    public function RemoveAt(int $index)
+    public function RemoveAt(int $index): void
     {
     }
 
@@ -1816,7 +1832,7 @@ class Table
      * 
      * @return string
      */
-    public function get_AlternativeText()
+    public function get_AlternativeText(): string
     {
     }
 
@@ -1825,7 +1841,7 @@ class Table
      * 
      * @return bool
      */
-    public function isGroupShape()
+    public function isGroupShape(): bool
     {
     }
 
@@ -1834,7 +1850,7 @@ class Table
      * 
      * @return bool
      */
-    public function isChart()
+    public function isChart(): bool
     {
     }
 
@@ -1843,7 +1859,7 @@ class Table
      * 
      * @return bool
      */
-    public function isTable()
+    public function isTable(): bool
     {
     }
 
@@ -1852,7 +1868,7 @@ class Table
      * 
      * @return bool
      */
-    public function isAutoShape()
+    public function isAutoShape(): bool
     {
     }
 
@@ -1861,7 +1877,7 @@ class Table
      * 
      * @return bool
      */
-    public function isPictureFrame()
+    public function isPictureFrame(): bool
     {
     }
 
@@ -1871,7 +1887,7 @@ class Table
      * 
      * @return bool
      */
-    public function isConnector()
+    public function isConnector(): bool
     {
     }
 
@@ -1880,7 +1896,7 @@ class Table
      * 
      * @return int 
      */
-    public function get_UniqueId()
+    public function get_UniqueId(): int
     {
     }
 
@@ -1889,7 +1905,7 @@ class Table
      * 
      * @return string 
      */
-    public function get_Name()
+    public function get_Name(): string
     {
     }
 
@@ -1899,16 +1915,16 @@ class Table
      * 
      * @return bool 
      */
-    public function get_IsGrouped()
+    public function get_IsGrouped(): bool
     {
     }
 
     /**
      * Returns parent GroupShape object if shape is grouped. Otherwise returns null
      * 
-     * @return AsposePhp\Slides\GroupShape 
+     * @return \AsposePhp\Slides\GroupShape 
      */
-    public function get_ParentGroup()
+    public function get_ParentGroup(): GroupShape
     {
     }
 
@@ -1917,7 +1933,7 @@ class Table
      * 
      * @return float 
      */
-    public function get_Height()
+    public function get_Height(): float
     {
     }
 
@@ -1926,36 +1942,36 @@ class Table
      * 
      * @return float 
      */
-    public function get_Width()
+    public function get_Width(): float
     {
     }
 
       /**
-     * @brief Merges neighbour cells
+     * Merges neighbour cells
      * 
      * @param object $cell1 The cell 
      * @param object $cell2 The other cell 
-     * @return AsposePhp\Slides\Cell 
+     * @return \AsposePhp\Slides\Cell 
      */
-    public function MergeCells(?\AsposePhp\Slides\Cell $cell1, ?\AsposePhp\Slides\Cell $cell2, bool $allowSplitting)
+    public function MergeCells(?\AsposePhp\Slides\Cell $cell1, ?\AsposePhp\Slides\Cell $cell2, bool $allowSplitting): Cell
     {
     }
 
      /**
      * Returns the collectoin of rows. Read-only IRowCollection
      * 
-     * @return AsposePhp\Slides\RowCollection 
+     * @return \AsposePhp\Slides\RowCollection 
      */
-    public function get_Rows()
+    public function get_Rows(): RowCollection
     {
     }
 
     /**
      * Returns the collectoin of columns. Read-only IColumnCollection
      * 
-     * @return AsposePhp\Slides\ColumnCollection 
+     * @return \AsposePhp\Slides\ColumnCollection 
      */
-    public function get_Columns()
+    public function get_Columns(): ColumnCollection
     {
     }
 
@@ -1977,27 +1993,27 @@ class ChartData
      /**
      *  Returns the series collection from chart data. 
      * 
-     * @return AsposePhp\Slides\Charts\ChartSeriesCollection 
+     * @return \AsposePhp\Slides\Charts\ChartSeriesCollection 
      */
-    public function get_Series()
+    public function get_Series(): ChartSeriesCollection
     {
     }
 
     /**
      * Returns categories collection.
      * 
-     * @return AsposePhp\Slides\Charts\ChartCategoryCollection 
+     * @return \AsposePhp\Slides\Charts\ChartCategoryCollection 
      */
-    public function get_Categories()
+    public function get_Categories(): ChartCategoryCollection
     {
     }
 
     /**
      * Gets the cells factory to create cells used for chart series or categories. Read-only IChartDataWorkbook
      * 
-     * @return AsposePhp\Slides\Charts\ChartDataWorkbook 
+     * @return \AsposePhp\Slides\Charts\ChartDataWorkbook 
      */
-    public function get_ChartDataWorkbook()
+    public function get_ChartDataWorkbook(): ChartDataWorkbook
     {
     }
 
@@ -2023,9 +2039,9 @@ class Chart
     /**
      * Returns information about the linked or embedded data associated with a chart. 
      * 
-     * @return AsposePhp\Slides\Charts\ChartData 
+     * @return \AsposePhp\Slides\Charts\ChartData 
      */
-    public function get_ChartData()
+    public function get_ChartData(): ChartData
     {
     }
 
@@ -2034,7 +2050,7 @@ class Chart
      * 
      * @return string
      */
-    public function get_AlternativeText()
+    public function get_AlternativeText(): string
     {
     }
 
@@ -2043,7 +2059,7 @@ class Chart
      * 
      * @return bool
      */
-    public function isGroupShape()
+    public function isGroupShape(): bool
     {
     }
 
@@ -2052,7 +2068,7 @@ class Chart
      * 
      * @return bool
      */
-    public function isAutoShape()
+    public function isAutoShape(): bool
     {
     }
 
@@ -2061,7 +2077,7 @@ class Chart
      * 
      * @return bool
      */
-    public function isChart()
+    public function isChart(): bool
     {
     }
 
@@ -2070,7 +2086,7 @@ class Chart
      * 
      * @return bool
      */
-    public function isTable()
+    public function isTable(): bool
     {
     }
 
@@ -2079,7 +2095,7 @@ class Chart
      * 
      * @return bool
      */
-    public function isConnector()
+    public function isConnector(): bool
     {
     }
 
@@ -2088,7 +2104,7 @@ class Chart
      * 
      * @return bool
      */
-    public function isPictureFrame()
+    public function isPictureFrame(): bool
     {
     }
 
@@ -2097,7 +2113,7 @@ class Chart
      * 
      * @return int 
      */
-    public function get_UniqueId()
+    public function get_UniqueId(): int
     {
     }
 
@@ -2106,7 +2122,7 @@ class Chart
      * 
      * @return string 
      */
-    public function get_Name()
+    public function get_Name(): string
     {
     }
 
@@ -2115,7 +2131,7 @@ class Chart
      * 
      * @return string 
      */
-    public function get_Type()
+    public function get_Type(): string
     {
     }
 
@@ -2125,16 +2141,16 @@ class Chart
      * 
      * @return bool 
      */
-    public function get_IsGrouped()
+    public function get_IsGrouped(): bool
     {
     }
 
      /**
      * Returns parent GroupShape object if shape is grouped. Otherwise returns null
      * 
-     * @return AsposePhp\Slides\GroupShape 
+     * @return \AsposePhp\Slides\GroupShape 
      */
-    public function get_ParentGroup()
+    public function get_ParentGroup(): GroupShape
     {
     }
 
@@ -2144,7 +2160,7 @@ class Chart
      * 
      * @return float 
      */
-    public function get_Height()
+    public function get_Height(): float
     {
     }
 
@@ -2154,7 +2170,7 @@ class Chart
      * 
      * @return float 
      */
-    public function get_Width()
+    public function get_Width(): float
     {
     }
 
@@ -2180,9 +2196,9 @@ class GroupShape
      * @brief Returns the shape collection for this group. 
      * @see Aspose::Slides::GroupShape
      * 
-     * @return AsposePhp\Slides\ShapeCollection 
+     * @return \AsposePhp\Slides\ShapeCollection 
      */
-    public function get_Shapes()
+    public function get_Shapes(): ShapeCollection
     {
     }
 
@@ -2191,7 +2207,7 @@ class GroupShape
      * 
      * @return string
      */
-    public function get_AlternativeText()
+    public function get_AlternativeText(): string
     {
     }
 
@@ -2200,7 +2216,7 @@ class GroupShape
      * 
      * @return bool
      */
-    public function isGroupShape()
+    public function isGroupShape(): bool
     {
     }
 
@@ -2209,7 +2225,7 @@ class GroupShape
      * 
      * @return bool
      */
-    public function isChart()
+    public function isChart(): bool
     {
     }
 
@@ -2218,7 +2234,7 @@ class GroupShape
      * 
      * @return bool
      */
-    public function isAutoShape()
+    public function isAutoShape(): bool
     {
     }
 
@@ -2227,7 +2243,7 @@ class GroupShape
      * 
      * @return bool
      */
-    public function isTable()
+    public function isTable(): bool
     {
     }
 
@@ -2236,7 +2252,7 @@ class GroupShape
      * 
      * @return bool
      */
-    public function isConnector()
+    public function isConnector(): bool
     {
     }
 
@@ -2245,7 +2261,7 @@ class GroupShape
      * 
      * @return bool
      */
-    public function isPictureFrame()
+    public function isPictureFrame(): bool
     {
     }
 
@@ -2254,7 +2270,7 @@ class GroupShape
      * 
      * @return int 
      */
-    public function get_UniqueId()
+    public function get_UniqueId(): int
     {
     }
 
@@ -2263,7 +2279,7 @@ class GroupShape
      * 
      * @return string 
      */
-    public function get_Name()
+    public function get_Name(): string
     {
     }
 
@@ -2272,16 +2288,16 @@ class GroupShape
      * 
      * @return bool 
      */
-    public function get_IsGrouped()
+    public function get_IsGrouped(): bool
     {
     }
 
     /**
      * Returns parent GroupShape object if shape is grouped. Otherwise returns null
      * 
-     * @return AsposePhp\Slides\GroupShape 
+     * @return \AsposePhp\Slides\GroupShape 
      */
-    public function get_ParentGroup()
+    public function get_ParentGroup(): GroupShape
     {
     }
 
@@ -2290,7 +2306,7 @@ class GroupShape
      * 
      * @return float 
      */
-    public function get_Height()
+    public function get_Height(): float
     {
     }
 
@@ -2299,7 +2315,7 @@ class GroupShape
      * 
      * @return float 
      */
-    public function get_Width()
+    public function get_Width(): float
     {
     }
 
@@ -2326,7 +2342,7 @@ class Shape
      * 
      * @return bool
      */
-    public function isTable()
+    public function isTable(): bool
     {
     }
 
@@ -2335,7 +2351,7 @@ class Shape
      * 
      * @return bool
      */
-    public function isChart()
+    public function isChart(): bool
     {
     }
 
@@ -2344,7 +2360,7 @@ class Shape
      * 
      * @return bool
      */
-    public function isGroupShape()
+    public function isGroupShape(): bool
     {
     }
 
@@ -2353,7 +2369,7 @@ class Shape
      * 
      * @return bool
      */
-    public function isAutoShape()
+    public function isAutoShape(): bool
     {
     }
 
@@ -2362,7 +2378,7 @@ class Shape
      * 
      * @return bool
      */
-    public function isPictureFrame()
+    public function isPictureFrame(): bool
     {
     }
 
@@ -2371,7 +2387,7 @@ class Shape
      * 
      * @return bool
      */
-    public function isConnector()
+    public function isConnector(): bool
     {
     }
 
@@ -2381,7 +2397,7 @@ class Shape
      * 
      * @return string
      */
-    public function get_AlternativeText()
+    public function get_AlternativeText(): string
     {
     }
 
@@ -2390,7 +2406,7 @@ class Shape
      * 
      * @return string 
      */
-    public function get_Name()
+    public function get_Name(): string
     {
     }
 
@@ -2399,7 +2415,7 @@ class Shape
      * 
      * @return int 
      */
-    public function get_UniqueId()
+    public function get_UniqueId(): int
     {
     }
 
@@ -2408,16 +2424,16 @@ class Shape
      * 
      * @return bool 
      */
-    public function get_IsGrouped()
+    public function get_IsGrouped(): bool
     {
     }
 
       /**
      * Returns parent GroupShape object if shape is grouped. Otherwise returns null
      * 
-     * @return AsposePhp\Slides\GroupShape 
+     * @return \AsposePhp\Slides\GroupShape 
      */
-    public function get_ParentGroup()
+    public function get_ParentGroup(): GroupShape
     {
     }
 
@@ -2426,7 +2442,7 @@ class Shape
      * 
      * @return float 
      */
-    public function get_Height()
+    public function get_Height(): float
     {
     }
 
@@ -2435,7 +2451,7 @@ class Shape
      * 
      * @return float 
      */
-    public function get_Width()
+    public function get_Width(): float
     {
     }
 
@@ -2465,7 +2481,7 @@ class ShapeCollection
      * 
      * @return array of shapes 
      */
-    public function ToArray()
+    public function ToArray(): array
     {
     }
 
@@ -2474,7 +2490,7 @@ class ShapeCollection
      * 
      * @param object $shape The shape to remove 
      */
-    public function Remove(object $shape)
+    public function Remove(object $shape): object
     {
     }
 
@@ -2501,7 +2517,7 @@ class TextFrame
      * 
      * @return string 
      */
-    public function get_Text()
+    public function get_Text(): string
     {
     }
 
@@ -2511,16 +2527,16 @@ class TextFrame
      * @param string $text The new text 
      * @return void
      */
-    public function set_Text(string $text)
+    public function set_Text(string $text): void
     {
     }
 
     /**
      * Returns the list of all paragraphs in a frame
      * 
-     * @return AsposePhp\Slides\ParagraphCollection 
+     * @return \AsposePhp\Slides\ParagraphCollection 
      */
-    public function get_Paragraphs()
+    public function get_Paragraphs(): ParagraphCollection
     {
     }
 
@@ -2545,9 +2561,9 @@ class NotesSlide
     /**
      * Returns the TextFrame object which contains the notes text string
      * 
-     * @return AsposePhp\Slides\TextFrame 
+     * @return \AsposePhp\Slides\TextFrame 
      */
-    public function get_NotesTextFrame()
+    public function get_NotesTextFrame(): TextFrame
     {
     }
 
@@ -2570,9 +2586,9 @@ class NotesSlideManager
      /**
      * Returns a NotesSlide object wrapper. 
      * 
-     * @return AsposePhp\Slides\NotesSlide 
+     * @return \AsposePhp\Slides\NotesSlide 
      */
-    public function get_NotesSlide()
+    public function get_NotesSlide(): NotesSlide
     {
     }
 
@@ -2599,7 +2615,7 @@ class SlideText
      * 
      * @return string 
      */
-    public function get_Text()
+    public function get_Text(): string
     {
     }
 
@@ -2608,7 +2624,7 @@ class SlideText
      * 
      * @return string
      */
-    public function get_MasterText()
+    public function get_MasterText(): string
     {
     }
 
@@ -2617,7 +2633,7 @@ class SlideText
      * 
      * @return string
      */
-    public function get_LayoutText()
+    public function get_LayoutText(): string
     {
     }
 
@@ -2626,7 +2642,7 @@ class SlideText
      * 
      * @return string
      */
-    public function get_NotesText()
+    public function get_NotesText(): string
     {
     }
 
@@ -2655,9 +2671,9 @@ class PresentationFactory
      * 
      * @throws System::ArgumentException path is invalid
      * @throws System::IO::FileNotFoundException File or path doesn't exist
-     * @return Php::Value 
+     * @return \AsposePhp\\Slides\\PresentationText 
      */
-    public function GetPresentationText(string $path)
+    public function GetPresentationText(string $path): PresentationText
     {
     }
 
@@ -2685,7 +2701,7 @@ class PresentationText
      * 
      * @return array 
      */
-    public function get_SlidesText()
+    public function get_SlidesText(): array
     {
     }
 
@@ -2705,7 +2721,7 @@ class ISlideCollection
      * 
      * @return int 
      */
-    public function size()
+    public function size(): int
     {
     }
 
@@ -2715,9 +2731,9 @@ class ISlideCollection
      * @param int $index A 0 based index of the slide
      * 
      * @throws System::ArgumentOutOfRangeException Index is invalid or does not exist
-     * @return AsposePhp\Slides\Slide 
+     * @return \AsposePhp\Slides\Slide 
      */
-    public function get_Item(int $index)
+    public function get_Item(int $index): Slide
     {
     }
 
@@ -2726,9 +2742,9 @@ class ISlideCollection
      * 
      * @param object $slide The slide to be cloned
      * @throws Aspose::Slides::PptxEditException if cannot modify presentation
-     * @return void 
+     * @return \AsposePhp\\Slides\\Slide 
      */
-    public function AddClone(?\AsposePhp\Slides\Slide $slide)
+    public function AddClone(\AsposePhp\Slides\Slide $slide): Slide
     {
     }
 
@@ -2745,7 +2761,7 @@ class AsposeUtil
      * 
      * @return string
      */
-    public static function getVersion()
+    public static function getVersion(): string
     {
     }
 
@@ -2768,27 +2784,27 @@ class Slide
      * @param string $format The image format. Either png or jpeg.
      * @param bool $asArray Return byte array if true
      * 
-     * @return array or string
+     * @return array | string
      */
-    public function GetThumbnail(float $scaleX, float $scaleY, string $format, bool $asArray)
+    public function GetThumbnail(float $scaleX, float $scaleY, string $format, bool $asArray): array | string
     {
     }
 
      /**
      * Returns the layout slide for the current slide
      * 
-     * @return AsposePhp\Slides\LayoutSlide 
+     * @return \AsposePhp\Slides\LayoutSlide 
      */
-    public function get_LayoutSlide()
+    public function get_LayoutSlide(): LayoutSlide
     {
     }
 
      /**
      *  Returns the shape collection
      * 
-     * @return AsposePhp\Slides\ShapeCollection 
+     * @return \AsposePhp\Slides\ShapeCollection 
      */
-    public function get_Shapes()
+    public function get_Shapes(): ShapeCollection
     {
     }
 
@@ -2797,7 +2813,7 @@ class Slide
      * 
      * @return int 
      */
-    public function getSlideNumber()
+    public function getSlideNumber(): int
     {
     }
 
@@ -2806,7 +2822,7 @@ class Slide
      * 
      * @return string 
      */
-    public function getSlideText()
+    public function getSlideText(): string
     {
     }
 
@@ -2815,25 +2831,25 @@ class Slide
      * 
      * @return string 
      */
-    public function getLayoutText()
+    public function getLayoutText(): string
     {
     }
 
     /**
      * Returns the master text
      * 
-     * @return Php::Value 
+     * @return string 
      */
-    public function getMasterText()
+    public function getMasterText(): string
     {
     }
 
     /**
      * Returns the notes text
      * 
-     * @return Php::Value 
+     * @return string 
      */
-    public function getNotesText()
+    public function getNotesText(): string
     {
     }
 
@@ -2841,9 +2857,9 @@ class Slide
     /**
      *  Returns the SlideManager instance.
      * 
-     * @return AsposePhp\Slides\NotesSlideManager 
+     * @return \AsposePhp\Slides\NotesSlideManager 
      */
-    public function get_NotesSlideManager()
+    public function get_NotesSlideManager(): NotesSlideManager
     {
     }
 
@@ -2852,7 +2868,7 @@ class Slide
      * 
      * @return void
      */
-    public function Remove()
+    public function Remove(): void
     {
     }
 
@@ -2875,7 +2891,7 @@ class Presentation
      * @throws System::Xml::XmlException File contains invalid XML
      * 
      */
-    public function load(string $path)
+    public function load(string $path): void
     {
     }
 
@@ -2894,16 +2910,16 @@ class Presentation
      * 
      * @return int 
      */
-    public function getNumberOfSlides()
+    public function getNumberOfSlides(): int
     {
     }
 
     /**
      *  Returns a collection of Slide objects.
      * 
-     * @return AsposePhp\Slides\ISlideCollection 
+     * @return \AsposePhp\Slides\ISlideCollection 
      */
-    public function getSlides()
+    public function getSlides(): ISlideCollection
     {
     }
 
@@ -2913,9 +2929,9 @@ class Presentation
      * @param int $slideNo The 0 based index of the slide.
      * 
      * @throws System::ArgumentOutOfRangeException index does not exist.
-     * @return AsposePhp\Slides\Slide 
+     * @return \AsposePhp\Slides\Slide 
      */
-    public function getSlide(int $slideNo)
+    public function getSlide(int $slideNo): Slide
     {
     }
 
@@ -2931,7 +2947,7 @@ class Presentation
      * 
      * @return null
      */
-    public function save(string $outfile, string $format, bool $asArray)
+    public function save(string $outfile, string $format, bool $asArray): null
     {
     }
 
@@ -2945,43 +2961,39 @@ class Presentation
      * 
      * @return void
      */
-    public function cloneSlide(int $outfile)
+    public function cloneSlide(int $outfile): void
     {
     }
 
      /**
      *  Returns slide size object
      * 
-     * @return AsposePhp\Slides\SlideSize 
+     * @return \AsposePhp\Slides\SlideSize 
      */
-    public function get_SlideSize()
+    public function get_SlideSize(): SlideSize
     {
     }
 
     /**
      * Returns a list of all master slides that are defined in the presentation. Read-only IMasterSlideCollection
      * 
-     * @return AsposePhp\Slides\MasterSlideCollection 
+     * @return \AsposePhp\Slides\MasterSlideCollection 
      */
-    public function get_Masters()
+    public function get_Masters(): MasterSlideCollection
     {
     }
 
     /**
      * Returns the collection of all images in the presentation. Read-only IImageCollection
      * 
-     * @return AsposePhp\Slides\ImageCollection 
+     * @return \AsposePhp\Slides\ImageCollection 
      */
-    public function get_Images()
+    public function get_Images(): ImageCollection
     {
     }
 
 
 }
 
-class PhpCpp::Functor
-{
 
-
-}
 
