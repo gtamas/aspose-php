@@ -77,6 +77,11 @@ namespace AsposePhp
         return Shape::get_Name();
     }
 
+    Php::Value Table::get_FillFormat()
+    {
+        return Shape::get_FillFormat();
+    }
+
     /**
      * @brief Returns the collectoin of rows. Read-only IRowCollection
      * 

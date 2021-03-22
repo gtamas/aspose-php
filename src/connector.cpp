@@ -76,6 +76,11 @@ namespace AsposePhp
         return Shape::get_Name();
     }
 
+    Php::Value Connector::get_FillFormat()
+    {
+        return Shape::get_FillFormat();
+    }
+
     /**
      * @brief Returns the shape to attach the beginning of the connector to. Read IShape.
      * 

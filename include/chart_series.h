@@ -16,6 +16,8 @@ namespace AsposePhp {
             void __construct(Php::Parameters &params);
             Php::Value get_Name();
             Php::Value get_DataPoints();
+            Php::Value get_Format();
+            Php::Value get_Marker();
             void set_InvertIfNegative(Php::Parameters &params);
 
     };

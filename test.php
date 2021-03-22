@@ -56,7 +56,7 @@ Isset: <?php echo $fac->GetPresentationText("../asposeext/pptexamples.ppt")->get
 
 Aspose.Slides version: <?php echo AsposeUtil::getVersion(); 
 
-print_r($ppt->save("./xy.pptx", "pptx", false));
+//print_r($ppt->save("./xy.pptx", "pptx", false));
 
 }
 catch(Exception $e) {

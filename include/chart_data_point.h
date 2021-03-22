@@ -19,6 +19,7 @@ namespace AsposePhp {
             Php::Value get_XValue();
             Php::Value get_YValue();
             Php::Value get_Marker();
+            Php::Value get_Format();
             void Remove();
 
     };

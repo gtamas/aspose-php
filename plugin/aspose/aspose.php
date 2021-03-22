@@ -42,14 +42,14 @@ class LineFormat
 {
 
      /**
-     * Returns the fill format of a line
+     * Returns the fill format of a line. Read-only ILineFillFormat
      * @link https://apireference.aspose.com/slides/cpp/class/aspose.slides.line_format
      * 
-     * Not implemented.
      * 
-     * @return null
+     * 
+     * @return \AsposePhp\Slides\LineFillFormat
      */
-    public function get_FillFormat(): null
+    public function get_FillFormat(): LineFillFormat
     {
     }
 
@@ -167,7 +167,7 @@ class ImageCollection
      * @param bool $isBase64 the is this base64 encoded input.
      * @return \AsposePhp\Slides\PPImage
      */
-    public function AddImage(string $fileOrEncoded, bool $isBase64): PPImage
+    public function AddImage(string $fileOrEncoded, bool $isBase64 = false): PPImage
     {
     }
 
@@ -300,9 +300,11 @@ class CellFormat
 {
 
     /**
-     * Not implemented
+     * Returns a cell fill properties object. Read-only IFillFormat
+     * 
+     * @return \AsposePhp\Slides\Charts\FillFormat
      */
-    public function get_FillFormat(): null
+    public function get_FillFormat(): FillFormat
     {
     }
 
@@ -439,9 +441,9 @@ class RowCollection
      * 
      * @param int $index The index.
      * @throws System::ArgumentOutOfRangeException if index is invalid or does not exist
-     * @return \AsposePhp\Slides\Cell
+     * @return \AsposePhp\Slides\Row
      */
-    public function idx_get(int $index): Cell
+    public function idx_get(int $index): Row
     {
     }
 
@@ -620,6 +622,15 @@ class Connector
     {
     }
 
+    /**
+     * Returns the FillFormat object that contains fill formatting properties for a shape
+     * 
+     * @return \AsposePhp\Slides\FillFormat 
+     */
+    public function get_FillFormat(): FillFormat
+    {
+    }
+
 
 }
 
@@ -753,6 +764,15 @@ class PictureFrame
      * @return float 
      */
     public function get_Width(): float
+    {
+    }
+
+    /**
+     * Returns the FillFormat object that contains fill formatting properties for a shape
+     * 
+     * @return \AsposePhp\Slides\FillFormat 
+     */
+    public function get_FillFormat(): FillFormat
     {
     }
 
@@ -1025,6 +1045,15 @@ class AutoShape
     {
     }
 
+    /**
+     * Returns the FillFormat object that contains fill formatting properties for a shape
+     * 
+     * @return \AsposePhp\Slides\FillFormat 
+     */
+    public function get_FillFormat(): FillFormat
+    {
+    }
+
 
 }
 
@@ -1170,7 +1199,7 @@ class SlideUtil
      * 
      * @param object $slide The normal, master, layout or notes slide.
      * 
-     * @return array
+     * @return  \AsposePhp\Slides\TextFrame[]
      */
     public static function GetAllTextBoxes(object $slide): array
     {
@@ -1434,7 +1463,7 @@ class ChartDataPoint
     {
     }
 
-     /**
+    /**
      * Specifies a data marker
      * 
      * @return \AsposePhp\Slides\Charts\Marker 
@@ -1445,9 +1474,19 @@ class ChartDataPoint
 
     /**
      * Removes DataPoint from chart series
+     * 
      * @return void
      */
     public function Remove(): void
+    {
+    }
+
+    /**
+     * Represents the formatting properties. Read IFormat
+     * 
+     * @return \AsposePhp\Slides\Charts\Format
+     */
+    public function get_Format(): Format
     {
     }
 
@@ -1491,10 +1530,11 @@ class ChartDataPointCollection
 
     /**
      * Removes the element at the given index
+     * @param int $index The index
      * 
      * @return void
      */
-    public function RemoveAt(): void
+    public function RemoveAt(int $index): void
     {
     }
 
@@ -1761,6 +1801,24 @@ class ChartSeries
     {
     }
 
+    /**
+     * Specifies a data marker
+     * 
+     * @return \AsposePhp\Slides\Charts\Marker 
+     */
+    public function get_Marker(): Marker
+    {
+    }
+
+    /**
+     * Represents the formatting properties. Read IFormat
+     * 
+     * @return \AsposePhp\Slides\Charts\Format
+     */
+    public function get_Format(): Format
+    {
+    }
+
 
 }
 
@@ -1975,6 +2033,15 @@ class Table
     {
     }
 
+    /**
+     * Returns the FillFormat object that contains fill formatting properties for a shape
+     * 
+     * @return \AsposePhp\Slides\FillFormat 
+     */
+    public function get_FillFormat(): FillFormat
+    {
+    }
+
 
 }
 
@@ -2131,7 +2198,7 @@ class Chart
      * 
      * @return string 
      */
-    public function get_Type(): string
+    public function get_Type(): int
     {
     }
 
@@ -2171,6 +2238,15 @@ class Chart
      * @return float 
      */
     public function get_Width(): float
+    {
+    }
+
+    /**
+     * Returns the FillFormat object that contains fill formatting properties for a shape
+     * 
+     * @return \AsposePhp\Slides\FillFormat 
+     */
+    public function get_FillFormat(): FillFormat
     {
     }
 
@@ -2319,6 +2395,15 @@ class GroupShape
     {
     }
 
+    /**
+     * Returns the FillFormat object that contains fill formatting properties for a shape
+     * 
+     * @return \AsposePhp\Slides\FillFormat 
+     */
+    public function get_FillFormat(): FillFormat
+    {
+    }
+
 
 }
 
@@ -2455,6 +2540,15 @@ class Shape
     {
     }
 
+    /**
+     * Returns the FillFormat object that contains fill formatting properties for a shape
+     * 
+     * @return \AsposePhp\Slides\FillFormat 
+     */
+    public function get_FillFormat(): FillFormat
+    {
+    }
+
 
 }
 
@@ -2479,7 +2573,7 @@ class ShapeCollection
      * Converts the shape collection to Array, casting shapes to appropriate type.
      * Currently Tables, Charts, AutoShape, GroupShape, Connector etc are recognized, everything else is Shape object.
      * 
-     * @return array of shapes 
+     * @return Shape[] 
      */
     public function ToArray(): array
     {
@@ -2671,7 +2765,7 @@ class PresentationFactory
      * 
      * @throws System::ArgumentException path is invalid
      * @throws System::IO::FileNotFoundException File or path doesn't exist
-     * @return \AsposePhp\\Slides\\PresentationText 
+     * @return \AsposePhp\Slides\PresentationText 
      */
     public function GetPresentationText(string $path): PresentationText
     {
@@ -2742,7 +2836,7 @@ class ISlideCollection
      * 
      * @param object $slide The slide to be cloned
      * @throws Aspose::Slides::PptxEditException if cannot modify presentation
-     * @return \AsposePhp\\Slides\\Slide 
+     * @return \AsposePhp\Slides\Slide 
      */
     public function AddClone(\AsposePhp\Slides\Slide $slide): Slide
     {

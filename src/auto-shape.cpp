@@ -71,6 +71,11 @@ namespace AsposePhp
         return Shape::get_UniqueId();
     }
 
+    Php::Value AutoShape::get_FillFormat()
+    {
+        return Shape::get_FillFormat();
+    }
+
     Php::Value AutoShape::get_Name()
     {
         return Shape::get_Name();

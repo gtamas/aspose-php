@@ -1,6 +1,7 @@
 #include "../include/aspose.h"
 #include "../include/shape.h"
 #include "../include/group_shape.h"
+#include "../include/fill-format.h"
 #include <phpcpp.h>
 
 using namespace Aspose::Slides;
@@ -145,6 +146,16 @@ namespace AsposePhp
     Php::Value Shape::get_ParentGroup()
     {
         return Php::Object("AsposePhp\\Slides\\GroupShape", wrapObject<IGroupShape, AsposePhp::GroupShape, &IShape::get_ParentGroup>());
+    }
+
+    /**
+     * @brief Returns the FillFormat object that contains fill formatting properties for a shape
+     * 
+     * @return Php::Value 
+     */
+    Php::Value Shape::get_FillFormat()
+    {
+        return Php::Object("AsposePhp\\Slides\\FillFormat", wrapObject<IFillFormat, AsposePhp::FillFormat, &IShape::get_FillFormat>());
     }
 
 } // namespace AsposePhp

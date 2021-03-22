@@ -75,4 +75,9 @@ namespace AsposePhp
         return Shape::get_Name();
     }
 
+    Php::Value PictureFrame::get_FillFormat()
+    {
+        return Shape::get_FillFormat();
+    }
+
 } // namespace AsposePhp

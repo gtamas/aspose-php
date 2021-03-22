@@ -71,6 +71,11 @@ namespace AsposePhp {
     Php::Value GroupShape::get_Name() {
         return Shape::get_UniqueId();
     }
+
+    Php::Value GroupShape::get_FillFormat()
+    {
+        return Shape::get_FillFormat();
+    }
     
 
 

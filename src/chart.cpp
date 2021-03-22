@@ -96,4 +96,9 @@ namespace AsposePhp
         return (int32_t)AsposeObjectWrapper<IChart>::_asposeObj->get_Type();
     }
 
+    Php::Value Chart::get_FillFormat()
+    {
+        return Shape::get_FillFormat();
+    }
+
 } // namespace AsposePhp

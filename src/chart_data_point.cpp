@@ -4,6 +4,7 @@
 #include "../include/double_chart_value.h"
 #include "../include/string_or_double_chart_value.h"
 #include "../include/marker.h"
+#include "../include/format.h"
 #include <phpcpp.h>
 
 using namespace Aspose::Slides;
@@ -63,6 +64,17 @@ namespace AsposePhp
     Php::Value ChartDataPoint::get_Marker()
     {
         return Php::Object("AsposePhp\\Slides\\Charts\\Marker", wrapObject<IMarker, AsposePhp::Marker, &IChartDataPoint::get_Marker>());
+    }
+
+
+    /**
+     * @brief Represents the formatting properties. Read IFormat
+     * 
+     * @return Php::Value 
+     */
+    Php::Value ChartDataPoint::get_Format()
+    {
+        return Php::Object("AsposePhp\\Slides\\Charts\\Format", wrapObject<IFormat, AsposePhp::Format, &IChartDataPoint::get_Format>());
     }
 
     /**

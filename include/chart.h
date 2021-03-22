@@ -25,6 +25,7 @@ namespace AsposePhp {
             Php::Value get_ChartData();
             Php::Value get_AlternativeText();
             Php::Value get_UniqueId();
+            Php::Value get_FillFormat();
             Php::Value get_Name();
             Php::Value get_Type();
             Php::Value get_IsGrouped();

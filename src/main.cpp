@@ -206,6 +206,7 @@ extern "C" {
         shape.method<&AsposePhp::Shape::get_Name>("get_Name", Php::Public, {});
         shape.method<&AsposePhp::Shape::get_UniqueId>("get_UniqueId", Php::Public, {});
         shape.method<&AsposePhp::Shape::get_IsGrouped>("get_IsGrouped", Php::Public, {});
+        shape.method<&AsposePhp::Shape::get_FillFormat>("get_FillFormat", Php::Public, {});
         shape.method<&AsposePhp::Shape::get_ParentGroup>("get_ParentGroup", Php::Public, {});
         shape.method<&AsposePhp::Shape::get_Height>("get_Height", Php::Public, {});
         shape.method<&AsposePhp::Shape::get_Width>("get_Width", Php::Public, {});
@@ -223,6 +224,7 @@ extern "C" {
         groupShape.method<&AsposePhp::GroupShape::isConnector>("isConnector", Php::Public, {});
         groupShape.method<&AsposePhp::GroupShape::isPictureFrame>("isPictureFrame", Php::Public, {});
         groupShape.method<&AsposePhp::GroupShape::get_UniqueId>("get_UniqueId", Php::Public, {});
+        groupShape.method<&AsposePhp::GroupShape::get_FillFormat>("get_FillFormat", Php::Public, {});
         groupShape.method<&AsposePhp::GroupShape::get_Name>("get_Name", Php::Public, {});
         groupShape.method<&AsposePhp::GroupShape::get_IsGrouped>("get_IsGrouped", Php::Public, {});
         groupShape.method<&AsposePhp::GroupShape::get_ParentGroup>("get_ParentGroup", Php::Public, {});
@@ -243,6 +245,7 @@ extern "C" {
         chart.method<&AsposePhp::Chart::isPictureFrame>("isPictureFrame", Php::Public, {});
         chart.method<&AsposePhp::Chart::get_UniqueId>("get_UniqueId", Php::Public, {});
         chart.method<&AsposePhp::Chart::get_Name>("get_Name", Php::Public, {});
+        chart.method<&AsposePhp::Chart::get_FillFormat>("get_FillFormat", Php::Public, {});
         chart.method<&AsposePhp::Chart::get_Type>("get_Type", Php::Public, {});
         chart.method<&AsposePhp::Chart::get_IsGrouped>("get_IsGrouped", Php::Public, {});
         chart.method<&AsposePhp::Chart::get_ParentGroup>("get_ParentGroup", Php::Public, {});
@@ -261,6 +264,7 @@ extern "C" {
         table.method<&AsposePhp::Table::isPictureFrame>("isPictureFrame", Php::Public, {});
         table.method<&AsposePhp::Table::isConnector>("isConnector", Php::Public, {});
         table.method<&AsposePhp::Table::get_UniqueId>("get_UniqueId", Php::Public, {});
+        table.method<&AsposePhp::Table::get_FillFormat>("get_FillFormat", Php::Public, {});
         table.method<&AsposePhp::Table::get_Name>("get_Name", Php::Public, {});
         table.method<&AsposePhp::Table::get_IsGrouped>("get_IsGrouped", Php::Public, {});
         table.method<&AsposePhp::Table::get_ParentGroup>("get_ParentGroup", Php::Public, {});
@@ -302,6 +306,8 @@ extern "C" {
         chartSeries.method<&AsposePhp::ChartSeries::__construct>("__construct", Php::Public, {});
         chartSeries.method<&AsposePhp::ChartSeries::get_Name>("get_Name", Php::Public, {});
         chartSeries.method<&AsposePhp::ChartSeries::get_DataPoints>("get_DataPoints", Php::Public, {});
+        chartSeries.method<&AsposePhp::ChartSeries::get_Format>("get_Format", Php::Public, {});
+        chartSeries.method<&AsposePhp::ChartSeries::get_Marker>("get_Marker", Php::Public, {});
         chartSeries.method<&AsposePhp::ChartSeries::set_InvertIfNegative>("set_InvertIfNegative", Php::Public, {
              Php::ByVal("value", Php::Type::Bool, true) 
         });
@@ -376,6 +382,7 @@ extern "C" {
         chartDataPoint.method<&AsposePhp::ChartDataPoint::get_YValue>("get_YValue", Php::Public, {});
         chartDataPoint.method<&AsposePhp::ChartDataPoint::get_XValue>("get_XValue", Php::Public, {});
         chartDataPoint.method<&AsposePhp::ChartDataPoint::get_Marker>("get_Marker", Php::Public, {});
+        chartDataPoint.method<&AsposePhp::ChartDataPoint::get_Format>("get_Format", Php::Public, {});
         chartDataPoint.method<&AsposePhp::ChartDataPoint::Remove>("Remove", Php::Public, {});
 
         // DataLabel
@@ -500,6 +507,7 @@ extern "C" {
         autoShape.method<&AsposePhp::AutoShape::isAutoShape>("isAutoShape", Php::Public, {});
         autoShape.method<&AsposePhp::AutoShape::isConnector>("isConnector", Php::Public, {});
         autoShape.method<&AsposePhp::AutoShape::get_UniqueId>("get_UniqueId", Php::Public, {});
+        autoShape.method<&AsposePhp::AutoShape::get_FillFormat>("get_FillFormat", Php::Public, {});
         autoShape.method<&AsposePhp::AutoShape::get_Name>("get_Name", Php::Public, {});
         autoShape.method<&AsposePhp::AutoShape::get_TextFrame>("get_TextFrame", Php::Public, {});
         autoShape.method<&AsposePhp::AutoShape::get_IsGrouped>("get_IsGrouped", Php::Public, {});
@@ -549,6 +557,7 @@ extern "C" {
         pictureFrame.method<&AsposePhp::PictureFrame::isPictureFrame>("isPictureFrame", Php::Public, {});
         pictureFrame.method<&AsposePhp::PictureFrame::get_UniqueId>("get_UniqueId", Php::Public, {});
         pictureFrame.method<&AsposePhp::PictureFrame::get_Name>("get_Name", Php::Public, {});
+        pictureFrame.method<&AsposePhp::PictureFrame::get_FillFormat>("get_FillFormat", Php::Public, {});
         pictureFrame.method<&AsposePhp::PictureFrame::get_IsGrouped>("get_IsGrouped", Php::Public, {});
         pictureFrame.method<&AsposePhp::PictureFrame::get_ParentGroup>("get_ParentGroup", Php::Public, {});
         pictureFrame.method<&AsposePhp::PictureFrame::get_Height>("get_Height", Php::Public, {});
@@ -566,6 +575,7 @@ extern "C" {
         connector.method<&AsposePhp::Connector::isAutoShape>("isAutoShape", Php::Public, {});
         connector.method<&AsposePhp::Connector::isConnector>("isConnector", Php::Public, {});
         connector.method<&AsposePhp::Connector::isPictureFrame>("isPictureFrame", Php::Public, {});
+        connector.method<&AsposePhp::Connector::get_FillFormat>("get_FillFormat", Php::Public, {});
         connector.method<&AsposePhp::Connector::get_UniqueId>("get_UniqueId", Php::Public, {});
         connector.method<&AsposePhp::Connector::get_Name>("get_Name", Php::Public, {});
         connector.method<&AsposePhp::Connector::get_IsGrouped>("get_IsGrouped", Php::Public, {});

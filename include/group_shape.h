@@ -20,6 +20,7 @@ namespace AsposePhp {
             Php::Value isPictureFrame();
             Php::Value isConnector();
             Php::Value get_Shapes();
+            Php::Value get_FillFormat();
             Php::Value get_AlternativeText();
             Php::Value get_UniqueId();
             Php::Value get_Name();

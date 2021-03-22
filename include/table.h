@@ -23,6 +23,7 @@ namespace AsposePhp {
             Php::Value get_Name();
             Php::Value get_AlternativeText();
             Php::Value get_IsGrouped();
+            Php::Value get_FillFormat();
             Php::Value get_ParentGroup();
             Php::Value get_Height();
             Php::Value get_Width();
