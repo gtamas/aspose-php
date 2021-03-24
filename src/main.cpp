@@ -191,6 +191,14 @@ extern "C" {
         shapeCollection.method<&AsposePhp::ShapeCollection::__construct>("__construct", Php::Public, {});
         shapeCollection.method<&AsposePhp::ShapeCollection::ToArray>("ToArray", Php::Public, {});
         shapeCollection.method<&AsposePhp::ShapeCollection::Remove>("Remove", Php::Public, {});
+        shapeCollection.method<&AsposePhp::ShapeCollection::AddPictureFrame>("AddPictureFrame", Php::Public, {
+             Php::ByVal("type", Php::Type::Numeric, true),
+             Php::ByVal("x", Php::Type::Float, true),
+             Php::ByVal("y", Php::Type::Float, true),
+             Php::ByVal("width", Php::Type::Float, true),
+             Php::ByVal("height", Php::Type::Float, true),
+             Php::ByVal("img", Php::Type::Object, true),
+        });
         
          // Shape
 
@@ -528,7 +536,7 @@ extern "C" {
 
         // FillFormat
 
-        Php::Class<AsposePhp::FillFormat> fillFormat("AsposePhp\\Slides\\Charts\\FillFormat");
+        Php::Class<AsposePhp::FillFormat> fillFormat("AsposePhp\\Slides\\FillFormat");
         fillFormat.method<&AsposePhp::FillFormat::set_FillType>("set_FillType", Php::Public, {
             Php::ByVal("type", Php::Type::Numeric, true) 
         });

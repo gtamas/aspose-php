@@ -20,6 +20,7 @@ namespace AsposePhp {
             
             Php::Value ToArray();
             void Remove(Php::Parameters &params);
+            Php::Value AddPictureFrame(Php::Parameters &params);
 
     };
 

@@ -276,6 +276,10 @@ class Connector
     {
     }
 
+    public function get_FillFormat()
+    {
+    }
+
     public function get_UniqueId()
     {
     }
@@ -356,6 +360,10 @@ class PictureFrame
     {
     }
 
+    public function get_FillFormat()
+    {
+    }
+
     public function get_IsGrouped()
     {
     }
@@ -399,7 +407,7 @@ class ColorFormat
 
 }
 
-namespace AsposePhp\Slides\Charts;
+namespace AsposePhp\Slides;
 
 class FillFormat
 {
@@ -481,6 +489,10 @@ class AutoShape
     }
 
     public function get_UniqueId()
+    {
+    }
+
+    public function get_FillFormat()
     {
     }
 
@@ -740,6 +752,10 @@ class ChartDataPoint
     {
     }
 
+    public function get_Format()
+    {
+    }
+
     public function Remove()
     {
     }
@@ -900,6 +916,14 @@ class ChartSeries
     {
     }
 
+    public function get_Format()
+    {
+    }
+
+    public function get_Marker()
+    {
+    }
+
     public function set_InvertIfNegative(bool $value)
     {
     }
@@ -969,6 +993,10 @@ class Table
     }
 
     public function get_UniqueId()
+    {
+    }
+
+    public function get_FillFormat()
     {
     }
 
@@ -1080,6 +1108,10 @@ class Chart
     {
     }
 
+    public function get_FillFormat()
+    {
+    }
+
     public function get_Type()
     {
     }
@@ -1145,6 +1177,10 @@ class GroupShape
     }
 
     public function get_UniqueId()
+    {
+    }
+
+    public function get_FillFormat()
     {
     }
 
@@ -1220,6 +1256,10 @@ class Shape
     {
     }
 
+    public function get_FillFormat()
+    {
+    }
+
     public function get_ParentGroup()
     {
     }
@@ -1249,6 +1289,10 @@ class ShapeCollection
     }
 
     public function Remove()
+    {
+    }
+
+    public function AddPictureFrame(int $type, float $x, float $y, float $width, float $height, object $img)
     {
     }
 

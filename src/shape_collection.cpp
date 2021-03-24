@@ -7,6 +7,7 @@
 #include "../include/auto-shape.h"
 #include "../include/picture-frame.h"
 #include "../include/connector.h"
+#include "../include/picture-frame.h"
 #include <phpcpp.h>
 
 using namespace Aspose::Slides;
@@ -86,5 +87,29 @@ namespace AsposePhp
 
         return Php::Array(arr);
     }
+
+    /**
+     * @brief Creates a new PictureFrame and adds it to the end of the collection
+     * 
+     * @param params 
+     * @return Php::Value 
+     */
+    Php::Value ShapeCollection::AddPictureFrame(Php::Parameters &params)
+    {
+        ShapeType type = (ShapeType) params[0].numericValue();
+        float x = params[1].floatValue();
+        float y = params[2].floatValue();
+        float width = params[3].floatValue();
+        float height = params[4].floatValue();
+        Php::Value imgObj = params[5];
+        SharedPtr<Aspose::Slides::PPImage> img = (Aspose::Slides::PPImage *) imgObj.implementation();
+        SharedPtr<Aspose::Slides::IPictureFrame> result = _shapes->AddPictureFrame(type,x,y,width,height,img);
+        PictureFrame *phpValue = new PictureFrame(result);
+        return Php::Object("AsposePhp\\Slides\\PictureFrame", phpValue);
+
+    }
+
+
+
 
 } // namespace AsposePhp

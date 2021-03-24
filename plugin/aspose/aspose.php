@@ -302,7 +302,7 @@ class CellFormat
     /**
      * Returns a cell fill properties object. Read-only IFillFormat
      * 
-     * @return \AsposePhp\Slides\Charts\FillFormat
+     * @return \AsposePhp\Slides\FillFormat
      */
     public function get_FillFormat(): FillFormat
     {
@@ -790,7 +790,7 @@ class PortionFormat
     /**
      * Returns the text FillFormat properties. No inheritance applied
      * 
-     * @return \AsposePhp\Slides\Charts\FillFormat 
+     * @return \AsposePhp\Slides\FillFormat 
      */
     public function get_FillFormat(): FillFormat
     {
@@ -820,7 +820,7 @@ class ColorFormat
 
 }
 
-namespace AsposePhp\Slides\Charts;
+namespace AsposePhp\Slides;
 
 /**
  * Represents a fill formatting options
@@ -863,7 +863,7 @@ class Format
     /**
      * Returns fill style properties of a chart
      * 
-     * @return \AsposePhp\Slides\Charts\FillFormat 
+     * @return \AsposePhp\Slides\FillFormat 
      */
     public function get_Fill(): FillFormat
     {
@@ -2580,11 +2580,25 @@ class ShapeCollection
     }
 
      /**
-     * @Removes the given shape from collection
+     * Removes the given shape from collection
      * 
      * @param object $shape The shape to remove 
      */
     public function Remove(object $shape): object
+    {
+    }
+
+    /**
+     * Creates a new PictureFrame and adds it to the end of the collection
+     * 
+     * @param ShapeType $type The shape contained in the set ShapeType of shapes
+     * @param float $x The X-coordinate for a left side of shape's frame
+     * @param float $x The Y-coordinate for a top side of shape's frame
+     * @param float $width The width of shape's frame
+     * @param float $height The height of shape's frame
+     * @param PPImage $img The image of picture frame
+     */
+    public function AddPictureFrame(int $type, float $x, float $y, float $width, float $height, object $img)
     {
     }
 
