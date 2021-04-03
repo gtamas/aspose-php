@@ -44,6 +44,8 @@ You can find information about all the exported APIs in [./docs/index.html]("./d
 * Dev tools like make, g++ etc.
 * PHP 7.0+
 
+Please note that this project currently works only with PHP 7.x, PHP 8 is **NOT** supported!
+
 ##  4. <a name='precompiled-version'></a>Precompiled version
 
 You can find it in ./dist. This should work under Ubuntu Linux 16.0+. Just run the following (you might need sudo):
@@ -148,7 +150,7 @@ Please note that each IDE requires unique config steps to use the stubs. Please 
 
 ##  9. <a name='development'></a>Development
 
-We welcome contributors! Please see [./CONTRIBUTE.MD](contribute.md) to get started.
+We welcome contributors! Please see [./CONTRIBUTE.MD](./CONTRIBUTE.MD) to get started.
 
 
 
