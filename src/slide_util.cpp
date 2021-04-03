@@ -12,8 +12,10 @@ using namespace std;
 namespace AsposePhp {
 
     /**
-     * @brief Returns the master slide for a layout.  
-     * 
+     * @brief Returns all text frames on a slide in a PPTX presentation.  
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.util.slide_util#a97da94e3fc5230cdfc0e30b444c127df
+     * @param params Php::Parameters params
+     * @param params[0] Slide obj Slide or MasterSlide The slide whose text is to be returned
      * @return Php::Value 
      */
     Php::Value SlideUtil::GetAllTextBoxes(Php::Parameters &params) {

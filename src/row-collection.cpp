@@ -14,8 +14,10 @@ namespace AsposePhp
 {
 
     /**
-     * @brief Desc. 
-     * 
+     * @brief Returns the row at the specified index. 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.row_collection#a9633b1d27c943693f8d802a273c58ad1
+     * @param params Php::Parameters
+     * @param params[0] int index The index of the item to get
      * @throw System::ArgumentOutOfRangeException Index is invalid or does not exist
      * @return Php::Value 
      */
@@ -34,7 +36,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the number of items in collection
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.row_collection#a0c6fe67e32400622019a951451044f00
      * @return Php::Value 
      */
     Php::Value RowCollection::get_Count()
@@ -44,8 +46,9 @@ namespace AsposePhp
 
     /**
      * @brief Removes a row at the specified position from a table
-     * 
-     * @param params 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.row_collection#ace556a43551344162b6d0db614571a70
+     * @param params Php::Parameters    
+     * @param params[0] int index The index of the item to remove 
      */
     void RowCollection::RemoveAt(Php::Parameters &params)
     {

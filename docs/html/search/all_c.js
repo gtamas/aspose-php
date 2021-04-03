@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['notes_5fslide_2ecpp_306',['notes_slide.cpp',['../notes__slide_8cpp.html',1,'']]],
-  ['notes_5fslide_2ed_307',['notes_slide.d',['../notes__slide_8d.html',1,'']]],
-  ['notes_5fslide_2eh_308',['notes_slide.h',['../notes__slide_8h.html',1,'']]],
-  ['notes_5fslide_5fmanager_2ecpp_309',['notes_slide_manager.cpp',['../notes__slide__manager_8cpp.html',1,'']]],
-  ['notes_5fslide_5fmanager_2ed_310',['notes_slide_manager.d',['../notes__slide__manager_8d.html',1,'']]],
-  ['notes_5fslide_5fmanager_2eh_311',['notes_slide_manager.h',['../notes__slide__manager_8h.html',1,'']]],
-  ['notesslide_312',['NotesSlide',['../class_aspose_php_1_1_notes_slide.html',1,'AsposePhp::NotesSlide'],['../class_aspose_php_1_1_notes_slide.html#accd3b72e0993565252dc5fd141abad32',1,'AsposePhp::NotesSlide::NotesSlide()']]],
-  ['notesslidemanager_313',['NotesSlideManager',['../class_aspose_php_1_1_notes_slide_manager.html',1,'AsposePhp::NotesSlideManager'],['../class_aspose_php_1_1_notes_slide_manager.html#a9b769dc8c6aa37c04ca0e1de4d247e19',1,'AsposePhp::NotesSlideManager::NotesSlideManager()']]]
+  ['remove_200',['Remove',['../class_aspose_php_1_1_chart_data_point.html#a66ebe73f7d57a3174ce08f6a6c6bd6c5',1,'AsposePhp::ChartDataPoint::Remove()'],['../class_aspose_php_1_1_shape_collection.html#a9be673d8ce507dc0eed6b001bf6fe3ba',1,'AsposePhp::ShapeCollection::Remove()'],['../class_aspose_php_1_1_slide.html#aa1b63f4ac455cc7f4ae7a2c1c9ed6e31',1,'AsposePhp::Slide::Remove()']]],
+  ['removeat_201',['RemoveAt',['../class_aspose_php_1_1_chart_category_collection.html#ac627218bdfb7cbd9141609944f3d2882',1,'AsposePhp::ChartCategoryCollection::RemoveAt()'],['../class_aspose_php_1_1_chart_data_point_collection.html#aadbd241598e2fdb7056cad587531cc9c',1,'AsposePhp::ChartDataPointCollection::RemoveAt()'],['../class_aspose_php_1_1_chart_series_collection.html#a42b721544cfed65c5d1d5e7bedda8dc2',1,'AsposePhp::ChartSeriesCollection::RemoveAt()'],['../class_aspose_php_1_1_column_collection.html#a366da126e12a44a8c1749dc86ce3ce27',1,'AsposePhp::ColumnCollection::RemoveAt()'],['../class_aspose_php_1_1_row_collection.html#a2f252200c9f51e30d30560f1d449aba8',1,'AsposePhp::RowCollection::RemoveAt()']]],
+  ['row_202',['Row',['../class_aspose_php_1_1_row.html',1,'AsposePhp']]],
+  ['rowcollection_203',['RowCollection',['../class_aspose_php_1_1_row_collection.html',1,'AsposePhp']]]
 ];

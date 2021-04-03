@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['fillformat_789',['FillFormat',['../class_aspose_php_1_1_fill_format.html#af49158058867485dce548fa8ee491522',1,'AsposePhp::FillFormat']]],
-  ['format_790',['Format',['../class_aspose_php_1_1_format.html#a54f165169bfd70916572f1e2077428c8',1,'AsposePhp::Format']]]
+  ['mergecells_443',['MergeCells',['../class_aspose_php_1_1_table.html#a77c83a4adab55486c2b32e45b43546f6',1,'AsposePhp::Table']]]
 ];

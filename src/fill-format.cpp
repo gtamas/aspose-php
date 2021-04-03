@@ -12,7 +12,7 @@ namespace AsposePhp
 
     /**
      * @brief Sets the type of filling
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.i_fill_format#a38adf1b338a84a54aa48b7b447c7920e
      * @param params 
      */
     void FillFormat::set_FillType(Php::Parameters &params)
@@ -23,7 +23,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the fill color.
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.i_fill_format#a978e561a7f49dc7ce3c96e4cfe8f640a
      * @return Php::Value 
      */
     Php::Value FillFormat::get_SolidFillColor()

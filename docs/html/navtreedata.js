@@ -25,36 +25,21 @@
 var NAVTREE =
 [
   [ "AsposePhp", "index.html", [
-    [ "README", "md__r_e_a_d_m_e.html", [
-      [ "aspose-php", "md__r_e_a_d_m_e.html#autotoc_md0", [
-        [ "1. <a name='prerequisites'></a>Prerequisites", "md__r_e_a_d_m_e.html#autotoc_md1", null ],
-        [ "2. <a name='precompiled-version'></a>Precompiled version", "md__r_e_a_d_m_e.html#autotoc_md2", null ],
-        [ "3. <a name='compile-from-source'></a>Compile from source", "md__r_e_a_d_m_e.html#autotoc_md3", null ],
-        [ "4. <a name='api'></a>API", "md__r_e_a_d_m_e.html#autotoc_md4", null ],
-        [ "5. <a name='php'></a>PHP", "md__r_e_a_d_m_e.html#autotoc_md5", null ]
-      ] ]
-    ] ],
-    [ "Namespaces", "namespaces.html", [
-      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
-    ] ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ],
-        [ "Variables", "functions_vars.html", null ]
+        [ "Functions", "functions_func.html", "functions_func" ]
       ] ]
     ] ],
     [ "Files", "files.html", [
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
-        [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Functions", "globals_func.html", null ]
       ] ]
     ] ]
   ] ]
@@ -63,9 +48,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"class_aspose_php_1_1_column_collection.html#a366da126e12a44a8c1749dc86ce3ce27",
-"class_aspose_php_1_1_slide_text.html#a6e270efc3e9db9411345c23c0a1fef55",
-"portion-collection_8cpp.html"
+"class_aspose_php_1_1_i_slide_collection.html#aa737a2d1d8155cd156ab617a6ee5a8fd",
+"dir_d44c64559bbebec7f509842c48db8b23.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

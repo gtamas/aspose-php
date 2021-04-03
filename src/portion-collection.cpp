@@ -13,8 +13,10 @@ using namespace Aspose::Slides;
 namespace AsposePhp {
 
     /**
-     * @brief Desc. 
-     * 
+     * @brief Gets the element at the specified index 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.portion_collection#aac1137d882a2832b5143817d2e8d60f8
+     * @param params Php::Parameters
+     * @param params[0] int index The index of the item to get
      * @throw System::ArgumentOutOfRangeException Index is invalid or does not exist
      * @return Php::Value 
      */
@@ -30,7 +32,7 @@ namespace AsposePhp {
 
     /**
      * @brief Returns the number of items in collection
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.portion_collection#a0f357e511e40bf0fb4f278c825769479
      * @return Php::Value 
      */
     Php::Value PortionCollection::get_Count() {

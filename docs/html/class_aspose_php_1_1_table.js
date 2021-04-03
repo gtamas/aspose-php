@@ -4,6 +4,7 @@ var class_aspose_php_1_1_table =
     [ "__construct", "class_aspose_php_1_1_table.html#a2a9488e52d40336c71dd833a54a21779", null ],
     [ "get_AlternativeText", "class_aspose_php_1_1_table.html#af5e758f77e8036bd6bef40f3b2d20d6b", null ],
     [ "get_Columns", "class_aspose_php_1_1_table.html#a17b5ad5e3d5677f96eba3cf94d19f04e", null ],
+    [ "get_FillFormat", "class_aspose_php_1_1_table.html#ab28af2f685f706bfb5973057b31891aa", null ],
     [ "get_Height", "class_aspose_php_1_1_table.html#a72bf746ff539419b49882bb3ad239afd", null ],
     [ "get_IsGrouped", "class_aspose_php_1_1_table.html#a454af28b2da5825490b171311ffc6746", null ],
     [ "get_Name", "class_aspose_php_1_1_table.html#a1184a25e02587d0a67ea5506cd439ff2", null ],

@@ -22,6 +22,7 @@ namespace AsposePhp {
     
         void __construct(Php::Parameters &params);
         Php::Value get_SlideSize();
+        Php::Value get_Slides();
 
 
         // Custom methods
@@ -30,7 +31,6 @@ namespace AsposePhp {
         Php::Value load(Php::Parameters &params);
         Php::Value getPresentationText(Php::Parameters &params);
         Php::Value getNumberOfSlides();
-        Php::Value getSlides2();
         Php::Value getSlides();
         Php::Value getSlide(Php::Parameters &params);
         Php::Value get_Masters();

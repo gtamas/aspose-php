@@ -80,7 +80,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the height of the shape. Read float
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.shape#a77d2a6b7c54b09a0968bd9b32e8b292d
      * @return Php::Value 
      */
     Php::Value Shape::get_Height()
@@ -90,7 +90,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the width of the shape. Read float
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.shape#a7fa9a747ccf07632e69b26e9699f34f7
      * @return Php::Value 
      */
     Php::Value Shape::get_Width()
@@ -100,7 +100,7 @@ namespace AsposePhp
 
     /**
      * @brief Gets unique id (int)
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.shape#a03a7b856e59931340e7fcffb5e4ecc81
      * @return Php::Value 
      */
     Php::Value Shape::get_UniqueId()
@@ -110,7 +110,7 @@ namespace AsposePhp
 
     /**
      * @brief Gets the name of the shape.
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.shape#ae804b4e10eb56606de229ed31f373180
      * @return Php::Value 
      */
     Php::Value Shape::get_Name()
@@ -120,7 +120,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the alt text of the shape as string
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.shape#a881872af9669da1dfe9a51a894b8dfcf
      * @return Php::Value 
      */
     Php::Value Shape::get_AlternativeText()
@@ -140,7 +140,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns parent GroupShape object if shape is grouped. Otherwise returns null
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.shape#aa7d7a0f57dcc8bbcf521858f44d7fda8
      * @return Php::Value 
      */
     Php::Value Shape::get_ParentGroup()
@@ -150,7 +150,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the FillFormat object that contains fill formatting properties for a shape
-     * 
+     * @#see https://apireference.aspose.com/slides/cpp/class/aspose.slides.shape#a1bfe6f11a0dad278184d03ca10d27359
      * @return Php::Value 
      */
     Php::Value Shape::get_FillFormat()

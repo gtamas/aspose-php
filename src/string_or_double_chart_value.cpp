@@ -13,7 +13,7 @@ namespace AsposePhp {
 
     /**
      * @brief Returns chart data cell
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.string_or_double_chart_value#aceab1aeabc14658eb7d78ea99ae25d60
      * @return Php::Value 
      */
     Php::Value StringOrDoubleChartValue::get_AsCell() {

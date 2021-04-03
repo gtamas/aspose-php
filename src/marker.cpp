@@ -12,6 +12,7 @@ namespace AsposePhp
 
     /**
      * @brief Gets the marker fill
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.marker#a47fb32c7640e064461d5897bd6c06840
      * 
      * @return Php::Value 
      */

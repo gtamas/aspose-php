@@ -10,6 +10,11 @@ using namespace Aspose::Slides;
 
 namespace AsposePhp {
 
+    /**
+     * @brief Represents an AutoShape
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.auto_shape
+     * 
+     */
     class AutoShape : virtual AsposeObjectWrapper<IAutoShape>,  public Shape
     {
         public:

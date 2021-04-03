@@ -1,5 +1,7 @@
 var namespace_aspose_php =
 [
+    [ "Drawing", "namespace_aspose_php_1_1_drawing.html", "namespace_aspose_php_1_1_drawing" ],
+    [ "Slides", "namespace_aspose_php_1_1_slides.html", "namespace_aspose_php_1_1_slides" ],
     [ "AsposeObjectWrapper", "class_aspose_php_1_1_aspose_object_wrapper.html", "class_aspose_php_1_1_aspose_object_wrapper" ],
     [ "AsposeUtil", "class_aspose_php_1_1_aspose_util.html", "class_aspose_php_1_1_aspose_util" ],
     [ "AutoShape", "class_aspose_php_1_1_auto_shape.html", "class_aspose_php_1_1_auto_shape" ],

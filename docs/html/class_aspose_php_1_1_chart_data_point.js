@@ -2,6 +2,7 @@ var class_aspose_php_1_1_chart_data_point =
 [
     [ "ChartDataPoint", "class_aspose_php_1_1_chart_data_point.html#a273dbb8bbb977d8bec9ee92bc443371d", null ],
     [ "__construct", "class_aspose_php_1_1_chart_data_point.html#a4d75a7c6101bc5e242528c20be24130a", null ],
+    [ "get_Format", "class_aspose_php_1_1_chart_data_point.html#aa287aa10c48c230019fab026be2e69d0", null ],
     [ "get_Label", "class_aspose_php_1_1_chart_data_point.html#ae611306db3566b242c1385c7669075b7", null ],
     [ "get_Marker", "class_aspose_php_1_1_chart_data_point.html#a8350ed900c6efd0a79cf02e383bfcf5b", null ],
     [ "get_Value", "class_aspose_php_1_1_chart_data_point.html#a48e8e16c3cba46f506d1a23e6e00d6c4", null ],

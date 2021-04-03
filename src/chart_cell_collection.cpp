@@ -12,7 +12,10 @@ namespace AsposePhp {
 
     /**
      * @brief Returns the series collection from chart data. 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_cell_collection#ae20f90f0e08fb82a59dd400e703f4a06
      * 
+     * @param params Php::Parameters
+     * @param params[0] int index The index of the item to get
      * @throw System::ArgumentOutOfRangeException Index is invalid or does not exist
      * @return Php::Value 
      */
@@ -28,6 +31,7 @@ namespace AsposePhp {
 
     /**
      * @brief Returns the number of items in collection
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_cell_collection#acda274a88c33b4f1d32881b2d816e31c
      * 
      * @return Php::Value 
      */

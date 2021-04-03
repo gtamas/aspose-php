@@ -3,6 +3,7 @@ var class_aspose_php_1_1_group_shape =
     [ "GroupShape", "class_aspose_php_1_1_group_shape.html#acf83f1b0a428953699cc55e4776a31ca", null ],
     [ "__construct", "class_aspose_php_1_1_group_shape.html#a2890bf9cfb82efcb5af159f16819c50f", null ],
     [ "get_AlternativeText", "class_aspose_php_1_1_group_shape.html#ae96e695f714075d64169da1c51a6184a", null ],
+    [ "get_FillFormat", "class_aspose_php_1_1_group_shape.html#aef083b202447eba0c8f3d945a896927e", null ],
     [ "get_Height", "class_aspose_php_1_1_group_shape.html#a45139d126902c312f654ee5adcb117d5", null ],
     [ "get_IsGrouped", "class_aspose_php_1_1_group_shape.html#a2c218b4e6b62e08cfd19b8010b77a11c", null ],
     [ "get_Name", "class_aspose_php_1_1_group_shape.html#a1576a5b3d30ec6973ec7ff92756621b2", null ],

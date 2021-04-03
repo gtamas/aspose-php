@@ -5,6 +5,7 @@ var class_aspose_php_1_1_shape =
     [ "__construct", "class_aspose_php_1_1_shape.html#a3bb1ff0ace570eb9c2d42b609617906a", null ],
     [ "convert", "class_aspose_php_1_1_shape.html#a11c1121088c7476b90d45f5298858aa7", null ],
     [ "get_AlternativeText", "class_aspose_php_1_1_shape.html#a7f665494540a6f22b05902af9c759430", null ],
+    [ "get_FillFormat", "class_aspose_php_1_1_shape.html#ade9437f6987bacdc208bc8e40aff66cf", null ],
     [ "get_Height", "class_aspose_php_1_1_shape.html#a194a14b045f5ed0ef4fb4c58a030cfa3", null ],
     [ "get_IsGrouped", "class_aspose_php_1_1_shape.html#ab047174f061d17d715f7043cad101eae", null ],
     [ "get_Name", "class_aspose_php_1_1_shape.html#aec847aa4a830d8647f8acf0c93bd8caa", null ],

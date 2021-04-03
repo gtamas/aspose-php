@@ -9,6 +9,11 @@ using namespace Aspose::Slides::Charts;
 
 namespace AsposePhp {
 
+    /**
+     * @brief Represents chart categories
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_category
+     * 
+     */
     class ChartCategory : public AsposeObjectWrapper<IChartCategory>, public Php::Base
     {
         public:

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['_24fac_0',['$fac',['../test_8php.html#a960cb2b719a0f87f964af888445868af',1,'test.php']]],
-  ['_24h_1',['$h',['../test_8php.html#ab00da9d5d8bd5b6b944793e093860aff',1,'test.php']]],
-  ['_24w_2',['$w',['../test_8php.html#ae51391055f5e898dc2625d155b016aaa',1,'test.php']]]
+  ['_5f_5fconstruct_0',['__construct',['../class_aspose_php_1_1_i_slide_collection.html#acf46fe0ba994f28e0f244a1bd2cb1bd6',1,'AsposePhp::ISlideCollection::__construct()'],['../class_aspose_php_1_1_notes_slide.html#a50bf42355ec428f399abfe0d035964b8',1,'AsposePhp::NotesSlide::__construct()'],['../class_aspose_php_1_1_presentation.html#ad08871c69f9cc33d2bb84c76d9ca7aaf',1,'AsposePhp::Presentation::__construct()'],['../class_aspose_php_1_1_presentation_factory.html#a3542ece8d1cda02f58ca55e8e4f9da2c',1,'AsposePhp::PresentationFactory::__construct()'],['../class_aspose_php_1_1_presentation_text.html#a77b6140b865bc2b0a2b8f1a681925128',1,'AsposePhp::PresentationText::__construct()'],['../class_aspose_php_1_1_shape_collection.html#a05328ec0c30bc1bf7b4ccf2d60ebe559',1,'AsposePhp::ShapeCollection::__construct()'],['../class_aspose_php_1_1_slide.html#ac1dd402ca66e8c3c502845c2aae303ce',1,'AsposePhp::Slide::__construct()'],['../class_aspose_php_1_1_slide_text.html#a479a2a5275c07ec6936b858b1d9530df',1,'AsposePhp::SlideText::__construct()'],['../class_aspose_php_1_1_text_frame.html#a84d8f41a5d080d313454a62a768f5b2e',1,'AsposePhp::TextFrame::__construct()']]]
 ];

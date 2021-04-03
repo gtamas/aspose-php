@@ -11,6 +11,11 @@ using namespace Aspose::Slides::Charts;
 
 namespace AsposePhp {
 
+    /**
+     * @brief Represents cell for chart data
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_cell
+     * 
+     */
     class ChartDataCell : public AsposeObjectWrapper<IChartDataCell>, public Php::Base
     {
         public:

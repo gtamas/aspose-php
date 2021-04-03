@@ -12,6 +12,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the UTF8 string value of this data cell. 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_cell#a02d5b346a018c911b040fca030e1fc1a
      * 
      * @return Php::Value 
      */
@@ -29,6 +30,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the index of the row of worksheet in which the cell is located
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_cell#ad5d79837407a66fcbcd49855766c3e1f
      * 
      * @return Php::Value 
      */
@@ -39,8 +41,10 @@ namespace AsposePhp
 
     /**
      * @brief Sets the custom display format of numbers and dates. If value is empty will be used PresetNumberFormat value
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_cell#a3647cb863d72d0e5f13e03557d227d65
      * 
-     * @param params 
+     * @param params Php::Parameters
+     * @param params[0] string The name of the number format
      * @return Php::Value 
      */
     void ChartDataCell::set_CustomNumberFormat(Php::Parameters &params)
@@ -51,8 +55,11 @@ namespace AsposePhp
 
     /**
      * @brief Sets the value.
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_cell#ad5ef4d22314d81dd99b1a271d69669a7
      * 
-     * @param params 
+     * @param params Php::Parameters
+     * @param params[0] string value The value to set
+     * @param params[1] string type The data type of the value
      */
     void ChartDataCell::set_Value(Php::Parameters &params)
     {
@@ -72,6 +79,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the index of the column of worksheet in which the cell is located. Read-only int32_t
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_cell#a9c88c0203b01b17df9091e4359d9f269
      * 
      * @return Php::Value 
      */

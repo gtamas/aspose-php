@@ -9,6 +9,11 @@ using namespace Aspose::Slides;
 
 namespace AsposePhp {
 
+    /**
+     * @brief Represents format of a table cell
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.cell_format
+     * 
+     */
     class CellFormat : public AsposeObjectWrapper<ICellFormat>, public Php::Base
     {
         public:

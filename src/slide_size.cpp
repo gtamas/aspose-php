@@ -12,7 +12,7 @@ namespace AsposePhp {
 
     /**
      * @brief Returns the size in points.  
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.slide_size#adaf4a9ed16d7a6e3757524fa1eafdbd2
      * @return Php::Value 
      */
     Php::Value SlideSize::get_Size() {

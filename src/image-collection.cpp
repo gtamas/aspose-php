@@ -15,8 +15,11 @@ namespace AsposePhp
 {
 
     /**
-     * @brief Desc. 
+     * @brief Returns image by its index.
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.i_image_collection#aa2177dc21db5f1c177ea97f355f54964 
      * 
+     * @param params Php::Parameters
+     * @param params[0] int index The index of the item to get
      * @throw System::ArgumentOutOfRangeException Index is invalid or does not exist
      * @return Php::Value 
      */
@@ -34,7 +37,8 @@ namespace AsposePhp
     }
 
     /**
-     * @brief Returns the number of items in collection
+     * @brief Returns the number of behaviors in a collection. Read-only int32_t
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.i_generic_collection#a326ea00c3ee827e399d3d4a6e7b63f35
      * 
      * @return Php::Value 
      */
@@ -45,8 +49,11 @@ namespace AsposePhp
 
     /**
      * @brief Add an image to a presentation
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.i_image_collection#aa2177dc21db5f1c177ea97f355f54964
      * 
-     * @param params 
+     * @param params Php::Parameters 
+     * @param params[0] string fileOrEncoded File path to Base64 string value 
+     * @param params[1] bool isBase64 Is this a base64 string 
      * @return Php::Value 
      */
     Php::Value ImageCollection::AddImage(Php::Parameters &params)
@@ -71,7 +78,7 @@ namespace AsposePhp
             throw Php::Exception(e.what());
         }
 
-            PPImage *phpValue = new PPImage(img);
+        PPImage *phpValue = new PPImage(img);
         return Php::Object("AsposePhp\\Slides\\PPImage", phpValue);
     }
 

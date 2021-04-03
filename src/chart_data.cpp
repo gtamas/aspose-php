@@ -14,6 +14,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the series collection from chart data. 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data#afc935a1e9a6d37a8d876cfb527f659e8
      * 
      * @return Php::Value 
      */
@@ -24,6 +25,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns categories collection.
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data#a877fdf0889737029dc0f993979998ff1
      * 
      * @return Php::Value 
      */
@@ -35,6 +37,7 @@ namespace AsposePhp
 
     /**
      * @brief Gets the cells factory to create cells used for chart series or categories. Read-only IChartDataWorkbook
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data#a32097093561723a10df0a57dc91acaea
      * 
      * @return Php::Value 
      */

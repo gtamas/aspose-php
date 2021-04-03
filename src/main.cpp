@@ -109,6 +109,7 @@ extern "C" {
         });
         pres.method<&AsposePhp::Presentation::getNumberOfSlides>("getNumberOfSlides", Php::Public, {});
         pres.method<&AsposePhp::Presentation::getSlides>("getSlides", Php::Public, {});
+        pres.method<&AsposePhp::Presentation::get_Slides>("get_Slides", Php::Public, {});
         pres.method<&AsposePhp::Presentation::getSlide>("getSlide", Php::Public, { 
             Php::ByVal("slideNo", Php::Type::Numeric, true) 
         });
@@ -129,7 +130,13 @@ extern "C" {
         Php::Class<AsposePhp::ISlideCollection> col("AsposePhp\\Slides\\ISlideCollection");
 
         col.method<&AsposePhp::ISlideCollection::size>("size", {});
-        col.method<&AsposePhp::ISlideCollection::get_Item>("get_Item", {});
+        col.method<&AsposePhp::ISlideCollection::get_Count>("get_Count", {});
+        col.method<&AsposePhp::ISlideCollection::get_Item>("get_Item", {
+             Php::ByVal("index", Php::Type::Numeric, true) 
+        });
+        col.method<&AsposePhp::ISlideCollection::idx_get>("idx_get", {
+              Php::ByVal("index", Php::Type::Numeric, true) 
+        });
         col.method<&AsposePhp::ISlideCollection::AddClone>("AddClone", Php::Public, {
              Php::ByVal("slide", "AsposePhp\\Slides\\Slide", true) 
         });
@@ -448,6 +455,7 @@ extern "C" {
         slide.method<&AsposePhp::Slide::get_LayoutSlide>("get_LayoutSlide", {});
         slide.method<&AsposePhp::Slide::get_Shapes>("get_Shapes", {});
         slide.method<&AsposePhp::Slide::getSlideNumber>("getSlideNumber", {});
+        slide.method<&AsposePhp::Slide::get_SlideNumber>("get_SlideNumber", {});
         slide.method<&AsposePhp::Slide::getSlideText>("getSlideText", {});
         slide.method<&AsposePhp::Slide::getLayoutText>("getLayoutText", {});
         slide.method<&AsposePhp::Slide::getMasterText>("getMasterText", {});

@@ -11,7 +11,7 @@ namespace AsposePhp {
 
     /**
      * @brief Returns the master slide for a layout.  
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.i_layout_slide#a72ac46e03b57e031966200c1a143a763
      * @return Php::Value 
      */
     Php::Value LayoutSlide::get_MasterSlide() {

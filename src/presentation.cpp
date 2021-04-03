@@ -37,7 +37,8 @@ namespace AsposePhp {
     /**
      * @brief Loads license file
      * 
-     * @param params Has one param, the path
+     * @param params Php::Parameters params
+     * @param params[0] string path Path to licence file
      * 
      * @throw System::ArgumentException path is invalid
      * @throw System::IO::FileNotFoundException File does not exist
@@ -80,7 +81,8 @@ namespace AsposePhp {
     /**
      * @brief Loads a presentation file.
      * 
-     * @param params Path to presentation to read.
+     * @param params Php::Parameters params
+     * @param params[0] string path Path to presentation file
      * 
      * @throw System::ArgumentException path is invalid
      * @throw System::IO::FileNotFoundException File does not exist
@@ -120,9 +122,10 @@ namespace AsposePhp {
     /**
      * @brief Writes the presentaton to disk or returns it as byte array.
      * 
-     * @param params Output path. File must not exist.
-     * @param params file format.
-     * @param params AsArray if true, byte array will be returned.
+     * @param params Php::Parameters params
+     * @param params[0] string path Output path. File must not exist.
+     * @param params[1] string format file format.
+     * @param params[2] bool AsArray if true, byte array will be returned otherwise it'll save to disk.
      * 
      * @throw System::IO::IOException cannot access path
      * @throw System::UnauthorizedAccessException Has no right access file
@@ -175,7 +178,8 @@ namespace AsposePhp {
     /**
      * @brief Clones the slide with given index.
      * 
-     * @param params 0 based index of the slide to be cloned
+     * @param params Php::Parameters
+     * @param params[0] int index The index of the slide to clone
      * 
      * @throw System::ArgumentOutOfRangeException slide index does not exist
      * @throw Aspose::Slides::PptxEditException PPT modification failed.
@@ -202,12 +206,14 @@ namespace AsposePhp {
     /**
      * @brief Returns all text from presentation as string. Does NOT include charts and tables.
      * 
-     * @param params An array with 2 string elements: a path to the presentation file and a 
-     * type indicating which type of text should be returned. Type can be either of the following: 
+     * @param params Php::Parameters
+     * @param params[0] string path A path to the presentation file
+     * @param params[1] string type A type indicating which type of text should be returned. Type can be either of the following: 
      * - master 
      * - layout
      * - notes
      * - all
+     * 
      * 
      * @throw System::ArgumentException path is invalid
      * @throw System::IO::FileNotFoundException File does not exist
@@ -264,19 +270,29 @@ namespace AsposePhp {
     }
 
     /**
-     * @brief Returns an array of slides as Slide objects.
+     * @brief Returns a Slide collection.
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.presentation#a9981b38f5a01d9fa5482f05b0a75974c
+     * @return Php::Value 
+     */
+    Php::Value Presentation::get_Slides() {
+        ISlideCollection* coll = new ISlideCollection(_slides);
+        return Php::Object("AsposePhp\\Slides\\ISlideCollection", coll);
+    }
+
+    /**
+     * @brief Alias to get_Slides().
+     * @deprecated Don't use.
      * 
      * @return Php::Value 
      */
     Php::Value Presentation::getSlides() {
-        ISlideCollection* coll = new ISlideCollection(_slides);
-        return Php::Object("AsposePhp\\Slides\\ISlideCollection", coll);
+       return this->get_Slides();
     }
 
 
     /**
      * @brief Returns slide size object
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.presentation#a857de5523405acaee7fb0a4da97f3f47
      * @return Php::Value 
      */
     Php::Value Presentation::get_SlideSize() {
@@ -284,42 +300,11 @@ namespace AsposePhp {
         return Php::Object("AsposePhp\\Slides\\SlideSize", size);
     }
 
-    Php::Value Presentation::getSlides2() {
-
-        if(_slides == nullptr) {
-            _slides = _pres->get_Slides();
-        }
-
-        int32_t slideCount = _slides->get_Count();
-        int32_t slideTextCount = _slideText->get_Count();
-        vector<Php::Object> slideArr;
-        SmartPtr<ISlide> slide;
-        
-        try {
-            for(int i = 0; i < slideCount; i++) {
-                slide = _slides->idx_get(i);
-                AsposePhp::Slide* phpSlide;
-                if(i >= slideTextCount) {
-                    phpSlide = new AsposePhp::Slide(slide, "", "", "", slide->get_SlideNumber());
-                } else {
-                    phpSlide = new AsposePhp::Slide(slide, 
-                    _slideText[i]->get_LayoutText().ToUtf8String(), 
-                    _slideText[i]->get_NotesText().ToUtf8String(), 
-                    _slideText[i]->get_MasterText().ToUtf8String(), slide->get_SlideNumber());
-                    }
-                slideArr.push_back(Php::Object("AsposePhp\\Slides\\Slide", phpSlide));
-            }
-            return Php::Array(slideArr);
-        }
-        catch(ArgumentOutOfRangeException &e) {
-            return nullptr;
-        }
-    }
-
     /**
      * @brief Returns a specific slide by index.
      * 
-     * @param params The 0 based index of the slide.
+     * @param params Php::Parameters.
+     * @param params[0] int index The 0 based index of the slide to get.
      * 
      * @throw System::ArgumentOutOfRangeException index does not exist.
      * @return Php::Value 
@@ -344,7 +329,7 @@ namespace AsposePhp {
 
     /**
      * @brief Returns a list of all master slides that are defined in the presentation. Read-only IMasterSlideCollection
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.presentation#a8fda502eacdf2fe4ccfc1ab0bf185d29
      * @return Php::Value 
      */
     Php::Value Presentation::get_Masters() {
@@ -355,7 +340,7 @@ namespace AsposePhp {
 
     /**
      * @brief Returns the collection of all images in the presentation. Read-only IImageCollection
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.presentation#a585e72bb387d3a887e6e9904e4da83fc
      * @return Php::Value 
      */
     Php::Value Presentation::get_Images() {

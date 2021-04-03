@@ -4,6 +4,7 @@ var class_aspose_php_1_1_chart =
     [ "__construct", "class_aspose_php_1_1_chart.html#a5b59281e2bd2a2afd2e4f6a1d520e5df", null ],
     [ "get_AlternativeText", "class_aspose_php_1_1_chart.html#abaca7e4c9fb5bfabf6975de7617c143d", null ],
     [ "get_ChartData", "class_aspose_php_1_1_chart.html#a06e3bfb366608001739d6ec086fde798", null ],
+    [ "get_FillFormat", "class_aspose_php_1_1_chart.html#a9d20ffc00361b1e84b67b06a704a85d1", null ],
     [ "get_Height", "class_aspose_php_1_1_chart.html#a6b3352cae96fb041d49ab8b3ed945a18", null ],
     [ "get_IsGrouped", "class_aspose_php_1_1_chart.html#aea69328989bb8be003ad9a890408a154", null ],
     [ "get_Name", "class_aspose_php_1_1_chart.html#a242087118a0f731ccaba6a4ddf06fbaa", null ],

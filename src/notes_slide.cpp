@@ -21,8 +21,8 @@ namespace AsposePhp {
     }
 
     /**
-     * @brief Returns the TextFrame object which contains the notes text string
-     * 
+     * @brief Returns a TextFrame with notes' text if there is one.
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.notes_slide#a848ebd26aacbbc0f9200340aad8b6df9
      * @return Php::Value 
      */
     Php::Value NotesSlide::get_NotesTextFrame() {

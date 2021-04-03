@@ -8,6 +8,11 @@
 
 namespace AsposePhp {
 
+    /**
+     * @brief Represents a group of shapes on a slide
+     * @see  https://apireference.aspose.com/slides/cpp/class/aspose.slides.i_group_shape
+     * 
+     */
     class GroupShape : public AsposeObjectWrapper<IGroupShape>, public Shape
     {
         public:

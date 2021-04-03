@@ -32,11 +32,22 @@ namespace AsposePhp
     }
 
     /**
-     * @brief Returns the index of this slide
+     * @brief Alias to get_SlideNumber(). 
+     * @deprecated Don't use.
      * 
      * @return Php::Value 
      */
     Php::Value Slide::getSlideNumber()
+    {
+        return this->get_SlideNumber();
+    }
+
+    /**
+     * @brief Returns the index of this slide
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.slide#ac8e47ca972db2444c43f311925bcc76f
+     * @return Php::Value 
+     */
+    Php::Value Slide::get_SlideNumber()
     {
         return _slide->get_SlideNumber();
     }
@@ -83,7 +94,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the SlideManager instance.
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.slide#a21a2f29db2277133cb09aaf0d39ff9ca
      * @return Php::Value 
      */
     Php::Value Slide::get_NotesSlideManager()
@@ -95,7 +106,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the shape collection
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.base_slide#a23c7b4b3c1d8274a151fa2474bf7d0d3
      * @return Php::Value 
      */
     Php::Value Slide::get_Shapes()
@@ -107,7 +118,7 @@ namespace AsposePhp
 
     /**
      * @brief Removes slide from presentation
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.slide#a432dc33785820c6c480d40e0e19f95ac
      */
     void Slide::Remove()
     {
@@ -116,7 +127,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the layout slide for the current slide
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.slide#a56b36c32cb9e5db97cdbc7e8248f6fa8
      * @return Php::Value 
      */
     Php::Value Slide::get_LayoutSlide()
@@ -127,9 +138,14 @@ namespace AsposePhp
     }
 
     /**
-     * @brief 
+     * @brief Returns a Thumbnail image with custom scaling, either as byte array or string 
      * 
-     * @param params 
+     * @param params Php::Parameters
+     * @param params[0] float scaleX The value by which to scale this Thumbnail in the x-axis direction 
+     * @param params[1] float scaleY The value by which to scale this Thumbnail in the y-axis direction
+     * @param params[2] string format The output image format (jpeg or png) 
+     * @param params[3] bool asArray If true, a byte array is returned.
+
      * @return Php::Value 
      */
     Php::Value Slide::GetThumbnail(Php::Parameters &params)
@@ -198,17 +214,13 @@ namespace AsposePhp
     /**
      * @brief Returns all text frames from a slide as string.
      * 
-     * @param slide The slide object
+     * @param slide Slide The slide object
      * @return std::string 
      */
     std::string Slide::getAllText(SharedPtr<ISlide> slide)
     {
 
         string text;
-
-        //vector<SharedPtr<Chart>> charts = this->getShapes(slide, u"Chart");
-
-        //cout << charts[0]->get_Name() << endl;
 
         ArrayPtr<SharedPtr<ITextFrame>> textFramesSlide = Util::SlideUtil::GetAllTextBoxes(slide);
 

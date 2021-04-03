@@ -36,6 +36,7 @@ namespace AsposePhp {
             Php::Value get_Shapes();
             Php::Value get_LayoutSlide();
             Php::Value get_NotesSlideManager();
+            Php::Value get_SlideNumber();
             void Remove();
 
             // Custom methods

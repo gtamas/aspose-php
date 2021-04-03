@@ -14,7 +14,10 @@ namespace AsposePhp
 
     /**
      * @brief Returns the series collection from chart data. 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_category_collection#a76f150486cefc3b0e33b161d365f0ca7
      * 
+     * @param params Php::Parameters
+     * @param params[0] int index The index of the item to get
      * @throw System::ArgumentOutOfRangeException Index is invalid or does not exist
      * @return Php::Value 
      */
@@ -33,6 +36,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the number of items in the collection
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_category_collection#a52747af2adb5b8a52b49e8f244911d02
      * 
      * @return Php::Value 
      */
@@ -43,6 +47,9 @@ namespace AsposePhp
 
     /**
      * @brief Removes the element at the given index
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_category_collection#a672b7f310cdf37ea1a9116598765333f
+     * @param params Php::Parameters
+     * @param params[0] int index the elemnt to remove
      * 
      * @return Php::Value 
      */

@@ -10,6 +10,11 @@ using namespace Aspose::Slides::Charts;
 
 namespace AsposePhp {
 
+    /**
+     * @brief Represents collection of a cells with data
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_cell_collection
+     * 
+     */
     class ChartCellCollection : public AsposeObjectWrapper<IChartCellCollection>, public Collection<IChartCellCollection>, public Php::Base
     {
         public:

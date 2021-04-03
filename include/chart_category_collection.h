@@ -10,6 +10,7 @@ namespace AsposePhp {
 
     /**
      * @brief AsposePhp wrapper for ChartCategoryCollection class.
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_category_collection
      * 
      */
     class ChartCategoryCollection : public AsposeObjectWrapper<IChartCategoryCollection>, public Collection<IChartCategoryCollection>, public Php::Base

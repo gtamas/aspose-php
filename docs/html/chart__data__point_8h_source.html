@@ -87,7 +87,7 @@ $(document).ready(function(){initNavTree('chart__data__point_8h_source.html','')
 <div class="title">chart_data_point.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="chart__data__point_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;phpcpp.h&gt;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;phpcpp.h&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;../include/aspose.h&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;../include/aspose_php.h&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
@@ -96,37 +96,35 @@ $(document).ready(function(){initNavTree('chart__data__point_8h_source.html','')
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#ifndef CHART_DATA_POINT_H</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define CHART_DATA_POINT_H</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespace_aspose_php.html">AsposePhp</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">namespace </span>AsposePhp {</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_chart_data_point.html">   12</a></span>&#160;    <span class="keyword">class </span><a class="code" href="class_aspose_php_1_1_chart_data_point.html">ChartDataPoint</a> : <span class="keyword">public</span> <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;IChartDataPoint&gt;, <span class="keyword">public</span> Php::Base</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_chart_data_point.html#a273dbb8bbb977d8bec9ee92bc443371d">   15</a></span>&#160;            <a class="code" href="class_aspose_php_1_1_chart_data_point.html#a273dbb8bbb977d8bec9ee92bc443371d">ChartDataPoint</a>(System::SharedPtr&lt;IChartDataPoint&gt; series) : <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper</a>&lt;IChartDataPoint&gt;(series) {};</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_aspose_php_1_1_chart_data_point.html#a4d75a7c6101bc5e242528c20be24130a">   16</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="class_aspose_php_1_1_chart_data_point.html#a4d75a7c6101bc5e242528c20be24130a">__construct</a>(Php::Parameters &amp;params);</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;            <a class="code" href="class_aspose_php_1_1_chart_data_point.html">ChartDataPoint</a>(System::SharedPtr&lt;IChartDataPoint&gt; series) : <a class="code" href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposeObjectWrapper&lt;IChartDataPoint&gt;</a>(series) {};</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            <span class="keywordtype">void</span> __construct(Php::Parameters &amp;params);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            Php::Value get_Label();</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;            Php::Value get_Value();</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;            Php::Value get_XValue();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            Php::Value get_YValue();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;            Php::Value get_Marker();</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            <span class="keywordtype">void</span> Remove();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    };</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;            Php::Value get_Format();</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;            <span class="keywordtype">void</span> Remove();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    };</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="aclass_aspose_php_1_1_aspose_object_wrapper_html"><div class="ttname"><a href="class_aspose_php_1_1_aspose_object_wrapper.html">AsposePhp::AsposeObjectWrapper</a></div><div class="ttdoc">This is the wrapper class we use to wrap Aspose objects. It's also the base class of all AsposePhp cl...</div><div class="ttdef"><b>Definition:</b> <a href="aspose__php_8h_source.html#l00022">aspose_php.h:23</a></div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_chart_data_point_html_a273dbb8bbb977d8bec9ee92bc443371d"><div class="ttname"><a href="class_aspose_php_1_1_chart_data_point.html#a273dbb8bbb977d8bec9ee92bc443371d">AsposePhp::ChartDataPoint::ChartDataPoint</a></div><div class="ttdeci">ChartDataPoint(System::SharedPtr&lt; IChartDataPoint &gt; series)</div><div class="ttdef"><b>Definition:</b> <a href="chart__data__point_8h_source.html#l00015">chart_data_point.h:15</a></div></div>
-<div class="ttc" id="anamespace_aspose_php_html"><div class="ttname"><a href="namespace_aspose_php.html">AsposePhp</a></div><div class="ttdef"><b>Definition:</b> <a href="aspose__php_8h_source.html#l00013">aspose_php.h:13</a></div></div>
 <div class="ttc" id="aclass_aspose_php_1_1_chart_data_point_html"><div class="ttname"><a href="class_aspose_php_1_1_chart_data_point.html">AsposePhp::ChartDataPoint</a></div><div class="ttdef"><b>Definition:</b> <a href="chart__data__point_8h_source.html#l00012">chart_data_point.h:13</a></div></div>
-<div class="ttc" id="aclass_aspose_php_1_1_chart_data_point_html_a4d75a7c6101bc5e242528c20be24130a"><div class="ttname"><a href="class_aspose_php_1_1_chart_data_point.html#a4d75a7c6101bc5e242528c20be24130a">AsposePhp::ChartDataPoint::__construct</a></div><div class="ttdeci">void __construct(Php::Parameters &amp;params)</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="chart__data__point_8h.html">chart_data_point.h</a></li>
-    <li class="footer">Generated on Fri Jan 29 2021 14:16:04 for AsposePhp by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>chart_data_point.h</b></li>
+    <li class="footer">Generated on Sat Apr 3 2021 10:17:43 for AsposePhp by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>

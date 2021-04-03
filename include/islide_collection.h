@@ -19,7 +19,9 @@ namespace AsposePhp {
             void __construct(Php::Parameters &params);
             
             Php::Value size();
+            Php::Value get_Count();
             Php::Value get_Item(Php::Parameters &params);
+            Php::Value idx_get(Php::Parameters &params);
             Php::Value AddClone(Php::Parameters &params);
 
     };

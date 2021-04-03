@@ -13,8 +13,13 @@ namespace AsposePhp {
  
     /**
      * @brief Gets the cell that can be used for chart series or categories
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_workbook#a7f21730e975a92bf5c85fe1e8320e3ce
      * 
-     * @param params 
+     * @param params Php::Parameters params 
+     * @param params[0] int worksheetIndex Index of the worksheet 
+     * @param params[1] int row	The row 
+     * @param params[2] int column	The column 
+     * @param params[3] string value	The value 
      * @return Php::Value 
      */
     Php::Value ChartDataWorkbook::GetCell(Php::Parameters &params) {

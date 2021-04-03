@@ -10,6 +10,11 @@ using namespace Aspose::Slides::Charts;
 
 namespace AsposePhp {
 
+    /**
+     * @brief Represents collection of a series data point
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_point_collection
+     * 
+     */
     class ChartDataPointCollection : public AsposeObjectWrapper<IChartDataPointCollection>, public Collection<IChartDataPointCollection>, public Php::Base
     {
         public:

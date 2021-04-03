@@ -11,6 +11,7 @@ namespace AsposePhp {
 
     /**
      * @brief Returns If true then AsCell property is actual. In other words, worksheet is used for storing category (this case supports a multi-level category). If false then AsLiteral property is actual. In other words, worksheet is NOT used for storing category (and this case doesn't support a multi-level categories).. 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_category#a9b19d13c50891a3777bc04aa4c3394dc
      * 
      * @return Php::Value 
      */
@@ -20,6 +21,7 @@ namespace AsposePhp {
 
     /**
      * @brief Returns Aspose.Cells.Cell object. If category is multi-level then used Aspose.Cells.Cell object for level "0". 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_category#a17e09a87afceeae4029c87db52663c3f
      * 
      * @return Php::Value 
      */

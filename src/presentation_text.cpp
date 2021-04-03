@@ -23,7 +23,7 @@ namespace AsposePhp {
     /**
      * @brief Returns an array of SlideText objects which hold text elements. There could be less SlideText objects than the number
      * of the actual slides.
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.presentation_text#a058dbd581d3c739eff1c6e93ee4fc09a
      * @return Php::Value 
      */
     Php::Value PresentationText::get_SlidesText()

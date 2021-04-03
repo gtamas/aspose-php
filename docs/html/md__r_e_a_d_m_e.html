@@ -93,6 +93,16 @@ $(document).ready(function(){initNavTree('md__r_e_a_d_m_e.html',''); initResizab
 <li>3. <a href="#compile-from-source">Compile from source</a></li>
 <li>4. <a href="#api">API</a></li>
 <li>5. <a href="#php">PHP</a></li>
+<li>6. <a href="#known-aspose-bugs">Known Aspose bugs</a></li>
+<li>7. <a href="#php-stubs">PHP stubs</a></li>
+<li>8. <a href="#development">Development</a><ul>
+<li>8.1. <a href="#about-the-code">About the code</a></li>
+<li>8.2. <a href="#more-on-the-php-classes-and-methods">More on the PHP classes and methods</a></li>
+<li>8.3. <a href="#on-memory-management">On memory management</a></li>
+<li>8.4. <a href="#adding-new-aspose-functionality">Adding new Aspose functionality</a></li>
+<li>8.5. <a href="#the-code-generator">The code generator</a></li>
+</ul>
+</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md0"></a>
 aspose-php</h1>
@@ -110,7 +120,7 @@ aspose-php</h1>
 <h2><a class="anchor" id="autotoc_md2"></a>
 2. &lt;a name='precompiled-version'&gt;&lt;/a&gt;Precompiled version</h2>
 <p>You can find it in ./dist. This should work under Ubuntu Linux 16.0+. Just run the following (you might need sudo):</p>
-<div class="fragment"><div class="line">make install</div>
+<div class="fragment"><div class="line">sudo make install</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
 3. &lt;a name='compile-from-source'&gt;&lt;/a&gt;Compile from source</h2>
 <p>Download Aspose Slides C++ library package from <a href="https://products.aspose.com/slides/cpp">this page</a> and unzip it somewhere.</p>
@@ -119,23 +129,270 @@ aspose-php</h1>
 </div><!-- fragment --><p>Then install <a href="https://www.php-cpp.com/">PHP-CPP</a></p>
 <p>Finally, run this to build from scratch:</p>
 <div class="fragment"><div class="line">./make.sh -c 1</div>
-</div><!-- fragment --><p>To build only changed files, partial rebuild:</p>
-<p>Finally, run this:</p>
+</div><!-- fragment --><p>Or this to build only changed files, partial rebuild:</p>
 <div class="fragment"><div class="line">./make.sh</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
 4. &lt;a name='api'&gt;&lt;/a&gt;API</h2>
 <p>Please see [./docs/index.html]("./docs/index.html").</p>
 <h2><a class="anchor" id="autotoc_md5"></a>
 5. &lt;a name='php'&gt;&lt;/a&gt;PHP</h2>
-<p>See <a class="el" href="test_8php.html">test.php</a> for examples.</p>
+<p>See test.php for examples.</p>
 <div class="fragment"><div class="line">php ./test.php</div>
-</div><!-- fragment --> </div></div><!-- contents -->
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md6"></a>
+6. &lt;a name='known-aspose-bugs'&gt;&lt;/a&gt;Known Aspose bugs</h2>
+<p>In order to make preview image generation work (Slide::GetThumbnail()), you must edit /etc/fonts/fonts.conf</p>
+<div class="fragment"><div class="line">sudo vim /etc/fonts/fonts.conf</div>
+</div><!-- fragment --><p>and comment the following line:</p>
+<div class="fragment"><div class="line">&lt;dir&gt;~/.fonts&lt;/dir&gt;</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md7"></a>
+7. &lt;a name='php-stubs'&gt;&lt;/a&gt;PHP stubs</h2>
+<p>You can find stub files in ./stubs. These can be used to make intellisense work in IDEs like PHPStorm. Please note that the generated stubs contain only the namespaces, methods and classes and some info about the arguments. This will make intellisense work, however, there is no detailed usage info like PHPDocs. This is because of PHP-CPP limitations.</p>
+<p>If you want more detailed info, see <code><a class="el" href="aspose_8php_source.html">plugin/aspose/aspose.php</a></code>, which is an annotated stub file, but it has to be updated manually. See below for install instructions.</p>
+<p>If you wanna build these files, install the stub generator:</p>
+<div class="fragment"><div class="line">composer update</div>
+</div><!-- fragment --><p>Run the following to build a single file containing all stub code:</p>
+<div class="fragment"><div class="line">./make.sh -s 1</div>
+</div><!-- fragment --><p>Run this to generate a stub file for each class:</p>
+<div class="fragment"><div class="line">./make.sh -s 2</div>
+</div><!-- fragment --><p>Additionally, you may also generate stubs as PHPStorm plugin. This is the recommended way, since it's the easiest to install and the stub data contains detailed PHPDocs. Simply add the resulting <code>plugin/phpstorm-aspose-php-plugin.jar</code> to PHPStorm (see <a href="https://www.jetbrains.com/help/phpstorm/managing-plugins.html">this page</a> if you wanna know more).</p>
+<div class="fragment"><div class="line">./make.sh -p 1</div>
+</div><!-- fragment --><p>Please note that each IDE requires unique config steps to use the stubs. Please refer to your IDE's docs for details.</p>
+<h2><a class="anchor" id="autotoc_md8"></a>
+8. &lt;a name='development'&gt;&lt;/a&gt;Development</h2>
+<h3><a class="anchor" id="autotoc_md9"></a>
+8.1. &lt;a name='about-the-code'&gt;&lt;/a&gt;About the code</h3>
+<p>This is C++ 20 code.</p>
+<p>Since it is not possible to export the Aspose classes directly to PHP, we use the following logic to build a proxy:</p>
+<ul>
+<li>Under the <a class="el" href="namespace_aspose_php.html">AsposePhp</a> namespace, there is a PHP class (extending <em>Php::Base</em>) for each Aspose class. Their names are identical.</li>
+<li>This has a protected member called **_asposeObj**, which is smart pointer and it points to the corresponding Aspose class instance. For example in our <em>Slide</em> class _asposeObj points to an instance of <em>Aspose::Slides::Slide</em>.</li>
+<li>You can define public methods on the PHP class which have access to to Aspose functionality via <em>this-&gt;_asposeObj</em>. This is where you implement any logic based on Aspose code or even totally custom logic.</li>
+<li>PHP will be able to instantiate these classes and call their methods, like normal PHP class methods.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md10"></a>
+8.2. &lt;a name='more-on-the-php-classes-and-methods'&gt;&lt;/a&gt;More on the PHP classes and methods</h3>
+<p><em><b>Classes</b></em></p>
+<ul>
+<li>PHP classes should be created using the <em><a class="el" href="class_aspose_php_1_1_aspose_object_wrapper.html" title="This is the wrapper class we use to wrap Aspose objects. It&#39;s also the base class of all AsposePhp cl...">AsposePhp::AsposeObjectWrapper</a></em> template class. See the docs, the *./include/aspose_php.h* header and any of the other headers for details.</li>
+<li>If the new PHP class is a collection, it should also extend <em>Collection</em> template class. See *./include/column-collection.h* for an example.</li>
+<li>Each PHP class should be exported under the <a class="el" href="namespace_aspose_php.html">AsposePhp</a> namespace using the namespace of its Aspose counterpart as a nested namespace, e.g: Aspose::Slides::Slide -&gt; <a class="el" href="class_aspose_php_1_1_slides_1_1_slide.html">AsposePhp::Slides::Slide</a>.</li>
+<li>Each PHP Class must be registered in *./src/main.cpp* in order to be exported to PHP.</li>
+<li>Instances of PHP classes can be easily returned by the the <em><a class="el" href="class_aspose_php_1_1_aspose_object_wrapper.html#a79367eeaab66ebb1b9874250bdd8ecee" title="A template fucntion which creates a PHP comatible a wrapper for an Aspose object. The result will be ...">AsposePhp::AsposeObjectWrapper::wrapObject</a></em> helper template method. This is most useful when you wish to return non-primitive results produced by an Aspose method. See <a class="el" href="aspose__php_8h_source.html">aspose_php.h</a> for details.</li>
+</ul>
+<p><em><b>Methods</b></em></p>
+<ul>
+<li>The Php methods might return primitives as well as instances other PHP classes (or the same class) or nullptr or they can also use void. If they return a value, it must be compatible with <b>Php::Value</b>.</li>
+<li>Methods must be also registered in ./src/main.cpp, otherwise PHP won't see them.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md11"></a>
+8.3. &lt;a name='on-memory-management'&gt;&lt;/a&gt;On memory management</h3>
+<p>You shouldn't worry about this, the PHP-CPP and Aspose libs got you covered for the most part. Just keep in mind:</p>
+<ul>
+<li>The Aspose lib uses smart pointers, most Aspose methods return these.</li>
+<li>If you wanna manually instantiate an Aspose class, use <em>MakeObject</em> and <em>MakeArray</em> Aspose functions (unless the docs suggest otherwise).</li>
+<li>If the value you return was created with <em>new</em> operator, PHP-CPP will take care about freeing the memory.</li>
+<li>For things you don't need to return to PHP, use smart pointers, avoid new.</li>
+</ul>
+<h3><a class="anchor" id="autotoc_md12"></a>
+8.4. &lt;a name='adding-new-aspose-functionality'&gt;&lt;/a&gt;Adding new Aspose functionality</h3>
+<p>Exporting some Aspose class to PHP usually requires the steps outlined below. Please note that it's best to use the code generator, you shouldn't do this by hand.</p>
+<ol type="1">
+<li>Create the header file in *./include/some-class.h*</li>
+</ol>
+<div class="fragment"><div class="line">#include &lt;phpcpp.h&gt;</div>
+<div class="line">#include &quot;../include/aspose.h&quot;</div>
+<div class="line">#include &quot;../include/aspose_php.h&quot;</div>
+<div class="line"> </div>
+<div class="line">#ifndef SOMECLASS_H</div>
+<div class="line">#define SOMECLASS_H</div>
+<div class="line"> </div>
+<div class="line">using namespace Aspose::Some::ns;</div>
+<div class="line"> </div>
+<div class="line">namespace AsposePhp {</div>
+<div class="line"> </div>
+<div class="line">    class SomeClass : public AsposeObjectWrapper&lt;SomeAsposeClass&gt;, public Php::Base</div>
+<div class="line">    {</div>
+<div class="line">        public:</div>
+<div class="line">            SomeClass(System::SharedPtr&lt;SomeAsposeClass&gt; obj) : AsposeObjectWrapper&lt;SomeAsposeClass&gt;(obj) {};</div>
+<div class="line">            void __construct(Php::Parameters &amp;params);</div>
+<div class="line">            </div>
+<div class="line"> </div>
+<div class="line">    };</div>
+<div class="line"> </div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line">#endif</div>
+</div><!-- fragment --><ol type="1">
+<li>Create the class body in ./src/some-class.cpp*</li>
+</ol>
+<div class="fragment"><div class="line">#include &quot;../include/aspose.h&quot;</div>
+<div class="line">#include &quot;../include/some-class.h&quot;</div>
+<div class="line">#include &lt;phpcpp.h&gt;</div>
+<div class="line"> </div>
+<div class="line">using namespace Aspose::Something;</div>
+<div class="line">// add more aspose namespaces as needed;</div>
+<div class="line"> </div>
+<div class="line">namespace AsposePhp {</div>
+<div class="line"> </div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><ol type="1">
+<li>Register the new class in ./src/main.cpp*</li>
+</ol>
+<div class="fragment"><div class="line">#include &quot;./include/some-class.h&quot;</div>
+<div class="line"> </div>
+<div class="line">...</div>
+<div class="line"> </div>
+<div class="line">// SomeClass</div>
+<div class="line"> </div>
+<div class="line">Php::Class&lt;AsposePhp::SomeClass&gt; someObj(&quot;AsposePhp\\Some\\Class&quot;);</div>
+<div class="line"> </div>
+<div class="line">...</div>
+<div class="line"> </div>
+<div class="line">extension.add(std::move(someObj));</div>
+</div><!-- fragment --><ol type="1">
+<li>Compile</li>
+</ol>
+<p>That's it! At this point, you have a new class in PHP, which you can refer to as <a class="el" href="namespace_aspose_php.html">AsposePhp</a>\Some\Class. You can instantiate it using the new operator.</p>
+<p>This class has access to SomeAsposeClass functionality, but currently it has no methods, so it's not very useful. In order to add a method, do this:</p>
+<ol type="1">
+<li>Edit the header file (*./include/some-class.h*)</li>
+</ol>
+<p>Add this line under the <em>public</em> section:</p>
+<div class="fragment"><div class="line">Php::Value someMethod();</div>
+</div><!-- fragment --><ol type="1">
+<li>Edit he class body (*./src/some-class.cpp*)</li>
+</ol>
+<p>Add the new method like this:</p>
+<div class="fragment"><div class="line">namespace AsposePhp {</div>
+<div class="line"> </div>
+<div class="line"> Php::Value someMethod() {</div>
+<div class="line">     // call aspose functions using _asposeObj-&gt;someMehod() or write custom logic. </div>
+<div class="line">     // You can call any method of SomeAsposeClass like this.</div>
+<div class="line"> </div>
+<div class="line">     return _asposeObj-&gt;someAsposeMethod();</div>
+<div class="line"> }</div>
+<div class="line"> </div>
+<div class="line">}</div>
+</div><!-- fragment --><ol type="1">
+<li>Register your method</li>
+</ol>
+<p>Open up *./src/main.cpp* and add this below your class registration code:</p>
+<div class="fragment"><div class="line">someObj.method&lt;&amp;AsposePhp::SomeClass::someMethod&gt;(&quot;someMethod&quot;, Php::Public, {});</div>
+</div><!-- fragment --><ol type="1">
+<li>Compile</li>
+</ol>
+<p>Now you can can use your new class like this:</p>
+<div class="fragment"><div class="line">&lt;?php </div>
+<div class="line">use AsposePhp\AsposeUtil;</div>
+<div class="line"> </div>
+<div class="line">$cls = new AsposePhp\Some\Class();</div>
+<div class="line">echo $cls-&gt;someMethod() // prints whatever someAsposeMethod has returned. ?&gt;</div>
+</div><!-- fragment --><p>This is just a very simple example. Methods may not return a value at all, they may return complex values (like other PHP class instances, arrays, custom objects etc) and they might have arguments too. You can find plenty of examples for these in the code.</p>
+<p>Additionally, please check out the following resources:</p>
+<ul>
+<li><a href="http://www.php-cpp.com/documentation/">PHP-CPP docs</a></li>
+<li><a href="https://apireference.aspose.com/slides/cpp">Aspose Slides CPP API docs</a></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md13"></a>
+8.5. &lt;a name='the-code-generator'&gt;&lt;/a&gt;The code generator</h3>
+<p>We also have a code generator which can help a lot with bootstrapping new classes, collections and methods.</p>
+<p>The generator uses a series of prompts to collect user input and it will generate all necessary source files and registration code for you.</p>
+<p>This is a <a href="https://yeoman.io/">Yeoman</a> generator and it's written in Node.</p>
+<ul>
+<li>Install <a href="https://nodejs.org/en/">node LTS</a></li>
+<li>Install Yeoman</li>
+</ul>
+<div class="fragment"><div class="line">npm install -g yo</div>
+</div><!-- fragment --><p>Once you've done this, you can start bootstrapping stuff.</p>
+<p><b>Boostrap a class</b></p>
+<div class="fragment"><div class="line">yo aspose::class</div>
+</div><!-- fragment --><p>This can be used to bootstrap a new class that you wish to export to PHP.</p>
+<p>Generator prompts:</p>
+<ul>
+<li>Name of the Aspose class you wanna export. Use only the class name, for instance, instead of Aspose::Slides::Slide you should type "Slide".</li>
+<li>Namespace of the aformentioned class (Aspose::Slides).</li>
+<li>You can also add methods. If you do, empty placeholder methods will be generated which return null.</li>
+</ul>
+<p>Once the prompts are filled, this generates the cpp and h files, prints the registration code and copies it to the clipboard. All you need to do is to update *./src/main.cpp* with this code, then recompile.</p>
+<p><b>Boostrap a collection</b></p>
+<div class="fragment"><div class="line">yo aspose::collection</div>
+</div><!-- fragment --><p>This can be used to create classes for Aspose collections such as <a href="https://apireference.aspose.com/slides/cpp/class/aspose.slides.audio_collection">this one</a>. It will generate some boilerplate code too.</p>
+<p>Generator prompts:</p>
+<ul>
+<li>Name of the Aspose (see above)</li>
+<li>Namespace of the Aspose class (ditto)</li>
+<li>Name of the Apsose class the collection holds.</li>
+</ul>
+<p>This is the type of an item in the collection. The name of another Aspose class.</p>
+<ul>
+<li>Namespace of the Apsose class the collection holds.</li>
+</ul>
+<p>This is the namespace the previously mentioned class belongs to.</p>
+<ul>
+<li>Again, you may addd placeholder method if you wish.</li>
+</ul>
+<p>Once finished, this will generate the sources and print reg code for you, just like the others. Add it to *./src/main.cpp*, then recompile.</p>
+<p>***Boostrap a method**</p>
+<div class="fragment"><div class="line">yo aspose::method</div>
+</div><!-- fragment --><p>This one is special, because it does not generate source files, but only the code for the new method. It is able to generate different kind of methods.</p>
+<p>Generator prompts:</p>
+<ul>
+<li><p class="startli">The type of the method you wanna generate</p><ul>
+<li>Empty method</li>
+</ul>
+<p class="startli">A method whose type is void</p><ul>
+<li>A method that calls its super counterpart.</li>
+</ul>
+<p class="startli">This creates code which calls the method of the same name on the super class (which is an Aspose class).</p><ul>
+<li>A method that calls a method of the same name on the Aspose object</li>
+</ul>
+<p class="startli">This one calls the method of the same name on _asposeObj and returns the result which should be primitive or nullptr.</p><ul>
+<li>A method that returns an Aspose object</li>
+</ul>
+<p class="startli">Similar to the previous one but this returns a non-primitive value, typically an exported class instance. It can produce this value either with or without a wrapper. If the class this method belongs to was created using <em><a class="el" href="class_aspose_php_1_1_aspose_object_wrapper.html" title="This is the wrapper class we use to wrap Aspose objects. It&#39;s also the base class of all AsposePhp cl...">AsposePhp::AsposeObjectWrapper</a></em>, say yes, otherwise say no. Also see ./include/aspose_php.h -&gt; wrapObject.</p><ul>
+<li>A method that returns an array of Aspose objects</li>
+</ul>
+<p class="startli">This one returns and Array of objects, each representing an Aspose class.</p>
+</li>
+</ul>
+<p>Additional generator prompts depending on type:</p>
+<ul>
+<li>Empty method<ul>
+<li>The name of the exported method</li>
+<li>The name of exported class this method belongs to</li>
+</ul>
+</li>
+<li>A method that calls its super counterpart.<ul>
+<li>The name of the exported method</li>
+<li>The name of exported class this method belongs to</li>
+<li>The name of the parent class</li>
+</ul>
+</li>
+<li>A method that calls a method of the same name on the Aspose object<ul>
+<li>The name of the exported method</li>
+<li>Does this method return a value? (void or not)</li>
+<li>The name of exported class this method belongs to</li>
+</ul>
+</li>
+<li>A method that returns an Aspose object<ul>
+<li>The name of the exported method</li>
+<li>The name of exported class this method belongs to</li>
+<li>Should object wrapper be used (say yes if AsposeObjectWrapper is the base class of this class)</li>
+<li>The name of method to be called on the Apose class producing results (see in Aspose docs)</li>
+<li>Name of the resulting Aspose class (should be an Aspose class you exported using yo aspose:class)</li>
+</ul>
+</li>
+</ul>
+<p>Once all is done, all generated code will be copied to the clipboard. Now you need to add this to your header, cpp file and <a class="el" href="main_8cpp.html" title="Main entry, PHP extension registration functions.">main.cpp</a>.</p>
+<p>If you wish to extend the Yeoman generator see <a href="https://yeoman.io/authoring/index.html">this page</a>. </p>
+</div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Jan 29 2021 14:16:07 for AsposePhp by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Sun Mar 28 2021 21:51:20 for AsposePhp by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>

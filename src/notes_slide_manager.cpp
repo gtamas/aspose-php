@@ -11,7 +11,8 @@ namespace AsposePhp {
 
 
     /**
-     * @brief Returns a NotesSlide object wrapper. 
+     * @brief Returns the notes slide for the current slide. Returns null if slide doesn't have notes slide.
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.notes_slide_manager#af09f6ddca2bef4a1c6a1b3e23b543dc5 
      * 
      * @return Php::Value 
      */

@@ -16,6 +16,7 @@ namespace AsposePhp
 
     /**
      * @brief Represents the label of chart data point
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_point#a56f9332fdc17c728d9688e39fd8f7250
      * 
      * @return Php::Value 
      */
@@ -26,6 +27,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the value of chart data point
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_point#a4cce55754d5b0c4b5f4f07a6b9cb0f37
      * 
      * @return Php::Value 
      */
@@ -36,6 +38,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the y value of chart data point
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_point#a400161d6b5b455d1217025a04468ab2f
      * 
      * @return Php::Value 
      */
@@ -47,6 +50,7 @@ namespace AsposePhp
 
     /**
      * @brief Returns the x value of chart data point
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_point#a8e962e5c05880ee808a545ffe4e3cf23
      * 
      * @return Php::Value 
      */
@@ -58,6 +62,7 @@ namespace AsposePhp
 
     /**
      * @brief Specifies a data marker
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_point#ad1dccaa99f76efa62384cc2fbb36630e
      * 
      * @return Php::Value 
      */
@@ -69,6 +74,7 @@ namespace AsposePhp
 
     /**
      * @brief Represents the formatting properties. Read IFormat
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_point#ab220b167cbe6087e9db85b32906b5b87
      * 
      * @return Php::Value 
      */
@@ -79,6 +85,7 @@ namespace AsposePhp
 
     /**
      * @brief Removes DataPoint from chart series
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.chart_data_point#a05cbec74e44d5e52c16890d37d42165e
      * 
      */
     void ChartDataPoint::Remove()

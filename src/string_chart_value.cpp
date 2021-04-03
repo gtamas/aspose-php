@@ -12,7 +12,7 @@ namespace AsposePhp {
 
     /**
      * @brief Null value assigning is not allowed. Returning value always is not null.. 
-     * 
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.charts.string_chart_value#ad40782ba99e60eb91d1b99baaf67d094
      * @return Php::Value 
      */
     Php::Value StringChartValue::get_AsCells() {

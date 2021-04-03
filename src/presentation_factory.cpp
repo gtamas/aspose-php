@@ -23,8 +23,9 @@ namespace AsposePhp {
 
     /**
      * @brief Returns all text from the presentation (charts, tables not included!).
-     * 
-     * @param params Path to the peresentation file to read.
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.presentation_factory#a629f92b012f71daf208695658cc350a6
+     * @param params Php::Parameters params.
+     * @param params[0] string path The path to presentation file.
      * 
      * @throw System::ArgumentException path is invalid
      * @throw System::IO::FileNotFoundException File or path doesn't exist

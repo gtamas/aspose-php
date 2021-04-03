@@ -9,6 +9,11 @@ using namespace Aspose::Slides;
 
 namespace AsposePhp {
 
+    /**
+     * @brief Represents a cell of a table
+     * @see https://apireference.aspose.com/slides/cpp/class/aspose.slides.cell
+     * 
+     */
     class Cell : public AsposeObjectWrapper<ICell>, public Php::Base
     {
         public:

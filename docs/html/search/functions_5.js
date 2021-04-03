@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['encode_788',['encode',['../class_base64.html#afb900dddea4770433842a99190ebdb11',1,'Base64::encode(const std::vector&lt; BYTE &gt; &amp;buf)'],['../class_base64.html#a42bc3d8103ba80aa80d14a066d9a4aed',1,'Base64::encode(const BYTE *buf, unsigned int bufLen)']]]
+  ['load_442',['load',['../class_aspose_php_1_1_presentation.html#ade5925620f5246320a9d185e3508ff6b',1,'AsposePhp::Presentation']]]
 ];

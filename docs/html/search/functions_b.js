@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['notesslide_886',['NotesSlide',['../class_aspose_php_1_1_notes_slide.html#accd3b72e0993565252dc5fd141abad32',1,'AsposePhp::NotesSlide']]],
-  ['notesslidemanager_887',['NotesSlideManager',['../class_aspose_php_1_1_notes_slide_manager.html#a9b769dc8c6aa37c04ca0e1de4d247e19',1,'AsposePhp::NotesSlideManager']]]
+  ['match_1757',['match',['../class_docopt_1_1_pattern.html#a0338e973439ba4994ab3e383bd9f1566',1,'Docopt\Pattern\match()'],['../class_docopt_1_1_leaf_pattern.html#a879d99700e2ce143d9682cc63438430d',1,'Docopt\LeafPattern\match()'],['../class_docopt_1_1_branch_pattern.html#a9de3e4ac4508e5b1811bb6d317f57c35',1,'Docopt\BranchPattern\match()'],['../class_docopt_1_1_required.html#a0d62ae394ccc3b8f1c046a1a986525dc',1,'Docopt\Required\match()'],['../class_docopt_1_1_optional.html#a289febf2c24f2ff747bc7c3dd12d3883',1,'Docopt\Optional\match()'],['../class_docopt_1_1_one_or_more.html#a5c7e4ca0b6fe7ad67a8ffba4c2892e8a',1,'Docopt\OneOrMore\match()'],['../class_docopt_1_1_either.html#a9cb7f86279ef7036a9bf2270593b12c8',1,'Docopt\Either\match()'],['../class_zend_1_1_console_1_1_route_matcher_1_1_default_route_matcher.html#a65a7d0bec01cea8f973dec751e9153eb',1,'Zend\Console\RouteMatcher\DefaultRouteMatcher\match()'],['../interface_zend_1_1_console_1_1_route_matcher_1_1_route_matcher_interface.html#a99d2ac322c2ed90c51ac1d83ff14477c',1,'Zend\Console\RouteMatcher\RouteMatcherInterface\match()']]],
+  ['merge_1758',['merge',['../class_zend_1_1_stdlib_1_1_array_utils.html#aa51e7fafab8d7fc01021bac6510b787f',1,'Zend::Stdlib::ArrayUtils']]],
+  ['mergecells_1759',['MergeCells',['../class_aspose_php_1_1_table.html#a77c83a4adab55486c2b32e45b43546f6',1,'AsposePhp::Table::MergeCells()'],['../class_aspose_php_1_1_slides_1_1_table.html#a1439d017c064abff16f994f0194ff6f8',1,'AsposePhp\Slides\Table\MergeCells()']]],
+  ['move_1760',['move',['../class_docopt_1_1_tokens.html#a3e7fcca64bb908bc824336c77a2f7faf',1,'Docopt::Tokens']]]
 ];

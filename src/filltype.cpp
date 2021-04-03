@@ -11,6 +11,9 @@ namespace AsposePhp
 
     /**
      * @brief Returns the given fill type or null if doesn't exist.
+     * @see https://apireference.aspose.com/slides/cpp/namespace/aspose.slides#a73f3a585b379b3df191d07931378e40a
+     * 
+     * @param string The type
      * 
      * @return Php::Value 
      */
